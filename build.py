@@ -1,0 +1,81 @@
+import json, html, shutil, subprocess, pathlib
+from PIL import Image
+R = pathlib.Path(__file__).parent
+D = R / 'dist'
+
+def rasterize():
+    """pdf/NAME_EN.pdf -> slides/NAME_EN/01.webp ... (runs only if PDFs are present)"""
+    for pdf in sorted((R / 'pdf').glob('*.pdf')):
+        out = R / 'slides' / pdf.stem
+        shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
+        subprocess.run(['pdftoppm', '-r', '80', '-png', str(pdf), str(out / 'p')], check=True)
+        for p in sorted(out.glob('p-*.png')):
+            Image.open(p).convert('RGB').save(out / (p.stem[2:] + '.webp'), quality=78)
+            p.unlink()
+
+def t(x):
+    return ''.join(f'<span lang="{l}">{html.escape(x[i])}</span>' for i, l in enumerate(('en', 'pt')))
+
+def imgs(d):
+    return ''.join(f'<img loading="lazy" alt="" src="slides/{d.name}/{p.name}">' for p in sorted(d.glob('*.webp')))
+
+def pick(name, fallback):
+    for n in (name, fallback):
+        d = R / 'slides' / n
+        if d.exists(): return d
+
+def gallery(c):
+    out = ''
+    for l in ('en', 'pt'):
+        k, L = c['slides'], l.upper()
+        desk = pick(f'{k}_{L}', f'{k}_EN')
+        mob = pick(f'{k}_{L}_mobile', f'{k}_EN_mobile')
+        out += f'<div lang="{l}" class="g{" d" if mob else ""}">{imgs(desk)}</div>'
+        if mob: out += f'<div lang="{l}" class="g m">{imgs(mob)}</div>'
+    return out
+
+def figma(c, L):
+    u = c.get('figma')
+    if not u: return ''
+    u = u.replace('www.figma.com', 'embed.figma.com') + ('&' if '?' in u else '?') + 'embed-host=share'
+    return f'<h3>{t(L["flow"])}</h3><iframe class="fg" loading="lazy" allowfullscreen src="{html.escape(u)}"></iframe>'
+
+def case(c, L):
+    facts = ''.join(f'<div><b>{t(L[k])}</b><p>{t(c[k])}</p></div>' for k in ('context', 'scope', 'deliverables', 'status') if k in c)
+    secs = ''.join(f'<section><h3>{t(L[k])}</h3><ul>' + ''.join(f'<li>{t(i)}</li>' for i in c[k]) + '</ul></section>'
+                   for k in ('discovery', 'process', 'outcomes', 'learnings') if k in c)
+    return (f'<article id="{c["slides"]}"><span class="tag">{t(c["org"])}</span><h2>{t(c["title"])}</h2>'
+            f'<div class="facts">{facts}</div><p class="res">{t(c["results"])}</p><div class="cols">{secs}</div>{figma(c, L)}'
+            f'<details><summary>{t(L["slides"])}</summary>{gallery(c)}</details></article>')
+
+CSS = """body{margin:0;font:16px/1.55 system-ui,sans-serif;color:#27506f;background:#fff}main{max-width:960px;margin:auto;padding:16px}
+.bar{display:flex;justify-content:flex-end;gap:8px}.bar button{border:1px solid #f08fb5;background:#fff;color:#27506f;border-radius:16px;padding:4px 14px;cursor:pointer}
+html[data-lang=en] .bar [data-l=en],html[data-lang=pt] .bar [data-l=pt]{background:#f08fb5;color:#fff}
+html[data-lang=pt] [lang=en],html[data-lang=en] [lang=pt]{display:none}
+article{border-top:3px solid #f08fb5;padding:24px 0}h2{margin:.2em 0 .6em}.tag{color:#f08fb5;font-weight:600}
+.facts,.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 32px}.facts b{font-size:.8em;text-transform:uppercase;letter-spacing:.06em}
+.fg{width:100%;height:520px;border:1px solid #f08fb5;border-radius:8px}.res{font-size:1.15em;font-weight:600}summary{cursor:pointer;font-weight:600}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-top:12px}.g img{width:100%;border-radius:6px;cursor:zoom-in}
+@media(max-width:700px){.g.d{display:none}.g.m{display:grid}.g{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}.g.m{display:none}dialog{border:0;background:none;padding:0}dialog img{max-width:92vw;max-height:90vh}"""
+JS = """const D=document.documentElement,ping=()=>parent.postMessage({h:D.scrollHeight},'*'),
+set=l=>{D.dataset.lang=l;ping()};
+set(new URLSearchParams(location.search).get('lang')||(navigator.language.startsWith('pt')?'pt':'en'));
+document.querySelectorAll('.bar button').forEach(b=>b.onclick=()=>set(b.dataset.l));
+addEventListener('message',e=>{if(e.data&&e.data.lang)set(String(e.data.lang).slice(0,2))});
+addEventListener('load',ping);addEventListener('resize',ping);
+document.querySelectorAll('details').forEach(d=>d.ontoggle=ping);
+const dl=document.querySelector('dialog');
+document.addEventListener('click',e=>{if(e.target.matches('.g img')){dl.querySelector('img').src=e.target.src;dl.showModal()}else if(e.target===dl||e.target.closest('dialog'))dl.close()});"""
+
+def main():
+    rasterize()
+    data = json.loads((R / 'content' / 'cases.json').read_text('utf-8'))
+    body = '<div class="bar"><button data-l="en">EN</button><button data-l="pt">PT</button></div>' + ''.join(case(c, data['labels']) for c in data['cases'])
+    page = (f'<!doctype html><html data-lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<title>Suelen Magalhães — Product Design</title><style>{CSS}</style></head><body><main>{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
+    shutil.rmtree(D, ignore_errors=True); D.mkdir()
+    (D / 'index.html').write_text(page, 'utf-8')
+    shutil.copytree(R / 'slides', D / 'slides')
+
+if __name__ == '__main__':
+    main()
