@@ -43,6 +43,14 @@
   "slides": [
    "View case slides",
    "Ver slides do case"
+  ],
+  "top": [
+   "Back to top",
+   "Voltar ao topo"
+  ],
+  "next": [
+   "Next case",
+   "Próximo case"
   ]
  },
  "cases": [

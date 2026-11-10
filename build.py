@@ -59,44 +59,49 @@ def pic(c, k):
 def h2(x):
     return ''.join(f'<span lang="{l}">{html.escape(x[i].split(" — ")[0])} <em>{html.escape(x[i].split(" — ")[-1])}</em></span>' for i, l in enumerate(('en', 'pt')))
 
-def case(c, L):
+def case(c, L, nxt=None):
     facts = ''.join(f'<div><b>{t(L[k])}</b><p>{t(c[k])}</p></div>' for k in ('context', 'scope', 'deliverables', 'status') if k in c)
     rows = ''
-    for k in ('discovery', 'process', 'outcomes', 'learnings'):
+    for i, k in enumerate(('discovery', 'process', 'outcomes', 'learnings')):
         if k not in c: continue
-        rows += (f'<section class="card"><div class="im">{pic(c, k)}</div><h3>{t(L[k])}</h3><ul>'
-                 + ''.join(f'<li>{t(x)}</li>' for x in c[k]) + '</ul></section>')
-    return (f'<article id="{c["slides"]}"><header class="hero"><div class="hx"><span class="tag">{t(c["org"])}</span><h2>{h2(c["title"])}</h2>{facts}</div>'
-            f'<div class="hi">{pic(c, "hero")}</div></header><p class="res">{t(c["results"])}</p><div class="cards">{rows}</div>{figma(c, L)}'
-            f'<details><summary>{t(L["slides"])}</summary>{gallery(c)}</details></article>')
+        im = pic(c, k)
+        rows += (f'<section class="row{" rev" if i % 2 else ""}{"" if im else " solo"}"><div class="tx"><h3>{t(L[k])}</h3><ul>'
+                 + ''.join(f'<li>{t(x)}</li>' for x in c[k]) + f'</ul></div><div class="im">{im}</div></section>')
+    nx = f'<a href="#top">↑ {t(L["top"])}</a>' + (f'<a class="pri" href="#{nxt}">{t(L["next"])} →</a>' if nxt else '')
+    return (f'<article id="{c["slides"]}"><header class="hero"><div class="hi">{pic(c, "hero")}</div><div class="hx"><span class="tag">{t(c["org"])}</span><h2>{h2(c["title"])}</h2></div></header>'
+            f'<div class="facts">{facts}</div><p class="res">{t(c["results"])}</p>{rows}{figma(c, L)}'
+            f'<details><summary>{t(L["slides"])}</summary>{gallery(c)}</details><div class="nx">{nx}</div></article>')
 
-CSS = """:root{--ink:#14122b;--navy:#27506f;--violet:#7c6cf6;--pink:#f58bb8;--soft:#f3efff;
---hex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16zM28 64l28 16v20M28 64L0 80v20' fill='none' stroke='%23fff' stroke-opacity='.08'/%3E%3C/svg%3E");
---glow:radial-gradient(90% 120% at 0% 0%,#0f0d24 0%,rgba(15,13,36,0) 60%);--g:linear-gradient(135deg,#27506f 0%,#5a4fd1 60%,#7c6cf6 100%)}
-*{box-sizing:border-box}body{margin:0;font:16px/1.6 Inter,system-ui,sans-serif;color:var(--navy);background:#fff}main{max-width:1080px;margin:auto;padding:16px;counter-reset:c}
+CSS = """:root{--ink:#14122b;--navy:#27506f;--violet:#7c6cf6;--pink:#f58bb8;--soft:#f3efff;--c:#27506f;
+--hex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16zM28 64l28 16v20M28 64L0 80v20' fill='none' stroke='%23fff' stroke-opacity='.1'/%3E%3C/svg%3E")}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.6 Inter,system-ui,sans-serif;color:var(--navy);background:#fff}main{max-width:1080px;margin:auto;padding:16px;counter-reset:c}
 h2,h3{font-family:Outfit,Inter,system-ui,sans-serif}
-.bar{display:flex;justify-content:flex-end;gap:6px;margin-bottom:8px}.bar button{border:1px solid var(--pink);background:#fff;color:var(--navy);border-radius:999px;padding:5px 16px;cursor:pointer;font:600 .85em Inter,sans-serif}
+.top{display:flex;justify-content:space-between;align-items:center}.logo{height:56px;width:auto}
+.bar{display:flex;gap:6px}.bar button{border:1px solid var(--pink);background:#fff;color:var(--navy);border-radius:999px;padding:5px 16px;cursor:pointer;font:600 .85em Inter,sans-serif}
 html[data-lang=en] .bar [data-l=en],html[data-lang=pt] .bar [data-l=pt]{background:linear-gradient(135deg,var(--pink),var(--violet));border-color:transparent;color:#fff}
 html[data-lang=pt] [lang=en],html[data-lang=en] [lang=pt]{display:none}
-.idx{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 0}.idx a{display:flex;gap:8px;align-items:center;text-decoration:none;color:var(--navy);border:1px solid #e0d9ff;border-radius:999px;padding:6px 16px;font-weight:600;font-size:.9em}.idx i{font-style:normal;color:var(--pink)}
-article{margin-top:120px;counter-reset:n;counter-increment:c}article:first-of-type{margin-top:48px}
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;color:#fff;border-radius:36px;padding:64px 56px;min-height:460px;align-items:center;overflow:hidden;background:var(--hex),var(--glow),var(--g)}
-article:nth-of-type(2){--g:linear-gradient(135deg,#1b1840 0%,#9b3d93 65%,#f58bb8 100%)}article:nth-of-type(3){--g:linear-gradient(135deg,#1f4f6e 0%,#1f86ad 60%,#2aa3c8 100%)}
-.tag{display:inline-block;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:2px 14px;font-size:.78em;font-weight:600;letter-spacing:.06em}.tag::before{content:"CASE 0" counter(c) "  ·  "}
-h2{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin:.35em 0 .6em}h2 em{display:block;font-style:normal;color:var(--pink)}
-.hx b{font-size:.7em;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)}.hx p{margin:.1em 0 .8em;font-size:.92em}
-.hi{position:relative}.hi::before{content:"";position:absolute;width:75%;aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--pink),#ffc2dc);right:-10%;top:-18%}
-article:nth-of-type(2) .hi::before{background:linear-gradient(135deg,#ffd0e4,#fff)}
-.hi img{position:relative;width:100%;border-radius:24px;display:block;box-shadow:0 20px 50px rgba(15,13,36,.45)}
-.res{font:600 1.25rem/1.4 Outfit,sans-serif;color:var(--ink);margin:28px 4px 8px;padding-left:16px;border-left:5px solid var(--pink)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:20px}
-.card{background:#fff;border:1px solid #e6e0ff;border-radius:20px;padding:14px 16px 6px;counter-increment:n}
-.im{background:var(--soft);border-radius:14px;height:170px;display:flex;align-items:center;justify-content:center;overflow:hidden}.im:empty{display:none}.im img{max-height:100%;max-width:100%;object-fit:contain}
-.card h3{font-size:1.05rem;margin:.8em 0 .3em;color:var(--ink)}.card h3::before{content:"0" counter(n);color:var(--pink);margin-right:8px}
-.card ul{font-size:.9rem;padding-left:1.1em;margin:0 0 8px}li{margin:.3em 0}li::marker{color:var(--pink)}
-.fg{width:100%;height:520px;border:0;border-radius:24px;background:var(--soft);margin-top:20px}summary{cursor:pointer;font-weight:600;margin-top:20px;color:var(--violet)}
+.idx{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}.idx a{display:flex;gap:8px;align-items:center;text-decoration:none;color:var(--navy);border:1px solid #e0d9ff;border-radius:999px;padding:7px 18px;font-weight:600;font-size:.92em}.idx a:hover{border-color:var(--pink)}.idx i{font-style:normal;color:var(--pink)}
+article{margin-top:104px;counter-reset:n;counter-increment:c}article:first-of-type{margin-top:36px}article:nth-of-type(2){--c:#1b1840}article:nth-of-type(3){--c:#1f4f6e}
+.hero{position:relative;border-radius:28px;overflow:hidden;min-height:340px;display:flex;align-items:center;background:var(--c)}
+.hi{position:absolute;inset:0}.hi img{width:100%;height:100%;object-fit:cover;display:block}
+.hi::after{content:"";position:absolute;inset:0;background:var(--hex),linear-gradient(90deg,var(--c) 0%,var(--c) 28%,transparent 68%)}
+.hx{position:relative;z-index:1;color:#fff;padding:40px 48px;max-width:52%}
+.tag{display:inline-block;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:2px 14px;font-size:.75em;font-weight:600;letter-spacing:.06em}.tag::before{content:"CASE 0" counter(c) "  ·  "}
+h2{font-size:clamp(2.3rem,5.2vw,3.8rem);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin:.4em 0 0}h2 em{display:block;font-style:normal;font-weight:500;font-size:.36em;line-height:1.3;letter-spacing:0;color:var(--pink);margin-top:.7em}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 28px;margin:20px 4px 0}.facts b{font-size:.68em;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)}.facts p{margin:.1em 0;font-size:.85rem}
+.res{font:600 1.2rem/1.4 Outfit,sans-serif;color:var(--ink);margin:22px 4px 8px;padding-left:16px;border-left:5px solid var(--pink)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;padding:18px 0;counter-increment:n}.row.rev .tx{order:2}.row.solo{grid-template-columns:1fr}
+h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}h3::before{content:"0" counter(n);display:block;font:700 2.6rem/1 Outfit,sans-serif;color:transparent;-webkit-text-stroke:1.3px var(--violet)}
+.tx ul{padding-left:1.1em;margin:0;font-size:.95rem}li{margin:.35em 0}li::marker{color:var(--pink)}
+.im{background:var(--soft);border-radius:24px;padding:16px;position:relative;overflow:hidden}.im:empty{display:none}
+.im::before{content:"";position:absolute;width:55%;aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--violet));opacity:.25;left:-12%;bottom:-18%}
+.im img{position:relative;width:100%;max-height:380px;object-fit:contain;border-radius:14px;display:block}
+.fg{width:100%;height:520px;border:0;border-radius:24px;background:var(--soft);margin-top:20px}summary{cursor:pointer;font-weight:600;margin-top:18px;color:var(--violet)}
 .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}.g img{width:100%;border-radius:10px;cursor:zoom-in}
-@media(max-width:700px){.hero{grid-template-columns:1fr;padding:32px 24px;min-height:0;border-radius:26px}article{margin-top:80px}.g.d{display:none}.g.m{display:grid}.g{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+.nx{display:flex;justify-content:space-between;gap:12px;margin-top:28px;padding-top:18px;border-top:1px solid #ece8ff}
+.nx a{border:1px solid var(--pink);border-radius:999px;padding:8px 22px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.9rem}.nx a.pri{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border-color:transparent;margin-left:auto}
+@media(max-width:700px){.hero{min-height:320px;align-items:flex-start;border-radius:22px}.hx{max-width:100%;padding:26px 22px}.hi::after{background:var(--hex),linear-gradient(180deg,var(--c) 0%,var(--c) 30%,transparent 90%)}
+.row{grid-template-columns:1fr;gap:16px}.row.rev .tx{order:0}article{margin-top:72px}.g.d{display:none}.g.m{display:grid}.g{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
 .g.m{display:none}dialog{border:0;background:none;padding:0}dialog img{max-width:92vw;max-height:90vh}"""
 JS = """const D=document.documentElement,ping=()=>parent.postMessage({h:D.scrollHeight},'*'),
 set=l=>{D.dataset.lang=l;ping()};
@@ -113,9 +118,11 @@ def main():
     data = json.loads((R / 'content' / 'cases.json').read_text('utf-8'))
     crops(data)
     nav = '<nav class="idx">' + ''.join(f'<a href="#{c["slides"]}"><i>0{n+1}</i>{t([x.split(" — ")[0] for x in c["title"]])}</a>' for n, c in enumerate(data['cases'])) + '</nav>'
-    body = nav + '<div class="bar"><button data-l="en">EN</button><button data-l="pt">PT</button></div>' + ''.join(case(c, data['labels']) for c in data['cases'])
+    bar = '<div class="bar"><button data-l="en">EN</button><button data-l="pt">PT</button></div>'
+    cs = data['cases']
+    body = '<div class="top"><img class="logo" src="assets/logo.png" alt="Suelen Magalhães">' + bar + '</div>' + nav + ''.join(case(c, data['labels'], cs[n+1]['slides'] if n+1 < len(cs) else None) for n, c in enumerate(cs))
     page = (f'<!doctype html><html data-lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            f'<title>Suelen Magalhães — Product Design</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}</style></head><body><main>{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
+            f'<title>Suelen Magalhães — Product Design</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
     shutil.rmtree(D, ignore_errors=True); D.mkdir()
     (D / 'index.html').write_text(page, 'utf-8')
     shutil.copytree(R / 'slides', D / 'slides')
