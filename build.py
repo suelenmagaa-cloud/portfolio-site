@@ -106,7 +106,7 @@ h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}.num{display:block;font:700
 .im img{position:relative;max-width:100%;max-height:340px;width:auto;height:auto;object-fit:contain;display:block;cursor:zoom-in}
 .ar{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--pink);background:#fff;color:var(--navy);font-size:1.7rem;line-height:1;cursor:pointer}.ar.l{left:0}.ar.r{right:0}
 .dots{display:flex;justify-content:center;gap:8px;margin-top:10px}.dots i{width:8px;height:8px;border-radius:99px;background:#e0d9ff;transition:.2s}.dots i.on{background:var(--pink);width:22px}
-.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.pills a{border:1px solid var(--pink);border-radius:999px;padding:6px 20px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.85rem}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:10px 16px;margin:0 -16px;border-bottom:1px solid #f0ecff}article{scroll-margin-top:56px}.pills a{border:1px solid var(--pink);border-radius:999px;padding:6px 20px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.85rem}
 .pills a[aria-current]{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border-color:transparent}
 .shero{display:flex;justify-content:space-between;align-items:center;gap:32px;color:#fff;border-radius:28px;padding:56px;margin-top:12px;background:var(--hex),var(--glow),linear-gradient(135deg,#1a1840 0%,#4b45c9 60%,#7c6cf6 100%)}
 .shero small{font-size:.85rem}.shero h1{font:400 clamp(2.6rem,6vw,4.6rem)/1.05 Outfit,sans-serif;margin:.2em 0 0}
@@ -134,6 +134,9 @@ if(new URLSearchParams(location.search).has('embed'))D.dataset.embed=1;
 document.querySelectorAll('.car').forEach(c=>{const tr=c.querySelector('.track'),ds=c.nextElementSibling;ds.innerHTML='<i></i>'.repeat(tr.children.length);
 const dot=()=>{const k=Math.round(tr.scrollLeft/tr.clientWidth);[...ds.children].forEach((d,j)=>d.className=j==k?'on':'')};tr.onscroll=dot;dot();
 c.querySelector('.l').onclick=()=>tr.scrollBy({left:-tr.clientWidth,behavior:'smooth'});c.querySelector('.r').onclick=()=>tr.scrollBy({left:tr.clientWidth,behavior:'smooth'})});
+const pl=[...document.querySelectorAll('.pills a')],arts=[...document.querySelectorAll('article')];
+const mark=()=>{let cur=null;arts.forEach(a=>{const r=a.getBoundingClientRect();if(r.top<innerHeight*.4&&r.bottom>innerHeight*.4)cur=a.id});pl.forEach(l=>{if(l.getAttribute('href')=='#'+cur)l.setAttribute('aria-current','true');else l.removeAttribute('aria-current')})};
+addEventListener('scroll',mark,{passive:true});mark();
 const dl=document.querySelector('dialog');
 document.addEventListener('click',e=>{if(e.target.matches('.g img,.im img')){dl.querySelector('img').src=e.target.src;dl.showModal()}else if(e.target===dl||e.target.closest('dialog'))dl.close()});"""
 
