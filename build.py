@@ -160,33 +160,46 @@ def shell(title, body):
 def pimg(k, alt=''):
     return f'<img loading="lazy" alt="{html.escape(alt)}" src="assets/{k}.webp">' if (R / 'assets' / f'{k}.webp').exists() else ''
 
-PCSS = """body.ph{background:#f7f5fc}.ph .intro{display:none}
+PCSS = """body.ph{background:#fff}.ph .intro{display:none}
 .pt{display:grid;grid-template-columns:1.2fr 1fr;gap:20px 56px;align-items:end;margin:44px 4px 0}
 .pt small{display:inline-block;border:1px solid var(--pink);border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em;color:var(--navy)}
 .pt h1{font:700 clamp(3rem,8vw,6.2rem)/.95 Outfit,sans-serif;letter-spacing:-.04em;color:var(--ink);margin:.2em 0 0}
-.pt p{font-size:1.1rem;margin:0;color:var(--navy)}.pf{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 28px;margin:34px 4px 0;padding-top:20px;border-top:1px solid #e3ddf5}
+.pt p{font-size:1.1rem;margin:0;color:var(--navy)}.pf{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 28px;margin:34px 4px 0;padding-top:24px;border-top:5px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
 .pf b{font-size:.68em;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)}.pf p{margin:.1em 0;font-size:.85rem}
 .bh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin:64px 4px 14px}.bh h2{font-size:1.7rem;margin:0;color:var(--ink);letter-spacing:-.02em}.bh span{font-size:.85rem}
-.bd{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:10px}
-.tl{position:relative;border:0;padding:0;border-radius:14px;overflow:hidden;background:#e8e5f2;cursor:pointer;text-align:left;font:inherit;color:var(--ink);display:flex;transition:transform .2s,box-shadow .2s}
-.tl:hover,.tl:focus-visible{transform:translateY(-3px);box-shadow:0 10px 28px rgba(35,80,112,.18);outline:none}
-.tl .ims{position:absolute;inset:0;display:flex}.tl img{flex:1 1 0;min-width:0;height:100%;display:block}
-.tl.cover img{object-fit:cover}.tl.contain img{object-fit:contain}.tl.top img{object-fit:cover;object-position:top;border-right:6px solid #e8e5f2}
-.tl .lb{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(255,255,255,.94);border-radius:10px;padding:9px 14px;display:flex;align-items:center;gap:12px;justify-content:space-between}
-.tl .lb i{display:block;font:600 .62rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-style:normal}.tl .lb b{font:500 1rem/1.2 Outfit,sans-serif}
-.tl .lb u{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--pink);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--navy)}
+.bd{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:44px 36px}
+.tl{width:100%;align-items:stretch;min-width:0;border:0;padding:0;background:none;cursor:pointer;text-align:left;font:inherit;color:var(--ink);display:flex;flex-direction:column;gap:14px;min-height:0}
+.tl .ims{position:relative;flex:1;min-height:0;min-width:0;border-radius:6px;overflow:hidden;display:flex;transition:transform .25s}
+.tl:hover .ims,.tl:focus-visible .ims{transform:translateY(-4px)}.tl:focus-visible{outline:2px solid var(--violet);outline-offset:6px}
+.tl img{flex:1 1 0;min-width:0;height:100%;display:block}
+.tl.fit .ims img{object-fit:contain;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);mask-composite:intersect}
+.tl.plain .ims{background:#e8e5f2;border-radius:10px}.tl.plain img{object-fit:cover}.tl.plain.top img{object-position:top;border-right:6px solid #e8e5f2}
+.tl .lb{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.tl .lb i{display:block;font:600 .64rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-style:normal;margin-bottom:2px}.tl .lb b{font:500 1.15rem/1.2 Outfit,sans-serif}
+.tl .more{flex:none;font:600 .82rem Inter,sans-serif;color:var(--navy);border-bottom:2px solid var(--pink);padding-bottom:1px;white-space:nowrap;transition:color .2s}.tl:hover .more{color:var(--violet)}
 dialog.pd{border:0;border-radius:18px;padding:0;width:min(1040px,94vw);max-height:90vh;color:var(--navy);background:#fff}dialog.pd::backdrop{background:rgba(20,18,43,.6)}
-.pd .in{display:grid;grid-template-columns:1.35fr 1fr;max-height:90vh}.pd .pi{background:#eeeaf8;padding:16px;overflow:auto;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}.pd .pi img{max-width:100%;height:auto;display:block;border-radius:6px}
+.pd .in{display:grid;grid-template-columns:1.35fr 1fr;max-height:90vh}.pd .pi{background:var(--pb,#eeeaf8);padding:16px;overflow:auto;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}.pd .pi img{max-width:100%;height:auto;display:block;border-radius:6px}
 .pd .px{padding:30px 30px 22px;overflow:auto}.pd .px i{font:600 .68rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-style:normal}
 .pd h3{font:700 1.7rem/1.1 Outfit,sans-serif;color:var(--ink);margin:.3em 0 .6em;letter-spacing:-.02em}.pd h4{font:600 .7rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);margin:1.2em 0 .3em}
 .pd ul{padding-left:1.1em;margin:0}.pd li{margin:.35em 0}.pd li::marker{color:var(--pink)}.pd p{margin:0}
 .pd .ct{position:sticky;bottom:-22px;display:flex;gap:8px;margin-top:22px;padding:12px 0 0;background:#fff}.pd .ct button{border:1px solid var(--pink);background:#fff;color:var(--navy);border-radius:999px;padding:7px 18px;cursor:pointer;font:600 .85rem Inter,sans-serif}.pd .ct button:first-child{margin-right:auto}
-@media(max-width:700px){.pt{grid-template-columns:1fr;margin-top:28px}.bd{grid-template-columns:1fr;grid-auto-rows:240px}.tl{grid-area:auto!important}.tl.top img:nth-child(n+3){display:none}.pd .in{grid-template-columns:1fr;overflow:auto}.pd .pi{max-height:44vh}.pd .px{overflow:visible}}"""
+@media(max-width:700px){.pt{grid-template-columns:1fr;margin-top:28px}.bd{grid-template-columns:1fr;grid-auto-rows:300px;gap:36px}.tl{grid-area:auto!important}.tl.top img:nth-child(n+3){display:none}.pd .in{grid-template-columns:1fr;overflow:auto}.pd .pi{max-height:44vh}.pd .px{overflow:visible}}"""
 PJS = """(()=>{const dl=document.querySelector('dialog.pd');if(!dl)return;const ts=[...document.querySelectorAll('.tl')],ds=[...dl.querySelectorAll('.dc')];let k=0;
 const show=n=>{k=(n+ds.length)%ds.length;ds.forEach((d,i)=>d.hidden=i!=k);ds[k].querySelectorAll('img[data-s]').forEach(i=>{i.src=i.dataset.s;i.removeAttribute('data-s')});ds[k].querySelector('.pi').scrollTop=0;ds[k].querySelector('.px').scrollTop=0};
 ts.forEach((t,i)=>t.onclick=()=>{show(i);dl.showModal();ping()});
 dl.addEventListener('click',e=>{if(e.target===dl)dl.close();const b=e.target.closest('button[data-a]');if(!b)return;if(b.dataset.a=='x')dl.close();else show(k+(b.dataset.a=='n'?1:-1))});
 })();"""
+
+def edgecolor(k):
+    f = R / 'assets' / f'{k}.webp'
+    if not f.exists(): return '#e8e5f2'
+    im = Image.open(f).convert('RGB'); w, h = im.size; px = im.load(); pts = []
+    for x in range(0, w, max(1, w // 60)):
+        pts += [px[x, 1], px[x, h - 2]]
+    for y in range(0, h, max(1, h // 60)):
+        pts += [px[1, y], px[w - 2, y]]
+    pts.sort(key=sum); m = pts[len(pts) // 2]
+    return '#%02x%02x%02x' % m
 
 def pharma(data, S, L):
     P = data['page']
@@ -196,11 +209,12 @@ def pharma(data, S, L):
     tiles = ''; dcs = ''
     for i, tl in enumerate(data['tiles']):
         ims = ''.join(pimg(k) for k in tl['images'])
-        bg = f' style="grid-area:{tl["area"]};background:{tl["bg"]}"' if 'bg' in tl else f' style="grid-area:{tl["area"]}"'
-        tiles += (f'<button class="tl {tl["fit"]}" id="{tl["id"]}"{bg} aria-haspopup="dialog"><span class="ims">{ims}</span>'
-                  f'<span class="lb"><span><i>{t(tl["tag"])}</i><b>{t(tl["title"])}</b></span><u aria-hidden="true">+</u></span></button>')
+        plain = tl.get('plain'); col = '#e8e5f2' if plain else edgecolor(tl['images'][0])
+        cls = 'plain' + (' top' if tl['fit'] == 'top' else '') if plain else 'fit'
+        tiles += (f'<button class="tl {cls}" id="{tl["id"]}" style="grid-area:{tl["area"]}" aria-haspopup="dialog"><span class="ims" style="background:{col}">{ims}</span>'
+                  f'<span class="lb"><span><i>{t(tl["tag"])}</i><b>{t(tl["title"])}</b></span><span class="more">{t(P["more"])} &#8599;</span></span></button>')
         big = ''.join(f'<img alt="" data-s="assets/{k}.webp">' for k in tl['images'])
-        dcs += (f'<div class="dc" hidden><div class="in"><div class="pi">{big}</div><div class="px"><i>{t(tl["tag"])}</i><h3>{t(tl["title"])}</h3>'
+        dcs += (f'<div class="dc" hidden><div class="in"><div class="pi" style="--pb:{col}">{big}</div><div class="px"><i>{t(tl["tag"])}</i><h3>{t(tl["title"])}</h3>'
                 f'<h4>{t(P["constraint"])}</h4><p>{t(tl["constraint"])}</p><h4>{t(P["did"])}</h4><ul>' + ''.join(f'<li>{t(x)}</li>' for x in tl['did'])
                 + f'</ul><div class="ct"><button data-a="p">&#8249; {t(P["prev"])}</button><button data-a="n">{t(P["next"])} &#8250;</button><button data-a="x">{t(P["close"])}</button></div></div></div></div>')
     board = f'<div class="bh"><h2>{t(P["board"])}</h2><span>{t(P["hint"])}</span></div><div class="bd">{tiles}</div>'
