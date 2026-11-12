@@ -160,25 +160,54 @@ def shell(title, body):
 def pimg(k, alt=''):
     return f'<img loading="lazy" alt="{html.escape(alt)}" src="assets/{k}.webp">' if (R / 'assets' / f'{k}.webp').exists() else ''
 
+PCSS = """body.ph{background:#f7f5fc}.ph .intro{display:none}
+.pt{display:grid;grid-template-columns:1.2fr 1fr;gap:20px 56px;align-items:end;margin:44px 4px 0}
+.pt small{display:inline-block;border:1px solid var(--pink);border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em;color:var(--navy)}
+.pt h1{font:700 clamp(3rem,8vw,6.2rem)/.95 Outfit,sans-serif;letter-spacing:-.04em;color:var(--ink);margin:.2em 0 0}
+.pt p{font-size:1.1rem;margin:0;color:var(--navy)}.pf{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 28px;margin:34px 4px 0;padding-top:20px;border-top:1px solid #e3ddf5}
+.pf b{font-size:.68em;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)}.pf p{margin:.1em 0;font-size:.85rem}
+.bh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin:64px 4px 14px}.bh h2{font-size:1.7rem;margin:0;color:var(--ink);letter-spacing:-.02em}.bh span{font-size:.85rem}
+.bd{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:10px}
+.tl{position:relative;border:0;padding:0;border-radius:14px;overflow:hidden;background:#e8e5f2;cursor:pointer;text-align:left;font:inherit;color:var(--ink);display:flex;transition:transform .2s,box-shadow .2s}
+.tl:hover,.tl:focus-visible{transform:translateY(-3px);box-shadow:0 10px 28px rgba(35,80,112,.18);outline:none}
+.tl .ims{position:absolute;inset:0;display:flex}.tl img{flex:1 1 0;min-width:0;height:100%;display:block}
+.tl.cover img{object-fit:cover}.tl.contain img{object-fit:contain}.tl.top img{object-fit:cover;object-position:top;border-right:6px solid #e8e5f2}
+.tl .lb{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(255,255,255,.94);border-radius:10px;padding:9px 14px;display:flex;align-items:center;gap:12px;justify-content:space-between}
+.tl .lb i{display:block;font:600 .62rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-style:normal}.tl .lb b{font:500 1rem/1.2 Outfit,sans-serif}
+.tl .lb u{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--pink);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--navy)}
+dialog.pd{border:0;border-radius:18px;padding:0;width:min(1040px,94vw);max-height:90vh;color:var(--navy);background:#fff}dialog.pd::backdrop{background:rgba(20,18,43,.6)}
+.pd .in{display:grid;grid-template-columns:1.35fr 1fr;max-height:90vh}.pd .pi{background:#eeeaf8;padding:16px;overflow:auto;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}.pd .pi img{max-width:100%;height:auto;display:block;border-radius:6px}
+.pd .px{padding:30px 30px 22px;overflow:auto}.pd .px i{font:600 .68rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-style:normal}
+.pd h3{font:700 1.7rem/1.1 Outfit,sans-serif;color:var(--ink);margin:.3em 0 .6em;letter-spacing:-.02em}.pd h4{font:600 .7rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);margin:1.2em 0 .3em}
+.pd ul{padding-left:1.1em;margin:0}.pd li{margin:.35em 0}.pd li::marker{color:var(--pink)}.pd p{margin:0}
+.pd .ct{position:sticky;bottom:-22px;display:flex;gap:8px;margin-top:22px;padding:12px 0 0;background:#fff}.pd .ct button{border:1px solid var(--pink);background:#fff;color:var(--navy);border-radius:999px;padding:7px 18px;cursor:pointer;font:600 .85rem Inter,sans-serif}.pd .ct button:first-child{margin-right:auto}
+@media(max-width:700px){.pt{grid-template-columns:1fr;margin-top:28px}.bd{grid-template-columns:1fr;grid-auto-rows:240px}.tl{grid-area:auto!important}.tl.top img:nth-child(n+3){display:none}.pd .in{grid-template-columns:1fr;overflow:auto}.pd .pi{max-height:44vh}.pd .px{overflow:visible}}"""
+PJS = """(()=>{const dl=document.querySelector('dialog.pd');if(!dl)return;const ts=[...document.querySelectorAll('.tl')],ds=[...dl.querySelectorAll('.dc')];let k=0;
+const show=n=>{k=(n+ds.length)%ds.length;ds.forEach((d,i)=>d.hidden=i!=k);ds[k].querySelectorAll('img[data-s]').forEach(i=>{i.src=i.dataset.s;i.removeAttribute('data-s')});ds[k].querySelector('.pi').scrollTop=0;ds[k].querySelector('.px').scrollTop=0};
+ts.forEach((t,i)=>t.onclick=()=>{show(i);dl.showModal();ping()});
+dl.addEventListener('click',e=>{if(e.target===dl)dl.close();const b=e.target.closest('button[data-a]');if(!b)return;if(b.dataset.a=='x')dl.close();else show(k+(b.dataset.a=='n'?1:-1))});
+})();"""
+
 def pharma(data, S, L):
-    P = data['page']; C = data['case']
+    P = data['page']
     head, menu, foot = chrome(S, 2)
-    hero = ('<section class="shero site"><div><small>' + html.escape(P['tags']) + '</small><h1>' + t(P['title']) + '</h1></div><div class="stats">'
-            + ''.join(f'<div><b>{html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in P['stats']) + '</div></section><p class="intro site">' + t(P['intro']) + '</p>')
-    facts = ''.join(f'<div><b>{t(L[k])}</b><p>{t(C[k])}</p></div>' for k in ('context', 'scope', 'deliverables'))
-    slides = ''
-    for i, sl in enumerate(C['slides']):
-        im = ''.join(pimg(k) for k in sl['images'])
-        slides += (f'<section class="slide"><div class="tx"><h3><span class="num">0{i+1}</span>{t(sl["title"])}</h3><ul>'
-                   + ''.join(f'<li>{t(x)}</li>' for x in sl['bullets']) + f'</ul></div><div class="im {sl["layout"]}">{im}</div></section>')
-    F = C['feature']
-    feat = (f'<section class="feat"><div class="ftx"><h3>{t(F["title"])}</h3><p>{t(F["text"])}</p><ul>' + ''.join(f'<li>{t(x)}</li>' for x in F['bullets'])
-            + f'</ul></div><div class="fim">{pimg(F["image"])}</div></section>')
-    art = (f'<article id="{C["id"]}"><header class="hero"><div class="hi">{pimg("pharma_hero")}</div><div class="hx"><span class="tag">{t(C["org"])}</span><h2>{h2(C["title"])}</h2></div></header>'
-           f'<div class="facts">{facts}</div><p class="res">{t(C["results"])}</p>'
-           f'<div class="car"><button class="ar l" aria-label="Previous / Anterior">&#8249;</button><div class="track" tabindex="0">{slides}</div><button class="ar r" aria-label="Next / Próximo">&#8250;</button></div><div class="dots"></div>'
-           f'{feat}<div class="nx"><a href="#top">↑ {t(L["top"])}</a></div></article>')
-    return shell('Suelen Magalhães — Pharma design', head + menu + hero + art + foot)
+    top = ('<section class="pt"><div><small>' + html.escape(P['tags']) + '</small><h1>' + t(P['title']) + '</h1></div><p>' + t(P['intro']) + '</p></section>'
+           '<div class="pf">' + ''.join(f'<div><b>{t(a)}</b><p>{t(b)}</p></div>' for a, b in P['facts']) + '</div>')
+    tiles = ''; dcs = ''
+    for i, tl in enumerate(data['tiles']):
+        ims = ''.join(pimg(k) for k in tl['images'])
+        bg = f' style="grid-area:{tl["area"]};background:{tl["bg"]}"' if 'bg' in tl else f' style="grid-area:{tl["area"]}"'
+        tiles += (f'<button class="tl {tl["fit"]}" id="{tl["id"]}"{bg} aria-haspopup="dialog"><span class="ims">{ims}</span>'
+                  f'<span class="lb"><span><i>{t(tl["tag"])}</i><b>{t(tl["title"])}</b></span><u aria-hidden="true">+</u></span></button>')
+        big = ''.join(f'<img alt="" data-s="assets/{k}.webp">' for k in tl['images'])
+        dcs += (f'<div class="dc" hidden><div class="in"><div class="pi">{big}</div><div class="px"><i>{t(tl["tag"])}</i><h3>{t(tl["title"])}</h3>'
+                f'<h4>{t(P["constraint"])}</h4><p>{t(tl["constraint"])}</p><h4>{t(P["did"])}</h4><ul>' + ''.join(f'<li>{t(x)}</li>' for x in tl['did'])
+                + f'</ul><div class="ct"><button data-a="p">&#8249; {t(P["prev"])}</button><button data-a="n">{t(P["next"])} &#8250;</button><button data-a="x">{t(P["close"])}</button></div></div></div></div>')
+    board = f'<div class="bh"><h2>{t(P["board"])}</h2><span>{t(P["hint"])}</span></div><div class="bd">{tiles}</div>'
+    dlg = f'<dialog class="pd" aria-label="Detail">{dcs}</dialog>'
+    page = shell('Suelen Magalhães — Pharma design', head + menu + top + board + foot)
+    page = page.replace('</style>', PCSS + '</style>', 1).replace('<body>', '<body class="ph">', 1)
+    return page.replace('</body>', dlg + f'<script>{PJS}</script></body>', 1)
 
 def main():
     rasterize()
