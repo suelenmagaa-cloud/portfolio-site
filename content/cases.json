@@ -426,6 +426,48 @@
    "Entrar em contato"
   ],
   "email": "suelenmagaa@gmail.com",
-  "linkedin": "https://linkedin.com/in/suelenmagaa"
+  "linkedin": "https://linkedin.com/in/suelenmagaa",
+  "menu": [
+   [
+    "Home",
+    "Home",
+    "https://www.suelenmagaa.com.br/início"
+   ],
+   [
+    "PRODUCT DESIGN",
+    "PRODUCT DESIGN",
+    "https://www.suelenmagaa.com.br"
+   ],
+   [
+    "PHARMA",
+    "FARMA",
+    "https://www.suelenmagaa.com.br/farmacêutico"
+   ],
+   [
+    "HEALTH",
+    "SAÚDE",
+    "https://www.suelenmagaa.com.br/impressos"
+   ],
+   [
+    "BRANDS",
+    "MARCAS",
+    "https://www.suelenmagaa.com.br/marca-e-identidade-visual-1"
+   ],
+   [
+    "OTHER MEDIA",
+    "OUTRAS MÍDIAS",
+    "https://www.suelenmagaa.com.br/videos"
+   ],
+   [
+    "ABOUT",
+    "SOBRE",
+    "https://www.suelenmagaa.com.br/sobre"
+   ],
+   [
+    "CONTACT",
+    "CONTATO",
+    "https://www.suelenmagaa.com.br/entre-em-contato"
+   ]
+  ]
  }
 }

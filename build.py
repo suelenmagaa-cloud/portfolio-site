@@ -83,9 +83,9 @@ CSS = """:root{--ink:#14122b;--navy:#235070;--violet:#7c6cf6;--pink:#f28db1;--so
 --hex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16zM28 64l28 16v20M28 64L0 80v20' fill='none' stroke='%23fff' stroke-opacity='.1'/%3E%3C/svg%3E")}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;font:16px/1.6 Inter,system-ui,sans-serif;color:var(--navy);background:#fff}main{max-width:1080px;margin:auto;padding:16px;counter-reset:c}
 h2,h3{font-family:Outfit,Inter,system-ui,sans-serif}
-.top{display:flex;justify-content:space-between;align-items:center}.logo{height:56px;width:auto}.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--navy)}.brand span{font:400 .95rem Outfit,sans-serif;letter-spacing:.16em}.brand b{font-weight:700}.brand i{font-style:normal;color:var(--pink);margin:0 .7em}
+.top{display:flex;justify-content:space-between;align-items:center}.logo{height:56px;width:auto}.menu{display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;margin:10px 0 14px}.menu a{text-decoration:none;color:var(--ink);font:500 .85rem Outfit,sans-serif;letter-spacing:.04em;padding:4px 0}.menu a[aria-current]{color:var(--pink)}.menu a:hover{color:var(--pink)}.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--navy)}.brand span{font:400 .95rem Outfit,sans-serif;letter-spacing:.16em}.brand b{font-weight:700}.brand i{font-style:normal;color:var(--pink);margin:0 .7em}
 .bar{display:flex;gap:6px}.bar button{border:1px solid var(--pink);background:#fff;color:var(--navy);border-radius:999px;padding:5px 16px;cursor:pointer;font:600 .85em Inter,sans-serif}
-html[data-lang=en] .bar [data-l=en],html[data-lang=pt] .bar [data-l=pt]{background:linear-gradient(135deg,var(--pink),var(--violet));border-color:transparent;color:#fff}
+html[data-lang=en] .bar [data-l=en],html[data-lang=pt] .bar [data-l=pt]{background:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%);background-origin:border-box;border-color:transparent;color:#fff}
 html[data-lang=pt] [lang=en],html[data-lang=en] [lang=pt]{display:none}
 .idx{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}.idx a{display:flex;gap:8px;align-items:center;text-decoration:none;color:var(--navy);border:1px solid #e0d9ff;border-radius:999px;padding:7px 18px;font-weight:600;font-size:.92em}.idx a:hover{border-color:var(--pink)}.idx i{font-style:normal;color:var(--pink)}
 article{margin-top:104px;counter-reset:n;counter-increment:c}article:first-of-type{margin-top:36px}article:nth-of-type(2){--c:#1b1840}article:nth-of-type(3){--c:#1f4f6e}
@@ -93,7 +93,7 @@ article{margin-top:104px;counter-reset:n;counter-increment:c}article:first-of-ty
 .hi{position:absolute;inset:0}.hi img{width:100%;height:100%;object-fit:cover;display:block}
 .hi::after{content:"";position:absolute;inset:0;background:var(--hex),linear-gradient(90deg,var(--c) 0%,var(--c) 28%,transparent 68%)}
 .hx{position:relative;z-index:1;color:#fff;padding:40px 48px;max-width:52%}
-.tag{display:inline-block;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:2px 14px;font-size:.75em;font-weight:600;letter-spacing:.06em}.tag::before{content:"CASE 0" counter(c) "  ·  "}
+.tag{display:inline-block;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:2px 14px;font-size:.75em;font-weight:600;letter-spacing:.06em}.tag::before{content:"CASE  ·  "}
 h2{font-size:clamp(2.3rem,5.2vw,3.8rem);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin:.4em 0 0}h2 em{display:block;font-style:normal;font-weight:500;font-size:.36em;line-height:1.3;letter-spacing:0;color:var(--pink);margin-top:.7em}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 28px;margin:20px 4px 0}.facts b{font-size:.68em;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)}.facts p{margin:.1em 0;font-size:.85rem}
 .res{font:600 1.2rem/1.4 Outfit,sans-serif;color:var(--ink);margin:22px 4px 8px;padding-left:16px;border-left:5px solid var(--pink)}
@@ -107,11 +107,11 @@ h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}.num{display:block;font:700
 .ar{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--pink);background:#fff;color:var(--navy);font-size:1.7rem;line-height:1;cursor:pointer}.ar.l{left:0}.ar.r{right:0}
 .dots{display:flex;justify-content:center;gap:8px;margin-top:10px}.dots i{width:8px;height:8px;border-radius:99px;background:#e0d9ff;transition:.2s}.dots i.on{background:var(--pink);width:22px}
 .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:10px 16px;margin:0 -16px;border-bottom:1px solid #f0ecff}article{scroll-margin-top:56px}.pills a{border:1px solid var(--pink);border-radius:999px;padding:6px 20px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.85rem}
-.pills a[aria-current]{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border-color:transparent}
-.shero{display:flex;justify-content:flex-start;align-items:center;gap:80px;color:#fff;border-radius:0;padding:56px calc(50vw - 50%);margin:12px calc(50% - 50vw) 0;background:var(--hex),linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%)}
+.pills a[aria-current]{background:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%);background-origin:border-box;color:#fff;border-color:transparent}
+.shero{display:flex;justify-content:flex-start;align-items:center;gap:80px;color:#fff;border-radius:0;padding:56px max(24px,calc(50vw - 50% - 10vw));margin:12px calc(50% - 50vw) 0;background:var(--hex),linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%)}
 .shero small{font-size:.85rem}.shero h1{font:400 clamp(2.6rem,6vw,4.6rem)/1.05 Outfit,sans-serif;margin:.2em 0 0}
-.stats{min-width:200px}.stats div{border-top:1px solid rgba(255,255,255,.4);padding:10px 0}.stats div:first-child{border:0}.stats b{font:500 1.5rem/1.1 Outfit,sans-serif;display:block}.stats span{font-size:.75rem;display:block;margin-top:2px}
-.intro{max-width:760px;font-size:1.15rem;margin:26px 4px 16px}
+.stats{min-width:200px}.stats div{border-top:1px solid rgba(255,255,255,.4);padding:22px 0}.stats div:last-child{padding-bottom:0}.stats div:first-child{border:0}.stats b{font:500 1.5rem/1.1 Outfit,sans-serif;display:block}.stats span{font-size:.75rem;display:block;margin-top:2px}
+.intro{max-width:720px;font-size:1.15rem;margin:26px auto 16px;text-align:center}
 footer.site{margin-top:20px}.bandbar{height:14px;margin:0 calc(50% - 50vw);background:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%)}.ft{display:flex;justify-content:space-between;align-items:center;padding:34px 8px}
 .ft h4{font:500 1.6rem Outfit,sans-serif;margin:0;color:var(--ink)}.ft p{margin:.2em 0 0;font-size:.9rem}.btn{border:1px solid #d9d2ff;border-radius:999px;padding:10px 34px;text-decoration:none;color:var(--navy)}
 .fl{display:flex;gap:26px;justify-content:center;font-size:.85rem;padding-bottom:24px}.fl a{color:var(--navy)}
@@ -147,12 +147,13 @@ def main():
     S = data['site']; cs = data['cases']
     bar = '<div class="bar"><button data-l="en">EN</button><button data-l="pt">PT</button></div>'
     head = '<div class="top"><a class="brand site" href="#top"><img class="logo" src="assets/logo.png" alt=""><span><b>SUELEN MAGALHÃES</b><i>|</i>DESIGN</span></a>' + bar + '</div>'
+    menu = '<nav class="menu site">' + ''.join(f'<a href="{html.escape(u)}"' + (' aria-current="page"' if i == 1 else '') + f'>{t([en, pt])}</a>' for i, (en, pt, u) in enumerate(S['menu'])) + '</nav>'
     hero = ('<section class="shero site"><div><small>' + html.escape(S['tags']) + '</small><h1>' + t(S['title']) + '</h1></div><div class="stats">'
             + ''.join(f'<div><b>{html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in S['stats']) + '</div></section><p class="intro site">' + t(S['intro']) + '</p>')
     foot = (f'<footer class="site"><div class="bandbar"></div><div class="ft"><div><h4>{t(S["cta"])}</h4><p>{t(S["cta2"])}</p></div>'
             f'<a class="btn" href="mailto:{S["email"]}">{t(S["btn"])}</a></div><div class="fl"><a href="mailto:{S["email"]}">{S["email"]}</a>'
             f'<a href="{S["linkedin"]}">LinkedIn</a><span>© 2026 Suelen Magalhães</span></div></footer>')
-    body = head + hero + pills(cs, None) + ''.join(case(c, data['labels'], cs, n) for n, c in enumerate(cs)) + foot
+    body = head + menu + hero + pills(cs, None) + ''.join(case(c, data['labels'], cs, n) for n, c in enumerate(cs)) + foot
     page = (f'<!doctype html><html data-lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<title>Suelen Magalhães — Product Design</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
     shutil.rmtree(D, ignore_errors=True); D.mkdir()
