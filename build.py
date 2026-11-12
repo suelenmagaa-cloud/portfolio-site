@@ -73,14 +73,11 @@ def case(c, L, cs, n):
         if k not in c: continue
         slides += (f'<section class="slide"><div class="tx"><h3><span class="num">0{i+1}</span>{t(L[k])}</h3><ul>'
                    + ''.join(f'<li>{t(x)}</li>' for x in c[k]) + f'</ul></div><div class="im">{pic(c, k)}</div></section>')
-    prev = cs[n-1] if n else None
-    nxt = cs[n+1] if n + 1 < len(cs) else None
-    go = (f'<a class="pri" href="#{nxt["slides"]}">{t(L["next"])} →</a>' if nxt else f'<a class="pri" href="#{prev["slides"]}">← {t(L["prev"])}</a>')
-    nav = f'<a href="#top">↑ {t(L["top"])}</a>' + pills(cs, c['slides']) + go
+    nav = f'<a href="#top">↑ {t(L["top"])}</a>'
     return (f'<article id="{c["slides"]}"><header class="hero"><div class="hi">{pic(c, "hero")}</div><div class="hx"><span class="tag">{t(c["org"])}</span><h2>{h2(c["title"])}</h2></div></header>'
             f'<div class="facts">{facts}</div><p class="res">{t(c["results"])}</p>'
             f'<div class="car"><button class="ar l" aria-label="Previous / Anterior">&#8249;</button><div class="track" tabindex="0">{slides}</div><button class="ar r" aria-label="Next / Próximo">&#8250;</button></div><div class="dots"></div>'
-            f'{figma(c, L)}<details><summary>{t(L["slides"])}</summary>{gallery(c)}</details><div class="nx">{nav}</div></article>')
+            f'{figma(c, L)}<div class="nx">{nav}</div></article>')
 
 CSS = """:root{--ink:#14122b;--navy:#27506f;--violet:#7c6cf6;--pink:#f58bb8;--soft:#f3efff;--c:#27506f;
 --hex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16zM28 64l28 16v20M28 64L0 80v20' fill='none' stroke='%23fff' stroke-opacity='.1'/%3E%3C/svg%3E")}
@@ -121,7 +118,7 @@ footer.site{margin-top:110px}.bandbar{height:14px;background:linear-gradient(90d
 html[data-embed] .site{display:none}html[data-embed] .top{justify-content:flex-end}
 .fg{width:100%;height:520px;border:0;border-radius:24px;background:var(--soft);margin-top:20px}summary{cursor:pointer;font-weight:600;margin-top:18px;color:var(--violet)}
 .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}.g img{width:100%;border-radius:10px;cursor:zoom-in}
-.nx{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:28px;padding-top:18px;border-top:1px solid #ece8ff}
+.nx{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:12px;margin-top:28px;padding-top:18px;border-top:1px solid #ece8ff}
 .nx a{border:1px solid var(--pink);border-radius:999px;padding:8px 22px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.9rem}.nx a.pri{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border-color:transparent;margin-left:auto}
 @media(max-width:700px){.slide{grid-template-columns:1fr;padding:0 4px;min-height:0}.ar{display:none}.shero{flex-direction:column;align-items:flex-start;padding:28px}.ft{flex-direction:column;align-items:flex-start;gap:16px}.hero{min-height:320px;align-items:flex-start;border-radius:22px}.hx{max-width:100%;padding:26px 22px}.hi::after{background:var(--hex),linear-gradient(180deg,var(--c) 0%,var(--c) 30%,transparent 90%)}
 .row{grid-template-columns:1fr;gap:16px}.row.rev .tx{order:0}article{margin-top:72px}.g.d{display:none}.g.m{display:grid}.g{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
@@ -157,7 +154,6 @@ def main():
             f'<title>Suelen Magalhães — Product Design</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
     shutil.rmtree(D, ignore_errors=True); D.mkdir()
     (D / 'index.html').write_text(page, 'utf-8')
-    shutil.copytree(R / 'slides', D / 'slides')
     shutil.copytree(R / 'assets', D / 'assets')
 
 if __name__ == '__main__':
