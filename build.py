@@ -98,7 +98,7 @@ h2{font-size:clamp(2.3rem,5.2vw,3.8rem);line-height:1.02;font-weight:700;letter-
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 28px;margin:20px 4px 0}.facts b{font-size:.68em;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)}.facts p{margin:.1em 0;font-size:.85rem}
 .res{font:600 1.2rem/1.4 Outfit,sans-serif;color:var(--ink);margin:22px 4px 8px;padding-left:16px;border-left:5px solid var(--pink)}
 .car{position:relative;margin-top:26px}.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.track::-webkit-scrollbar{display:none}
-.slide{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;padding:8px 60px;min-height:380px}
+.slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;padding:8px 60px;min-height:380px}
 h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}.num{display:block;font:700 3rem/1 Outfit,sans-serif;color:transparent;-webkit-text-stroke:1.3px var(--violet);margin-bottom:2px}
 .tx ul{padding-left:1.1em;margin:0;font-size:.95rem}li{margin:.35em 0}li::marker{color:var(--pink)}
 .im{padding:0;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:280px}.im:empty{display:none}
@@ -120,8 +120,12 @@ html[data-embed] .site{display:none}html[data-embed] .top{justify-content:flex-e
 .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}.g img{width:100%;border-radius:10px;cursor:zoom-in}
 .nx{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:12px;margin-top:16px}
 .nx a{border:1px solid var(--pink);border-radius:999px;padding:8px 22px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.9rem}.nx a.pri{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border-color:transparent;margin-left:auto}
-@media(max-width:700px){.menu{justify-content:flex-start;gap:4px 18px}.slide{grid-template-columns:1fr;padding:0 4px;min-height:0}.ar{display:none}.shero{flex-direction:column;align-items:flex-start;padding:28px}.ft{flex-direction:column;align-items:flex-start;gap:16px}.hero{min-height:320px;align-items:flex-start;border-radius:22px}.hx{max-width:100%;padding:26px 22px}.hi::after{background:var(--hex),linear-gradient(180deg,var(--c) 0%,var(--c) 30%,transparent 90%)}
+@media(max-width:700px){.logo{height:44px}.brand{gap:8px}.brand span{font-size:.68rem;letter-spacing:.08em}.brand i{margin:0 .4em}.menu{justify-content:flex-start;gap:4px 18px}.slide{grid-template-columns:minmax(0,1fr);padding:0 4px;min-height:0}.im{min-width:0;width:100%}.tx{min-width:0}.ar{display:none}.shero{flex-direction:column;align-items:flex-start;padding:28px}.ft{flex-direction:column;align-items:flex-start;gap:16px}.hero{min-height:320px;align-items:flex-start;border-radius:22px}.hx{max-width:100%;padding:26px 22px}.hi::after{background:var(--hex),linear-gradient(180deg,var(--c) 0%,var(--c) 30%,transparent 90%)}
 .row{grid-template-columns:1fr;gap:16px}.row.rev .tx{order:0}article{margin-top:72px}.g.d{display:none}.g.m{display:grid}.g{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+.im.col{flex-direction:column;gap:10px}.im.col img{max-height:190px}.im.row{gap:12px}.im.row img{flex:1 1 0;min-width:0;max-height:340px;object-fit:contain}
+.im.tall{gap:10px;align-items:flex-start}.im.tall img{flex:1 1 0;min-width:0;height:340px;object-fit:cover;object-position:top;border:1px solid #e8e4f7}
+.feat{display:grid;grid-template-columns:1fr 1.5fr;gap:32px;align-items:center;margin:48px 4px 0;padding-top:36px;border-top:1px solid #ece8fb}.feat h3{font-size:1.6rem}.feat p{margin:.2em 0 .8em}.fim img{width:100%;height:auto;display:block;cursor:zoom-in;border-radius:10px}
+@media(max-width:700px){.feat{grid-template-columns:1fr}.im.row{flex-direction:column}.im.row img{max-height:300px;width:100%}.im.tall img{height:260px}}
 .g.m{display:none}dialog{border:0;background:none;padding:0}dialog img{max-width:92vw;max-height:90vh}"""
 JS = """const D=document.documentElement,ping=()=>parent.postMessage({h:D.scrollHeight},'*'),
 set=l=>{D.dataset.lang=l;ping()};
@@ -140,24 +144,56 @@ addEventListener('scroll',mark,{passive:true});mark();
 const dl=document.querySelector('dialog');
 document.addEventListener('click',e=>{if(e.target.matches('.g img,.im img')){dl.querySelector('img').src=e.target.src;dl.showModal()}else if(e.target===dl||e.target.closest('dialog'))dl.close()});"""
 
+def chrome(S, cur):
+    bar = '<div class="bar"><button data-l="en">EN</button><button data-l="pt">PT</button></div>'
+    head = '<div class="top"><a class="brand site" href="#top"><img class="logo" src="assets/logo.png" alt=""><span><b>SUELEN MAGALHÃES</b><i>|</i>DESIGN</span></a>' + bar + '</div>'
+    menu = '<nav class="menu site">' + ''.join(f'<a href="{html.escape(u)}"' + (' aria-current="page"' if i == cur else '') + f'>{t([en, pt])}</a>' for i, (en, pt, u) in enumerate(S['menu'])) + '</nav>'
+    foot = (f'<footer class="site"><div class="bandbar"></div><div class="ft"><div><h4>{t(S["cta"])}</h4><p>{t(S["cta2"])}</p></div>'
+            f'<a class="btn" href="mailto:{S["email"]}">{t(S["btn"])}</a></div><div class="fl"><a href="mailto:{S["email"]}">{S["email"]}</a>'
+            f'<a href="{S["linkedin"]}">LinkedIn</a><span>© 2026 Suelen Magalhães</span></div></footer>')
+    return head, menu, foot
+
+def shell(title, body):
+    return (f'<!doctype html><html data-lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<title>{title}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
+
+def pimg(k, alt=''):
+    return f'<img loading="lazy" alt="{html.escape(alt)}" src="assets/{k}.webp">' if (R / 'assets' / f'{k}.webp').exists() else ''
+
+def pharma(data, S, L):
+    P = data['page']; C = data['case']
+    head, menu, foot = chrome(S, 2)
+    hero = ('<section class="shero site"><div><small>' + html.escape(P['tags']) + '</small><h1>' + t(P['title']) + '</h1></div><div class="stats">'
+            + ''.join(f'<div><b>{html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in P['stats']) + '</div></section><p class="intro site">' + t(P['intro']) + '</p>')
+    facts = ''.join(f'<div><b>{t(L[k])}</b><p>{t(C[k])}</p></div>' for k in ('context', 'scope', 'deliverables'))
+    slides = ''
+    for i, sl in enumerate(C['slides']):
+        im = ''.join(pimg(k) for k in sl['images'])
+        slides += (f'<section class="slide"><div class="tx"><h3><span class="num">0{i+1}</span>{t(sl["title"])}</h3><ul>'
+                   + ''.join(f'<li>{t(x)}</li>' for x in sl['bullets']) + f'</ul></div><div class="im {sl["layout"]}">{im}</div></section>')
+    F = C['feature']
+    feat = (f'<section class="feat"><div class="ftx"><h3>{t(F["title"])}</h3><p>{t(F["text"])}</p><ul>' + ''.join(f'<li>{t(x)}</li>' for x in F['bullets'])
+            + f'</ul></div><div class="fim">{pimg(F["image"])}</div></section>')
+    art = (f'<article id="{C["id"]}"><header class="hero"><div class="hi">{pimg("pharma_hero")}</div><div class="hx"><span class="tag">{t(C["org"])}</span><h2>{h2(C["title"])}</h2></div></header>'
+           f'<div class="facts">{facts}</div><p class="res">{t(C["results"])}</p>'
+           f'<div class="car"><button class="ar l" aria-label="Previous / Anterior">&#8249;</button><div class="track" tabindex="0">{slides}</div><button class="ar r" aria-label="Next / Próximo">&#8250;</button></div><div class="dots"></div>'
+           f'{feat}<div class="nx"><a href="#top">↑ {t(L["top"])}</a></div></article>')
+    return shell('Suelen Magalhães — Pharma design', head + menu + hero + art + foot)
+
 def main():
     rasterize()
     data = json.loads((R / 'content' / 'cases.json').read_text('utf-8'))
     crops(data)
     S = data['site']; cs = data['cases']
-    bar = '<div class="bar"><button data-l="en">EN</button><button data-l="pt">PT</button></div>'
-    head = '<div class="top"><a class="brand site" href="#top"><img class="logo" src="assets/logo.png" alt=""><span><b>SUELEN MAGALHÃES</b><i>|</i>DESIGN</span></a>' + bar + '</div>'
-    menu = '<nav class="menu site">' + ''.join(f'<a href="{html.escape(u)}"' + (' aria-current="page"' if i == 1 else '') + f'>{t([en, pt])}</a>' for i, (en, pt, u) in enumerate(S['menu'])) + '</nav>'
+    head, menu, foot = chrome(S, 1)
     hero = ('<section class="shero site"><div><small>' + html.escape(S['tags']) + '</small><h1>' + t(S['title']) + '</h1></div><div class="stats">'
             + ''.join(f'<div><b>{html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in S['stats']) + '</div></section><p class="intro site">' + t(S['intro']) + '</p>')
-    foot = (f'<footer class="site"><div class="bandbar"></div><div class="ft"><div><h4>{t(S["cta"])}</h4><p>{t(S["cta2"])}</p></div>'
-            f'<a class="btn" href="mailto:{S["email"]}">{t(S["btn"])}</a></div><div class="fl"><a href="mailto:{S["email"]}">{S["email"]}</a>'
-            f'<a href="{S["linkedin"]}">LinkedIn</a><span>© 2026 Suelen Magalhães</span></div></footer>')
     body = head + menu + hero + pills(cs, None) + ''.join(case(c, data['labels'], cs, n) for n, c in enumerate(cs)) + foot
-    page = (f'<!doctype html><html data-lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            f'<title>Suelen Magalhães — Product Design</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
     shutil.rmtree(D, ignore_errors=True); D.mkdir()
-    (D / 'index.html').write_text(page, 'utf-8')
+    (D / 'index.html').write_text(shell('Suelen Magalhães — Product Design', body), 'utf-8')
+    pj = R / 'content' / 'pharma.json'
+    if pj.exists():
+        (D / 'pharma.html').write_text(pharma(json.loads(pj.read_text('utf-8')), S, data['labels']), 'utf-8')
     shutil.copytree(R / 'assets', D / 'assets')
 
 if __name__ == '__main__':

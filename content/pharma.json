@@ -1,0 +1,48 @@
+{
+ "page": {
+  "title": ["Pharma design", "Design farmacêutico"],
+  "tags": "Pharma | Regulated design | Print, digital and events",
+  "stats": [
+   ["JANSSEN", ["client, brand Tremfya® (guselkumab)", "cliente, marca Tremfya® (guselkumab)"]],
+   ["REGULATED", ["full safety information in every piece", "informações de segurança completas em cada peça"]],
+   ["PRINT + DIGITAL", ["plus event materials", "e materiais para eventos"]]
+  ],
+  "intro": ["Sales and educational materials for Tremfya® (guselkumab), a regulated brand where every piece carries dense clinical data and the full safety information. Developed together with the copywriter and the project manager.", "Materiais de venda e educação para Tremfya® (guselkumab), uma marca regulada em que cada peça carrega dados clínicos densos e as informações de segurança completas. Desenvolvido junto com a redatora e a gerente de projeto."]
+ },
+ "case": {
+  "id": "tremfya",
+  "org": ["Janssen · Tremfya", "Janssen · Tremfya"],
+  "title": ["Tremfya® — Design for a regulated brand", "Tremfya® — Design para uma marca regulada"],
+  "context": ["Janssen, brand Tremfya® (guselkumab). Team: design, copy and project management", "Janssen, marca Tremfya® (guselkumab). Equipe: design, copy e gestão de projeto"],
+  "scope": ["Print, digital and event materials", "Materiais impressos, digitais e para eventos"],
+  "deliverables": ["Brochures, inserts, HCP e-mails, icons, charts, QR tent card, window cling", "Brochuras, encartes, e-mails para HCPs, ícones, gráficos, tent card com QR, window cling"],
+  "results": ["Fewer pages and lower print cost with the full safety information included, and icons the agency kept using afterwards.", "Menos páginas e menor custo de impressão com as informações de segurança completas, e ícones que a agência continuou usando depois."],
+  "slides": [
+   {"title": ["Visual system", "Sistema visual"], "images": ["pharma_icons"], "layout": "one",
+    "bullets": [
+     ["Icons for Scalp, Nail, Palms/soles, Body weight and joints did not exist and were created for this material", "Os ícones de Scalp, Nail, Palms/soles, Body weight e articulações não existiam e foram criados para este material"],
+     ["Later used by the agency and incorporated into the brand's visual system", "Depois usados pela agência e incorporados ao sistema visual da marca"],
+     ["Data charts designed by me", "Gráficos de dados desenhados por mim"]]},
+   {"title": ["Formats that solve problems", "Formatos que resolvem problemas"], "images": ["pharma_fold", "pharma_insert"], "layout": "col",
+    "bullets": [
+     ["A folded piece in a custom size avoided one extra page, saving paper, folding and printing, and still fit the full safety information. It started as a simple front and back, but there was a lot of information", "Uma peça com dobra e tamanho específicos evitou uma página extra, economizando papel, dobra e impressão, e ainda coube a bula inteira. Começou como frente e verso simples, mas havia muita informação"],
+     ["An inner insert that reaches three quarters of the sheet holds the safety information", "Um encarte interno que alcança três quartos da folha abriga as informações de segurança"],
+     ["The “~8 out of 10” and “~9 out of 10” highlights were designed by me", "Os destaques “~8 out of 10” e “~9 out of 10” foram criados por mim"]]},
+   {"title": ["Materials in the real world", "Materiais no mundo real"], "images": ["pharma_qr", "pharma_cling"], "layout": "row",
+    "bullets": [
+     ["The QR code evolution was my proposal: the photo now sits in the background. The team (me, the copywriter and the PM) studied it at length until reaching this model", "A evolução do QR foi proposta minha: a foto agora fica no fundo. A equipe (eu, a redatora e a gerente de projeto) estudou bastante até chegar neste modelo"],
+     ["It also changed how materials are presented: from flat files to applied mockups", "Também mudou a apresentação dos materiais: de arquivos secos para mockups aplicados"],
+     ["Window cling for the event booth, a different material from print", "Window cling para o estande do evento, um material diferente do impresso"]]},
+   {"title": ["Digital", "Digital"], "images": ["pharma_email_commitment", "pharma_email_dosing", "pharma_email_onset"], "layout": "tall",
+    "bullets": [
+     ["HCP e-mails with text customizable directly in the reps' platform", "E-mails para HCPs com textos customizáveis direto na plataforma dos representantes"],
+     ["Animated GIFs and alt text for every image", "GIFs animados e texto alternativo em todas as imagens"]]}
+  ],
+  "feature": {
+   "title": ["TREMFYA DATA", "TREMFYA DATA"],
+   "text": ["Brochure comparing the brand with its biggest competitors. Also available in a digital version, where it can be flipped through like a printed one.", "Brochura que compara a marca com seus maiores concorrentes. Também disponível em versão digital, que pode ser folheada como um impresso."],
+   "bullets": [["One of the charts had to be rebuilt from another chart, because the numbers were not provided", "Um dos gráficos precisou ser reconstruído a partir de outro gráfico, porque os números não foram fornecidos"]],
+   "image": "pharma_brochure"
+  }
+ }
+}
