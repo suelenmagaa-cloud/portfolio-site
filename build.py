@@ -212,7 +212,7 @@ def pharma(data, S, L):
         plain = tl.get('plain'); col = '#e8e5f2' if plain else edgecolor(tl['images'][0])
         cls = 'plain' + (' top' if tl['fit'] == 'top' else '') if plain else 'fit'
         tiles += (f'<button class="tl {cls}" id="{tl["id"]}" style="grid-area:{tl["area"]}" aria-haspopup="dialog"><span class="ims" style="background:{col}">{ims}</span>'
-                  f'<span class="lb"><span><i>{t(tl["tag"])}</i><b>{t(tl["title"])}</b></span><span class="more">{t(P["more"])} &#8599;</span></span></button>')
+                  f'<span class="lb"><span><i>{t(tl["tag"])}</i><b>{t(tl["title"])}</b></span><span class="more">{t(P.get("more", ["See more", "Ver mais"]))} &#8599;</span></span></button>')
         big = ''.join(f'<img alt="" data-s="assets/{k}.webp">' for k in tl['images'])
         dcs += (f'<div class="dc" hidden><div class="in"><div class="pi" style="--pb:{col}">{big}</div><div class="px"><i>{t(tl["tag"])}</i><h3>{t(tl["title"])}</h3>'
                 f'<h4>{t(P["constraint"])}</h4><p>{t(tl["constraint"])}</p><h4>{t(P["did"])}</h4><ul>' + ''.join(f'<li>{t(x)}</li>' for x in tl['did'])

@@ -1,0 +1,297 @@
+{
+ "page": {
+  "title": [
+   "Pharma design",
+   "Design farmacêutico"
+  ],
+  "tags": "Janssen · Tremfya® (guselkumab)",
+  "intro": [
+   "Sales and educational materials for a regulated brand, where every piece carries dense clinical data and the full safety information. Developed together with the copywriter and the project manager.",
+   "Materiais de venda e educação para uma marca regulada, em que cada peça carrega dados clínicos densos e as informações de segurança completas. Desenvolvido junto com a redatora e a gerente de projeto."
+  ],
+  "facts": [
+   [
+    [
+     "Context",
+     "Contexto"
+    ],
+    [
+     "Janssen, brand Tremfya® (guselkumab). Team: design, copy and project management",
+     "Janssen, marca Tremfya® (guselkumab). Equipe: design, copy e gestão de projeto"
+    ]
+   ],
+   [
+    [
+     "Scope",
+     "Escopo"
+    ],
+    [
+     "Print, digital and event materials",
+     "Materiais impressos, digitais e para eventos"
+    ]
+   ],
+   [
+    [
+     "Deliverables",
+     "Entregas"
+    ],
+    [
+     "Brochures, inserts, HCP e-mails, icons, charts, QR tent card, window cling",
+     "Brochuras, encartes, e-mails para HCPs, ícones, gráficos, tent card com QR, window cling"
+    ]
+   ]
+  ],
+  "board": [
+   "Constraints that became solutions",
+   "Restrições que viraram solução"
+  ],
+  "hint": [
+   "Select a piece to see the constraint and what I did",
+   "Selecione uma peça para ver a restrição e o que eu fiz"
+  ],
+  "constraint": [
+   "The constraint",
+   "A restrição"
+  ],
+  "did": [
+   "What I did",
+   "O que eu fiz"
+  ],
+  "close": [
+   "Close",
+   "Fechar"
+  ],
+  "prev": [
+   "Previous",
+   "Anterior"
+  ],
+  "next": [
+   "Next",
+   "Próximo"
+  ],
+  "more": [
+   "See more",
+   "Ver mais"
+  ]
+ },
+ "tiles": [
+  {
+   "id": "fold",
+   "tag": [
+    "Print",
+    "Impresso"
+   ],
+   "area": "1/1/3/8",
+   "fit": "contain",
+   "images": [
+    "pharma_fold"
+   ],
+   "title": [
+    "The full safety information, without one more page",
+    "A bula inteira, sem uma página a mais"
+   ],
+   "constraint": [
+    "It would be only a front and back, but there was a lot of information, and the full safety information had to fit.",
+    "Seria somente um frente e verso, mas havia muita informação, e a bula inteira precisava caber."
+   ],
+   "did": [
+    [
+     "A folded piece in a custom size avoided an extra page",
+     "Uma peça com dobra e tamanho específicos evitou uma página extra"
+    ],
+    [
+     "Saved paper, folding and printing, and the full safety information still fit",
+     "Economizou papel, dobra e impressão, e a bula inteira ainda coube"
+    ]
+   ]
+  },
+  {
+   "id": "qr",
+   "tag": [
+    "Print · Event",
+    "Impresso · Evento"
+   ],
+   "area": "1/8/4/13",
+   "fit": "contain",
+   "images": [
+    "pharma_qr"
+   ],
+   "title": [
+    "A QR code that is a photo",
+    "Um QR code que é uma foto"
+   ],
+   "constraint": [
+    "A QR code is usually just a block of dots, and materials were presented as flat files.",
+    "Um QR code costuma ser só um bloco de pontos, e os materiais eram apresentados como arquivos secos."
+   ],
+   "did": [
+    [
+     "Proposed the photo in the background of the QR code",
+     "Propus a foto no fundo do QR code"
+    ],
+    [
+     "The team (me, the copywriter and the PM) studied it at length until reaching this model",
+     "A equipe (eu, a redatora e a gerente de projeto) estudou bastante até chegar neste modelo"
+    ],
+    [
+     "Materials are now presented applied on mockups, not flat",
+     "Os materiais agora são apresentados aplicados em mockups, e não secos"
+    ]
+   ]
+  },
+  {
+   "id": "insert",
+   "tag": [
+    "Print",
+    "Impresso"
+   ],
+   "area": "3/1/5/8",
+   "fit": "contain",
+   "images": [
+    "pharma_insert"
+   ],
+   "title": [
+    "Safety information inside a three-quarter insert",
+    "A bula dentro de um encarte de três quartos"
+   ],
+   "constraint": [
+    "Another model with the same problem: it would be a simple front and back, with the safety information to include.",
+    "Outro modelo com o mesmo problema: seria um frente e verso simples, com a bula para incluir."
+   ],
+   "did": [
+    [
+     "An inner insert that reaches three quarters of the sheet holds the safety information",
+     "Um encarte interno que alcança três quartos da folha abriga a bula"
+    ],
+    [
+     "The “~8 out of 10” and “~9 out of 10” highlights were designed by me",
+     "Os destaques “~8 out of 10” e “~9 out of 10” foram criados por mim"
+    ]
+   ]
+  },
+  {
+   "id": "cling",
+   "tag": [
+    "Event",
+    "Evento"
+   ],
+   "area": "4/8/5/13",
+   "fit": "cover",
+   "images": [
+    "pharma_cling"
+   ],
+   "title": [
+    "A different material: window cling",
+    "Um material diferente: window cling"
+   ],
+   "constraint": [
+    "A booth at an event, with glass instead of paper.",
+    "Um estande em um evento, com vidro no lugar de papel."
+   ],
+   "did": [
+    [
+     "Window cling for the event booth, a material different from print",
+     "Window cling para o estande do evento, um material diferente do impresso"
+    ]
+   ],
+   "plain": true
+  },
+  {
+   "id": "icons",
+   "tag": [
+    "Visual system",
+    "Sistema visual"
+   ],
+   "area": "5/1/7/6",
+   "fit": "contain",
+   "images": [
+    "pharma_icons"
+   ],
+   "title": [
+    "Icons that did not exist",
+    "Ícones que não existiam"
+   ],
+   "constraint": [
+    "The brand had no icons for the patient types shown in the data.",
+    "A marca não tinha ícones para os tipos de paciente mostrados nos dados."
+   ],
+   "did": [
+    [
+     "Created the icons for Scalp, Nail, Palms/soles, Body weight and joints",
+     "Criei os ícones de Scalp, Nail, Palms/soles, Body weight e articulações"
+    ],
+    [
+     "Later used by the agency and incorporated into the brand's visual system",
+     "Depois usados pela agência e incorporados ao sistema visual da marca"
+    ],
+    [
+     "Data charts designed by me",
+     "Gráficos de dados desenhados por mim"
+    ]
+   ]
+  },
+  {
+   "id": "data",
+   "tag": [
+    "Print · Digital",
+    "Impresso · Digital"
+   ],
+   "area": "5/6/7/13",
+   "fit": "contain",
+   "images": [
+    "pharma_brochure"
+   ],
+   "title": [
+    "A chart with no numbers",
+    "Um gráfico sem os números"
+   ],
+   "constraint": [
+    "Tremfya Data compares the brand with its biggest competitors. One chart arrived without the underlying numbers.",
+    "O Tremfya Data compara a marca com seus maiores concorrentes. Um gráfico chegou sem os números por trás."
+   ],
+   "did": [
+    [
+     "Rebuilt the chart from another chart, since the numbers were not provided",
+     "Reconstruí o gráfico a partir de outro gráfico, já que os números não foram fornecidos"
+    ],
+    [
+     "The brochure also exists in a digital version, where it can be flipped through like a printed one",
+     "A brochura também existe em versão digital, em que dá para folhear como um impresso"
+    ]
+   ]
+  },
+  {
+   "id": "email",
+   "tag": [
+    "Digital",
+    "Digital"
+   ],
+   "area": "7/1/9/13",
+   "fit": "top",
+   "images": [
+    "pharma_email_commitment",
+    "pharma_email_dosing",
+    "pharma_email_onset"
+   ],
+   "title": [
+    "E-mails the reps can edit",
+    "E-mails que os representantes editam"
+   ],
+   "constraint": [
+    "Each rep needs to speak to their own physicians, inside a regulated template.",
+    "Cada representante precisa falar com os próprios médicos, dentro de um template regulado."
+   ],
+   "did": [
+    [
+     "HCP e-mails with text customizable directly in the reps' platform",
+     "E-mails para HCPs com textos customizáveis direto na plataforma dos representantes"
+    ],
+    [
+     "Animated GIFs and alt text for every image",
+     "GIFs animados e texto alternativo em todas as imagens"
+    ]
+   ],
+   "plain": true
+  }
+ ]
+}
