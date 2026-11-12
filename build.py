@@ -79,7 +79,7 @@ def case(c, L, cs, n):
             f'<div class="car"><button class="ar l" aria-label="Previous / Anterior">&#8249;</button><div class="track" tabindex="0">{slides}</div><button class="ar r" aria-label="Next / Próximo">&#8250;</button></div><div class="dots"></div>'
             f'{figma(c, L)}<div class="nx">{nav}</div></article>')
 
-CSS = """:root{--ink:#14122b;--navy:#27506f;--violet:#7c6cf6;--pink:#f58bb8;--soft:#f3efff;--c:#27506f;
+CSS = """:root{--ink:#14122b;--navy:#235070;--violet:#7c6cf6;--pink:#f28db1;--soft:#f3efff;--c:#27506f;
 --hex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16zM28 64l28 16v20M28 64L0 80v20' fill='none' stroke='%23fff' stroke-opacity='.1'/%3E%3C/svg%3E")}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.6 Inter,system-ui,sans-serif;color:var(--navy);background:#fff}main{max-width:1080px;margin:auto;padding:16px;counter-reset:c}
 h2,h3{font-family:Outfit,Inter,system-ui,sans-serif}
@@ -108,9 +108,9 @@ h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}.num{display:block;font:700
 .dots{display:flex;justify-content:center;gap:8px;margin-top:10px}.dots i{width:8px;height:8px;border-radius:99px;background:#e0d9ff;transition:.2s}.dots i.on{background:var(--pink);width:22px}
 .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:10px 16px;margin:0 -16px;border-bottom:1px solid #f0ecff}article{scroll-margin-top:56px}.pills a{border:1px solid var(--pink);border-radius:999px;padding:6px 20px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.85rem}
 .pills a[aria-current]{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border-color:transparent}
-.shero{display:flex;justify-content:space-between;align-items:center;gap:32px;color:#fff;border-radius:28px;padding:56px;margin-top:12px;background:var(--hex),var(--glow),linear-gradient(135deg,#1a1840 0%,#4b45c9 60%,#7c6cf6 100%)}
+.shero{display:flex;justify-content:space-between;align-items:center;gap:32px;color:#fff;border-radius:28px;padding:56px;margin-top:12px;background:var(--hex),linear-gradient(90deg,#235070 0%,#f28db1 100%)}
 .shero small{font-size:.85rem}.shero h1{font:400 clamp(2.6rem,6vw,4.6rem)/1.05 Outfit,sans-serif;margin:.2em 0 0}
-.stats{min-width:230px}.stats div{border-top:1px solid rgba(255,255,255,.4);padding:10px 0}.stats div:first-child{border:0}.stats b{font:500 1.5rem Outfit,sans-serif;display:block}.stats span{font-size:.75rem}
+.stats{min-width:230px}.stats{color:#235070}.stats div{border-top:1px solid rgba(35,80,112,.4);padding:10px 0}.stats div:first-child{border:0}.stats b{font:500 1.5rem Outfit,sans-serif;display:block}.stats span{font-size:.75rem}
 .intro{max-width:760px;font-size:1.15rem;margin:26px 4px 16px}
 footer.site{margin-top:110px}.bandbar{height:14px;background:linear-gradient(90deg,#2b2bff,#b9c6ee)}.ft{display:flex;justify-content:space-between;align-items:center;padding:34px 8px}
 .ft h4{font:500 1.6rem Outfit,sans-serif;margin:0;color:var(--ink)}.ft p{margin:.2em 0 0;font-size:.9rem}.btn{border:1px solid #d9d2ff;border-radius:999px;padding:10px 34px;text-decoration:none;color:var(--navy)}
