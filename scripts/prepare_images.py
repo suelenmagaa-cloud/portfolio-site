@@ -20,6 +20,6 @@ def trim(im, pad=12):
 
 for p in sorted((R / 'assets-src').iterdir()):
     if p.suffix.lower() in ('.png', '.jpg', '.jpeg', '.pdf'):
-        im = trim(load(p)); im.thumbnail((2400, 1400))
+        im = load(p) if p.stem.endswith('_hero') else trim(load(p)); im.thumbnail((2400, 1400))
         im.save(R / 'assets' / (p.stem + '.webp'), quality=82, method=6)
         print(p.name, '->', im.size)
