@@ -59,18 +59,28 @@ def pic(c, k):
 def h2(x):
     return ''.join(f'<span lang="{l}">{html.escape(x[i].split(" — ")[0])} <em>{html.escape(x[i].split(" — ")[-1])}</em></span>' for i, l in enumerate(('en', 'pt')))
 
-def case(c, L, nxt=None):
+def pills(cs, cur):
+    out = ''
+    for c in cs:
+        cur_attr = ' aria-current="true"' if c['slides'] == cur else ''
+        out += f'<a href="#{c["slides"]}"{cur_attr}>' + t([x.split(' — ')[0] for x in c['title']]) + '</a>'
+    return f'<nav class="pills">{out}</nav>'
+
+def case(c, L, cs, n):
     facts = ''.join(f'<div><b>{t(L[k])}</b><p>{t(c[k])}</p></div>' for k in ('context', 'scope', 'deliverables', 'status') if k in c)
-    rows = ''
+    slides = ''
     for i, k in enumerate(('discovery', 'process', 'outcomes', 'learnings')):
         if k not in c: continue
-        im = pic(c, k)
-        rows += (f'<section class="row{" rev" if i % 2 else ""}{"" if im else " solo"}"><div class="tx"><h3>{t(L[k])}</h3><ul>'
-                 + ''.join(f'<li>{t(x)}</li>' for x in c[k]) + f'</ul></div><div class="im">{im}</div></section>')
-    nx = f'<a href="#top">↑ {t(L["top"])}</a>' + (f'<a class="pri" href="#{nxt}">{t(L["next"])} →</a>' if nxt else '')
+        slides += (f'<section class="slide"><div class="tx"><h3><span class="num">0{i+1}</span>{t(L[k])}</h3><ul>'
+                   + ''.join(f'<li>{t(x)}</li>' for x in c[k]) + f'</ul></div><div class="im">{pic(c, k)}</div></section>')
+    prev = cs[n-1] if n else None
+    nxt = cs[n+1] if n + 1 < len(cs) else None
+    go = (f'<a class="pri" href="#{nxt["slides"]}">{t(L["next"])} →</a>' if nxt else f'<a class="pri" href="#{prev["slides"]}">← {t(L["prev"])}</a>')
+    nav = f'<a href="#top">↑ {t(L["top"])}</a>' + pills(cs, c['slides']) + go
     return (f'<article id="{c["slides"]}"><header class="hero"><div class="hi">{pic(c, "hero")}</div><div class="hx"><span class="tag">{t(c["org"])}</span><h2>{h2(c["title"])}</h2></div></header>'
-            f'<div class="facts">{facts}</div><p class="res">{t(c["results"])}</p>{rows}{figma(c, L)}'
-            f'<details><summary>{t(L["slides"])}</summary>{gallery(c)}</details><div class="nx">{nx}</div></article>')
+            f'<div class="facts">{facts}</div><p class="res">{t(c["results"])}</p>'
+            f'<div class="car"><button class="ar l" aria-label="Previous / Anterior">&#8249;</button><div class="track" tabindex="0">{slides}</div><button class="ar r" aria-label="Next / Próximo">&#8250;</button></div><div class="dots"></div>'
+            f'{figma(c, L)}<details><summary>{t(L["slides"])}</summary>{gallery(c)}</details><div class="nx">{nav}</div></article>')
 
 CSS = """:root{--ink:#14122b;--navy:#27506f;--violet:#7c6cf6;--pink:#f58bb8;--soft:#f3efff;--c:#27506f;
 --hex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16zM28 64l28 16v20M28 64L0 80v20' fill='none' stroke='%23fff' stroke-opacity='.1'/%3E%3C/svg%3E")}
@@ -90,17 +100,30 @@ article{margin-top:104px;counter-reset:n;counter-increment:c}article:first-of-ty
 h2{font-size:clamp(2.3rem,5.2vw,3.8rem);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin:.4em 0 0}h2 em{display:block;font-style:normal;font-weight:500;font-size:.36em;line-height:1.3;letter-spacing:0;color:var(--pink);margin-top:.7em}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 28px;margin:20px 4px 0}.facts b{font-size:.68em;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)}.facts p{margin:.1em 0;font-size:.85rem}
 .res{font:600 1.2rem/1.4 Outfit,sans-serif;color:var(--ink);margin:22px 4px 8px;padding-left:16px;border-left:5px solid var(--pink)}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;padding:18px 0;counter-increment:n}.row.rev .tx{order:2}.row.solo{grid-template-columns:1fr}
-h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}h3::before{content:"0" counter(n);display:block;font:700 2.6rem/1 Outfit,sans-serif;color:transparent;-webkit-text-stroke:1.3px var(--violet)}
+.car{position:relative;margin-top:26px}.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;padding:8px 60px;min-height:380px}
+h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}.num{display:block;font:700 3rem/1 Outfit,sans-serif;color:transparent;-webkit-text-stroke:1.3px var(--violet);margin-bottom:2px}
 .tx ul{padding-left:1.1em;margin:0;font-size:.95rem}li{margin:.35em 0}li::marker{color:var(--pink)}
-.im{background:var(--soft);border-radius:24px;padding:16px;position:relative;overflow:hidden}.im:empty{display:none}
-.im::before{content:"";position:absolute;width:55%;aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--violet));opacity:.25;left:-12%;bottom:-18%}
-.im img{position:relative;width:100%;max-height:380px;object-fit:contain;border-radius:14px;display:block}
+.im{background:var(--soft);border-radius:24px;padding:16px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:280px}.im:empty{display:none}
+.im::before{content:"";position:absolute;width:55%;aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--violet));opacity:.22;left:-12%;bottom:-18%}
+.im img{position:relative;max-width:100%;max-height:340px;width:auto;height:auto;object-fit:contain;display:block;cursor:zoom-in}
+.ar{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--pink);background:#fff;color:var(--navy);font-size:1.7rem;line-height:1;cursor:pointer}.ar.l{left:0}.ar.r{right:0}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:10px}.dots i{width:8px;height:8px;border-radius:99px;background:#e0d9ff;transition:.2s}.dots i.on{background:var(--pink);width:22px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.pills a{border:1px solid var(--pink);border-radius:999px;padding:6px 20px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.85rem}
+.pills a[aria-current]{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border-color:transparent}
+.shero{display:flex;justify-content:space-between;align-items:center;gap:32px;color:#fff;border-radius:28px;padding:56px;margin-top:12px;background:var(--hex),var(--glow),linear-gradient(135deg,#1a1840 0%,#4b45c9 60%,#7c6cf6 100%)}
+.shero small{font-size:.85rem}.shero h1{font:400 clamp(2.6rem,6vw,4.6rem)/1.05 Outfit,sans-serif;margin:.2em 0 0}
+.stats{min-width:230px}.stats div{border-top:1px solid rgba(255,255,255,.4);padding:10px 0}.stats div:first-child{border:0}.stats b{font:500 1.5rem Outfit,sans-serif;display:block}.stats span{font-size:.75rem}
+.intro{max-width:760px;font-size:1.15rem;margin:26px 4px 16px}
+footer.site{margin-top:110px}.bandbar{height:14px;background:linear-gradient(90deg,#2b2bff,#b9c6ee)}.ft{display:flex;justify-content:space-between;align-items:center;padding:34px 8px}
+.ft h4{font:500 1.6rem Outfit,sans-serif;margin:0;color:var(--ink)}.ft p{margin:.2em 0 0;font-size:.9rem}.btn{border:1px solid #d9d2ff;border-radius:999px;padding:10px 34px;text-decoration:none;color:var(--navy)}
+.fl{display:flex;gap:26px;justify-content:center;font-size:.85rem;padding-bottom:24px}.fl a{color:var(--navy)}
+html[data-embed] .site{display:none}html[data-embed] .top{justify-content:flex-end}
 .fg{width:100%;height:520px;border:0;border-radius:24px;background:var(--soft);margin-top:20px}summary{cursor:pointer;font-weight:600;margin-top:18px;color:var(--violet)}
 .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}.g img{width:100%;border-radius:10px;cursor:zoom-in}
-.nx{display:flex;justify-content:space-between;gap:12px;margin-top:28px;padding-top:18px;border-top:1px solid #ece8ff}
+.nx{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:28px;padding-top:18px;border-top:1px solid #ece8ff}
 .nx a{border:1px solid var(--pink);border-radius:999px;padding:8px 22px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.9rem}.nx a.pri{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border-color:transparent;margin-left:auto}
-@media(max-width:700px){.hero{min-height:320px;align-items:flex-start;border-radius:22px}.hx{max-width:100%;padding:26px 22px}.hi::after{background:var(--hex),linear-gradient(180deg,var(--c) 0%,var(--c) 30%,transparent 90%)}
+@media(max-width:700px){.slide{grid-template-columns:1fr;padding:0 4px;min-height:0}.ar{display:none}.shero{flex-direction:column;align-items:flex-start;padding:28px}.ft{flex-direction:column;align-items:flex-start;gap:16px}.hero{min-height:320px;align-items:flex-start;border-radius:22px}.hx{max-width:100%;padding:26px 22px}.hi::after{background:var(--hex),linear-gradient(180deg,var(--c) 0%,var(--c) 30%,transparent 90%)}
 .row{grid-template-columns:1fr;gap:16px}.row.rev .tx{order:0}article{margin-top:72px}.g.d{display:none}.g.m{display:grid}.g{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
 .g.m{display:none}dialog{border:0;background:none;padding:0}dialog img{max-width:92vw;max-height:90vh}"""
 JS = """const D=document.documentElement,ping=()=>parent.postMessage({h:D.scrollHeight},'*'),
@@ -110,17 +133,26 @@ document.querySelectorAll('.bar button').forEach(b=>b.onclick=()=>set(b.dataset.
 addEventListener('message',e=>{if(e.data&&e.data.lang)set(String(e.data.lang).slice(0,2))});
 addEventListener('load',ping);addEventListener('resize',ping);
 document.querySelectorAll('details').forEach(d=>d.ontoggle=ping);
+if(new URLSearchParams(location.search).has('embed'))D.dataset.embed=1;
+document.querySelectorAll('.car').forEach(c=>{const tr=c.querySelector('.track'),ds=c.nextElementSibling;ds.innerHTML='<i></i>'.repeat(tr.children.length);
+const dot=()=>{const k=Math.round(tr.scrollLeft/tr.clientWidth);[...ds.children].forEach((d,j)=>d.className=j==k?'on':'')};tr.onscroll=dot;dot();
+c.querySelector('.l').onclick=()=>tr.scrollBy({left:-tr.clientWidth,behavior:'smooth'});c.querySelector('.r').onclick=()=>tr.scrollBy({left:tr.clientWidth,behavior:'smooth'})});
 const dl=document.querySelector('dialog');
-document.addEventListener('click',e=>{if(e.target.matches('.g img')){dl.querySelector('img').src=e.target.src;dl.showModal()}else if(e.target===dl||e.target.closest('dialog'))dl.close()});"""
+document.addEventListener('click',e=>{if(e.target.matches('.g img,.im img')){dl.querySelector('img').src=e.target.src;dl.showModal()}else if(e.target===dl||e.target.closest('dialog'))dl.close()});"""
 
 def main():
     rasterize()
     data = json.loads((R / 'content' / 'cases.json').read_text('utf-8'))
     crops(data)
-    nav = '<nav class="idx">' + ''.join(f'<a href="#{c["slides"]}"><i>0{n+1}</i>{t([x.split(" — ")[0] for x in c["title"]])}</a>' for n, c in enumerate(data['cases'])) + '</nav>'
+    S = data['site']; cs = data['cases']
     bar = '<div class="bar"><button data-l="en">EN</button><button data-l="pt">PT</button></div>'
-    cs = data['cases']
-    body = '<div class="top"><img class="logo" src="assets/logo.png" alt="Suelen Magalhães">' + bar + '</div>' + nav + ''.join(case(c, data['labels'], cs[n+1]['slides'] if n+1 < len(cs) else None) for n, c in enumerate(cs))
+    head = '<div class="top"><img class="logo site" src="assets/logo.png" alt="Suelen Magalhães">' + bar + '</div>'
+    hero = ('<section class="shero site"><div><small>' + html.escape(S['tags']) + '</small><h1>' + t(S['title']) + '</h1></div><div class="stats">'
+            + ''.join(f'<div><b>{html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in S['stats']) + '</div></section><p class="intro site">' + t(S['intro']) + '</p>')
+    foot = (f'<footer class="site"><div class="bandbar"></div><div class="ft"><div><h4>{t(S["cta"])}</h4><p>{t(S["cta2"])}</p></div>'
+            f'<a class="btn" href="mailto:{S["email"]}">{t(S["btn"])}</a></div><div class="fl"><a href="mailto:{S["email"]}">{S["email"]}</a>'
+            f'<a href="{S["linkedin"]}">LinkedIn</a><span>© 2026 Suelen Magalhães</span></div></footer>')
+    body = head + hero + pills(cs, None) + ''.join(case(c, data['labels'], cs, n) for n, c in enumerate(cs)) + foot
     page = (f'<!doctype html><html data-lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<title>Suelen Magalhães — Product Design</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
     shutil.rmtree(D, ignore_errors=True); D.mkdir()

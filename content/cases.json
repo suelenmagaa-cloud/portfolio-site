@@ -51,6 +51,10 @@
   "next": [
    "Next case",
    "Próximo case"
+  ],
+  "prev": [
+   "Previous case",
+   "Case anterior"
   ]
  },
  "cases": [
@@ -164,34 +168,6 @@
      0.395,
      1,
      1
-    ],
-    "discovery": [
-     2,
-     0.51,
-     0.03,
-     0.8,
-     0.97
-    ],
-    "process": [
-     3,
-     0.39,
-     0.15,
-     0.99,
-     0.9
-    ],
-    "outcomes": [
-     4,
-     0.51,
-     0.06,
-     0.71,
-     0.89
-    ],
-    "learnings": [
-     5,
-     0.49,
-     0.03,
-     0.78,
-     0.97
     ]
    }
   },
@@ -228,34 +204,6 @@
      0.415,
      1,
      0.82
-    ],
-    "discovery": [
-     3,
-     0.46,
-     0.03,
-     0.73,
-     1
-    ],
-    "process": [
-     4,
-     0.43,
-     0.05,
-     0.79,
-     0.93
-    ],
-    "outcomes": [
-     5,
-     0.44,
-     0.13,
-     0.98,
-     0.88
-    ],
-    "learnings": [
-     6,
-     0.42,
-     0.02,
-     0.79,
-     1
     ]
    },
    "scope": [
@@ -428,36 +376,56 @@
      0.42,
      1,
      1
-    ],
-    "discovery": [
-     3,
-     0.5,
-     0.13,
-     0.98,
-     0.88
-    ],
-    "process": [
-     4,
-     0.62,
-     0.16,
-     0.99,
-     0.88
-    ],
-    "outcomes": [
-     5,
-     0.42,
-     0.27,
-     0.95,
-     0.8
-    ],
-    "learnings": [
-     6,
-     0.49,
-     0.37,
-     0.99,
-     0.8
     ]
    }
   }
- ]
+ ],
+ "site": {
+  "tags": "Product Design | Conversational UX | Phygital",
+  "title": [
+   "User-centered design",
+   "Design centrado no usuário"
+  ],
+  "stats": [
+   [
+    "10+",
+    [
+     "years of experience",
+     "anos de experiência"
+    ]
+   ],
+   [
+    "GLOBAL",
+    [
+     "projects across USA, LATAM and Europe",
+     "projetos nos EUA, LATAM e Europa"
+    ]
+   ],
+   [
+    "PHYGITAL",
+    [
+     "experiences bridging digital & physical",
+     "experiências que unem digital e físico"
+    ]
+   ]
+  ],
+  "intro": [
+   "Good products are born from listening. These are case studies of conversational design for the FORDi Chatbot, from Ford Motors, with phygital experiences, developed with a focus on the real user.",
+   "Bons produtos nascem da escuta. Estes são cases de design conversacional para o chatbot FORDi, da Ford Motors, com experiências phygitais, desenvolvidas com foco no usuário real."
+  ],
+  "cta": [
+   "Let's talk",
+   "Vamos conversar"
+  ],
+  "cta2": [
+   "Open to opportunities in Product Design and UX",
+   "Aberta a oportunidades em Product Design e UX"
+  ],
+  "btn": [
+   "Get in touch",
+   "Entrar em contato"
+  ],
+  "email": "suelenmagaa@gmail.com",
+  "linkedin": "https://linkedin.com/in/suelenmagaa"
+ }
 }
