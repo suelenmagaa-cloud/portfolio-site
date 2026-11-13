@@ -1,0 +1,66 @@
+{
+  "page": {
+    "title": ["Health", "Saúde"],
+    "tags": "Unifesp · UFT · Instituto Jô Clemente",
+    "intro": ["Scientific books and research reports in public and mental health. The researchers hand me the text; the graphic project, layout, charts, infographics and every page are mine.", "Livros científicos e relatórios de pesquisa em saúde pública e saúde mental. Os pesquisadores me entregam o texto; o projeto gráfico, o layout, os gráficos, os infográficos e cada página são meus."],
+    "give": ["I receive", "Eu recebo"],
+    "give2": ["The manuscript. Text only.", "O manuscrito. Somente o texto."],
+    "make": ["I create", "Eu crio"],
+    "make2": ["Cover and graphic project, layout, charts and infographics, art editing and the composition of every page.", "Capa e projeto gráfico, layout, gráficos e infográficos, edição de arte e a diagramação de cada página."],
+    "chapter": ["Publications", "Publicações"],
+    "chapter2": ["Four books, all published. Open any of them to browse selected pages.", "Quatro livros, todos publicados. Abra qualquer um para folhear páginas selecionadas."],
+    "process": ["How every book is made", "Como cada livro é feito"],
+    "steps": [
+      [["Conversation", "Conversa"], ["I talk with the researcher to understand the study and the readers.", "Converso com o pesquisador para entender a pesquisa e os leitores."]],
+      [["Layout proposal", "Proposta de layout"], ["I build the visual system: cover, grid, typography, charts.", "Monto o sistema visual: capa, grade, tipografia, gráficos."]],
+      [["Layout approval", "Aprovação do layout"], ["The layout is reviewed and approved before any composition.", "O layout é revisado e aprovado antes de qualquer diagramação."]],
+      [["Full composition", "Diagramação completa"], ["I compose the whole book, page by page.", "Diagramo o livro inteiro, página a página."]],
+      [["Review and approval", "Revisão e aprovação"], ["Proofreading, corrections and final sign-off.", "Revisão, correções e aprovação final."]]
+    ],
+    "browse": ["Browse pages", "Folhear páginas"],
+    "close": ["Close", "Fechar"],
+    "prev": ["Previous", "Anterior"],
+    "next": ["Next", "Próxima"],
+    "meta": {"inst": ["Institution", "Instituição"], "year": ["Year", "Ano"], "pages": ["Pages", "Páginas"], "role": ["My role", "Meu papel"], "fund": ["Funding", "Financiamento"], "org": ["Organization", "Organização"]},
+    "info_tag": ["Infographic", "Infográfico"],
+    "info_title": ["From survey data to a single long read", "Dos dados da pesquisa a uma leitura contínua"],
+    "info_text": ["A vertical infographic for the Observatório da Deficiência Intelectual: a Brazil map with state percentages, bars, pictograms and donut charts for sociodemographics, health care and mental-health access. Two versions, scroll inside each one.", "Um infográfico vertical para o Observatório da Deficiência Intelectual: mapa do Brasil com porcentagens por estado, barras, pictogramas e rosquinhas para dados sociodemográficos, atendimento em saúde e acesso à saúde mental. Duas versões, role dentro de cada uma."],
+    "info_src": ["Source cited in the piece: Pesquisa Nacional de Saúde 2019 (IBGE).", "Fonte citada na peça: Pesquisa Nacional de Saúde 2019 (IBGE)."],
+    "info_open": ["Open full size", "Abrir em tamanho real"],
+    "cvv": ["Support in Brazil: CVV, call 188 (free, 24 hours).", "Apoio no Brasil: CVV, ligue 188 (gratuito, 24 horas)."]
+  },
+  "books": [
+    {
+      "id": "cuidadores", "key": "cuid", "n": 10, "accent": "#c9806a", "tint": "#fbf1ed", "fan": [7, 17, 1],
+      "kind": ["Research report", "Relatório de pesquisa"],
+      "title": ["Cuidadores de idosos acamados residentes na cidade de Palmas: principais achados", "Cuidadores de idosos acamados residentes na cidade de Palmas: principais achados"],
+      "inst": "Universidade Federal do Tocantins · Colegiado de Enfermagem",
+      "year": "2022", "pages": "39",
+      "fund": "FAPT",
+      "text": ["A warm peach and terracotta system with flat illustrations. Charts, icons and highlighted indicators turn survey tables into pages that can be scanned.", "Um sistema quente em pêssego e terracota, com ilustrações chapadas. Gráficos, ícones e indicadores em destaque transformam tabelas de pesquisa em páginas fáceis de percorrer."],
+      "role": [["Layout", "Layout"], ["Charts and infographics", "Gráficos e infográficos"], ["Art editing", "Edição de arte"]]
+    },
+    {
+      "id": "ijc", "key": "ijc", "n": 10, "accent": "#8f1d7a", "tint": "#f8eef6", "fan": [8, 3, 1],
+      "kind": ["Book", "Livro"],
+      "title": ["Saúde mental de pessoas com deficiência intelectual", "Saúde mental de pessoas com deficiência intelectual"],
+      "inst": "Instituto Jô Clemente · parceria Unifesp",
+      "year": "2024", "pages": "58",
+      "org": "Gabriela Arantes Wagner",
+      "text": ["A magenta-to-violet cover system, chapter openers, a Brazil map with state-level data and sociodemographic pictograms. I also created the logo of the Observatório da Deficiência Intelectual.", "Um sistema de capa do magenta ao violeta, aberturas de capítulo, mapa do Brasil com dados por estado e pictogramas sociodemográficos. Também criei o logo do Observatório da Deficiência Intelectual."],
+      "role": [["Cover and graphic project", "Capa e projeto gráfico"], ["Layout", "Layout"], ["Observatory logo", "Logo do Observatório"], ["Infographic", "Infográfico"]]
+    },
+    {
+      "id": "bombeiros", "key": "bomb", "n": 10, "accent": "#d9a400", "tint": "#fff8e0", "fan": [6, 4, 1],
+      "kind": ["Book", "Livro"],
+      "title": ["Tentativas de suicídio atendidas pelo Corpo de Bombeiros da Polícia Militar do Estado de São Paulo", "Tentativas de suicídio atendidas pelo Corpo de Bombeiros da Polícia Militar do Estado de São Paulo"],
+      "inst": "Unifesp · Programa de Pós-Graduação em Saúde Coletiva · Corpo de Bombeiros PMESP",
+      "year": "2022", "pages": "58",
+      "fund": "FAPESP 2020/03703-6",
+      "org": "Gabriela Arantes Wagner, Tiago Regis Franco de Almeida",
+      "text": ["A yellow ribbon system for the awareness theme: section openers, a flow diagram and a set of maps of the state of São Paulo, each indicator in its own color family. Only layout pages are shown here.", "Um sistema com o laço amarelo para o tema da conscientização: aberturas de seção, um fluxograma e uma série de mapas do estado de São Paulo, cada indicador em sua família de cor. Aqui aparecem apenas páginas de layout."],
+      "role": [["Cover and art", "Capa e arte"], ["Layout", "Layout"], ["Maps, charts and tables", "Mapas, gráficos e tabelas"]],
+      "cvv": true
+    }
+  ]
+}

@@ -223,6 +223,86 @@ def pharma(data, S, L):
     page = page.replace('</style>', PCSS + '</style>', 1).replace('<body>', '<body class="ph">', 1)
     return page.replace('</body>', dlg + f'<script>{PJS}</script></body>', 1)
 
+HCSS = """body.hl{background:#fff}.hl .intro{display:none}
+.ht{margin:48px 4px 0;max-width:980px}.ht small{display:inline-block;border:1px solid var(--pink);border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em;color:var(--navy)}
+.ht h1{font:700 clamp(3.4rem,9vw,7rem)/.92 Outfit,sans-serif;letter-spacing:-.045em;color:var(--ink);margin:.18em 0 .25em}.ht p{font-size:1.25rem;line-height:1.45;color:var(--navy);margin:0;max-width:44ch}
+.hg{display:grid;grid-template-columns:1fr 1fr;margin:44px 4px 0;border-top:5px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
+.hg>div{padding:26px 36px 8px 0}.hg>div+div{padding-left:36px;border-left:1px solid #e4e0ee}.hg b{font:600 .7rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}.hg p{font:500 1.35rem/1.3 Outfit,sans-serif;color:var(--ink);margin:.35em 0 0}
+.hp{margin:72px 4px 0}.hp h2,.hc h2{font-size:1.7rem;margin:0 0 22px;color:var(--ink);letter-spacing:-.02em}
+.hs{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;counter-reset:s}.hs::before{content:"";position:absolute;left:0;right:0;top:19px;height:3px;background:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%)}
+.hs li{list-style:none;position:relative;padding:50px 22px 0 0;counter-increment:s}.hs li::before{content:counter(s);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:#fff;border:3px solid var(--navy);display:grid;place-items:center;font:700 .95rem Outfit,sans-serif;color:var(--navy)}
+.hs b{display:block;font:600 1.05rem Outfit,sans-serif;color:var(--ink);margin-bottom:.3em}.hs span{font-size:.85rem;line-height:1.45;color:var(--navy)}.hs ol{display:contents;margin:0;padding:0}
+.hc{margin:88px 4px 0}.hc>p{margin:-12px 0 36px;font-size:.95rem}
+.bk{--a:#c9806a;--t:#fbf1ed;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;border-radius:28px;padding:56px;margin:0 0 36px;background:linear-gradient(var(--a),var(--a)) top/100% 7px no-repeat,var(--t)}
+.bk.rev{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}.bk.rev .fan{order:2}
+.fan{position:relative;aspect-ratio:1/1.12;max-width:420px;width:100%;margin:0 auto;border:0;padding:0;background:none;cursor:pointer}
+.fan img{position:absolute;width:72%;height:auto;border-radius:3px;box-shadow:0 14px 34px rgba(20,18,43,.22);transition:transform .35s}
+.fan img:nth-child(1){left:0;top:6%;transform:rotate(-7deg);z-index:1}.fan img:nth-child(2){right:0;top:0;transform:rotate(6deg);z-index:2}.fan img:nth-child(3){left:14%;top:12%;z-index:3;width:74%}
+.fan:hover img:nth-child(1){transform:rotate(-10deg) translateX(-10px)}.fan:hover img:nth-child(2){transform:rotate(9deg) translateX(10px)}.fan:focus-visible{outline:2px solid var(--violet);outline-offset:8px}
+.bk .k{font:600 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--a);filter:brightness(.8)}
+.bk h3{font:700 clamp(1.5rem,2.6vw,2.15rem)/1.12 Outfit,sans-serif;color:var(--ink);letter-spacing:-.02em;margin:.3em 0 .4em}.bk .in2{font-size:.9rem;color:var(--navy);margin:0 0 14px}
+.bk .tx2{font-size:1rem;line-height:1.55;color:var(--navy);margin:0 0 20px}
+.bk dl{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin:0 0 20px;font-size:.88rem}.bk dt{font:600 .66rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);opacity:.55;padding-top:3px}.bk dd{margin:0;color:var(--navy)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}.chips>span{background:#fff;border:1px solid var(--a);border-radius:999px;padding:4px 14px;font:600 .74rem Inter,sans-serif;color:var(--navy)}
+.hb{border:0;background:none;padding:0 0 2px;cursor:pointer;font:600 .95rem Inter,sans-serif;color:var(--navy);border-bottom:3px solid var(--a);transition:color .2s}.hb:hover{color:var(--violet)}
+.cvv{margin:18px 0 0;font-size:.8rem;color:var(--navy);opacity:.8}
+.if{background:linear-gradient(135deg,#1c1140 0%,#235070 70%,#4a2c6e 130%);color:#fff;border-radius:28px;padding:56px;margin:0 0 36px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:48px;align-items:center}
+.if .k{font:600 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}.if h3{font:700 clamp(1.5rem,2.6vw,2.15rem)/1.12 Outfit,sans-serif;letter-spacing:-.02em;margin:.3em 0 .5em;color:#fff}.if p{font-size:1rem;line-height:1.55;margin:0 0 14px;color:#e6e2f5}.if .sr{font-size:.8rem;opacity:.75}
+.if .hb{color:#fff;border-bottom-color:var(--pink)}.if .hb:hover{color:var(--pink)}
+.ifr{display:flex;gap:20px;justify-content:center}.ifr button{flex:0 1 300px;min-width:0;height:640px;overflow-y:auto;overflow-x:hidden;border:0;padding:0;background:#14122b;border-radius:14px;cursor:pointer;scrollbar-width:thin;box-shadow:0 18px 40px rgba(0,0,0,.35)}.ifr img{display:block;width:100%;height:auto}
+dialog.hv{border:0;border-radius:18px;padding:0;width:min(1000px,96vw);height:min(92vh,980px);background:#14122b;color:#fff;overflow:hidden}dialog.hv::backdrop{background:rgba(20,18,43,.72)}
+dialog.hv[open]{display:flex;flex-direction:column}.hv .hh{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.12)}.hv .hh b{flex:1;font:600 .95rem Outfit,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hv .hh span{font:600 .8rem Inter,sans-serif;opacity:.7}
+.hv button{font:600 .85rem Inter,sans-serif;color:#fff;background:none;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:6px 16px;cursor:pointer}.hv button:hover{border-color:var(--pink);color:var(--pink)}
+.hv .st{flex:1;min-height:0;overflow:auto;display:flex;justify-content:center;padding:20px;background:#2a2740}.hv .st img{display:block;max-width:100%;height:auto;align-self:flex-start;box-shadow:0 10px 30px rgba(0,0,0,.4)}.hv.pg .st{align-items:center}.hv.pg .st img{max-height:100%;width:auto;align-self:center}
+.hv .th{display:flex;gap:8px;padding:12px 20px;overflow-x:auto;border-top:1px solid rgba(255,255,255,.12)}.hv .th img{height:64px;width:auto;border-radius:3px;opacity:.5;cursor:pointer;flex:none;border:2px solid transparent}.hv .th img.on{opacity:1;border-color:var(--pink)}
+.hv .nv{display:flex;gap:8px}
+@media(max-width:860px){.hg{grid-template-columns:1fr}.hg>div,.hg>div+div{padding:20px 0 6px;border-left:0}.hs{grid-template-columns:1fr}.hs::before{left:19px;right:auto;top:0;bottom:0;width:3px;height:auto}.hs li{padding:0 0 26px 58px;min-height:40px}
+.bk,.bk.rev,.if{grid-template-columns:minmax(0,1fr);padding:30px 22px;gap:30px;border-radius:22px}.bk.rev .fan{order:0}.fan{max-width:340px}.ifr{gap:12px}.ifr{align-items:flex-start}.ifr button{height:auto;max-height:520px;flex:1 1 0}.hv .th img{height:48px}}"""
+HJS = """(()=>{const dl=document.querySelector('dialog.hv');if(!dl)return;const G=JSON.parse(document.getElementById('hg').textContent),st=dl.querySelector('.st'),th=dl.querySelector('.th'),ct=dl.querySelector('.hh span'),tt=dl.querySelector('.hh b');let g=null,k=0;
+const show=n=>{k=(n+g.i.length)%g.i.length;st.innerHTML='<img alt="" src="'+g.i[k]+'">';st.scrollTop=0;ct.textContent=(k+1)+' / '+g.i.length;[...th.children].forEach((x,j)=>x.className=j==k?'on':'');th.children[k]&&th.children[k].scrollIntoView({inline:'center',block:'nearest'})};
+const open=(id,n)=>{g=G[id];tt.textContent=g.t;dl.classList.toggle('pg',g.p);th.innerHTML=g.i.length>1?g.i.map((s,j)=>'<img alt="" loading="lazy" data-j="'+j+'" src="'+g.h[j]+'">').join(''):'';th.style.display=g.i.length>1?'flex':'none';dl.querySelector('.nv').style.visibility=g.i.length>1?'visible':'hidden';show(n||0);dl.showModal();ping()};
+document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>open(b.dataset.g,+b.dataset.n||0));
+dl.addEventListener('click',e=>{if(e.target===dl)dl.close();const b=e.target.closest('button[data-a]');if(b){if(b.dataset.a=='x')dl.close();else show(k+(b.dataset.a=='n'?1:-1))}const i=e.target.closest('.th img');if(i)show(+i.dataset.j)});
+dl.addEventListener('keydown',e=>{if(e.key=='ArrowRight')show(k+1);if(e.key=='ArrowLeft')show(k-1)});
+})();"""
+
+def health(data, S):
+    P = data['page']; M = P['meta']
+    head, menu, foot = chrome(S, 3)
+    top = ('<section class="ht"><small>' + html.escape(P['tags']) + '</small><h1>' + t(P['title']) + '</h1><p>' + t(P['intro']) + '</p></section>'
+           f'<div class="hg"><div><b>{t(P["give"])}</b><p>{t(P["give2"])}</p></div><div><b>{t(P["make"])}</b><p>{t(P["make2"])}</p></div></div>')
+    steps = ''.join(f'<li><b>{t(a)}</b><span>{t(b)}</span></li>' for a, b in P['steps'])
+    proc = f'<section class="hp"><h2>{t(P["process"])}</h2><ol class="hs">{steps}</ol></section>'
+    G = {}; blocks = ''
+    def ims(key, n): return [f'assets/health/{key}_{i:02d}.webp' for i in range(1, n + 1)]
+    for bi, b in enumerate(data['books']):
+        I = ims(b['key'], b['n']); title = b['title'][1]
+        G[b['id']] = {'t': title, 'i': I, 'h': I, 'p': True}
+        fan = ''.join(f'<img loading="lazy" alt="" src="assets/health/{b["key"]}_{i:02d}.webp">' for i in b['fan'])
+        rows = [(M['inst'], html.escape(b['inst'])), (M['year'], b['year']), (M['pages'], b['pages'])]
+        if b.get('org'): rows.insert(1, (M['org'], html.escape(b['org'])))
+        if b.get('fund'): rows.append((M['fund'], html.escape(b['fund'])))
+        dl = ''.join(f'<dt>{t(a)}</dt><dd>{c}</dd>' for a, c in rows)
+        chips = ''.join(f'<span>{t(r)}</span>' for r in b['role'])
+        cvv = f'<p class="cvv">{t(P["cvv"])}</p>' if b.get('cvv') else ''
+        blocks += (f'<article class="bk{" rev" if bi % 2 else ""}" id="{b["id"]}" style="--a:{b["accent"]};--t:{b["tint"]}">'
+                   f'<button class="fan" data-g="{b["id"]}" aria-label="{html.escape(title)}">{fan}</button><div><span class="k">{t(b["kind"])}</span>'
+                   f'<h3>{t(b["title"])}</h3><p class="tx2">{t(b["text"])}</p><dl>{dl}</dl><div class="chips">{chips}</div>'
+                   f'<button class="hb" data-g="{b["id"]}">{t(P["browse"])} ({b["n"]}) &#8599;</button>{cvv}</div></article>')
+        if b['id'] == 'ijc':
+            G['info'] = {'t': P['info_title'][1], 'i': ['assets/health/info_1.webp', 'assets/health/info_3.webp'], 'h': ['assets/health/info_1.webp', 'assets/health/info_3.webp'], 'p': False}
+            blocks += (f'<article class="if" id="infografico"><div><span class="k">{t(P["info_tag"])}</span><h3>{t(P["info_title"])}</h3><p>{t(P["info_text"])}</p>'
+                       f'<p class="sr">{t(P["info_src"])}</p><button class="hb" data-g="info">{t(P["info_open"])} &#8599;</button></div>'
+                       '<div class="ifr"><button data-g="info" data-n="0" aria-label="Infographic 1"><img loading="lazy" alt="" src="assets/health/info_1.webp"></button>'
+                       '<button data-g="info" data-n="1" aria-label="Infographic 2"><img loading="lazy" alt="" src="assets/health/info_3.webp"></button></div></article>')
+    chap = f'<section class="hc"><h2>{t(P["chapter"])}</h2><p>{t(P["chapter2"])}</p>{blocks}</section>'
+    viewer = (f'<dialog class="hv" aria-label="Viewer"><div class="hh"><b></b><span></span><div class="nv"><button data-a="p">&#8249; {t(P["prev"])}</button> <button data-a="n">{t(P["next"])} &#8250;</button></div>'
+              f'<button data-a="x">{t(P["close"])}</button></div><div class="st"></div><div class="th"></div></dialog>')
+    page = shell('Suelen Magalhães — Health', head + menu + top + proc + chap + foot)
+    page = page.replace('</style>', HCSS + '</style>', 1).replace('<body>', '<body class="hl">', 1)
+    js = '<script type="application/json" id="hg">' + json.dumps(G, ensure_ascii=False).replace('</', '<\\/') + '</script>'
+    return page.replace('</body>', viewer + js + f'<script>{HJS}</script></body>', 1)
+
 def main():
     rasterize()
     data = json.loads((R / 'content' / 'cases.json').read_text('utf-8'))
@@ -237,6 +317,9 @@ def main():
     pj = R / 'content' / 'pharma.json'
     if pj.exists():
         (D / 'pharma.html').write_text(pharma(json.loads(pj.read_text('utf-8')), S, data['labels']), 'utf-8')
+    hj = R / 'content' / 'health.json'
+    if hj.exists():
+        (D / 'health.html').write_text(health(json.loads(hj.read_text('utf-8')), S), 'utf-8')
     shutil.copytree(R / 'assets', D / 'assets')
 
 if __name__ == '__main__':
