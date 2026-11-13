@@ -425,6 +425,11 @@ ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .wh ul{margin:0;padding-left:18px}.wh li{margin:6px 0;line-height:1.4;font-size:.95rem;color:var(--navy)}
 .ww{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.ww div{border-left:4px solid #f28db1;padding:4px 0 4px 16px}.ww b{display:block;font:700 1.05rem Outfit,sans-serif;color:var(--ink);margin-bottom:6px}.ww p{margin:0;font-size:.93rem;line-height:1.45;color:var(--navy)}
 .ib{margin:64px 4px 0;border-radius:24px;padding:clamp(24px,4vw,44px);background:#f7f6fb}.ib h2{margin:0 0 10px;font-size:1.7rem;color:var(--ink)}.ib p{margin:0;max-width:60ch;line-height:1.55;color:var(--navy)}
+.dc{border:1px solid #e3e1ef;border-radius:20px;overflow:hidden}.dh,.dr{display:grid;grid-template-columns:1.2fr 1fr 1.3fr;gap:18px;padding:14px 20px}
+.dh{background:#14122b;color:#fff;font:600 .75rem Inter,sans-serif;letter-spacing:.05em;text-transform:uppercase}.dr{border-top:1px solid #e3e1ef;align-items:start}.dr p{margin:0;font-size:.95rem;line-height:1.4;color:var(--navy)}.dr b{font:700 1rem/1.25 Outfit,sans-serif;color:#235070}
+.ww{grid-template-columns:repeat(2,minmax(0,1fr))}.ww.cl{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ia details.mr{border:1px solid #e3e1ef;border-radius:20px;padding:6px 20px}.ia details.mr summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:12px 0;font:700 1.1rem Outfit,sans-serif;color:var(--ink)}.ia details.mr summary::-webkit-details-marker{display:none}.ia details.mr .c,.ia details.mr[open] .o{display:none}.ia details.mr[open] .c{display:inline}.ia details.mr i{width:9px;height:9px;border:solid #f28db1;border-width:0 2px 2px 0;transform:rotate(45deg);margin-left:auto;transition:transform .2s}.ia details.mr[open] i{transform:rotate(-135deg)}.ia details.mr .mb{padding:8px 0 18px}
+@media(max-width:900px){.dh{display:none}.dr{grid-template-columns:1fr;gap:6px}.ww,.ww.cl{grid-template-columns:1fr}}
 @media(max-width:900px){.pn{grid-template-columns:1fr}.pn li:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}.rg,.ww{grid-template-columns:1fr}.wh{grid-template-columns:1fr}.lp{flex-direction:column}}
 @media(max-width:700px){.ist{grid-template-columns:repeat(2,minmax(0,1fr))}.bu{max-width:92%}}
 """
@@ -434,20 +439,25 @@ def ia(data, S):
     head, menu, foot = chrome(S, 6)
     stats = ''.join(f'<div><b>{html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in P['stats'])
     top = (f'<section class="ih"><small>{t(P["tag"])}</small><h1>{t(P["title"])}</h1><p class="ld">{t(P["lead"])}</p><p class="in">{t(P["intro"])}</p><div class="ist">{stats}</div></section>')
-    def sec(h, s, inner): return f'<section class="is"><h2>{t(h)}</h2>{('<p class="s">'+t(s)+'</p>') if s else '<div style="height:18px"></div>'}{inner}</section>'
-    nodes = ''.join(f'<li class="{"me" if n[2][0]=="Me" else ""}"><b>{t(n[0])}</b><p>{t(n[1])}</p><em>{t(n[2])}</em></li>' for n in P['nodes'])
-    rules = ''.join(f'<div><i>{i+1:02d}</i><b>{t(r[0])}</b><p>{t(r[1])}</p></div>' for i, r in enumerate(P['rule_items']))
-    steps = ''.join(f'<li>{t(s)}</li>' for s in P['steps'])
-    bubbles = ''.join(f'<div class="bu {w}"><b>{t(P["me"] if w=="me" else P["claude"])}</b>{t(x)}</div>' for w, x in P['talk'])
-    loop = f'<ol class="lp">{steps}</ol><div class="ch"><h3>{t(P["chat"])}</h3>{bubbles}</div>'
-    who = (f'<div class="wh"><div><h3>{t(P["me_h"])}</h3><ul>' + ''.join(f'<li>{t(x)}</li>' for x in P['me_l']) + '</ul></div>'
-           f'<div class="a"><h3>{t(P["ai_h"])}</h3><ul>' + ''.join(f'<li>{t(x)}</li>' for x in P['ai_l']) + '</ul></div></div>')
+    def sec(h, s, inner): return f'<section class="is"><h2>{t(h)}</h2>' + (f'<p class="s">{t(s)}</p>' if s else '') + inner + '</section>'
+    li = lambda L: ''.join(f'<li>{t(x)}</li>' for x in L)
+    ba = f'<div class="wh"><div><h3>{t(P["before_h"])}</h3><ul>{li(P["before"])}</ul></div><div class="a"><h3>{t(P["after_h"])}</h3><ul>{li(P["after"])}</ul></div></div>'
+    tools = '<div class="rg">' + ''.join(f'<div><b>{t(x[0])}</b><p>{t(x[1])}</p></div>' for x in P['tools']) + '</div>'
+    dh = ''.join(f'<span>{t(x)}</span>' for x in P['dec_h'])
+    dec = f'<div class="dc"><div class="dh">{dh}</div>' + ''.join(f'<div class="dr"><p>{t(r[0])}</p><b>{t(r[1])}</b><p>{t(r[2])}</p></div>' for r in P['dec']) + '</div>'
+    rules = '<div class="rg">' + ''.join(f'<div><i>{i+1:02d}</i><b>{t(r[0])}</b><p>{t(r[1])}</p></div>' for i, r in enumerate(P['rule_items'])) + '</div>'
     wrong = '<div class="ww">' + ''.join(f'<div><b>{t(w[0])}</b><p>{t(w[1])}</p></div>' for w in P['wrong_items']) + '</div>'
-    beyond = f'<section class="ib"><h2>{t(P["beyond"])}</h2><p>{t(P["beyond2"])}</p></section>'
-    body = (head + menu + top + sec(P['setup'], P['setup2'], f'<ol class="pn">{nodes}</ol>') + sec(P['rules'], P['rules2'], f'<div class="rg">{rules}</div>')
-            + sec(P['loop'], P['loop2'], loop) + sec(P['who'], '', who) + sec(P['wrong'], P['wrong2'], wrong) + beyond + foot)
+    steps = ''.join(f'<li>{t(s)}</li>' for s in P['steps'])
+    bub = ''.join(f'<div class="bu {w}"><b>{t(P["me"] if w=="me" else P["claude"])}</b>{t(x)}</div>' for w, x in P['talk'])
+    flow = (f'<section class="is"><details class="mr"><summary><span class="o">{t(P["flow"])} · {t(P["more"])}</span><span class="c">{t(P["flow"])} · {t(P["less"])}</span><i></i></summary>'
+            f'<div class="mb"><ol class="lp">{steps}</ol><div class="ch"><h3>{t(P["chat"])}</h3>{bub}</div></div></details></section>')
+    nxt = f'<section class="ib"><h2>{t(P["next"])}</h2><p>{t(P["next2"])}</p></section>'
+    close = '<section class="is"><h2>' + t(P['close']) + '</h2><div class="ww cl">' + ''.join(f'<div><b>{t(x[0])}</b><p>{t(x[1])}</p></div>' for x in P['close_items']) + '</div></section>'
+    body = (head + menu + top + sec(P['ba'], P['ba2'], ba) + sec(P['tool'], P['tool2'], tools) + sec(P['know'], P['know2'], dec)
+            + sec(P['ctrl'], P['ctrl2'], rules) + sec(P['wrong'], P['wrong2'], wrong) + flow + nxt + close + foot)
     page = shell('Suelen Magalhães — AI', body)
-    return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
+    page = page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
+    return page.replace('</body>', '<script>document.querySelectorAll("details.mr").forEach(d=>d.addEventListener("toggle",()=>{try{ping()}catch(e){}}))</script></body>', 1)
 
 def main():
     rasterize()

@@ -1,80 +1,490 @@
 {
-  "page": {
-    "tag": ["Process", "Processo"],
-    "title": ["AI", "IA"],
-    "lead": ["This site was built with AI and directed by me.", "Este site foi construído com IA e dirigido por mim."],
-    "intro": ["I used Claude to write the code and GitHub to publish it. What to show, what to say and what to reject was always my decision. This page shows how I coordinated the work.", "Usei o Claude para escrever o código e o GitHub para publicar. O que mostrar, o que dizer e o que rejeitar foi sempre decisão minha. Esta página mostra como coordenei o trabalho."],
-    "stats": [
-      ["4", ["modules built: Product, Pharma, Health, Brands", "módulos construídos: Product, Pharma, Health, Brands"]],
-      ["2", ["languages, English and Portuguese", "idiomas, inglês e português"]],
-      ["0", ["frameworks: Python, HTML and CSS", "frameworks: Python, HTML e CSS"]],
-      ["1", ["rule: nothing goes live without my approval", "regra: nada vai ao ar sem a minha aprovação"]]
+ "page": {
+  "tag": [
+   "Process",
+   "Processo"
+  ],
+  "title": [
+   "AI",
+   "IA"
+  ],
+  "lead": [
+   "AI executes. I design.",
+   "A IA executa. Eu projeto."
+  ],
+  "intro": [
+   "I know basic HTML, CSS is a struggle, and Python and GitHub were theory. I still built this bilingual, modular site, because I know what I want and why. AI replaced the tools that held me back. It did not replace the design knowledge I have built over the years.",
+   "Sei o básico de HTML, CSS é uma luta, e Python e GitHub eram teoria. Mesmo assim construí este site bilíngue e modular, porque sei o que quero e por quê. A IA substituiu as ferramentas que me travavam. Não substituiu o conhecimento de design que construí ao longo dos anos."
+  ],
+  "stats": [
+   [
+    "2→1",
+    [
+     "weeks → day of work (my estimate, quick-and-dirty vs. now)",
+     "semanas → dia de trabalho (minha estimativa, no modo go horse vs. agora)"
+    ]
+   ],
+   [
+    "4",
+    [
+     "independent modules: Product, Pharma, Health, Brands",
+     "módulos independentes: Product, Pharma, Health, Brands"
+    ]
+   ],
+   [
+    "2",
+    [
+     "languages, in one build",
+     "idiomas, em um único build"
+    ]
+   ],
+   [
+    "0",
+    [
+     "frameworks, and every change reviewed by me",
+     "frameworks, e toda mudança revisada por mim"
+    ]
+   ]
+  ],
+  "ba": [
+   "Where I started",
+   "De onde eu parti"
+  ],
+  "ba2": [
+   "The site already existed on Wix. It worked, but it held me back.",
+   "O site já existia no Wix. Funcionava, mas me travava."
+  ],
+  "before_h": [
+   "Before: Wix",
+   "Antes: Wix"
+  ],
+  "after_h": [
+   "Now: my own generator",
+   "Agora: gerador próprio"
+  ],
+  "before": [
+   [
+    "Previewing different formats was slow and limited.",
+    "Visualizar formatos diferentes era lento e limitado."
+   ],
+   [
+    "Each page bound by the template's possibilities.",
+    "Cada página presa às possibilidades do template."
+   ],
+   [
+    "A site like this: about two weeks, quick-and-dirty.",
+    "Um site como este: umas duas semanas, no modo go horse."
+   ],
+   [
+    "My code skills: basic HTML, CSS a struggle, Python and GitHub in theory only.",
+    "Meu nível de código: HTML básico, CSS é difícil, Python e GitHub só na teoria."
+   ]
+  ],
+  "after": [
+   [
+    "Each module has its own layout and narrative.",
+    "Cada módulo tem layout e narrativa próprios."
+   ],
+   [
+    "Portuguese and English from the same content files.",
+    "Português e inglês a partir dos mesmos arquivos de conteúdo."
+   ],
+   [
+    "About a day of work so far, with the Wix site untouched and online.",
+    "Cerca de um dia de trabalho até agora, com o Wix intacto e no ar."
+   ],
+   [
+    "The same skills as before. What changed is the tool, not the knowledge.",
+    "As mesmas habilidades de antes. O que mudou foi a ferramenta, não o conhecimento."
+   ]
+  ],
+  "tool": [
+   "AI in place of the tool",
+   "A IA no lugar da ferramenta"
+  ],
+  "tool2": [
+   "I direct, AI does the execution. These are the three places it replaced a slow step.",
+   "Eu dirijo, a IA executa. São os três lugares onde ela trocou uma etapa lenta."
+  ],
+  "tools": [
+   [
+    [
+     "Code",
+     "Código"
     ],
-    "setup": ["The setup", "A estrutura"],
-    "setup2": ["Five pieces, each with a clear owner.", "Cinco peças, cada uma com um responsável claro."],
-    "nodes": [
-      [["Content", "Conteúdo"], ["Texts, images and files that I supply.", "Textos, imagens e arquivos que eu forneço."], ["Me", "Eu"]],
-      [["Claude", "Claude"], ["Writes and tests the page generator.", "Escreve e testa o gerador de páginas."], ["AI", "IA"]],
-      [["GitHub", "GitHub"], ["Repository, with an automatic build on every upload.", "Repositório, com build automático a cada envio."], ["Me", "Eu"]],
-      [["GitHub Pages", "GitHub Pages"], ["Hosts each page.", "Hospeda cada página."], ["Automatic", "Automático"]],
-      [["Wix", "Wix"], ["Embeds the pages. The official domain is untouched.", "Incorpora as páginas. O domínio oficial não é alterado."], ["Me", "Eu"]]
+    [
+     "I never wrote the code. I describe what I want, review the page on desktop and phone, and ask for changes until it is right.",
+     "Eu não escrevi o código. Descrevo o que quero, reviso a página no desktop e no celular e peço ajustes até ficar certo."
+    ]
+   ],
+   [
+    [
+     "Images",
+     "Imagens"
     ],
-    "rules": ["My rules", "Minhas regras"],
-    "rules2": ["Set at the start and repeated whenever needed. Claude works inside them.", "Definidas no início e repetidas quando necessário. O Claude trabalha dentro delas."],
-    "rule_items": [
-      [["Nothing goes live without my approval", "Nada vai ao ar sem a minha aprovação"], ["No publishing and no change to the official domain without my explicit approval.", "Nenhuma publicação nem alteração no domínio oficial sem a minha aprovação explícita."]],
-      [["No invented professional content", "Sem conteúdo profissional inventado"], ["Every text comes from my material. Drafts are marked for my review.", "Todo texto parte do meu material. Rascunhos são marcados para a minha revisão."]],
-      [["Human review of every change", "Revisão humana de toda mudança"], ["I read the result, check facts, dates and credits, and only then approve.", "Eu leio o resultado, confiro fatos, datas e créditos e só então aprovo."]],
-      [["No framework without a reason", "Sem framework sem motivo"], ["No React, Vite or Next.js unless there is a concrete technical justification.", "Nada de React, Vite ou Next.js sem uma justificativa técnica concreta."]],
-      [["No general rewrites", "Sem reescritas gerais"], ["Change what was asked, nothing more.", "Mudar o que foi pedido, nada além disso."]],
-      [["Wix stays active", "O Wix continua ativo"], ["The current site stays published while the new pages are built.", "O site atual segue publicado enquanto as páginas novas são construídas."]]
+    [
+     "Cropping, cleaning and preparing images takes seconds. I no longer wait for a PSD to open.",
+     "Recortar, limpar e preparar imagens leva segundos. Não espero mais um PSD abrir."
+    ]
+   ],
+   [
+    [
+     "Ideation",
+     "Ideação"
     ],
-    "loop": ["How I coordinated", "Como eu coordenei"],
-    "loop2": ["The same loop, page after page.", "O mesmo ciclo, página após página."],
-    "steps": [["Brief", "Briefing"], ["Draft", "Rascunho"], ["My review", "Minha revisão"], ["Adjust", "Ajuste"], ["Approval", "Aprovação"]],
-    "chat": ["Real moments, paraphrased", "Momentos reais, parafraseados"],
-    "me": ["Me", "Eu"],
-    "claude": ["Claude", "Claude"],
-    "talk": [
-      ["me", ["Green is the client's brand color, not mine. Keep my palette.", "O verde é a cor da marca deles, não a minha. Mantemos a minha cor."]],
-      ["ai", ["Redone in my navy, pink and violet.", "Refeito na minha paleta de azul-marinho, rosa e violeta."]],
-      ["me", ["It looks like the same cake with different icing. Change everything.", "Parece o mesmo bolo com outra cobertura. Podemos mudar tudo."]],
-      ["ai", ["Three different concepts, built from your material.", "Três conceitos diferentes, a partir do seu material."]],
-      ["me", ["I like A.", "Gostei do A."]],
-      ["me", ["The “+” is not intuitive. It should say “See more”.", "O “+” não é intuitivo. Tem que ser “Ver mais”."]],
-      ["ai", ["Replaced with a text link.", "Trocado por um link de texto."]],
-      ["me", ["No: the page stays white. Only the image boxes take the image color.", "Não: o fundo da página fica branco. Só as caixas das imagens usam a cor da imagem."]],
-      ["ai", ["I had misread it. Fixed.", "Eu tinha entendido errado. Corrigido."]],
-      ["me", ["The deploy failed.", "O deploy deu erro."]],
-      ["ai", ["The new build expected a field the old content file did not have. The build is now tolerant, and both files were tested.", "O build novo esperava um campo que o arquivo de conteúdo antigo não tinha. O build agora é tolerante, e os dois arquivos foram testados."]]
+    [
+     "I ask for options, compare and choose (“I like A”). I also used AI to turn a table from an Instituto Jô Clemente publication into a card, and for charts and tables in that work.",
+     "Peço opções, comparo e escolho (“gostei do A”). Também usei IA para transformar uma tabela de uma publicação do Instituto Jô Clemente em card, e para gráficos e tabelas nesse trabalho."
+    ]
+   ]
+  ],
+  "know": [
+   "My design knowledge drives it",
+   "Meu conhecimento de design conduz"
+  ],
+  "know2": [
+   "AI does not know when something is wrong. I do. Each decision below came from me, and the principle behind it is what I learned over the years.",
+   "A IA não sabe quando algo está errado. Eu sei. Cada decisão abaixo veio de mim, e o princípio por trás é o que aprendi ao longo dos anos."
+  ],
+  "dec_h": [
+   [
+    "What I saw",
+    "O que eu vi"
+   ],
+   [
+    "Principle",
+    "Princípio"
+   ],
+   [
+    "What changed",
+    "O que mudou"
+   ]
+  ],
+  "dec": [
+   [
+    [
+     "The “+” was not intuitive.",
+     "O “+” não era intuitivo."
     ],
-    "who": ["Who did what", "Quem fez o quê"],
-    "me_h": ["I decided", "Eu decidi"],
-    "ai_h": ["Claude did", "O Claude fez"],
-    "me_l": [
-      ["What to show and what to leave out.", "O que mostrar e o que deixar de fora."],
-      ["The material: every text, image and file comes from my work.", "O material: todo texto, imagem e arquivo vem do meu trabalho."],
-      ["The direction: palette, spacing, tone, the concept to follow.", "A direção: paleta, espaçamento, tom, o conceito a seguir."],
-      ["The facts: roles, dates, credits and what I may show.", "Os fatos: papéis, datas, créditos e o que posso mostrar."],
-      ["The review, the upload to GitHub and the final approval.", "A revisão, o envio ao GitHub e a aprovação final."]
+    [
+     "Clarity, recognition over recall",
+     "Clareza, reconhecimento em vez de memória"
     ],
-    "ai_l": [
-      ["Wrote the page generator and each page layout.", "Escreveu o gerador de páginas e o layout de cada página."],
-      ["Prepared images from PDFs and files I sent.", "Preparou imagens a partir dos PDFs e arquivos que enviei."],
-      ["Drafted and translated texts, in English and Portuguese, for my review.", "Redigiu e traduziu textos, em inglês e português, para a minha revisão."],
-      ["Tested every page on desktop and mobile with screenshots.", "Testou cada página em desktop e celular, com capturas de tela."],
-      ["Found and fixed bugs, and proposed options when I asked.", "Encontrou e corrigiu erros e propôs opções quando eu pedi."]
+    [
+     "Replaced by a text link, “See more”.",
+     "Trocado por um link de texto, “Ver mais”."
+    ]
+   ],
+   [
+    [
+     "The whole page was taking the image color.",
+     "A página inteira estava ficando com a cor da imagem."
     ],
-    "wrong": ["What went wrong", "O que deu errado"],
-    "wrong2": ["Mistakes are part of the process. What matters is that they were caught and fixed.", "Erros fazem parte do processo. O que importa é que foram percebidos e corrigidos."],
-    "wrong_items": [
-      [["An old page on the site", "Uma página antiga no site"], ["Two different uploads had the same file name, so the old layout stayed live. I noticed it on the site. Since then every delivery has its own name and is checked against the repository.", "Dois envios diferentes tinham o mesmo nome de arquivo, então o layout antigo continuou no ar. Eu percebi no site. Desde então cada entrega tem nome próprio e é conferida no repositório."]],
-      [["A failed deploy", "Um deploy com erro"], ["A new build file did not match an older content file. I sent a screenshot of the failed run; the fix was applied and both versions were tested.", "Um arquivo de build novo não combinava com um arquivo de conteúdo mais antigo. Eu enviei a captura da execução com erro; a correção foi aplicada e as duas versões foram testadas."]],
-      [["A header that overflowed on mobile", "Um cabeçalho que estourava no celular"], ["The brand text pushed the page wider than the phone screen. It was fixed on every page.", "O texto da marca deixava a página mais larga que a tela do celular. Foi corrigido em todas as páginas."]]
+    [
+     "Figure and ground",
+     "Figura e fundo"
     ],
-    "beyond": ["AI beyond the site", "A IA além do site"],
-    "beyond2": ["I use AI as a tool that I direct and check. In one of the publications for Instituto Jô Clemente, I used it to produce charts and tables. The method is the same: I give the direction, I review the result, and I answer for it.", "Uso a IA como uma ferramenta que eu dirijo e confiro. Em uma das publicações para o Instituto Jô Clemente, usei para produzir gráficos e tabelas. O método é o mesmo: eu dou a direção, reviso o resultado e respondo por ele."],
-    "more": ["See more", "Ver mais"],
-    "less": ["See less", "Ver menos"]
-  }
+    [
+     "White page. Only the image boxes keep the color.",
+     "Página branca. Só as caixas das imagens mantêm a cor."
+    ]
+   ],
+   [
+    [
+     "It looked like the same cake with different icing.",
+     "Parecia o mesmo bolo com outra cobertura."
+    ],
+    [
+     "Differentiation within a system",
+     "Diferenciação dentro de um sistema"
+    ],
+    [
+     "Each module with its own layout and narrative, under one shared header.",
+     "Cada módulo com layout e narrativa próprios, sob um mesmo cabeçalho."
+    ]
+   ],
+   [
+    [
+     "Green is the client's color, not mine.",
+     "O verde é a cor do cliente, não a minha."
+    ],
+    [
+     "Brand consistency",
+     "Consistência de marca"
+    ],
+    [
+     "My palette on the pages; client colors only inside their pieces.",
+     "Minha paleta nas páginas; cor do cliente só dentro das peças dele."
+    ]
+   ],
+   [
+    [
+     "Too much on screen at once.",
+     "Informação demais de uma vez."
+    ],
+    [
+     "Progressive disclosure",
+     "Revelação progressiva"
+    ],
+    [
+     "Brand and story first; details behind “See more”.",
+     "Primeiro a marca e a história; os detalhes atrás de “Ver mais”."
+    ]
+   ]
+  ],
+  "ctrl": [
+   "I stay in control",
+   "Eu continuo no controle"
+  ],
+  "ctrl2": [
+   "Rules I set from the start. The AI works inside them.",
+   "Regras que defini desde o início. A IA trabalha dentro delas."
+  ],
+  "rule_items": [
+   [
+    [
+     "Nothing goes live without my approval",
+     "Nada vai ao ar sem a minha aprovação"
+    ],
+    [
+     "No publishing and no change to the official domain without my explicit approval.",
+     "Nenhuma publicação nem alteração no domínio oficial sem a minha aprovação explícita."
+    ]
+   ],
+   [
+    [
+     "No invented professional content",
+     "Sem conteúdo profissional inventado"
+    ],
+    [
+     "Clients, metrics and credits come from my material, never from the AI.",
+     "Clientes, métricas e créditos vêm do meu material, nunca da IA."
+    ]
+   ],
+   [
+    [
+     "Human review of every change",
+     "Revisão humana de toda mudança"
+    ],
+    [
+     "I read it, check facts and credits, and only then approve.",
+     "Eu leio, confiro fatos e créditos e só então aprovo."
+    ]
+   ],
+   [
+    [
+     "No framework without a reason",
+     "Sem framework sem motivo"
+    ],
+    [
+     "No React, Vite or Next.js without a concrete technical reason.",
+     "Nada de React, Vite ou Next.js sem um motivo técnico concreto."
+    ]
+   ],
+   [
+    [
+     "No general rewrites",
+     "Sem reescritas gerais"
+    ],
+    [
+     "Change what was asked, nothing more.",
+     "Mudar o que foi pedido, nada além disso."
+    ]
+   ],
+   [
+    [
+     "The Wix site stays online",
+     "O site no Wix continua no ar"
+    ],
+    [
+     "The current site stays published while the new pages are built.",
+     "O site atual segue publicado enquanto as páginas novas são construídas."
+    ]
+   ]
+  ],
+  "wrong": [
+   "When the AI got it wrong",
+   "Quando a IA errou"
+  ],
+  "wrong2": [
+   "Catching this is the job. These are real cases from this build.",
+   "Perceber isso é o trabalho. São casos reais desta construção."
+  ],
+  "wrong_items": [
+   [
+    [
+     "It claimed things the material did not support",
+     "Afirmou coisas que o material não sustentava"
+    ],
+    [
+     "Some brand texts had claims I could not trace to the manuals. They were cut. A portfolio cannot carry invented content.",
+     "Alguns textos de marca traziam afirmações que não saíam dos manuais. Foram cortadas. Um portfólio não pode carregar conteúdo inventado."
+    ]
+   ],
+   [
+    [
+     "It credited me with work that was not mine",
+     "Atribuiu a mim um trabalho que não era meu"
+    ],
+    [
+     "A logo was listed as mine. I knew it was not, and it was removed.",
+     "Um logo foi listado como meu. Eu sabia que não era, e foi removido."
+    ]
+   ],
+   [
+    [
+     "An old page stayed online",
+     "Uma página antiga ficou no ar"
+    ],
+    [
+     "Two uploads had the same file name. I noticed it on the site. Now every delivery has a distinct name.",
+     "Dois envios tinham o mesmo nome de arquivo. Eu percebi no site. Agora cada entrega tem um nome diferente."
+    ]
+   ],
+   [
+    [
+     "A deploy failed",
+     "Um deploy falhou"
+    ],
+    [
+     "A new build did not match an older content file. I sent the error, the build became tolerant and both versions were tested.",
+     "Um build novo não combinava com um arquivo de conteúdo antigo. Enviei o erro, o build ficou tolerante e as duas versões foram testadas."
+    ]
+   ]
+  ],
+  "flow": [
+   "The loop, page after page",
+   "O ciclo, página após página"
+  ],
+  "steps": [
+   [
+    "Brief",
+    "Briefing"
+   ],
+   [
+    "Draft",
+    "Rascunho"
+   ],
+   [
+    "My review",
+    "Minha revisão"
+   ],
+   [
+    "Adjust",
+    "Ajuste"
+   ],
+   [
+    "Approval",
+    "Aprovação"
+   ]
+  ],
+  "chat": [
+   "Real moments, paraphrased",
+   "Momentos reais, parafraseados"
+  ],
+  "me": [
+   "Me",
+   "Eu"
+  ],
+  "claude": [
+   "Claude",
+   "Claude"
+  ],
+  "talk": [
+   [
+    "me",
+    [
+     "Green is the client's color, not mine. Keep my palette.",
+     "O verde é a cor do cliente, não a minha. Mantemos a minha paleta."
+    ]
+   ],
+   [
+    "ai",
+    [
+     "Redone in your navy, pink and violet.",
+     "Refeito na sua paleta de azul-marinho, rosa e violeta."
+    ]
+   ],
+   [
+    "me",
+    [
+     "The “+” is not intuitive. It should say “See more”.",
+     "O “+” não é intuitivo. Tem que ser “Ver mais”."
+    ]
+   ],
+   [
+    "ai",
+    [
+     "Replaced with a text link.",
+     "Trocado por um link de texto."
+    ]
+   ],
+   [
+    "me",
+    [
+     "No: the page stays white. Only the image boxes take the image color.",
+     "Não: o fundo da página fica branco. Só as caixas das imagens usam a cor da imagem."
+    ]
+   ],
+   [
+    "ai",
+    [
+     "I misread it. Fixed.",
+     "Eu tinha entendido errado. Corrigido."
+    ]
+   ]
+  ],
+  "more": [
+   "See more",
+   "Ver mais"
+  ],
+  "less": [
+   "See less",
+   "Ver menos"
+  ],
+  "next": [
+   "Next systems",
+   "Próximos sistemas"
+  ],
+  "next2": [
+   "The same approach, applied to other tools. In progress: a political radar. More will be added here as they are finished.",
+   "A mesma abordagem aplicada a outras ferramentas. Em andamento: um radar político. Outros entram aqui conforme ficarem prontos."
+  ],
+  "close": [
+   "What I bring to a team",
+   "O que eu levo para um time"
+  ],
+  "close_items": [
+   [
+    [
+     "Direction",
+     "Direção"
+    ],
+    [
+     "I know what to ask for and why. The AI does not decide that for me.",
+     "Sei o que pedir e por quê. A IA não decide isso por mim."
+    ]
+   ],
+   [
+    [
+     "Speed",
+     "Velocidade"
+    ],
+    [
+     "Weeks of work become days, with the design criteria intact.",
+     "Semanas de trabalho viram dias, com o critério de design preservado."
+    ]
+   ],
+   [
+    [
+     "Judgment",
+     "Julgamento"
+    ],
+    [
+     "I catch what is wrong, whether it is a detail or an invented claim.",
+     "Percebo o que está errado, seja um detalhe ou uma afirmação inventada."
+    ]
+   ]
+  ]
+ }
 }
