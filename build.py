@@ -394,6 +394,61 @@ def brands(data, S):
     page = page.replace('</style>', BCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
     return page.replace('</body>', '<script>document.querySelectorAll("details.mr").forEach(d=>d.addEventListener("toggle",()=>{try{ping()}catch(e){}}))</script></body>', 1)
 
+ICSS = """body.ia{background:#fff}.ia .intro{display:none}
+.ih{margin:40px 4px 0;border-radius:28px;padding:clamp(28px,5vw,60px);color:#fff;background:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%)}
+.ih small{display:inline-block;border:1px solid #f28db1;border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em}
+.ih h1{font:700 clamp(4rem,12vw,9rem)/.9 Outfit,sans-serif;letter-spacing:-.05em;margin:.12em 0 .2em}
+.ih .ld{font:500 clamp(1.4rem,2.6vw,2rem)/1.25 Outfit,sans-serif;margin:0 0 14px;max-width:26ch}
+.ih p.in{font-size:1.05rem;line-height:1.55;max-width:56ch;margin:0;opacity:.9}
+.ist{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:34px}
+.ist div{background:rgba(255,255,255,.1);border-radius:18px;padding:16px}.ist b{display:block;font:700 2.6rem/1 Outfit,sans-serif;color:#f28db1}.ist span{display:block;margin-top:6px;font-size:.88rem;line-height:1.35}
+.is{margin:64px 4px 0}.is h2{font-size:1.7rem;margin:0 0 6px;color:var(--ink);letter-spacing:-.02em}.is>p.s{margin:0 0 24px;color:var(--navy)}
+.pn{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.pn li{position:relative;border:1px solid #e3e1ef;border-radius:20px;padding:18px;background:#fff}
+.pn li:not(:last-child):after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);z-index:2;background:#fff;color:#f28db1;font-weight:700;width:14px;text-align:center}
+.pn b{display:block;font:700 1.15rem Outfit,sans-serif;color:var(--ink)}.pn p{margin:6px 0 12px;font-size:.92rem;line-height:1.4;color:var(--navy)}
+.pn em{font-style:normal;font:600 .72rem Inter,sans-serif;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:3px 10px;background:#f2f1f7;color:var(--navy)}
+.pn .me em{background:#f28db1;color:#14122b}
+.rg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rg div{border-radius:20px;padding:20px;background:#f7f6fb}.rg i{font:700 .8rem Inter,sans-serif;color:#f28db1;font-style:normal}.rg b{display:block;margin:6px 0;font:700 1.1rem/1.2 Outfit,sans-serif;color:var(--ink)}.rg p{margin:0;font-size:.93rem;line-height:1.45;color:var(--navy)}
+.lp{display:flex;gap:10px;margin:0 0 28px;padding:0;list-style:none;counter-reset:l}
+.lp li{flex:1;counter-increment:l;border-radius:999px;padding:12px 16px;background:#235070;color:#fff;font:600 .95rem Outfit,sans-serif;text-align:center}
+.lp li:before{content:counter(l) " · ";color:#f28db1}.lp li:last-child{background:#f28db1;color:#14122b}.lp li:last-child:before{color:#14122b}
+.ch{max-width:720px;display:flex;flex-direction:column;gap:10px}
+.ch h3{margin:0 0 4px;font-size:1rem;color:var(--navy)}
+.bu{max-width:80%;border-radius:20px;padding:12px 16px;font-size:.98rem;line-height:1.4}
+.bu b{display:block;font:600 .72rem Inter,sans-serif;letter-spacing:.05em;text-transform:uppercase;opacity:.75;margin-bottom:3px}
+.bu.me{align-self:flex-end;background:#f28db1;color:#14122b;border-bottom-right-radius:6px}
+.bu.ai{align-self:flex-start;background:#235070;color:#fff;border-bottom-left-radius:6px}
+.wh{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.wh div{border-radius:20px;padding:22px;background:#f7f6fb}.wh h3{margin:0 0 10px;font:700 1.2rem Outfit,sans-serif;color:var(--ink)}.wh .a{background:#14122b}.wh .a h3,.wh .a li{color:#fff}
+.wh ul{margin:0;padding-left:18px}.wh li{margin:6px 0;line-height:1.4;font-size:.95rem;color:var(--navy)}
+.ww{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.ww div{border-left:4px solid #f28db1;padding:4px 0 4px 16px}.ww b{display:block;font:700 1.05rem Outfit,sans-serif;color:var(--ink);margin-bottom:6px}.ww p{margin:0;font-size:.93rem;line-height:1.45;color:var(--navy)}
+.ib{margin:64px 4px 0;border-radius:24px;padding:clamp(24px,4vw,44px);background:#f7f6fb}.ib h2{margin:0 0 10px;font-size:1.7rem;color:var(--ink)}.ib p{margin:0;max-width:60ch;line-height:1.55;color:var(--navy)}
+@media(max-width:900px){.pn{grid-template-columns:1fr}.pn li:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}.rg,.ww{grid-template-columns:1fr}.wh{grid-template-columns:1fr}.lp{flex-direction:column}}
+@media(max-width:700px){.ist{grid-template-columns:repeat(2,minmax(0,1fr))}.bu{max-width:92%}}
+"""
+
+def ia(data, S):
+    P = data['page']
+    head, menu, foot = chrome(S, 6)
+    stats = ''.join(f'<div><b>{html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in P['stats'])
+    top = (f'<section class="ih"><small>{t(P["tag"])}</small><h1>{t(P["title"])}</h1><p class="ld">{t(P["lead"])}</p><p class="in">{t(P["intro"])}</p><div class="ist">{stats}</div></section>')
+    def sec(h, s, inner): return f'<section class="is"><h2>{t(h)}</h2>{('<p class="s">'+t(s)+'</p>') if s else '<div style="height:18px"></div>'}{inner}</section>'
+    nodes = ''.join(f'<li class="{"me" if n[2][0]=="Me" else ""}"><b>{t(n[0])}</b><p>{t(n[1])}</p><em>{t(n[2])}</em></li>' for n in P['nodes'])
+    rules = ''.join(f'<div><i>{i+1:02d}</i><b>{t(r[0])}</b><p>{t(r[1])}</p></div>' for i, r in enumerate(P['rule_items']))
+    steps = ''.join(f'<li>{t(s)}</li>' for s in P['steps'])
+    bubbles = ''.join(f'<div class="bu {w}"><b>{t(P["me"] if w=="me" else P["claude"])}</b>{t(x)}</div>' for w, x in P['talk'])
+    loop = f'<ol class="lp">{steps}</ol><div class="ch"><h3>{t(P["chat"])}</h3>{bubbles}</div>'
+    who = (f'<div class="wh"><div><h3>{t(P["me_h"])}</h3><ul>' + ''.join(f'<li>{t(x)}</li>' for x in P['me_l']) + '</ul></div>'
+           f'<div class="a"><h3>{t(P["ai_h"])}</h3><ul>' + ''.join(f'<li>{t(x)}</li>' for x in P['ai_l']) + '</ul></div></div>')
+    wrong = '<div class="ww">' + ''.join(f'<div><b>{t(w[0])}</b><p>{t(w[1])}</p></div>' for w in P['wrong_items']) + '</div>'
+    beyond = f'<section class="ib"><h2>{t(P["beyond"])}</h2><p>{t(P["beyond2"])}</p></section>'
+    body = (head + menu + top + sec(P['setup'], P['setup2'], f'<ol class="pn">{nodes}</ol>') + sec(P['rules'], P['rules2'], f'<div class="rg">{rules}</div>')
+            + sec(P['loop'], P['loop2'], loop) + sec(P['who'], '', who) + sec(P['wrong'], P['wrong2'], wrong) + beyond + foot)
+    page = shell('Suelen Magalhães — AI', body)
+    return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
+
 def main():
     rasterize()
     data = json.loads((R / 'content' / 'cases.json').read_text('utf-8'))
@@ -414,6 +469,9 @@ def main():
     bj = R / 'content' / 'brands.json'
     if bj.exists():
         (D / 'brands.html').write_text(brands(json.loads(bj.read_text('utf-8')), S), 'utf-8')
+    ij = R / 'content' / 'ia.json'
+    if ij.exists():
+        (D / 'ia.html').write_text(ia(json.loads(ij.read_text('utf-8')), S), 'utf-8')
     shutil.copytree(R / 'assets', D / 'assets')
 
 if __name__ == '__main__':
