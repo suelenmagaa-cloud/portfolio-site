@@ -1,0 +1,941 @@
+{
+  "page": {
+    "title": [
+      "Visual identity",
+      "Identidade visual"
+    ],
+    "tags": "Brand development",
+    "lead": [
+      "The most important part of the process is listening to the client, so the brand represents them.",
+      "A parte mais importante do processo é ouvir o cliente, para que a marca o represente."
+    ],
+    "intro": [
+      "Brand development for professionals and small businesses. Six stories, six starting points, each one built from something people already recognize.",
+      "Desenvolvimento de marcas para profissionais e pequenos negócios. Seis histórias, seis pontos de partida, cada um construído a partir de algo que as pessoas já reconhecem."
+    ],
+    "index": [
+      "Six brands, six starting points",
+      "Seis marcas, seis pontos de partida"
+    ],
+    "story": [
+      "The idea",
+      "A ideia"
+    ],
+    "palette": [
+      "Colors",
+      "Cores"
+    ],
+    "type": [
+      "Typography",
+      "Tipografia"
+    ],
+    "frames": [
+      "How the idea took shape",
+      "Como a ideia ganhou forma"
+    ],
+    "apps": [
+      "In use",
+      "Em uso"
+    ],
+    "more": [
+      "Also in the portfolio",
+      "Também no portfólio"
+    ],
+    "more2": [
+      "Gisa Marchini · Editora Gota · Trote Solidário · Faculdade Sumaré · identities for Unifesp courses (teacher training, Saúde Indígena) · Suelen Magalhães",
+      "Gisa Marchini · Editora Gota · Trote Solidário · Faculdade Sumaré · identidades de cursos da Unifesp (formação de docentes, Saúde Indígena) · Suelen Magalhães"
+    ],
+    "see": [
+      "See chapter",
+      "Ver capítulo"
+    ]
+  },
+  "brands": [
+    {
+      "id": "margeci",
+      "n": "01",
+      "name": "Margeci",
+      "key": "mar",
+      "hero": 6,
+      "symbol": [
+        "the zen circle",
+        "o círculo zen"
+      ],
+      "kind": [
+        "Clinical psychologist",
+        "Psicóloga clínica"
+      ],
+      "year": "2020",
+      "bg": "#054557",
+      "fg": "#ffffff",
+      "ac": "#eacf19",
+      "quote": [
+        "At certain moments, thoughts and feelings mix until they become a tangle, with no clarity, beginning or end. But it is possible to unwind that thread.",
+        "Em certos momentos, pensamentos e sentimentos misturam-se até se tornar um emaranhado, sem clareza, começo ou fim. Mas é possível desenrolar esse fio."
+      ],
+      "text": [
+        [
+          "The circle has many meanings: eye, movement, expansion, completeness, protection. For Hindus and Buddhists it is also the cycle of life: being born, dying and being reborn. The zen circle, made of concentric circles, stands for the path to perfection.",
+          "O círculo tem vários significados: olho, movimento, expansão, completude, proteção. Para hindus e budistas é também o ciclo da vida: nascer, morrer e renascer. O círculo zen, composto de círculos concêntricos, representa o caminho para a perfeição."
+        ],
+        [
+          "The dot on the “i” began to be used in the 16th century so that Gothic letters written in Latin would not be mistaken for “u”. That is where the Portuguese expression “pôr os pingos nos is” comes from: something to be resolved or clarified. In the mark, the zen circle takes the place of that dot, recalling the winding and rewinding of the threads explored in therapy. Uneven edges and a handwritten stroke say that every walk is unique and personal.",
+          "O pingo no i começou a ser usado no século XVI, para que os caracteres góticos escritos em latim não fossem confundidos com “u”. Vem daí a expressão “pôr os pingos nos is”: algo a ser resolvido ou esclarecido. Na marca, o círculo zen ocupa o lugar do pingo e lembra o enrolar e re-enrolar dos fios explorados na terapia. Bordas desiguais e traço manuscrito dizem que cada caminhada é única e pessoal."
+        ]
+      ],
+      "frames": [
+        {
+          "img": 1,
+          "t": [
+            "The tangle",
+            "O emaranhado"
+          ],
+          "d": [
+            "Thoughts and feelings with no beginning or end.",
+            "Pensamentos e sentimentos sem começo nem fim."
+          ]
+        },
+        {
+          "img": 2,
+          "t": [
+            "The thread",
+            "O fio"
+          ],
+          "d": [
+            "It is possible to unwind it and put each thing in its place.",
+            "É possível desenrolar e pôr cada coisa no seu lugar."
+          ]
+        },
+        {
+          "img": 3,
+          "t": [
+            "The circle",
+            "O círculo"
+          ],
+          "d": [
+            "Eye, movement, completeness; the zen circle as a path.",
+            "Olho, movimento, completude; o círculo zen como caminho."
+          ]
+        },
+        {
+          "img": 4,
+          "t": [
+            "The dot on the i",
+            "O pingo no i"
+          ],
+          "d": [
+            "From the 16th century to “pôr os pingos nos is”.",
+            "Do século XVI a “pôr os pingos nos is”."
+          ]
+        },
+        {
+          "img": 5,
+          "t": [
+            "Where they meet",
+            "Onde se encontram"
+          ],
+          "d": [
+            "The circle replaces the dot, hand-drawn.",
+            "O círculo no lugar do pingo, desenhado à mão."
+          ]
+        }
+      ],
+      "swatches": [
+        {
+          "c": "#054557",
+          "n": [
+            "Blue",
+            "Azul"
+          ],
+          "d": [
+            "trust and calm",
+            "confiança e calma"
+          ]
+        },
+        {
+          "c": "#eacf19",
+          "n": [
+            "Mustard yellow",
+            "Amarelo-mostarda"
+          ],
+          "d": [
+            "vivid; the symbol color of psychology",
+            "vivo; a cor símbolo da psicologia"
+          ]
+        },
+        {
+          "c": "#414141",
+          "n": [
+            "Text gray",
+            "Cinza do texto"
+          ],
+          "d": [
+            "for running text, never pure black",
+            "para textos corridos, nunca o preto puro"
+          ]
+        }
+      ],
+      "type": [
+        [
+          "MODERNSPACE",
+          "the name, in capitals: assertive, with slightly rounded edges because delicacy matters in therapy",
+          "o nome, em maiúsculas: assertiva, com bordas levemente arredondadas porque a delicadeza importa na terapia"
+        ],
+        [
+          "Montserrat Light",
+          "all texts",
+          "todos os textos"
+        ]
+      ],
+      "apps": [
+        {
+          "img": 9,
+          "t": [
+            "Business card",
+            "Cartão"
+          ],
+          "d": [
+            "Printed and virtual versions.",
+            "Versões impressa e virtual."
+          ]
+        },
+        {
+          "img": 10,
+          "t": [
+            "Texture",
+            "Textura"
+          ],
+          "d": [
+            "Circles as visual support, in gray, blue or yellow.",
+            "Círculos como apoio visual, em cinza, azul ou amarelo."
+          ]
+        },
+        {
+          "img": 11,
+          "t": [
+            "Secondary signatures",
+            "Assinaturas secundárias"
+          ],
+          "d": [
+            "The name alone, or the “i” with its dot.",
+            "O nome sozinho, ou o “i” com o pingo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gisa",
+      "n": "02",
+      "name": "Gisa Marchini",
+      "key": "gis",
+      "hero": 4,
+      "symbol": [
+        "the plate",
+        "o prato"
+      ],
+      "kind": [
+        "Gastronomy consulting",
+        "Consultoria gastronômica"
+      ],
+      "year": "2020",
+      "bg": "#0089cf",
+      "fg": "#ffffff",
+      "ac": "#fbee23",
+      "quote": [
+        "It is on the plate that the chef presents a masterpiece, the fruit of the work of a team that works “redondinha”, in a perfect circle, to offer the best service.",
+        "É no prato que o chef nos apresenta sua obra-prima, fruto do trabalho de uma equipe que trabalha “redondinha” para oferecer o melhor serviço."
+      ],
+      "text": [
+        [
+          "The circle is one of the oldest geometric shapes known. It appears in nature and astronomy, and in many cultures it stands for human evolution, eternity, perfection and wholeness. Circles move freely, they are fluid, and they offer security, connection and community. We have circles of friends, and we sit at a round table to share food.",
+          "O círculo é uma das formas geométricas mais antigas que se tem notícia. Está na natureza, na astronomia e, em muitas culturas, representa a evolução humana, a eternidade, a perfeição e a plenitude. Círculos têm livre circulação, são fluidos e oferecem segurança, conexão e comunidade. Temos círculos de amigos e nos sentamos à mesa redonda para partilhar o alimento."
+        ],
+        [
+          "The mark turns that idea into a plate: the circle is the plate, the G is the name and the initial, and a sprig of cutlery finishes the dish, like the herb placed on top of food. Blue is the brand color, a mid tone between light and dark that shows the balance between seriousness and understanding.",
+          "A marca transforma essa ideia em um prato: o círculo é o prato, o G é o nome e a inicial, e um ramo de talheres finaliza o prato, como a erva colocada no topo do alimento. O azul é a cor da marca, num tom intermediário entre o claro e o escuro, que mostra o equilíbrio entre a seriedade e a compreensão."
+        ]
+      ],
+      "frames": [
+        {
+          "img": 5,
+          "t": [
+            "Anatomy of the mark",
+            "Anatomia da marca"
+          ],
+          "d": [
+            "Plate, name and initial, cutlery sprig.",
+            "Prato, nome e inicial, ramo de talheres."
+          ]
+        },
+        {
+          "img": 6,
+          "t": [
+            "Blue and the colors of food",
+            "O azul e o colorido dos alimentos"
+          ],
+          "d": [
+            "One brand color, eight auxiliary ones.",
+            "Uma cor da marca, oito auxiliares."
+          ]
+        },
+        {
+          "img": 7,
+          "t": [
+            "The cutlery sprig",
+            "O ramo de talheres"
+          ],
+          "d": [
+            "A graphic that echoes the finishing of a dish.",
+            "Um grafismo que remete à finalização do prato."
+          ]
+        },
+        {
+          "img": 8,
+          "t": [
+            "Texture",
+            "Textura"
+          ],
+          "d": [
+            "The sprig repeated, in blue or in auxiliary colors.",
+            "O ramo repetido, em azul ou nas cores auxiliares."
+          ]
+        }
+      ],
+      "swatches": [
+        {
+          "c": "#0089cf",
+          "n": [
+            "Brand blue",
+            "Azul da marca"
+          ],
+          "d": [
+            "the priority color in institutional materials",
+            "a cor prioritária nos materiais institucionais"
+          ]
+        },
+        {
+          "c": "#fbee23",
+          "n": [
+            "Yellow",
+            "Amarelo"
+          ],
+          "d": [
+            "auxiliary: the colors of healthy food",
+            "auxiliar: o colorido dos alimentos saudáveis"
+          ]
+        },
+        {
+          "c": "#95d5d1",
+          "n": [
+            "Mint",
+            "Menta"
+          ],
+          "d": [
+            "auxiliary",
+            "auxiliar"
+          ]
+        },
+        {
+          "c": "#12beb7",
+          "n": [
+            "Turquoise",
+            "Turquesa"
+          ],
+          "d": [
+            "auxiliary",
+            "auxiliar"
+          ]
+        },
+        {
+          "c": "#38c2d9",
+          "n": [
+            "Sky blue",
+            "Azul-céu"
+          ],
+          "d": [
+            "auxiliary",
+            "auxiliar"
+          ]
+        },
+        {
+          "c": "#5e3f99",
+          "n": [
+            "Purple",
+            "Roxo"
+          ],
+          "d": [
+            "auxiliary",
+            "auxiliar"
+          ]
+        },
+        {
+          "c": "#df4f96",
+          "n": [
+            "Pink",
+            "Rosa"
+          ],
+          "d": [
+            "auxiliary",
+            "auxiliar"
+          ]
+        },
+        {
+          "c": "#7b133e",
+          "n": [
+            "Wine",
+            "Vinho"
+          ],
+          "d": [
+            "auxiliary",
+            "auxiliar"
+          ]
+        },
+        {
+          "c": "#da2128",
+          "n": [
+            "Red",
+            "Vermelho"
+          ],
+          "d": [
+            "auxiliary",
+            "auxiliar"
+          ]
+        }
+      ],
+      "type": [
+        [
+          "Corbel",
+          "the institutional typeface, in all its weights",
+          "a tipografia institucional, em todos os pesos"
+        ],
+        [
+          "Baroneys",
+          "the name in lowercase, to resemble the mark",
+          "o nome em minúsculas, para se assemelhar à marca"
+        ]
+      ],
+      "apps": [
+        {
+          "img": 12,
+          "t": [
+            "Versions",
+            "Versões"
+          ],
+          "d": [
+            "Color, black and white, and tones of gray.",
+            "Colorida, preto e branco e tons de cinza."
+          ]
+        },
+        {
+          "img": 13,
+          "t": [
+            "Applications",
+            "Aplicações"
+          ],
+          "d": [
+            "The mark on photos of healthy foods.",
+            "A marca sobre fotos de alimentos saudáveis."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "efficiency",
+      "n": "03",
+      "name": "Efficiency",
+      "key": "eff",
+      "hero": 7,
+      "symbol": [
+        "the check mark",
+        "o sinal de certo"
+      ],
+      "kind": [
+        "Accounting advisory · redesign",
+        "Assessoria contábil · redesign"
+      ],
+      "year": "2021",
+      "bg": "linear-gradient(135deg,#efe6fa 0%,#e3efff 100%)",
+      "fg": "#2a1b4a",
+      "ac": "#8652a1",
+      "quote": [
+        "Fluid. Light. Modern. Colorful. Feminine. Humanized.",
+        "Fluido. Leve. Moderno. Colorido. Feminino. Humanizado."
+      ],
+      "text": [
+        [
+          "The check mark is the Brazilian version of the tick used since Ancient Rome, when people marked items on lists with a V, from the Latin veritas, “truth”. It means “yes”: yes, this was verified; yes, this is the right answer.",
+          "O sinal de “certo” é a versão abrasileirada do visto utilizado desde a Roma Antiga, quando as pessoas marcavam itens nas listas com uma letra V, de veritas, “verdade” em latim. Indica o “sim”: sim, isto foi verificado; sim, esta é a resposta correta."
+        ],
+        [
+          "The letter “e”, the initial of Efficiency, reinforces the message of the symbol. Check mark plus “e” gives the final mark.",
+          "A letra “e”, inicial de Efficiency, potencializa a mensagem do símbolo. Sinal de certo mais “e” resulta na marca final."
+        ]
+      ],
+      "frames": [
+        {
+          "img": 2,
+          "t": [
+            "Two starting points",
+            "Dois pontos de partida"
+          ],
+          "d": [
+            "The check mark and the letter “e”.",
+            "O sinal de certo e a letra “e”."
+          ]
+        },
+        {
+          "img": 3,
+          "t": [
+            "The sum",
+            "A soma"
+          ],
+          "d": [
+            "Check mark + e = the symbol.",
+            "Sinal de certo + e = o símbolo."
+          ]
+        },
+        {
+          "img": 5,
+          "t": [
+            "The personality",
+            "A personalidade"
+          ],
+          "d": [
+            "Six words that guided the redesign.",
+            "Seis palavras que guiaram o redesign."
+          ]
+        },
+        {
+          "img": 6,
+          "t": [
+            "The symbol",
+            "O símbolo"
+          ],
+          "d": [
+            "Gradients in violet, pink and blue.",
+            "Degradês em violeta, rosa e azul."
+          ]
+        }
+      ],
+      "swatches": [
+        {
+          "c": "#8652a1",
+          "n": [
+            "Violet",
+            "Violeta"
+          ],
+          "d": [
+            "wisdom, royalty",
+            "sabedoria, realeza"
+          ]
+        },
+        {
+          "c": "#e2afd1",
+          "n": [
+            "Pink",
+            "Rosa"
+          ],
+          "d": [
+            "the symbol color of accounting",
+            "a cor símbolo da contabilidade"
+          ]
+        },
+        {
+          "c": "#2b54a5",
+          "n": [
+            "Blue",
+            "Azul"
+          ],
+          "d": [
+            "trust, security, responsibility, calm",
+            "confiança, segurança, responsabilidade, calma"
+          ]
+        },
+        {
+          "c": "#7bd0de",
+          "n": [
+            "Light blue",
+            "Azul claro"
+          ],
+          "d": [
+            "the second blue",
+            "o segundo tom de azul"
+          ]
+        },
+        {
+          "c": "#58595b",
+          "n": [
+            "Gray",
+            "Cinza"
+          ],
+          "d": [
+            "seriousness, neutrality",
+            "seriedade, neutralidade"
+          ]
+        }
+      ],
+      "type": [
+        [
+          "Alte Haas Grotesk Regular",
+          "modern, sans serif and rounded",
+          "moderna, sem serifa e arredondada"
+        ]
+      ],
+      "apps": []
+    },
+    {
+      "id": "fkl",
+      "n": "04",
+      "name": "FKL Service",
+      "key": "fkl",
+      "hero": 7,
+      "symbol": [
+        "the arrow",
+        "a seta"
+      ],
+      "kind": [
+        "Logistics",
+        "Logística"
+      ],
+      "year": "2021",
+      "bg": "#f3f6fc",
+      "fg": "#1d2a5c",
+      "ac": "#f2571a",
+      "quote": [
+        "Used since cave paintings, the arrow is a graphic symbol recognized by different peoples and cultures.",
+        "Utilizada desde pinturas rupestres, a seta é um símbolo gráfico reconhecido por diferentes povos e culturas."
+      ],
+      "text": [
+        [
+          "Present in countless everyday situations, this powerful symbol also indicates movement: backwards to the left, forwards to the right.",
+          "Presente nas mais diversas situações cotidianas, este poderoso símbolo também indica movimento: para a esquerda, trás; para a direita, à frente."
+        ],
+        [
+          "The arrow enters the name itself. In the first version it sits inside the lettering; in the second it is doubled and runs ahead of it, adding speed.",
+          "A seta entra no próprio nome. Na primeira versão ela fica dentro das letras; na segunda é dobrada e corre à frente delas, ganhando velocidade."
+        ]
+      ],
+      "frames": [
+        {
+          "img": 2,
+          "t": [
+            "The arrow",
+            "A seta"
+          ],
+          "d": [
+            "Directions, movement, forwards and backwards.",
+            "Direções, movimento, para a frente e para trás."
+          ]
+        },
+        {
+          "img": 4,
+          "t": [
+            "Version 1",
+            "Versão 1"
+          ],
+          "d": [
+            "The arrow inside the lettering.",
+            "A seta dentro das letras."
+          ]
+        },
+        {
+          "img": 6,
+          "t": [
+            "Version 2",
+            "Versão 2"
+          ],
+          "d": [
+            "A double arrow running ahead.",
+            "Uma seta dupla correndo à frente."
+          ]
+        }
+      ],
+      "swatches": [
+        {
+          "c": "#3d7cc8",
+          "n": [
+            "Blue",
+            "Azul"
+          ],
+          "d": [
+            "confidence, respectability, tradition",
+            "confiança, respeitabilidade, tradição"
+          ]
+        },
+        {
+          "c": "#2d4ca7",
+          "n": [
+            "Royal blue",
+            "Azul royal"
+          ],
+          "d": [
+            "the same family",
+            "a mesma família"
+          ]
+        },
+        {
+          "c": "#2a2f7f",
+          "n": [
+            "Deep blue",
+            "Azul profundo"
+          ],
+          "d": [
+            "the same family",
+            "a mesma família"
+          ]
+        },
+        {
+          "c": "#f27522",
+          "n": [
+            "Orange",
+            "Laranja"
+          ],
+          "d": [
+            "modernity, agility, energy",
+            "modernidade, agilidade, energia"
+          ]
+        },
+        {
+          "c": "#f2571a",
+          "n": [
+            "Red orange",
+            "Laranja avermelhado"
+          ],
+          "d": [
+            "the same family",
+            "a mesma família"
+          ]
+        }
+      ],
+      "type": [],
+      "apps": []
+    },
+    {
+      "id": "tellini",
+      "n": "05",
+      "name": "Clau Tellini",
+      "key": "tel",
+      "hero": 1,
+      "symbol": [
+        "the meringue drop",
+        "a gota de suspiro"
+      ],
+      "kind": [
+        "Cake & Sugar · confectionery",
+        "Cake & Sugar · confeitaria"
+      ],
+      "year": "2018",
+      "bg": "#fff1f6",
+      "fg": "#573a17",
+      "ac": "#e94884",
+      "quote": [
+        "The meringue drop is the detail that can travel through the materials. It never replaces the mark.",
+        "A gota de suspiro é o detalhe que pode viajar pelos materiais. Ela nunca substitui a marca."
+      ],
+      "text": [
+        [
+          "A hand-lettered wordmark in brown, “Cake & Sugar” in green, and pink flourishes that close at the ends in a swirl. The mark comes in color, positive and negative versions, plus a reduced version without the flourishes.",
+          "Um logotipo manuscrito em marrom, “Cake & Sugar” em verde e filetes rosa que terminam em um floreio. A marca tem versões colorida, positiva e negativa, além de uma versão reduzida, sem os filetes."
+        ],
+        [
+          "The meringue drop becomes the system: a single detail, repeated as a texture on the back of the business card and framed by an auxiliary box.",
+          "A gota de suspiro vira o sistema: um único detalhe, repetido como textura no verso do cartão e emoldurado por um box auxiliar."
+        ]
+      ],
+      "frames": [
+        {
+          "img": 2,
+          "t": [
+            "The mark",
+            "A marca"
+          ],
+          "d": [
+            "Color, positive and negative.",
+            "Colorida, positiva e negativa."
+          ]
+        },
+        {
+          "img": 3,
+          "t": [
+            "Reduced mark",
+            "Marca reduzida"
+          ],
+          "d": [
+            "Without the flourishes.",
+            "Sem os filetes."
+          ]
+        },
+        {
+          "img": 4,
+          "t": [
+            "The detail",
+            "O detalhe"
+          ],
+          "d": [
+            "The meringue drop, with its own place.",
+            "A gota de suspiro, com lugar próprio."
+          ]
+        },
+        {
+          "img": 6,
+          "t": [
+            "Texture and frame",
+            "Textura e moldura"
+          ],
+          "d": [
+            "Drops as a pattern, an auxiliary box as a frame.",
+            "Gotas como padrão, um box auxiliar como moldura."
+          ]
+        },
+        {
+          "img": 7,
+          "t": [
+            "Business card",
+            "Cartão de visitas"
+          ],
+          "d": [
+            "Mark on the front, texture on the back.",
+            "Marca na frente, textura no verso."
+          ]
+        }
+      ],
+      "swatches": [
+        {
+          "c": "#e94884",
+          "n": [
+            "Pink",
+            "Rosa"
+          ],
+          "d": [
+            "flourishes and drops",
+            "filetes e gotas"
+          ]
+        },
+        {
+          "c": "#573a17",
+          "n": [
+            "Brown",
+            "Marrom"
+          ],
+          "d": [
+            "the name",
+            "o nome"
+          ]
+        },
+        {
+          "c": "#0c997f",
+          "n": [
+            "Green",
+            "Verde"
+          ],
+          "d": [
+            "“Cake & Sugar”",
+            "“Cake & Sugar”"
+          ]
+        }
+      ],
+      "type": [
+        [
+          "Lulo Clean W01 One",
+          "the chosen typeface; Futura Std when it is unavailable",
+          "a tipografia escolhida; Futura Std na sua ausência"
+        ]
+      ],
+      "apps": []
+    },
+    {
+      "id": "helpia",
+      "n": "06",
+      "name": "Helpia",
+      "key": "hel",
+      "hero": 2,
+      "symbol": [
+        "question + answer",
+        "pergunta + resposta"
+      ],
+      "kind": [
+        "App",
+        "Aplicativo"
+      ],
+      "year": "2016",
+      "bg": "#e6f6fd",
+      "fg": "#14344a",
+      "ac": "#00adef",
+      "quote": [
+        "Question + answer + the H of the name.",
+        "Pergunta + resposta + o H do nome."
+      ],
+      "text": [
+        [
+          "A question mark and an exclamation mark, the doubt and the answer, merge into the H of the name.",
+          "Um ponto de interrogação e um de exclamação, a dúvida e a resposta, se fundem no H do nome."
+        ],
+        [
+          "The same shape works as an app icon: white on blue, with the H leaning forward.",
+          "A mesma forma funciona como ícone de aplicativo: branca sobre o azul, com o H inclinado para a frente."
+        ]
+      ],
+      "frames": [
+        {
+          "img": 1,
+          "t": [
+            "The idea",
+            "A ideia"
+          ],
+          "d": [
+            "? + ! → H.",
+            "? + ! → H."
+          ]
+        },
+        {
+          "img": 3,
+          "t": [
+            "App icon",
+            "Ícone do app"
+          ],
+          "d": [
+            "The mark inside a rounded square.",
+            "A marca dentro de um quadrado arredondado."
+          ]
+        },
+        {
+          "img": 4,
+          "t": [
+            "Colors",
+            "Cores"
+          ],
+          "d": [
+            "Blue, gray and what happens where they overlap.",
+            "Azul, cinza e o que acontece onde eles se sobrepõem."
+          ]
+        }
+      ],
+      "swatches": [
+        {
+          "c": "#00adef",
+          "n": [
+            "Blue",
+            "Azul"
+          ],
+          "d": [
+            "trust, safety, productivity",
+            "confiança, segurança, produtividade"
+          ]
+        },
+        {
+          "c": "#4f4c4d",
+          "n": [
+            "Gray",
+            "Cinza"
+          ],
+          "d": [
+            "technology, professionalism, innovation",
+            "tecnologia, profissionalismo, inovação"
+          ]
+        }
+      ],
+      "type": [],
+      "apps": []
+    }
+  ]
+}

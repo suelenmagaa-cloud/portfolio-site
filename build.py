@@ -330,6 +330,65 @@ def health(data, S):
     js = '<script type="application/json" id="hg">' + json.dumps(G, ensure_ascii=False).replace('</', '<\\/') + '</script>'
     return page.replace('</body>', viewer + js + f'<script>{HJS}</script></body>', 1)
 
+BCSS = """body.br{background:#fff}.br .intro{display:none}
+.bt{margin:48px 4px 0;max-width:980px}.bt small{display:inline-block;border:1px solid var(--pink);border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em;color:var(--navy)}
+.bt h1{font:700 clamp(3.2rem,8.5vw,6.6rem)/.95 Outfit,sans-serif;letter-spacing:-.045em;color:var(--ink);margin:.18em 0 .3em}
+.bt .ld{font:500 clamp(1.4rem,2.6vw,2rem)/1.25 Outfit,sans-serif;color:var(--ink);margin:0 0 18px;max-width:28ch;padding-left:22px;border-left:6px solid;border-image:linear-gradient(180deg,#1c1140,#235070 62%,#f28db1) 1}
+.bt p{font-size:1.1rem;line-height:1.5;color:var(--navy);max-width:52ch;margin:0}
+.bi{margin:64px 4px 0}.bi h2{font-size:1.7rem;margin:0 0 22px;color:var(--ink);letter-spacing:-.02em}
+.bl{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.bl a{display:block;text-decoration:none;color:inherit}.bl .th{aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:#f2f1f7;transition:transform .25s,box-shadow .25s}.bl .th img{width:100%;height:100%;object-fit:contain;display:block}
+.bl a:hover .th{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,18,43,.16)}
+.bl b{display:block;font:600 1rem Outfit,sans-serif;color:var(--ink);margin-top:10px}.bl span{display:block;font-size:.8rem;color:var(--navy)}.bl i{font:600 .68rem Inter,sans-serif;font-style:normal;color:var(--pink);letter-spacing:.1em}
+.sc{--bg:#054557;--fg:#fff;--ac:#eacf19;background:var(--bg);color:var(--fg);border-radius:32px;padding:56px;margin:56px 0 0!important;position:relative;overflow:hidden}
+.sc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--ac)}
+.sh{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:0 0 36px}.sh .n{font:700 clamp(3.4rem,8vw,6rem)/.8 Outfit,sans-serif;color:var(--ac);letter-spacing:-.04em}
+.sh h2{font:700 clamp(2rem,4.4vw,3.4rem)/1 Outfit,sans-serif;letter-spacing:-.03em;margin:0;color:inherit}.sh .m{display:block;font:600 .75rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-top:8px}
+.sg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;margin:0 0 48px}
+.sg figure{margin:0}.sg figure img{display:block;width:100%;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.sg blockquote{margin:0 0 22px;font:500 clamp(1.25rem,2.2vw,1.65rem)/1.3 Outfit,sans-serif;color:inherit;padding-left:20px;border-left:4px solid var(--ac)}
+.sg p{font-size:.98rem;line-height:1.6;margin:0 0 14px;opacity:.92;color:inherit}
+.sc h3{font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin:0 0 16px;filter:brightness(.92)}
+.sb{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px;margin:0 0 48px;padding:0;list-style:none;counter-reset:f}
+.sb li{counter-increment:f}.sb li img{display:block;width:100%;border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.2)}
+.sb .no::before{content:counter(f);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ac);color:#fff;font:700 .78rem Outfit,sans-serif;margin-right:8px}
+.sb b{display:flex;align-items:center;margin:12px 0 4px;font:600 .95rem Outfit,sans-serif;color:inherit}.sb span.d{display:block;font-size:.82rem;line-height:1.45;opacity:.85}
+.sb.ap{counter-reset:f 0}.sb.ap .no::before{content:none}
+.pl{display:flex;flex-wrap:wrap;gap:18px 24px;margin:0 0 20px}.pl .sw{flex:1 1 150px;max-width:230px}.pl .ch{height:78px;border-radius:14px;border:1px solid rgba(255,255,255,.6);margin-bottom:10px}
+.sc.lt .pl .ch{border-color:rgba(0,0,0,.12)}.pl b{display:block;font:600 .9rem Outfit,sans-serif}.pl code{font:500 .72rem Inter,sans-serif;opacity:.7}.pl span{display:block;font-size:.8rem;line-height:1.4;opacity:.85;margin-top:2px}
+.ty{margin:0 0 48px;display:grid;gap:8px}.ty p{margin:0;font-size:.88rem;opacity:.92}.ty b{font:600 1rem Outfit,sans-serif}
+.bm{margin:56px 4px 0}.bm h2{font-size:1.3rem;margin:0 0 8px;color:var(--ink)}.bm p{margin:0;font-size:.95rem;color:var(--navy);line-height:1.6}
+@media(max-width:860px){.bl{grid-template-columns:repeat(2,minmax(0,1fr))}.bl{gap:16px}.sc{padding:34px 22px;border-radius:24px}.sg{grid-template-columns:minmax(0,1fr);gap:28px}.sb{grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:16px}}"""
+
+def brands(data, S):
+    P = data['page']
+    head, menu, foot = chrome(S, 4)
+    def im(k, n): return f'assets/brands/{k}_{n:02d}.webp'
+    top = (f'<section class="bt"><small>{html.escape(P["tags"])}</small><h1>{t(P["title"])}</h1><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></section>')
+    idx = ''.join(f'<li><a href="#{b["id"]}"><div class="th"><img loading="lazy" alt="" src="{im(b["key"], b["hero"])}"></div><i>{b["n"]}</i><b>{html.escape(b["name"])}</b><span>{t(b["symbol"])}</span></a></li>' for b in data['brands'])
+    index = f'<section class="bi"><h2>{t(P["index"])}</h2><ol class="bl">{idx}</ol></section>'
+    scenes = ''
+    def lum(c):
+        c = c.lstrip('#')
+        if len(c) != 6: return 1
+        r, g, b_ = (int(c[i:i+2], 16) for i in (0, 2, 4)); return (0.299*r + 0.587*g + 0.114*b_) / 255
+    for b in data['brands']:
+        light = lum(b['fg']) < .5
+        paras = ''.join(f'<p>{t(x)}</p>' for x in b['text'])
+        fr = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b><span class="no"></span>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['frames'])
+        sw = ''.join(f'<div class="sw"><div class="ch" style="background:{s["c"]}"></div><b>{t(s["n"])}</b><code>{s["c"].upper()}</code><span>{t(s["d"])}</span></div>' for s in b['swatches'])
+        ty = ''.join(f'<p><b>{html.escape(x[0])}</b> · {t([x[1], x[2]])}</p>' for x in b['type'])
+        tyb = f'<h3>{t(P["type"])}</h3><div class="ty">{ty}</div>' if ty else '<div style="height:28px"></div>'
+        ap = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['apps'])
+        apb = f'<h3>{t(P["apps"])}</h3><ol class="sb ap">{ap}</ol>' if ap else ''
+        scenes += (f'<section class="sc{" lt" if light else ""}" id="{b["id"]}" style="--bg:{b["bg"]};--fg:{b["fg"]};--ac:{b["ac"]}">'
+                   f'<header class="sh"><span class="n">{b["n"]}</span><div><h2>{html.escape(b["name"])}</h2><span class="m">{t(b["kind"])} · {b["year"]}</span></div></header>'
+                   f'<div class="sg"><figure><img loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}"></figure><div><blockquote>{t(b["quote"])}</blockquote>{paras}</div></div>'
+                   f'<h3>{t(P["frames"])}</h3><ol class="sb">{fr}</ol><h3>{t(P["palette"])}</h3><div class="pl">{sw}</div>{tyb}{apb}</section>')
+    more = f'<section class="bm"><h2>{t(P["more"])}</h2><p>{t(P["more2"])}</p></section>'
+    page = shell('Suelen Magalhães — Brands', head + menu + top + index + scenes + more + foot)
+    return page.replace('</style>', BCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
+
 def main():
     rasterize()
     data = json.loads((R / 'content' / 'cases.json').read_text('utf-8'))
@@ -347,6 +406,9 @@ def main():
     hj = R / 'content' / 'health.json'
     if hj.exists():
         (D / 'health.html').write_text(health(json.loads(hj.read_text('utf-8')), S), 'utf-8')
+    bj = R / 'content' / 'brands.json'
+    if bj.exists():
+        (D / 'brands.html').write_text(brands(json.loads(bj.read_text('utf-8')), S), 'utf-8')
     shutil.copytree(R / 'assets', D / 'assets')
 
 if __name__ == '__main__':
