@@ -344,7 +344,7 @@ BCSS = """body.br{background:#fff}.br .intro{display:none}
 .sc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--ac)}
 .sh{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:0 0 36px}.sh .n{font:700 clamp(3.4rem,8vw,6rem)/.8 Outfit,sans-serif;color:var(--ac);letter-spacing:-.04em}
 .sh h2{font:700 clamp(2rem,4.4vw,3.4rem)/1 Outfit,sans-serif;letter-spacing:-.03em;margin:0;color:inherit}.sh .m{display:block;font:600 .75rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-top:8px}
-.sg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;margin:0 0 48px}
+.sg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;margin:0 0 32px}
 .sg figure{margin:0}.sg figure img{display:block;width:100%;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
 .sg blockquote{margin:0 0 22px;font:500 clamp(1.25rem,2.2vw,1.65rem)/1.3 Outfit,sans-serif;color:inherit;padding-left:20px;border-left:4px solid var(--ac)}
 .sg p{font-size:.98rem;line-height:1.6;margin:0 0 14px;opacity:.92;color:inherit}
@@ -357,6 +357,9 @@ BCSS = """body.br{background:#fff}.br .intro{display:none}
 .pl{display:flex;flex-wrap:wrap;gap:18px 24px;margin:0 0 20px}.pl .sw{flex:1 1 150px;max-width:230px}.pl .ch{height:78px;border-radius:14px;border:1px solid rgba(255,255,255,.6);margin-bottom:10px}
 .sc.lt .pl .ch{border-color:rgba(0,0,0,.12)}.pl b{display:block;font:600 .9rem Outfit,sans-serif}.pl code{font:500 .72rem Inter,sans-serif;opacity:.7}.pl span{display:block;font-size:.8rem;line-height:1.4;opacity:.85;margin-top:2px}
 .ty{margin:0 0 48px;display:grid;gap:8px}.ty p{margin:0;font-size:.88rem;opacity:.92}.ty b{font:600 1rem Outfit,sans-serif}
+.mr summary{list-style:none;display:inline-flex;align-items:center;gap:10px;cursor:pointer;font:600 1rem Inter,sans-serif;color:inherit;padding:0 0 3px;border-bottom:3px solid var(--ac)}.mr summary::-webkit-details-marker{display:none}
+.mr summary i{width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .25s}.mr[open] summary i{transform:rotate(-135deg) translateY(-2px)}
+.mr .c{display:none}.mr[open] .c{display:inline}.mr[open] .o{display:none}.mr summary:hover{opacity:.8}.mr summary:focus-visible{outline:2px solid var(--ac);outline-offset:6px}.mb{margin-top:44px}
 .bm{margin:56px 4px 0}.bm h2{font-size:1.3rem;margin:0 0 8px;color:var(--ink)}.bm p{margin:0;font-size:.95rem;color:var(--navy);line-height:1.6}
 @media(max-width:860px){.bl{grid-template-columns:repeat(2,minmax(0,1fr))}.bl{gap:16px}.sc{padding:34px 22px;border-radius:24px}.sg{grid-template-columns:minmax(0,1fr);gap:28px}.sb{grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:16px}}"""
 
@@ -384,10 +387,12 @@ def brands(data, S):
         scenes += (f'<section class="sc{" lt" if light else ""}" id="{b["id"]}" style="--bg:{b["bg"]};--fg:{b["fg"]};--ac:{b["ac"]}">'
                    f'<header class="sh"><span class="n">{b["n"]}</span><div><h2>{html.escape(b["name"])}</h2><span class="m">{t(b["kind"])} · {b["year"]}</span></div></header>'
                    f'<div class="sg"><figure><img loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}"></figure><div><blockquote>{t(b["quote"])}</blockquote>{paras}</div></div>'
-                   f'<h3>{t(P["frames"])}</h3><ol class="sb">{fr}</ol><h3>{t(P["palette"])}</h3><div class="pl">{sw}</div>{tyb}{apb}</section>')
+                   f'<details class="mr"><summary><span class="o">{t(P["seemore"])}</span><span class="c">{t(P["seeless"])}</span><i></i></summary>'
+                   f'<div class="mb"><h3>{t(P["frames"])}</h3><ol class="sb">{fr}</ol><h3>{t(P["palette"])}</h3><div class="pl">{sw}</div>{tyb}{apb}</div></details></section>')
     more = f'<section class="bm"><h2>{t(P["more"])}</h2><p>{t(P["more2"])}</p></section>'
     page = shell('Suelen Magalhães — Brands', head + menu + top + index + scenes + more + foot)
-    return page.replace('</style>', BCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
+    page = page.replace('</style>', BCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
+    return page.replace('</body>', '<script>document.querySelectorAll("details.mr").forEach(d=>d.addEventListener("toggle",()=>{try{ping()}catch(e){}}))</script></body>', 1)
 
 def main():
     rasterize()
