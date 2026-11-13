@@ -401,33 +401,44 @@ ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .a1 .g{display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
 .a1 h1{font:700 clamp(8rem,28vw,20rem)/.78 Outfit,sans-serif;letter-spacing:-.07em;margin:0 0 .06em -.04em;background:linear-gradient(180deg,#fff 20%,#f28db1);-webkit-background-clip:text;background-clip:text;color:transparent}
 .a1 .h2{font:700 clamp(2rem,5.6vw,4.2rem)/1 Outfit,sans-serif;letter-spacing:-.035em;margin:0}.a1 .h2 s{display:block;text-decoration:none;color:transparent;-webkit-text-stroke:1.5px #fff}.a1 .h2 b{display:block;color:#f28db1}
-.a1 p.in2{max-width:48ch;font-size:1.05rem;line-height:1.55;margin:22px 0 0;opacity:.92}
+.a1 p.in2{max-width:50ch;font-size:1.05rem;line-height:1.55;margin:22px 0 0;opacity:.92}
 .mk{justify-self:end;width:100%;max-width:300px;background:rgba(20,18,43,.72);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:14px;transform:rotate(3deg);box-shadow:0 30px 60px rgba(0,0,0,.35)}
 .mk i{display:flex;gap:5px;margin-bottom:12px}.mk i:before,.mk i:after,.mk i span{content:"";width:9px;height:9px;border-radius:50%;background:#f28db1;opacity:.9}.mk i:after{background:#7c6cf6}.mk i span{background:#fff;opacity:.5}
 .mk p{margin:0 0 8px;font:500 .9rem/1.35 Inter,sans-serif;padding:10px 12px;border-radius:14px}.mk .m{background:#f28db1;color:#14122b;margin-left:22px}.mk .c{background:#235070;margin-right:22px}.mk b{display:block;font:600 .62rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:2px}
 .tk{margin-top:clamp(40px,6vw,70px);border-top:1px solid rgba(255,255,255,.25);padding:14px 0;overflow:hidden;white-space:nowrap}.tk div{display:inline-block;animation:tk 38s linear infinite;font:600 .8rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase}.tk span{margin:0 22px}.tk span:before{content:"✦";color:#f28db1;margin-right:44px}
 @keyframes tk{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.tk div{animation:none}}
-.a2{padding:clamp(60px,9vw,110px) 0;text-align:left}.a2 .big{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 .3em;font:700 clamp(3.6rem,14vw,11rem)/.95 Outfit,sans-serif;letter-spacing:-.06em;color:var(--ink)}
+.a0{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 30px;padding:clamp(34px,5vw,56px) 0 0}.a0 div{border-top:3px solid #14122b;padding-top:12px}.a0 div:nth-child(2){border-color:#235070}.a0 div:nth-child(3){border-color:#f28db1}
+.a0 h3{margin:0;font:700 clamp(1.8rem,4.4vw,3.2rem)/1 Outfit,sans-serif;letter-spacing:-.04em;color:#14122b}.a0 div:nth-child(2) h3{color:#235070}.a0 div:nth-child(3) h3{color:#f28db1}.a0 p{margin:8px 0 0;font-size:1rem;line-height:1.4}
+.a2{padding:clamp(48px,7vw,84px) 0}.a2 .big{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 .3em;font:700 clamp(3.6rem,14vw,11rem)/.95 Outfit,sans-serif;letter-spacing:-.06em;color:var(--ink)}
 .a2 s{text-decoration:none;position:relative;color:#b9b6cc}.a2 s:after{content:"";position:absolute;left:-2%;right:-2%;top:52%;height:.09em;background:#f28db1;transform:rotate(-4deg)}.a2 em{font-style:normal;background:linear-gradient(90deg,#235070,#f28db1);-webkit-background-clip:text;background-clip:text;color:transparent}
 .a2 p{max-width:60ch;font-size:1.1rem;line-height:1.55;margin:26px 0 0}.a2 small{display:block;margin-top:14px;color:#6b6985;font-size:.85rem}
-.a3{background:#f3efff;padding:clamp(48px,7vw,84px) 0}.a3 h2{font:700 clamp(1.8rem,4.4vw,3.2rem)/1.05 Outfit,sans-serif;letter-spacing:-.03em;margin:0 0 34px;color:var(--ink);max-width:22ch}
-.br2{display:grid;grid-template-columns:110px 1fr;gap:10px 18px;align-items:center;margin:10px 0}.br2 b{font:600 .95rem Outfit,sans-serif;color:var(--ink)}.br2 i{display:block;height:22px;border-radius:999px;background:#235070;opacity:.5}.br2 em{font-style:normal;font-size:.8rem;margin-left:10px;color:#6b6985}
-.br2.big{margin-top:26px}.br2.big b{font-size:1.4rem}.br2.big i{height:clamp(44px,7vw,70px);opacity:1;background:linear-gradient(90deg,#1c1140,#235070 62%,#f28db1);display:flex;align-items:center;color:#fff;font:600 clamp(.8rem,1.6vw,1rem) Inter,sans-serif;padding:0 22px;white-space:nowrap}
-.a3 small{display:block;margin-top:14px;color:#6b6985;font-size:.8rem}
-.a4{padding:clamp(56px,8vw,96px) 0}.tl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:10px 40px;align-items:center;padding:22px 0;border-top:1px solid #e3e1ef}
-.tl h3{margin:0;font:700 clamp(3rem,9vw,6.4rem)/.95 Outfit,sans-serif;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:2px #235070}.tl:nth-child(2n) h3{-webkit-text-stroke-color:#f28db1}.tl p{margin:0;font-size:1.05rem;line-height:1.55}
-.a5{background:#14122b;color:#fff;padding:clamp(56px,8vw,100px) 0}.a5 h2{font:700 clamp(2.4rem,7vw,5.4rem)/.98 Outfit,sans-serif;letter-spacing:-.045em;margin:0 0 8px}.a5 .n{opacity:.7;margin:0 0 30px}
-.rc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}.rc.hd{margin-bottom:6px}.rc div small{display:none}.rc.hd span{font:600 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#f28db1}
-.rc div{border-radius:18px;padding:18px;font-size:.98rem;line-height:1.4;background:rgba(255,255,255,.07)}.rc div:nth-child(1){font-family:ui-monospace,Menlo,monospace;font-size:.88rem;color:#c9c3ff}.rc div:nth-child(2){opacity:.7}.rc div:nth-child(3){background:#f28db1;color:#14122b;font-weight:600;transform:rotate(-1.2deg)}.rc div:nth-child(4){background:#fff;color:#14122b;font-weight:600}
-.al{margin-top:34px;border-top:1px dashed rgba(255,255,255,.3);padding-top:22px}.al p{margin:0 0 10px;opacity:.8}.al>span{display:inline-block;margin:0 8px 8px 0;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;font-size:.88rem}
-.a6{padding:clamp(56px,8vw,96px) 0}.pp{display:flex;align-items:flex-start;gap:0;margin:26px 0 8px;padding:0;list-style:none;position:relative}.pp:before{content:"";position:absolute;left:5%;right:5%;top:32px;height:4px;background:linear-gradient(90deg,#1c1140,#235070 62%,#f28db1)}
-.pp li{flex:1;position:relative;text-align:center}.pp .o{width:64px;height:64px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;background:#fff;border:4px solid #235070;font:700 .8rem Outfit,sans-serif;color:var(--ink);position:relative;z-index:1}.pp .me .o{background:#f28db1;border-color:#f28db1}.pp b{display:block;font:700 1rem Outfit,sans-serif;color:var(--ink)}.pp .lp{display:none}
-.a6 p.t{max-width:62ch;margin:26px 0 0}.lp2{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}.lp2 li{border-radius:999px;padding:8px 16px;background:#f3efff;font:600 .9rem Outfit,sans-serif;color:var(--ink)}.lp2 li:nth-child(5){background:#f28db1}
-.a7{background:linear-gradient(110deg,#14122b 0%,#235070 70%,#f28db1 190%);color:#fff;padding:clamp(56px,8vw,100px) 0}.a7 ol{margin:0;padding:0;list-style:none;counter-reset:r}.a7 li{counter-increment:r;display:flex;align-items:baseline;gap:20px;padding:16px 0;border-top:1px solid rgba(255,255,255,.25);font:700 clamp(1.4rem,3.6vw,2.6rem)/1.1 Outfit,sans-serif;letter-spacing:-.025em}.a7 li:before{content:counter(r,decimal-leading-zero);font:600 .8rem Inter,sans-serif;letter-spacing:.1em;color:#f28db1;min-width:2.2em}
-.a8{background:#f3efff;padding:clamp(40px,6vw,70px) 0}.a8 .g{display:flex;align-items:center;gap:30px;flex-wrap:wrap}.a8 h2{margin:0;font:700 clamp(2rem,6vw,4rem)/1 Outfit,sans-serif;letter-spacing:-.04em;color:var(--ink)}.a8 p{margin:6px 0 0;max-width:46ch}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#f28db1;margin-right:8px;animation:bl 1.4s infinite}@keyframes bl{50%{opacity:.25}}
-.a9{padding:clamp(56px,8vw,100px) 0}.a9 .row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:10px 40px;align-items:baseline;padding:14px 0;border-top:1px solid #e3e1ef}.a9 h3{margin:0;font:700 clamp(2.4rem,8vw,5.8rem)/.95 Outfit,sans-serif;letter-spacing:-.05em;color:var(--ink)}.a9 .row:nth-child(2) h3{color:#235070}.a9 .row:nth-child(3) h3{color:#f28db1}.a9 p{margin:0;font-size:1.05rem}
-@media(max-width:820px){.a1 .g{grid-template-columns:1fr}.mk{justify-self:start;max-width:300px;transform:rotate(2deg)}.rc{grid-template-columns:1fr}.rc.hd{display:none}.rc div small{display:block;font:600 .64rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:4px}.rc div:nth-child(3){transform:none}.tl,.a9 .row{grid-template-columns:1fr}.pp{flex-direction:column;gap:18px;align-items:stretch}.pp:before{left:31px;right:auto;top:20px;bottom:20px;width:4px;height:auto;background:linear-gradient(180deg,#1c1140,#235070 62%,#f28db1)}.pp li{display:flex;align-items:center;gap:16px;text-align:left}.pp .o{margin:0;flex:0 0 64px}.br2{grid-template-columns:78px 1fr}.br2.big i{white-space:normal;font-size:.8rem;padding:10px 16px}}
+.a3{background:#f3efff;padding:clamp(40px,6vw,70px) 0}.a3 h2{font:700 clamp(1.6rem,3.6vw,2.6rem)/1.05 Outfit,sans-serif;letter-spacing:-.03em;margin:0 0 22px;color:var(--ink)}
+.ch2{background:#fff;border:1px solid #e3e1ef;border-radius:18px;padding:18px 20px 12px}.ch2 .ct{font:600 .85rem Inter,sans-serif;color:var(--ink);margin-bottom:14px}
+.br2{display:grid;grid-template-columns:90px 1fr;gap:0 14px;align-items:center;margin:0 0 8px}.br2 b{font:600 .9rem Outfit,sans-serif;color:var(--ink)}
+.tr{height:30px;border-right:1px solid #e3e1ef;border-left:1px solid #e3e1ef;background:linear-gradient(90deg,#ececf5 1px,transparent 1px) 0 0/25% 100%;display:flex;align-items:center}.tr i{display:block;height:20px;border-radius:0 8px 8px 0;background:#8da1b8}.tr em{font-style:normal;font-size:.78rem;margin-left:8px;color:#6b6985;white-space:nowrap}
+.br2.big .tr{height:38px}.br2.big .tr i{height:28px;background:linear-gradient(90deg,#1c1140,#235070 62%,#f28db1);width:100%;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;color:#fff;font:600 .8rem Inter,sans-serif}.br2.big b{font-size:1rem}
+.ax{display:grid;grid-template-columns:90px 1fr;gap:0 14px;margin-top:4px}.ax div{display:flex;justify-content:space-between;font:600 .68rem Inter,sans-serif;color:#6b6985;letter-spacing:.04em;text-transform:uppercase}
+.a3 small{display:block;margin-top:12px;color:#6b6985;font-size:.8rem}
+.a4{padding:clamp(40px,6vw,70px) 0}.tl{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:10px 40px;align-items:center;padding:16px 0;border-top:1px solid #e3e1ef}
+.tl h3{margin:0;font:700 clamp(2rem,5vw,3.4rem)/1 Outfit,sans-serif;letter-spacing:-.04em;color:#235070}.tl:nth-child(2n) h3{color:#f28db1}.tl p{margin:0;font-size:1.05rem;line-height:1.5}
+.a5{background:#14122b;color:#fff;padding:clamp(40px,6vw,70px) 0}.a5 h2{font:700 clamp(1.8rem,4.4vw,3rem)/1 Outfit,sans-serif;letter-spacing:-.035em;margin:0 0 6px}.a5 .n{opacity:.7;margin:0 0 20px;font-size:.95rem}
+.rc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:8px}.rc.hd{margin-bottom:4px}.rc.hd span{font:600 .64rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#f28db1}
+.rc div{border-radius:12px;padding:10px 12px;font-size:.88rem;line-height:1.35;background:rgba(255,255,255,.07)}.rc div small{display:none}.rc div:nth-child(1){font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:#c9c3ff}.rc div:nth-child(2){opacity:.7}.rc div:nth-child(3){background:#f28db1;color:#14122b;font-weight:600}.rc div:nth-child(4){background:#fff;color:#14122b;font-weight:600}
+.al{margin-top:22px;border-top:1px dashed rgba(255,255,255,.3);padding-top:16px}.al p{margin:0 0 8px;opacity:.8;font-size:.9rem}.al>span{display:inline-block;margin:0 8px 8px 0;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:5px 12px;font-size:.82rem}
+.a6{padding:clamp(40px,6vw,70px) 0}.fw{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr;align-items:stretch;margin:6px 0 0}
+.fw .nd{border:1px solid #e3e1ef;border-radius:16px;padding:14px 12px;text-align:center}.fw .ic{height:44px;display:grid;place-items:center;margin-bottom:8px}.fw .ic img{height:44px;width:44px;border-radius:50%}.fw .ic svg{width:34px;height:34px;stroke:#235070;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fw b{display:block;font:700 .98rem Outfit,sans-serif;color:var(--ink)}.fw p{margin:4px 0 0;font-size:.82rem;line-height:1.35}.fw .fa{align-self:center;text-align:center;color:#f28db1;font-weight:700}
+.a6 p.t{max-width:62ch;margin:20px 0 0}.lp2{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;padding:0;list-style:none}.lp2 li{border-radius:999px;padding:5px 14px;background:#f3efff;font:600 .82rem Outfit,sans-serif;color:var(--ink)}.lp2 li:last-child{background:#f28db1}
+.a7{background:linear-gradient(110deg,#14122b 0%,#235070 70%,#f28db1 190%);color:#fff;padding:clamp(36px,5vw,56px) 0}.a7 ol{margin:0;padding:0;list-style:none;counter-reset:r;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px}.a7 li{counter-increment:r;display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid rgba(255,255,255,.25);font:600 clamp(1rem,1.9vw,1.25rem)/1.25 Outfit,sans-serif}.a7 li:before{content:counter(r,decimal-leading-zero);font:600 .7rem Inter,sans-serif;letter-spacing:.1em;color:#f28db1;min-width:2em}
+.a8{margin-top:clamp(40px,6vw,64px);border-top:1px dashed #cfcce0;padding:18px 0 8px}.a8 .k{color:#6b6985}.a8 .og{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 30px}.a8 b{display:block;font:700 1rem Outfit,sans-serif;color:var(--ink)}.a8 p{margin:3px 0 0;font-size:.9rem;line-height:1.4;color:#4f5d78}
+@media(max-width:820px){.a1 .g{grid-template-columns:1fr}.mk{justify-self:start;max-width:300px;transform:rotate(2deg)}.a0{grid-template-columns:1fr}.rc{grid-template-columns:1fr}.rc.hd{display:none}.rc div small{display:block;font:600 .62rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:3px}.tl{grid-template-columns:1fr}.fw{grid-template-columns:1fr}.fw .fa{transform:rotate(90deg);padding:6px 0}.a7 ol{grid-template-columns:1fr}.a8 .og{grid-template-columns:1fr}.br2,.ax{grid-template-columns:62px 1fr}}
 """
+
+ICO = {
+ 'ai': '<svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 1.8L21.5 18.5l-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg>',
+ 'git': '<svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2.4"/><circle cx="6" cy="19" r="2.4"/><circle cx="18" cy="9" r="2.4"/><path d="M6 7.4v9.2M18 11.4c0 4-6 3-12 5.6"/></svg>',
+ 'web': '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>',
+ 'ok': '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7.5 12.5l3 3 6-7"/></svg>'}
 
 def ia(data, S):
     P = data['page']
@@ -437,11 +448,15 @@ def ia(data, S):
             f'<p class="h2"><s>{t(P["l1"])}</s><b>{t(P["l2"])}</b></p><p class="in2">{t(P["intro"])}</p></div>'
             f'<div class="mk"><i><span></span></i><p class="m"><b>{t(["Me","Eu"])}</b>{t(P["mock_me"])}</p><p class="c"><b>Claude</b>{t(P["mock_ai"])}</p></div></div></div>'
             f'<div class="tk"><div>{tk}{tk}{tk}{tk}</div></div></section>')
+    top3 = '<section class="a0">' + ''.join(f'<div><h3>{t(a)}</h3><p>{t(b)}</p></div>' for a, b in zip(P['close'], P['close_t'])) + '</section>'
     time_ = (f'<section class="a2"><span class="k">{t(P["time_k"])}</span><div class="big"><s>{t(P["time_old"])}</s><em>{t(P["time_new"])}</em></div>'
              f'<p>{t(P["time_t"])}</p><small>{t(P["time_n"])}</small></section>')
-    bars = ''.join(f'<div class="br2"><b>{b[0]}</b><div><i style="width:{b[2]}%"></i><em>{t(b[1])}</em></div></div>' for b in P['bars'])
-    bars_ = (f'<section class="fb a3"><div class="in"><span class="k">{t(P["bars_k"])}</span><h2>{t(P["bars_h"])}</h2>{bars}'
-             f'<div class="br2 big"><b>{t(P["bar_big"])}</b><i>{t(P["bar_big2"])}</i></div><small>{t(P["bar_note"])}</small></div></section>')
+    bars = ''.join(f'<div class="br2"><b>{b[0]}</b><div class="tr"><i style="width:{b[2]}%"></i><em>{t(b[1])}</em></div></div>' for b in P['bars'])
+    ax = ''.join(f'<span>{t(x)}</span>' for x in P['axis'])
+    bars_ = (f'<section class="fb a3"><div class="in"><span class="k">{t(P["bars_k"])}</span><h2>{t(P["bars_h"])}</h2>'
+             f'<div class="ch2" role="img" aria-label="chart"><div class="ct">{t(P["chart_t"])}</div>{bars}'
+             f'<div class="br2 big"><b>{t(P["bar_big"])}</b><div class="tr"><i>{t(P["bar_big2"])}</i></div></div>'
+             f'<div class="ax"><span></span><div>{ax}</div></div></div><small>{t(P["bar_note"])}</small></div></section>')
     tools = ''.join(f'<div class="tl"><h3>{t(x[0])}</h3><p>{t(x[1])}</p></div>' for x in P['tools'])
     tools_ = f'<section class="a4"><span class="k">{t(P["tool_k"])}</span>{tools}</section>'
     hd = ''.join(f'<span>{t(c)}</span>' for c in P['rec_cols'])
@@ -449,13 +464,16 @@ def ia(data, S):
     also = ''.join(f'<span>{t(x)}</span>' for x in P['also_l'])
     rec_ = (f'<section class="fb a5"><div class="in"><span class="k">{t(P["rec_k"])}</span><h2>{t(P["rec_h"])}</h2><p class="n">{t(P["rec_n"])}</p>'
             f'<div class="rc hd">{hd}</div>{recs}<div class="al"><p>{t(P["also"])}</p>{also}</div></div></section>')
-    nodes = ''.join(f'<li class="{"me" if n[1][0]=="Me" else ""}"><div class="o">{t(n[1])}</div><b>{t(n[0])}</b></li>' for n in P['nodes'])
+    nodes = []
+    for n in P['nodes']:
+        ic = '<img src="assets/logo.png" alt="">' if n[2] == 'me' else ICO[n[2]]
+        nodes.append(f'<div class="nd"><div class="ic">{ic}</div><b>{t(n[0])}</b><p>{t(n[1])}</p></div>')
+    flow = '<div class="fa">→</div>'.join(nodes)
     loop = ''.join(f'<li>{t(x)}</li>' for x in P['loop'])
-    pipe_ = (f'<section class="a6"><span class="k">{t(P["pipe_k"])}</span><ol class="pp">{nodes}</ol><p class="t">{t(P["pipe_t"])}</p><ul class="lp2">{loop}</ul></section>')
+    pipe_ = (f'<section class="a6"><span class="k">{t(P["pipe_k"])}</span><div class="fw">{flow}</div><p class="t">{t(P["pipe_t"])}</p><ul class="lp2">{loop}</ul></section>')
     rules_ = f'<section class="fb a7"><div class="in"><span class="k">{t(P["rules_k"])}</span><ol>' + ''.join(f'<li>{t(x)}</li>' for x in P['rules']) + '</ol></div></section>'
-    next_ = (f'<section class="fb a8"><div class="in"><div class="g"><div><span class="k"><span class="dot"></span>{t(P["next_k"])}</span><h2>{t(P["next_h"])}</h2><p>{t(P["next_t"])}</p></div></div></div></section>')
-    close_ = '<section class="a9">' + ''.join(f'<div class="row"><h3>{t(a)}</h3><p>{t(b)}</p></div>' for a, b in zip(P['close'], P['close_t'])) + '</section>'
-    body = head + menu + hero + time_ + bars_ + tools_ + rec_ + pipe_ + rules_ + next_ + close_ + foot
+    out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
+    body = head + menu + hero + top3 + time_ + bars_ + tools_ + rec_ + pipe_ + rules_ + out_ + foot
     page = shell('Suelen Magalhães — AI', body)
     return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
 

@@ -17,8 +17,8 @@
    "Eu projeto."
   ],
   "intro": [
-   "I know basic HTML, CSS is a struggle, Python and GitHub were theory. I still built this bilingual, modular site, because I know what I want and why. AI replaced the tools that held me back. It did not replace the design knowledge I built over the years.",
-   "Sei o básico de HTML, CSS é uma luta, Python e GitHub eram teoria. Mesmo assim construí este site bilíngue e modular, porque sei o que quero e por quê. A IA substituiu as ferramentas que me travavam. Não substituiu o conhecimento de design que construí ao longo dos anos."
+   "My site was on Wix and it held me back. I replaced it with one made with AI, even though I know basic HTML, CSS is a struggle, and Python and GitHub were theory. I know what I want and why. AI replaced the tools that held me back. It did not replace the design knowledge I built over the years.",
+   "Meu site estava no Wix e me travava. Troquei por um feito com IA, mesmo sabendo só o básico de HTML, com CSS difícil e Python e GitHub só na teoria. Eu sei o que quero e por quê. A IA substituiu as ferramentas que me travavam. Não substituiu o conhecimento de design que construí ao longo dos anos."
   ],
   "mock_me": [
    "Green is the client's color, not mine.",
@@ -42,8 +42,8 @@
     "Toda mudança revisada por uma pessoa"
    ],
    [
-    "The Wix site stays online",
-    "O site no Wix continua no ar"
+    "The Wix site stays online until I approve everything",
+    "O site no Wix segue no ar até eu aprovar tudo"
    ],
    [
     "No framework without a reason",
@@ -63,20 +63,20 @@
    "1 dia"
   ],
   "time_t": [
-   "Starting point: a Wix site that locked me in when I wanted to preview different formats. Building one like this would have taken me about two weeks, quick-and-dirty. Here it took about a day of work so far.",
-   "Ponto de partida: um site no Wix que me travava quando eu queria visualizar formatos diferentes. Montar algo assim levaria umas duas semanas no modo go horse. Aqui foi cerca de um dia de trabalho até agora."
+   "Starting point: a Wix site that locked me in when I wanted to preview different formats. Building a site like this would have taken me about two weeks, quick-and-dirty. Here it took about a day of work so far.",
+   "Ponto de partida: um site no Wix que me travava quando eu queria visualizar formatos diferentes. Montar um site assim levaria umas duas semanas no modo go horse. Aqui foi cerca de um dia de trabalho até agora."
   ],
   "time_n": [
-   "My own estimate. The Wix site stayed untouched and online the whole time.",
-   "Estimativa minha. O site no Wix ficou intacto e no ar o tempo todo."
+   "My own estimate. The Wix site stays online until I approve everything.",
+   "Estimativa minha. O site no Wix segue no ar até eu aprovar tudo."
   ],
   "bars_k": [
    "Who drove",
    "Quem conduziu"
   ],
   "bars_h": [
-   "The small bars are what AI covered. The big one is mine.",
-   "As barras pequenas são o que a IA cobriu. A grande é minha."
+   "What AI covered, and what was mine",
+   "O que a IA cobriu e o que foi meu"
   ],
   "bars": [
    [
@@ -85,7 +85,7 @@
      "basic",
      "básico"
     ],
-    14
+    22
    ],
    [
     "CSS",
@@ -93,7 +93,7 @@
      "a struggle",
      "luta"
     ],
-    12
+    18
    ],
    [
     "Python",
@@ -101,7 +101,7 @@
      "theory",
      "teoria"
     ],
-    8
+    10
    ],
    [
     "GitHub",
@@ -109,7 +109,7 @@
      "theory",
      "teoria"
     ],
-    8
+    10
    ]
   ],
   "bar_big": [
@@ -117,12 +117,12 @@
    "Design"
   ],
   "bar_big2": [
-   "10+ years · heuristics, gestalt, brand, hierarchy",
-   "10+ anos · heurísticas, gestalt, marca, hierarquia"
+   "10+ years",
+   "10+ anos"
   ],
   "bar_note": [
-   "Illustrative, not a measurement.",
-   "Ilustrativo, não é uma medição."
+   "Illustrative self-assessment, not a measurement. AI covered the areas where I am a beginner.",
+   "Autoavaliação ilustrativa, não é uma medição. A IA cobriu as áreas em que sou iniciante."
   ],
   "tool_k": [
    "In place of the tool",
@@ -155,8 +155,8 @@
      "Ideação"
     ],
     [
-     "Options to compare, then my choice (“I like A”). I also turned a table from an Instituto Jô Clemente publication into a card, and used AI for charts and tables in that work.",
-     "Opções para comparar e depois a minha escolha (“gostei do A”). Também transformei uma tabela de uma publicação do Instituto Jô Clemente em card e usei IA para gráficos e tabelas nesse trabalho."
+     "I ask for options to compare, then I choose (“I like A”). The choice and the reason are mine.",
+     "Peço opções para comparar e depois eu escolho (“gostei do A”). A escolha e o motivo são meus."
     ]
    ]
   ],
@@ -165,7 +165,7 @@
    "Recibos"
   ],
   "rec_h": [
-   "Prompt. Critique. Result.",
+   "Request. Critique. Result.",
    "Pedido. Crítica. Resultado."
   ],
   "rec_n": [
@@ -283,19 +283,20 @@
    ]
   ],
   "pipe_k": [
-   "The setup",
-   "A estrutura"
+   "How it works",
+   "Como funciona"
   ],
   "nodes": [
    [
     [
-     "Content",
-     "Conteúdo"
-    ],
-    [
      "Me",
      "Eu"
-    ]
+    ],
+    [
+     "Content and direction",
+     "Conteúdo e direção"
+    ],
+    "me"
    ],
    [
     [
@@ -303,9 +304,10 @@
      "Claude"
     ],
     [
-     "AI",
-     "IA"
-    ]
+     "Writes and tests the code",
+     "Escreve e testa o código"
+    ],
+    "ai"
    ],
    [
     [
@@ -313,9 +315,10 @@
      "GitHub"
     ],
     [
-     "Me",
-     "Eu"
-    ]
+     "Stores and versions it",
+     "Guarda e versiona"
+    ],
+    "git"
    ],
    [
     [
@@ -323,24 +326,26 @@
      "GitHub Pages"
     ],
     [
-     "Auto",
-     "Auto"
-    ]
+     "Publishes each page",
+     "Publica cada página"
+    ],
+    "web"
    ],
    [
     [
-     "Wix",
-     "Wix"
+     "My approval",
+     "Minha aprovação"
     ],
     [
-     "Me",
-     "Eu"
-    ]
+     "Nothing goes live without my OK",
+     "Nada vai ao ar sem o meu OK"
+    ],
+    "ok"
    ]
   ],
   "pipe_t": [
-   "Texts, images and files come from me. Claude writes and tests the generator. I upload to GitHub, which builds each page. Wix embeds the pages and the official domain stays untouched.",
-   "Textos, imagens e arquivos vêm de mim. O Claude escreve e testa o gerador. Eu envio ao GitHub, que monta cada página. O Wix incorpora as páginas e o domínio oficial não é alterado."
+   "The project is replacing my Wix site with one made with AI. The Wix site stays online until I approve everything.",
+   "O projeto é trocar o meu site no Wix por um feito com IA. O Wix segue no ar até eu aprovar tudo."
   ],
   "loop": [
    [
@@ -390,8 +395,8 @@
     "Sem reescritas gerais."
    ],
    [
-    "The Wix site stays online.",
-    "O site no Wix continua no ar."
+    "The Wix site stays online until I approve everything.",
+    "O site no Wix segue no ar até eu aprovar tudo."
    ]
   ],
   "next_k": [
@@ -432,6 +437,50 @@
    [
     "I catch what is wrong, from a detail to an invented claim.",
     "Percebo o que está errado, de um detalhe a uma afirmação inventada."
+   ]
+  ],
+  "chart_t": [
+   "My skill level, self-assessed",
+   "Meu nível em cada área, autoavaliação"
+  ],
+  "axis": [
+   [
+    "beginner",
+    "iniciante"
+   ],
+   [
+    "intermediate",
+    "intermediário"
+   ],
+   [
+    "advanced",
+    "avançado"
+   ]
+  ],
+  "out_k": [
+   "Outside this site",
+   "Fora deste site"
+  ],
+  "out": [
+   [
+    [
+     "Instituto Jô Clemente",
+     "Instituto Jô Clemente"
+    ],
+    [
+     "In one publication I used AI for charts and tables, and turned a table into a card.",
+     "Em uma publicação usei IA para gráficos e tabelas, e transformei uma tabela em card."
+    ]
+   ],
+   [
+    [
+     "Political radar",
+     "Radar político"
+    ],
+    [
+     "In progress: the same approach on another tool.",
+     "Em andamento: a mesma abordagem em outra ferramenta."
+    ]
    ]
   ]
  }
