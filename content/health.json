@@ -154,6 +154,22 @@
     "cvv": [
       "Support in Brazil: CVV, call 188 (free, 24 hours).",
       "Apoio no Brasil: CVV, ligue 188 (gratuito, 24 horas)."
+    ],
+    "courses": [
+      "Online courses",
+      "Cursos online"
+    ],
+    "courses2": [
+      "Learning experiences for health professionals: how each course looks, navigates and guides the learner.",
+      "Experiências de aprendizagem para profissionais da saúde: como cada curso aparece, navega e conduz o aluno."
+    ],
+    "topics": [
+      "Course themes",
+      "Temas do curso"
+    ],
+    "tutorial": [
+      "Browse the navigation tutorial",
+      "Ver o tutorial de navegação"
     ]
   },
   "books": [
@@ -284,6 +300,138 @@
         ]
       ],
       "cvv": true
+    }
+  ],
+  "courses": [
+    {
+      "id": "saude-da-mulher",
+      "cls": "c1",
+      "accent": "#ec6e57",
+      "tint": "#fdf0ec",
+      "img": "cur_mulher",
+      "viewer": "tutorial",
+      "kind": [
+        "Online course",
+        "Curso online"
+      ],
+      "title": [
+        "Saúde da Mulher",
+        "Saúde da Mulher"
+      ],
+      "year": "2019",
+      "text": [
+        "A coral triangle identity, a guide character named Marjorie and six clinical-case characters. I also designed the navigation tutorial: annotated screens that take the learner from the pre-test through the clinical cases to the post-test and the certificate on Plataforma Arouca.",
+        "Uma identidade com o triângulo coral, uma personagem-guia chamada Marjorie e seis personagens para os casos clínicos. Também desenhei o tutorial de navegação: telas anotadas que levam o aluno do pré-teste, passando pelos casos clínicos, até o pós-teste e o certificado na Plataforma Arouca."
+      ],
+      "topics": [
+        [
+          "Saúde integral da mulher & SUS",
+          "Saúde integral da mulher & SUS"
+        ],
+        [
+          "Cuidado da mulher na atenção básica",
+          "Cuidado da mulher na atenção básica"
+        ],
+        [
+          "Protocolos de cuidado às mulheres",
+          "Protocolos de cuidado às mulheres"
+        ],
+        [
+          "Casos clínicos e avaliação",
+          "Casos clínicos e avaliação"
+        ]
+      ],
+      "chips": [
+        [
+          "Identity",
+          "Identidade"
+        ],
+        [
+          "Course interface",
+          "Interface do curso"
+        ],
+        [
+          "Navigation tutorial",
+          "Tutorial de navegação"
+        ]
+      ]
+    },
+    {
+      "id": "dermatologia",
+      "cls": "c2",
+      "accent": "#1f7a75",
+      "tint": "#eef7f6",
+      "img": "cur_derm",
+      "kind": [
+        "Online course",
+        "Curso online"
+      ],
+      "title": [
+        "Dermatologia na atenção básica",
+        "Dermatologia na atenção básica"
+      ],
+      "text": [
+        "A teal and warm-brown system with line icons, a dotted texture and clinical-case screens, shown here on the acne theme.",
+        "Um sistema em verde-azulado e marrom quente, com ícones de linha, textura pontilhada e telas de caso clínico, aqui no tema da acne."
+      ],
+      "chips": [
+        [
+          "Course interface",
+          "Interface do curso"
+        ],
+        [
+          "Icons",
+          "Ícones"
+        ]
+      ]
+    },
+    {
+      "id": "saude-indigena",
+      "cls": "c3",
+      "accent": "#c0453a",
+      "tint": "#fbf0ee",
+      "img": "cur_ind",
+      "logo": "cur_ind_logo",
+      "kind": [
+        "Online course",
+        "Curso online"
+      ],
+      "title": [
+        "Saúde Indígena",
+        "Saúde Indígena"
+      ],
+      "text": [
+        "A hand-drawn wordmark with an arrow, beads and feathers as decorative elements, and a hand-lettered type for the course themes.",
+        "Um logotipo desenhado à mão com uma flecha, contas e penas como elementos decorativos, e uma tipografia manuscrita para os temas do curso."
+      ],
+      "topics": [
+        [
+          "Adaptação ao ambiente virtual e introdução aos povos indígenas do Brasil",
+          "Adaptação ao ambiente virtual e introdução aos povos indígenas do Brasil"
+        ],
+        [
+          "Antropologia e saúde",
+          "Antropologia e saúde"
+        ],
+        [
+          "Políticas e organização dos serviços de saúde indígena",
+          "Políticas e organização dos serviços de saúde indígena"
+        ],
+        [
+          "Epidemiologia e vigilância em saúde",
+          "Epidemiologia e vigilância em saúde"
+        ]
+      ],
+      "chips": [
+        [
+          "Identity",
+          "Identidade"
+        ],
+        [
+          "Course interface",
+          "Interface do curso"
+        ]
+      ]
     }
   ]
 }

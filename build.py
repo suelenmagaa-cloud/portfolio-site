@@ -233,7 +233,7 @@ HCSS = """body.hl{background:#fff}.hl .intro{display:none}
 .hs li{list-style:none;position:relative;padding:50px 22px 0 0;counter-increment:s}.hs li::before{content:counter(s);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:#fff;border:3px solid var(--navy);display:grid;place-items:center;font:700 .95rem Outfit,sans-serif;color:var(--navy)}
 .hs b{display:block;font:600 1.05rem Outfit,sans-serif;color:var(--ink);margin-bottom:.3em}.hs span{font-size:.85rem;line-height:1.45;color:var(--navy)}.hs ol{display:contents;margin:0;padding:0}
 .hc{margin:88px 4px 0}.hc>p{margin:-12px 0 36px;font-size:.95rem}
-.bk{--a:#c9806a;--t:#fbf1ed;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;border-radius:28px;padding:56px;margin:0 0 36px;background:linear-gradient(var(--a),var(--a)) top/100% 7px no-repeat,var(--t)}
+.bk{--a:#c9806a;--t:#fbf1ed;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;border-radius:28px;padding:56px;margin:0 0 36px!important;background:linear-gradient(var(--a),var(--a)) top/100% 7px no-repeat,var(--t)}
 .bk.rev{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}.bk.rev .fan{order:2}
 .fan{position:relative;aspect-ratio:1/1.12;max-width:420px;width:100%;margin:0 auto;border:0;padding:0;background:none;cursor:pointer}
 .fan img{position:absolute;width:72%;height:auto;border-radius:3px;box-shadow:0 14px 34px rgba(20,18,43,.22);transition:transform .35s}
@@ -250,6 +250,17 @@ HCSS = """body.hl{background:#fff}.hl .intro{display:none}
 .if .k{font:600 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}.if h3{font:700 clamp(1.5rem,2.6vw,2.15rem)/1.12 Outfit,sans-serif;letter-spacing:-.02em;margin:.3em 0 .5em;color:#fff}.if p{font-size:1rem;line-height:1.55;margin:0 0 14px;color:#e6e2f5}.if .sr{font-size:.8rem;opacity:.75}
 .if .hb{color:#fff;border-bottom-color:var(--pink)}.if .hb:hover{color:var(--pink)}
 .ifr{display:flex;gap:20px;justify-content:center}.ifr .ifs{flex:0 1 360px;min-width:0;height:720px;overflow-y:auto;overflow-x:hidden;background:#14122b;border-radius:14px;scrollbar-width:thin;box-shadow:0 18px 40px rgba(0,0,0,.35)}.ifr img{display:block;width:100%;height:auto}
+.cw{align-items:stretch;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px;margin:0 0 36px}
+.cs{margin:0!important;--a:#ec6e57;--t:#fdf0ec;background:var(--t);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;grid-column:span 6;background:linear-gradient(var(--a),var(--a)) top/100% 7px no-repeat,var(--t)}
+.cs.c1{grid-column:span 8}.cs.c2{grid-column:span 4}.cs.c3{grid-column:span 12;flex-direction:row}
+.cs .ci{margin:7px 0 0;line-height:0;background:#fff}.cs .ci img{display:block;width:100%;height:100%;object-fit:cover}.cs.c2 .ci{position:relative;flex:1;min-height:340px}.cs.c2 .ci img{position:absolute;inset:0}.cs.c3 .ci{flex:1.5;min-width:0}
+.cs .ct{padding:34px 36px 38px}.cs.c3 .ct{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;margin-top:7px}
+.cs .k{font:600 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--a);filter:brightness(.8)}
+.cs h3{font:700 clamp(1.4rem,2.3vw,1.9rem)/1.12 Outfit,sans-serif;color:var(--ink);letter-spacing:-.02em;margin:.3em 0 .45em}.cs h3 small{font:600 .8rem Inter,sans-serif;color:var(--navy);opacity:.6;margin-left:8px;letter-spacing:0}
+.cs p{font-size:.95rem;line-height:1.55;color:var(--navy);margin:0 0 16px}.cs .lg{height:38px;width:auto;display:block;margin:0 0 14px}
+.cs .tp{margin:0 0 18px;padding:0;list-style:none;display:grid;gap:6px;font-size:.84rem;color:var(--navy)}.cs .tp li{padding-left:16px;position:relative}.cs .tp li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--a)}
+.cs .chips{margin:0 0 20px}
+@media(max-width:860px){.cw{grid-template-columns:minmax(0,1fr)}.cs,.cs.c1,.cs.c2,.cs.c3{grid-column:auto;flex-direction:column;border-radius:22px}.cs .ct{padding:26px 22px 30px}.cs.c3 .ct{margin-top:0}.cs.c2 .ci{flex:none;min-height:0}.cs.c2 .ci img{position:static}}
 dialog.hv{border:0;border-radius:18px;padding:0;width:min(1000px,96vw);height:min(92vh,980px);background:#14122b;color:#fff;overflow:hidden}dialog.hv::backdrop{background:rgba(20,18,43,.72)}
 dialog.hv[open]{display:flex;flex-direction:column}.hv .hh{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.12)}.hv .hh b{flex:1;font:600 .95rem Outfit,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hv .hh span{font:600 .8rem Inter,sans-serif;opacity:.7}
 .hv button{font:600 .85rem Inter,sans-serif;color:#fff;background:none;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:6px 16px;cursor:pointer}.hv button:hover{border-color:var(--pink);color:var(--pink)}
@@ -295,6 +306,23 @@ def health(data, S):
                        '<div class="ifr"><div class="ifs" tabindex="0" aria-label="Infographic 1"><img loading="lazy" alt="" src="assets/health/info_1.webp"></div>'
                        '<div class="ifs" tabindex="0" aria-label="Infographic 2"><img loading="lazy" alt="" src="assets/health/info_3.webp"></div></div></article>')
     chap = f'<section class="hc"><h2>{t(P["chapter"])}</h2><p>{t(P["chapter2"])}</p>{blocks}</section>'
+
+    courses = ''
+    for c in data.get('courses', []):
+        I = c.get('viewer')
+        if I:
+            seq = ['assets/health/tut_%02d.webp' % i for i in range(0, 8)]
+            G[I] = {'t': c['title'][1] + ' · ' + P['tutorial'][1], 'i': seq, 'h': seq, 'p': True}
+        tp = ''.join(f'<li>{t(x)}</li>' for x in c.get('topics', []))
+        tp = f'<ul class="tp" aria-label="{html.escape(P["topics"][1])}">{tp}</ul>' if tp else ''
+        chips = ''.join(f'<span>{t(r)}</span>' for r in c['chips'])
+        yr = f'<small>{c["year"]}</small>' if c.get('year') else ''
+        lg = f'<img class="lg" alt="" src="assets/health/{c["logo"]}.webp">' if c.get('logo') else ''
+        btn = f'<button class="hb" data-g="{I}" style="--a:{c["accent"]}">{t(P["tutorial"])} &#8599;</button>' if I else ''
+        courses += (f'<article class="cs {c["cls"]}" id="{c["id"]}" style="--a:{c["accent"]};--t:{c["tint"]}"><div class="ci"><img loading="lazy" alt="" src="assets/health/{c["img"]}.webp"></div>'
+                    f'<div class="ct"><span class="k">{t(c["kind"])}</span><h3>{t(c["title"])}{yr}</h3>{lg}<p>{t(c["text"])}</p>{tp}<div class="chips">{chips}</div>{btn}</div></article>')
+    if courses:
+        chap += f'<section class="hc"><h2>{t(P["courses"])}</h2><p>{t(P["courses2"])}</p><div class="cw">{courses}</div></section>'
     viewer = (f'<dialog class="hv" aria-label="Viewer"><div class="hh"><b></b><span></span><div class="nv"><button data-a="p">&#8249; {t(P["prev"])}</button> <button data-a="n">{t(P["next"])} &#8250;</button></div>'
               f'<button data-a="x">{t(P["close"])}</button></div><div class="st"></div><div class="th"></div></dialog>')
     page = shell('Suelen Magalhães — Health', head + menu + top + proc + chap + foot)
