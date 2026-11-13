@@ -246,10 +246,10 @@ HCSS = """body.hl{background:#fff}.hl .intro{display:none}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}.chips>span{background:#fff;border:1px solid var(--a);border-radius:999px;padding:4px 14px;font:600 .74rem Inter,sans-serif;color:var(--navy)}
 .hb{border:0;background:none;padding:0 0 2px;cursor:pointer;font:600 .95rem Inter,sans-serif;color:var(--navy);border-bottom:3px solid var(--a);transition:color .2s}.hb:hover{color:var(--violet)}
 .cvv{margin:18px 0 0;font-size:.8rem;color:var(--navy);opacity:.8}
-.if{background:linear-gradient(135deg,#1c1140 0%,#235070 70%,#4a2c6e 130%);color:#fff;border-radius:28px;padding:56px;margin:0 0 36px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:48px;align-items:center}
+.if{background:linear-gradient(135deg,#1c1140 0%,#235070 70%,#4a2c6e 130%);color:#fff;border-radius:28px;padding:56px;margin:0 0 36px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:48px;align-items:center}
 .if .k{font:600 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}.if h3{font:700 clamp(1.5rem,2.6vw,2.15rem)/1.12 Outfit,sans-serif;letter-spacing:-.02em;margin:.3em 0 .5em;color:#fff}.if p{font-size:1rem;line-height:1.55;margin:0 0 14px;color:#e6e2f5}.if .sr{font-size:.8rem;opacity:.75}
 .if .hb{color:#fff;border-bottom-color:var(--pink)}.if .hb:hover{color:var(--pink)}
-.ifr{display:flex;gap:20px;justify-content:center}.ifr button{flex:0 1 300px;min-width:0;height:640px;overflow-y:auto;overflow-x:hidden;border:0;padding:0;background:#14122b;border-radius:14px;cursor:pointer;scrollbar-width:thin;box-shadow:0 18px 40px rgba(0,0,0,.35)}.ifr img{display:block;width:100%;height:auto}
+.ifr{display:flex;gap:20px;justify-content:center}.ifr .ifs{flex:0 1 360px;min-width:0;height:720px;overflow-y:auto;overflow-x:hidden;background:#14122b;border-radius:14px;scrollbar-width:thin;box-shadow:0 18px 40px rgba(0,0,0,.35)}.ifr img{display:block;width:100%;height:auto}
 dialog.hv{border:0;border-radius:18px;padding:0;width:min(1000px,96vw);height:min(92vh,980px);background:#14122b;color:#fff;overflow:hidden}dialog.hv::backdrop{background:rgba(20,18,43,.72)}
 dialog.hv[open]{display:flex;flex-direction:column}.hv .hh{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.12)}.hv .hh b{flex:1;font:600 .95rem Outfit,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hv .hh span{font:600 .8rem Inter,sans-serif;opacity:.7}
 .hv button{font:600 .85rem Inter,sans-serif;color:#fff;background:none;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:6px 16px;cursor:pointer}.hv button:hover{border-color:var(--pink);color:var(--pink)}
@@ -257,7 +257,7 @@ dialog.hv[open]{display:flex;flex-direction:column}.hv .hh{display:flex;align-it
 .hv .th{display:flex;gap:8px;padding:12px 20px;overflow-x:auto;border-top:1px solid rgba(255,255,255,.12)}.hv .th img{height:64px;width:auto;border-radius:3px;opacity:.5;cursor:pointer;flex:none;border:2px solid transparent}.hv .th img.on{opacity:1;border-color:var(--pink)}
 .hv .nv{display:flex;gap:8px}
 @media(max-width:860px){.hg{grid-template-columns:1fr}.hg>div,.hg>div+div{padding:20px 0 6px;border-left:0}.hs{grid-template-columns:1fr}.hs::before{left:19px;right:auto;top:0;bottom:0;width:3px;height:auto}.hs li{padding:0 0 26px 58px;min-height:40px}
-.bk,.bk.rev,.if{grid-template-columns:minmax(0,1fr);padding:30px 22px;gap:30px;border-radius:22px}.bk.rev .fan{order:0}.fan{max-width:340px}.ifr{gap:12px}.ifr{align-items:flex-start}.ifr button{height:auto;max-height:520px;flex:1 1 0}.hv .th img{height:48px}}"""
+.bk,.bk.rev,.if{grid-template-columns:minmax(0,1fr);padding:30px 22px;gap:30px;border-radius:22px}.bk.rev .fan{order:0}.fan{max-width:340px}.ifr{gap:12px}.ifr{align-items:flex-start}.ifr .ifs{height:auto;max-height:560px;flex:1 1 0}.hv .th img{height:48px}}"""
 HJS = """(()=>{const dl=document.querySelector('dialog.hv');if(!dl)return;const G=JSON.parse(document.getElementById('hg').textContent),st=dl.querySelector('.st'),th=dl.querySelector('.th'),ct=dl.querySelector('.hh span'),tt=dl.querySelector('.hh b');let g=null,k=0;
 const show=n=>{k=(n+g.i.length)%g.i.length;st.innerHTML='<img alt="" src="'+g.i[k]+'">';st.scrollTop=0;ct.textContent=(k+1)+' / '+g.i.length;[...th.children].forEach((x,j)=>x.className=j==k?'on':'');th.children[k]&&th.children[k].scrollIntoView({inline:'center',block:'nearest'})};
 const open=(id,n)=>{g=G[id];tt.textContent=g.t;dl.classList.toggle('pg',g.p);th.innerHTML=g.i.length>1?g.i.map((s,j)=>'<img alt="" loading="lazy" data-j="'+j+'" src="'+g.h[j]+'">').join(''):'';th.style.display=g.i.length>1?'flex':'none';dl.querySelector('.nv').style.visibility=g.i.length>1?'visible':'hidden';show(n||0);dl.showModal();ping()};
@@ -290,11 +290,10 @@ def health(data, S):
                    f'<h3>{t(b["title"])}</h3><p class="tx2">{t(b["text"])}</p><dl>{dl}</dl><div class="chips">{chips}</div>'
                    f'<button class="hb" data-g="{b["id"]}">{t(P["browse"])} ({b["n"]}) &#8599;</button>{cvv}</div></article>')
         if b['id'] == 'ijc':
-            G['info'] = {'t': P['info_title'][1], 'i': ['assets/health/info_1.webp', 'assets/health/info_3.webp'], 'h': ['assets/health/info_1.webp', 'assets/health/info_3.webp'], 'p': False}
             blocks += (f'<article class="if" id="infografico"><div><span class="k">{t(P["info_tag"])}</span><h3>{t(P["info_title"])}</h3><p>{t(P["info_text"])}</p>'
-                       f'<p class="sr">{t(P["info_src"])}</p><button class="hb" data-g="info">{t(P["info_open"])} &#8599;</button></div>'
-                       '<div class="ifr"><button data-g="info" data-n="0" aria-label="Infographic 1"><img loading="lazy" alt="" src="assets/health/info_1.webp"></button>'
-                       '<button data-g="info" data-n="1" aria-label="Infographic 2"><img loading="lazy" alt="" src="assets/health/info_3.webp"></button></div></article>')
+                       f'<p class="sr">{t(P["info_src"])}</p></div>'
+                       '<div class="ifr"><div class="ifs" tabindex="0" aria-label="Infographic 1"><img loading="lazy" alt="" src="assets/health/info_1.webp"></div>'
+                       '<div class="ifs" tabindex="0" aria-label="Infographic 2"><img loading="lazy" alt="" src="assets/health/info_3.webp"></div></div></article>')
     chap = f'<section class="hc"><h2>{t(P["chapter"])}</h2><p>{t(P["chapter2"])}</p>{blocks}</section>'
     viewer = (f'<dialog class="hv" aria-label="Viewer"><div class="hh"><b></b><span></span><div class="nv"><button data-a="p">&#8249; {t(P["prev"])}</button> <button data-a="n">{t(P["next"])} &#8250;</button></div>'
               f'<button data-a="x">{t(P["close"])}</button></div><div class="st"></div><div class="th"></div></dialog>')
