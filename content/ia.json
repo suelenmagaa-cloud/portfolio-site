@@ -283,8 +283,8 @@
    ]
   ],
   "pipe_k": [
-   "How it works",
-   "Como funciona"
+   "Process",
+   "Processo"
   ],
   "nodes": [
    [
@@ -481,6 +481,32 @@
      "In progress: the same approach on another tool.",
      "Em andamento: a mesma abordagem em outra ferramenta."
     ]
+   ]
+  ],
+  "proc": [
+   "The portfolio already existed, with the limits of the platform and of my HTML/CSS knowledge. After seeing what AI can do with GitHub's support, the goal is to rebuild all the content with more functionality and bring it back to Wix.",
+   "O portfólio já existia, com limitações da plataforma e dos meus conhecimentos de HTML/CSS. O objetivo, depois de ver o que a IA é capaz de fazer com o suporte do GitHub, é montar todo o conteúdo com mais funcionalidade e devolver pro Wix."
+  ],
+  "pl": [
+   [
+    "Brief",
+    "Briefing"
+   ],
+   [
+    "AI draft",
+    "Rascunho da IA"
+   ],
+   [
+    "Human review",
+    "Revisão humana"
+   ],
+   [
+    "Adjustments",
+    "Ajustes"
+   ],
+   [
+    "Approval",
+    "Aprovação"
    ]
   ]
  }

@@ -407,6 +407,7 @@ ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .mk p{margin:0 0 8px;font:500 .9rem/1.35 Inter,sans-serif;padding:10px 12px;border-radius:14px}.mk .m{background:#f28db1;color:#14122b;margin-left:22px}.mk .c{background:#235070;margin-right:22px}.mk b{display:block;font:600 .62rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:2px}
 .tk{margin-top:clamp(40px,6vw,70px);border-top:1px solid rgba(255,255,255,.25);padding:14px 0;overflow:hidden;white-space:nowrap}.tk div{display:inline-block;animation:tk 38s linear infinite;font:600 .8rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase}.tk span{margin:0 22px}.tk span:before{content:"✦";color:#f28db1;margin-right:44px}
 @keyframes tk{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.tk div{animation:none}}
+.a1x{margin-top:28px}.bn{min-height:clamp(220px,32vw,360px);border:2px dashed #cfcce0;border-radius:24px;background:#f7f6fb}
 .a0{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 30px;padding:clamp(34px,5vw,56px) 0 0}.a0 div{border-top:3px solid #14122b;padding-top:12px}.a0 div:nth-child(2){border-color:#235070}.a0 div:nth-child(3){border-color:#f28db1}
 .a0 h3{margin:0;font:700 clamp(1.8rem,4.4vw,3.2rem)/1 Outfit,sans-serif;letter-spacing:-.04em;color:#14122b}.a0 div:nth-child(2) h3{color:#235070}.a0 div:nth-child(3) h3{color:#f28db1}.a0 p{margin:8px 0 0;font-size:1rem;line-height:1.4}
 .a2{padding:clamp(48px,7vw,84px) 0}.a2 .big{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 .3em;font:700 clamp(3.6rem,14vw,11rem)/.95 Outfit,sans-serif;letter-spacing:-.06em;color:var(--ink)}
@@ -429,9 +430,13 @@ ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .fw .nd{border:1px solid #e3e1ef;border-radius:16px;padding:14px 12px;text-align:center}.fw .ic{height:44px;display:grid;place-items:center;margin-bottom:8px}.fw .ic img{height:44px;width:44px;border-radius:50%}.fw .ic svg{width:34px;height:34px;stroke:#235070;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .fw b{display:block;font:700 .98rem Outfit,sans-serif;color:var(--ink)}.fw p{margin:4px 0 0;font-size:.82rem;line-height:1.35}.fw .fa{align-self:center;text-align:center;color:#f28db1;font-weight:700}
 .a6 p.t{max-width:62ch;margin:20px 0 0}.lp2{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;padding:0;list-style:none}.lp2 li{border-radius:999px;padding:5px 14px;background:#f3efff;font:600 .82rem Outfit,sans-serif;color:var(--ink)}.lp2 li:last-child{background:#f28db1}
-.a7{background:linear-gradient(110deg,#14122b 0%,#235070 70%,#f28db1 190%);color:#fff;padding:clamp(36px,5vw,56px) 0}.a7 ol{margin:0;padding:0;list-style:none;counter-reset:r;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px}.a7 li{counter-increment:r;display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid rgba(255,255,255,.25);font:600 clamp(1rem,1.9vw,1.25rem)/1.25 Outfit,sans-serif}.a7 li:before{content:counter(r,decimal-leading-zero);font:600 .7rem Inter,sans-serif;letter-spacing:.1em;color:#f28db1;min-width:2em}
+.pc{max-width:70ch;font-size:1.1rem;line-height:1.55;margin:0 0 22px;color:var(--navy)}.pl{display:flex;margin:0;padding:6px;list-style:none;border-radius:999px;background:linear-gradient(90deg,#f28db1,#7c6cf6 55%,#235070)}
+.pl li{flex:1;position:relative;text-align:center;padding:12px 8px;border-radius:999px;color:#fff;font:600 .95rem Outfit,sans-serif;animation:pls 10s infinite;animation-delay:calc(var(--i)*2s)}.pl li:not(:last-child):after{content:"→";position:absolute;right:-8px;top:50%;transform:translateY(-50%);z-index:1;font-weight:400}
+@keyframes pls{0%,19%{background:#fff;color:#14122b}20%,100%{background:transparent;color:#fff}}@media(prefers-reduced-motion:reduce){.pl li{animation:none}}
+@media(max-width:820px){.pl{flex-direction:column;border-radius:28px}.pl li:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-10px;transform:translateX(-50%)}}
+.a7{background:linear-gradient(110deg,#14122b 0%,#235070 70%,#f28db1 190%);color:#fff;padding:clamp(36px,5vw,56px) 0}.a7 ol{margin:0;padding:0;list-style:none;counter-reset:r}.a7 li{counter-increment:r;display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid rgba(255,255,255,.25);font:600 clamp(1rem,1.9vw,1.25rem)/1.25 Outfit,sans-serif}.a7 li:before{content:counter(r,decimal-leading-zero);font:600 .7rem Inter,sans-serif;letter-spacing:.1em;color:#f28db1;min-width:2em}
 .a8{margin-top:clamp(40px,6vw,64px);border-top:1px dashed #cfcce0;padding:18px 0 8px}.a8 .k{color:#6b6985}.a8 .og{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 30px}.a8 b{display:block;font:700 1rem Outfit,sans-serif;color:var(--ink)}.a8 p{margin:3px 0 0;font-size:.9rem;line-height:1.4;color:#4f5d78}
-@media(max-width:820px){.a1 .g{grid-template-columns:1fr}.mk{justify-self:start;max-width:300px;transform:rotate(2deg)}.a0{grid-template-columns:1fr}.rc{grid-template-columns:1fr}.rc.hd{display:none}.rc div small{display:block;font:600 .62rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:3px}.tl{grid-template-columns:1fr}.fw{grid-template-columns:1fr}.fw .fa{transform:rotate(90deg);padding:6px 0}.a7 ol{grid-template-columns:1fr}.a8 .og{grid-template-columns:1fr}.br2,.ax{grid-template-columns:62px 1fr}}
+@media(max-width:820px){.a1 .g{grid-template-columns:1fr}.mk{justify-self:start;max-width:300px;transform:rotate(2deg)}.a0{grid-template-columns:1fr}.rc{grid-template-columns:1fr}.rc.hd{display:none}.rc div small{display:block;font:600 .62rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:3px}.tl{grid-template-columns:1fr}.fw{grid-template-columns:1fr}.fw .fa{transform:rotate(90deg);padding:6px 0}.a8 .og{grid-template-columns:1fr}.br2,.ax{grid-template-columns:62px 1fr}}
 """
 
 ICO = {
@@ -444,10 +449,7 @@ def ia(data, S):
     P = data['page']
     head, menu, foot = chrome(S, 6)
     tk = ''.join(f'<span>{t(x)}</span>' for x in P['ticker'])
-    hero = (f'<section class="fb a1"><div class="in"><div class="g"><div><span class="k">{t(P["tag"])}</span><h1>{t(P["title"])}</h1>'
-            f'<p class="h2"><s>{t(P["l1"])}</s><b>{t(P["l2"])}</b></p><p class="in2">{t(P["intro"])}</p></div>'
-            f'<div class="mk"><i><span></span></i><p class="m"><b>{t(["Me","Eu"])}</b>{t(P["mock_me"])}</p><p class="c"><b>Claude</b>{t(P["mock_ai"])}</p></div></div></div>'
-            f'<div class="tk"><div>{tk}{tk}{tk}{tk}</div></div></section>')
+    hero = '<section class="a1x"><div class="bn"></div></section>'
     top3 = '<section class="a0">' + ''.join(f'<div><h3>{t(a)}</h3><p>{t(b)}</p></div>' for a, b in zip(P['close'], P['close_t'])) + '</section>'
     time_ = (f'<section class="a2"><span class="k">{t(P["time_k"])}</span><div class="big"><s>{t(P["time_old"])}</s><em>{t(P["time_new"])}</em></div>'
              f'<p>{t(P["time_t"])}</p><small>{t(P["time_n"])}</small></section>')
@@ -464,13 +466,8 @@ def ia(data, S):
     also = ''.join(f'<span>{t(x)}</span>' for x in P['also_l'])
     rec_ = (f'<section class="fb a5"><div class="in"><span class="k">{t(P["rec_k"])}</span><h2>{t(P["rec_h"])}</h2><p class="n">{t(P["rec_n"])}</p>'
             f'<div class="rc hd">{hd}</div>{recs}<div class="al"><p>{t(P["also"])}</p>{also}</div></div></section>')
-    nodes = []
-    for n in P['nodes']:
-        ic = '<img src="assets/logo.png" alt="">' if n[2] == 'me' else ICO[n[2]]
-        nodes.append(f'<div class="nd"><div class="ic">{ic}</div><b>{t(n[0])}</b><p>{t(n[1])}</p></div>')
-    flow = '<div class="fa">→</div>'.join(nodes)
-    loop = ''.join(f'<li>{t(x)}</li>' for x in P['loop'])
-    pipe_ = (f'<section class="a6"><span class="k">{t(P["pipe_k"])}</span><div class="fw">{flow}</div><p class="t">{t(P["pipe_t"])}</p><ul class="lp2">{loop}</ul></section>')
+    pl = ''.join(f'<li style="--i:{i}">{t(x)}</li>' for i, x in enumerate(P['pl']))
+    pipe_ = f'<section class="a6"><span class="k">{t(P["pipe_k"])}</span><p class="pc">{t(P["proc"])}</p><ol class="pl">{pl}</ol></section>'
     rules_ = f'<section class="fb a7"><div class="in"><span class="k">{t(P["rules_k"])}</span><ol>' + ''.join(f'<li>{t(x)}</li>' for x in P['rules']) + '</ol></div></section>'
     out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
     body = head + menu + hero + top3 + time_ + bars_ + tools_ + rec_ + pipe_ + rules_ + out_ + foot
