@@ -508,6 +508,196 @@
     "Approval",
     "Aprovação"
    ]
+  ],
+  "rr_k": [
+   "How I work · rules and receipts",
+   "Como eu trabalho · regras e recibos"
+  ],
+  "rr_h1": [
+   "Rules that keep me",
+   "Regras que me deixam"
+  ],
+  "rr_h2": [
+   "in control.",
+   "no controle."
+  ],
+  "rr_ask": [
+   "I asked",
+   "Eu pedi"
+  ],
+  "rr_ret": [
+   "AI returned",
+   "A IA devolveu"
+  ],
+  "rr_none": [
+   "A preventive rule. No receipt needed so far.",
+   "Uma regra preventiva. Até agora não precisou de recibo."
+  ],
+  "rr_rules": [
+   {
+    "t": [
+     "Nothing goes live without my approval",
+     "Nada vai ao ar sem a minha aprovação"
+    ],
+    "m": [
+     "Always",
+     "Sempre"
+    ],
+    "s": [
+     "No publishing and no change to the official domain without my explicit approval.",
+     "Nenhuma publicação nem alteração no domínio oficial sem a minha aprovação explícita."
+    ],
+    "r": []
+   },
+   {
+    "t": [
+     "No invented professional content",
+     "Sem conteúdo profissional inventado"
+    ],
+    "m": [
+     "1 receipt",
+     "1 recibo"
+    ],
+    "s": [
+     "Clients, metrics and credits come from my material, never from the AI.",
+     "Clientes, métricas e créditos vêm do meu material, nunca da IA."
+    ],
+    "r": [
+     [
+      [
+       "Write the text for each brand.",
+       "Escreva o texto de cada marca."
+      ],
+      [
+       "Claims the manuals did not support.",
+       "Afirmações que os manuais não sustentavam."
+      ],
+      [
+       "Do not invent professional content.",
+       "Não invente conteúdo profissional."
+      ],
+      [
+       "Texts cut back to what the material says.",
+       "Textos cortados ao que o material diz."
+      ]
+     ]
+    ]
+   },
+   {
+    "t": [
+     "Every change reviewed by a person",
+     "Toda mudança revisada por uma pessoa"
+    ],
+    "m": [
+     "3 receipts",
+     "3 recibos"
+    ],
+    "s": [
+     "Nothing the AI delivers gets past my eye. These are the times it changed the result.",
+     "Nada do que a IA entrega passa sem o meu olho. Aqui estão as vezes em que ele mudou o resultado."
+    ],
+    "r": [
+     [
+      [
+       "Build the Pharma page.",
+       "Monte a página Pharma."
+      ],
+      [
+       "The client's green as the main color.",
+       "O verde do cliente como cor principal."
+      ],
+      [
+       "Green is the client's color, not mine.",
+       "O verde é a cor do cliente, não a minha."
+      ],
+      [
+       "My palette on the page. Client colors only inside their pieces.",
+       "Minha paleta na página. Cor do cliente só dentro das peças."
+      ]
+     ],
+     [
+      [
+       "Redo this page.",
+       "Refaça esta página."
+      ],
+      [
+       "Same structure, different color.",
+       "Mesma estrutura, outra cor."
+      ],
+      [
+       "Same cake, different icing. Change everything.",
+       "Mesmo bolo, outra cobertura. Podemos mudar tudo."
+      ],
+      [
+       "Three different concepts. I chose A.",
+       "Três conceitos diferentes. Escolhi o A."
+      ]
+     ],
+     [
+      [
+       "Keep the details collapsed.",
+       "Deixe os detalhes recolhidos."
+      ],
+      [
+       "A “+” button.",
+       "Um botão de “+”."
+      ],
+      [
+       "The “+” is not intuitive.",
+       "O “+” não é intuitivo."
+      ],
+      [
+       "A text link: “See more”.",
+       "Um link de texto: “Ver mais”."
+      ]
+     ]
+    ]
+   },
+   {
+    "t": [
+     "No framework without a reason",
+     "Nenhum framework sem motivo"
+    ],
+    "m": [
+     "Always",
+     "Sempre"
+    ],
+    "s": [
+     "No React, Vite or Next.js without a concrete technical reason.",
+     "Sem React, Vite ou Next.js sem um motivo técnico concreto."
+    ],
+    "r": []
+   },
+   {
+    "t": [
+     "No general rewrites",
+     "Sem reescritas gerais"
+    ],
+    "m": [
+     "Always",
+     "Sempre"
+    ],
+    "s": [
+     "Change what was asked, nothing more.",
+     "Mudar o que foi pedido, nada além disso."
+    ],
+    "r": []
+   },
+   {
+    "t": [
+     "The Wix site stays online until I approve everything",
+     "O Wix no ar até eu aprovar tudo"
+    ],
+    "m": [
+     "Always",
+     "Sempre"
+    ],
+    "s": [
+     "The current site stays published while the new pages are built.",
+     "O site atual segue publicado enquanto as páginas novas são construídas."
+    ],
+    "r": []
+   }
   ]
  }
 }

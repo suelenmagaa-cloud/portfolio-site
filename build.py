@@ -422,10 +422,18 @@ ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .a3 small{display:block;margin-top:12px;color:#6b6985;font-size:.8rem}
 .a4{padding:clamp(40px,6vw,70px) 0}.tl{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:10px 40px;align-items:center;padding:16px 0;border-top:1px solid #e3e1ef}
 .tl h3{margin:0;font:700 clamp(2rem,5vw,3.4rem)/1 Outfit,sans-serif;letter-spacing:-.04em;color:#235070}.tl:nth-child(2n) h3{color:#f28db1}.tl p{margin:0;font-size:1.05rem;line-height:1.5}
-.a5{background:#14122b;color:#fff;padding:clamp(40px,6vw,70px) 0}.a5 h2{font:700 clamp(1.8rem,4.4vw,3rem)/1 Outfit,sans-serif;letter-spacing:-.035em;margin:0 0 6px}.a5 .n{opacity:.7;margin:0 0 20px;font-size:.95rem}
-.rc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:8px}.rc.hd{margin-bottom:4px}.rc.hd span{font:600 .64rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#f28db1}
-.rc div{border-radius:12px;padding:10px 12px;font-size:.88rem;line-height:1.35;background:rgba(255,255,255,.07)}.rc div small{display:none}.rc div:nth-child(1){font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:#c9c3ff}.rc div:nth-child(2){opacity:.7}.rc div:nth-child(3){background:#f28db1;color:#14122b;font-weight:600}.rc div:nth-child(4){background:#fff;color:#14122b;font-weight:600}
-.al{margin-top:22px;border-top:1px dashed rgba(255,255,255,.3);padding-top:16px}.al p{margin:0 0 8px;opacity:.8;font-size:.9rem}.al>span{display:inline-block;margin:0 8px 8px 0;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:5px 12px;font-size:.82rem}
+.a5{background:#14122b;color:#fff;padding:clamp(40px,6vw,76px) 0}.rh{font:800 clamp(2.4rem,6vw,4.4rem)/1 Outfit,sans-serif;letter-spacing:-.045em;margin:12px 0 clamp(26px,4vw,44px);max-width:16ch;color:#fff}.rh em{font-style:normal;background:linear-gradient(90deg,#fff,#f28db1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rg{display:grid;grid-template-columns:1fr 1.15fr;gap:34px;align-items:start}.rl{display:flex;flex-direction:column;gap:6px}.ri .pm{display:none}
+.rb{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:10px;padding:16px 20px;border-radius:26px;width:100%}.rb:focus-visible{outline:2px solid #f28db1;outline-offset:2px}
+.rb b{font:700 .8rem Inter,sans-serif;opacity:.5;color:#8d89a8}.rb h3{margin:0;font:700 clamp(1.25rem,2.6vw,2rem)/1.1 Outfit,sans-serif;letter-spacing:-.03em;color:#8d89a8}.rb>span{font-size:.78rem;color:#8d89a8;text-align:right;white-space:nowrap}.rb:hover h3{color:#c9c3ff}
+.ri.on .rb{background:#f28db1}.ri.on .rb b,.ri.on .rb h3,.ri.on .rb>span{color:#14122b;opacity:1}.ri.on .rb b{opacity:.7}
+.rcard{position:relative;border-radius:34px;padding:22px;background:#f5a6c4;color:#235070}.nt{position:absolute;left:-30px;top:14px;width:0;height:0;border-top:34px solid transparent;border-bottom:34px solid transparent;border-right:30px solid #f5a6c4;transition:top .2s}
+.pd{display:none}.pd.on{display:block}.inn{background:#fff;border-radius:24px;padding:26px 26px 12px}.a5 .ic{width:44px;height:44px;stroke:#235070;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.inn h2{font:700 clamp(1.25rem,2.2vw,1.7rem)/1.2 Outfit,sans-serif;letter-spacing:-.02em;margin:14px 0 16px;color:#235070}.inn .no{margin:6px 0 16px;color:#6b7b90;font-size:.95rem}
+.rc{border-top:1px solid #dfe6ee;padding:14px 0 18px}.rc p{margin:0 0 8px;font-size:.78rem;color:#6b7b90}.rc p i{font-style:normal;font-weight:700;color:#235070;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+.rw{display:grid;grid-template-columns:1fr 22px 1fr;gap:8px;align-items:center}.cr{background:#235070;color:#fff;font-weight:700;font-size:.9rem;border-radius:12px;padding:10px 14px;line-height:1.3}.ok{background:#e8f0f6;color:#235070;font-weight:700;font-size:.9rem;border-radius:12px;padding:10px 14px;line-height:1.3}.rw .ra{text-align:center;color:#235070;opacity:.6}
+.a5 .lb{margin:20px 0 10px;font:600 .66rem Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#235070}.a5 .ch>span{display:inline-block;color:#235070;border:1px solid #235070;background:#fff;border-radius:999px;padding:7px 14px;font-size:.82rem;margin:0 8px 8px 0}
+@media(max-width:820px){.rg{display:block}.rcard{display:none}.ri .pm{display:none;background:#f5a6c4;border-radius:0 0 26px 26px;padding:14px;margin-top:-10px;color:#235070}.ri.on .pm{display:block}.ri.on .rb{border-radius:26px 26px 0 0}.rw{grid-template-columns:1fr}.rw .ra{transform:rotate(90deg)}}
 .a6{padding:clamp(40px,6vw,70px) 0}.fw{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr;align-items:stretch;margin:6px 0 0}
 .fw .nd{border:1px solid #e3e1ef;border-radius:16px;padding:14px 12px;text-align:center}.fw .ic{height:44px;display:grid;place-items:center;margin-bottom:8px}.fw .ic img{height:44px;width:44px;border-radius:50%}.fw .ic svg{width:34px;height:34px;stroke:#235070;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .fw b{display:block;font:700 .98rem Outfit,sans-serif;color:var(--ink)}.fw p{margin:4px 0 0;font-size:.82rem;line-height:1.35}.fw .fa{align-self:center;text-align:center;color:#f28db1;font-weight:700}
@@ -434,7 +442,6 @@ ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .pl li{flex:1;position:relative;text-align:center;padding:12px 8px;border-radius:999px;color:#fff;font:600 .95rem Outfit,sans-serif;animation:pls 10s infinite;animation-delay:calc(var(--i)*2s)}.pl li:not(:last-child):after{content:"→";position:absolute;right:-8px;top:50%;transform:translateY(-50%);z-index:1;font-weight:400}
 @keyframes pls{0%,19%{background:#fff;color:#14122b}20%,100%{background:transparent;color:#fff}}@media(prefers-reduced-motion:reduce){.pl li{animation:none}}
 @media(max-width:820px){.pl{flex-direction:column;border-radius:28px}.pl li:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-10px;transform:translateX(-50%)}}
-.a7{background:linear-gradient(110deg,#14122b 0%,#235070 70%,#f28db1 190%);color:#fff;padding:clamp(36px,5vw,56px) 0}.a7 ol{margin:0;padding:0;list-style:none;counter-reset:r}.a7 li{counter-increment:r;display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid rgba(255,255,255,.25);font:600 clamp(1rem,1.9vw,1.25rem)/1.25 Outfit,sans-serif}.a7 li:before{content:counter(r,decimal-leading-zero);font:600 .7rem Inter,sans-serif;letter-spacing:.1em;color:#f28db1;min-width:2em}
 .a8{margin-top:clamp(40px,6vw,64px);border-top:1px dashed #cfcce0;padding:18px 0 8px}.a8 .k{color:#6b6985}.a8 .og{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 30px}.a8 b{display:block;font:700 1rem Outfit,sans-serif;color:var(--ink)}.a8 p{margin:3px 0 0;font-size:.9rem;line-height:1.4;color:#4f5d78}
 @media(max-width:820px){.a1 .g{grid-template-columns:1fr}.mk{justify-self:start;max-width:300px;transform:rotate(2deg)}.a0{grid-template-columns:1fr}.rc{grid-template-columns:1fr}.rc.hd{display:none}.rc div small{display:block;font:600 .62rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:3px}.tl{grid-template-columns:1fr}.fw{grid-template-columns:1fr}.fw .fa{transform:rotate(90deg);padding:6px 0}.a8 .og{grid-template-columns:1fr}.br2,.ax{grid-template-columns:62px 1fr}}
 """
@@ -461,16 +468,26 @@ def ia(data, S):
              f'<div class="ax"><span></span><div>{ax}</div></div></div><small>{t(P["bar_note"])}</small></div></section>')
     tools = ''.join(f'<div class="tl"><h3>{t(x[0])}</h3><p>{t(x[1])}</p></div>' for x in P['tools'])
     tools_ = f'<section class="a4"><span class="k">{t(P["tool_k"])}</span>{tools}</section>'
-    hd = ''.join(f'<span>{t(c)}</span>' for c in P['rec_cols'])
-    recs = ''.join('<div class="rc">' + ''.join(f'<div><small>{t(P["rec_cols"][i])}</small>{t(c)}</div>' for i, c in enumerate(r)) + '</div>' for r in P['recs'])
     also = ''.join(f'<span>{t(x)}</span>' for x in P['also_l'])
-    rec_ = (f'<section class="fb a5"><div class="in"><span class="k">{t(P["rec_k"])}</span><h2>{t(P["rec_h"])}</h2><p class="n">{t(P["rec_n"])}</p>'
-            f'<div class="rc hd">{hd}</div>{recs}<div class="al"><p>{t(P["also"])}</p>{also}</div></div></section>')
+    def panel(r):
+        if r['r']:
+            rc = ''.join(f'<div class="rc"><p><i>{t(P["rr_ask"])}</i> {t(x[0])} · <i>{t(P["rr_ret"])}</i> {t(x[1])}</p><div class="rw"><div class="cr">{t(x[2])}</div><div class="ra">→</div><div class="ok">{t(x[3])}</div></div></div>' for x in r['r'])
+        else:
+            rc = f'<p class="no">{t(P["rr_none"])}</p>'
+        return f'<div class="inn"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h2>{t(r["s"])}</h2>{rc}</div>'
+    items = ''.join(f'<div class="ri{" on" if i==2 else ""}"><button type="button" class="rb" data-i="{i}" aria-expanded="{"true" if i==2 else "false"}"><b>{i+1:02d}</b><h3>{t(r["t"])}</h3><span>{t(r["m"])}</span></button><div class="pm">{panel(r)}<div class="lb">{t(P["also"])}</div><div class="ch">{also}</div></div></div>' for i, r in enumerate(P['rr_rules']))
+    pans = ''.join(f'<div class="pd{" on" if i==2 else ""}" data-i="{i}">{panel(r)}</div>' for i, r in enumerate(P['rr_rules']))
+    rec_ = (f'<section class="fb a5"><div class="in"><span class="k">{t(P["rr_k"])}</span><h1 class="rh">{t(P["rr_h1"])} <em>{t(P["rr_h2"])}</em></h1>'
+            f'<div class="rg"><div class="rl">{items}</div><div class="rcard"><i class="nt"></i>{pans}<div class="lb">{t(P["also"])}</div><div class="ch">{also}</div></div></div></div>'
+            '<script>(function(){var s=document.currentScript.parentNode,bs=s.querySelectorAll(".rb"),it=s.querySelectorAll(".ri"),pd=s.querySelectorAll(".pd"),c=s.querySelector(".rcard"),n=s.querySelector(".nt");'
+            'function pos(){var a=s.querySelector(".ri.on .rb");if(!a||!c||getComputedStyle(c).display=="none")return;var y=a.getBoundingClientRect().top+a.offsetHeight/2-c.getBoundingClientRect().top-34;n.style.top=Math.max(14,Math.min(y,c.offsetHeight-82))+"px"}'
+            'function go(i){it.forEach(function(e,k){e.classList.toggle("on",k==i);bs[k].setAttribute("aria-expanded",k==i)});pd.forEach(function(e,k){e.classList.toggle("on",k==i)});pos();try{ping()}catch(e){}}'
+            'bs.forEach(function(b){b.addEventListener("click",function(){go(+b.dataset.i)})});window.addEventListener("resize",pos);window.addEventListener("load",pos);setTimeout(pos,50)})()</script></section>')
     pl = ''.join(f'<li style="--i:{i}">{t(x)}</li>' for i, x in enumerate(P['pl']))
     pipe_ = f'<section class="a6"><span class="k">{t(P["pipe_k"])}</span><p class="pc">{t(P["proc"])}</p><ol class="pl">{pl}</ol></section>'
     rules_ = f'<section class="fb a7"><div class="in"><span class="k">{t(P["rules_k"])}</span><ol>' + ''.join(f'<li>{t(x)}</li>' for x in P['rules']) + '</ol></div></section>'
     out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
-    body = head + menu + hero + top3 + time_ + bars_ + tools_ + rec_ + pipe_ + rules_ + out_ + foot
+    body = head + menu + hero + top3 + time_ + bars_ + tools_ + rec_ + pipe_ + out_ + foot
     page = shell('Suelen Magalhães — AI', body)
     return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
 
