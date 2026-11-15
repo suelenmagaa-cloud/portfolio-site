@@ -215,11 +215,11 @@
   {
    "id": "bombeiros",
    "key": "bomb",
-   "n": 5,
+   "n": 6,
    "accent": "#d9a400",
    "tint": "#fff8e0",
    "fan": [
-    3,
+    4,
     2,
     1
    ],
@@ -301,11 +301,11 @@
   {
    "id": "tea",
    "key": "tea",
-   "n": 10,
+   "n": 8,
    "accent": "#c2287e",
    "tint": "#fdeff6",
    "fan": [
-    7,
+    3,
     5,
     1
    ],
@@ -344,28 +344,9 @@
     "Women's Health",
     "Saúde da Mulher"
    ],
-   "year": "2019",
    "text": [
     "A coral triangle identity, a guide character named Marjorie and six characters for the clinical cases. I also designed the navigation tutorial: annotated screens that take the learner from the pre-test, through the clinical cases, to the post-test and the certificate on Plataforma Arouca.",
     "Uma identidade com o triângulo coral, uma personagem-guia chamada Marjorie e seis personagens para os casos clínicos. Também desenhei o tutorial de navegação: telas anotadas que levam o aluno do pré-teste, passando pelos casos clínicos, até o pós-teste e o certificado na Plataforma Arouca."
-   ],
-   "topics": [
-    [
-     "Comprehensive women's health & SUS",
-     "Saúde integral da mulher & SUS"
-    ],
-    [
-     "Women's care in primary care",
-     "Cuidado da mulher na atenção básica"
-    ],
-    [
-     "Care protocols for women",
-     "Protocolos de cuidado às mulheres"
-    ],
-    [
-     "Clinical cases and assessment",
-     "Casos clínicos e avaliação"
-    ]
    ],
    "chips": [
     [
@@ -408,7 +389,6 @@
    "accent": "#c0453a",
    "tint": "#fbf0ee",
    "img": "cur_ind",
-   "logo": "cur_ind_logo",
    "kind": [
     "Online course",
     "Curso online"
@@ -418,8 +398,8 @@
     "Saúde Indígena"
    ],
    "text": [
-    "The most challenging case. My initial instructions were: don't do anything, because it isn't allowed. After a visit to the Indigenous Health museum and a conversation with the course coordinators, I was able to develop a design system built from images of items common to every village, a logo and a hand-lettered typeface. All the materials from the 2017, 2018 and 2019 editions received new visual communication and navigation. A partnership between SUS and the Ministry of Health through the UNASUS project.",
-    "O case mais desafiador. Minhas instruções iniciais foram: não faça nada porque não é permitido. Depois de uma visita ao museu da Saúde Indígena e uma conversa com os coordenadores do curso, pude desenvolver um design system que envolveu imagens dos itens comuns em todas as aldeias, um logo e uma tipografia manuscrita. Todos os materiais de edições nos anos de 2017, 2018 e 2019 ganharam nova comunicação visual e navegação. Parceria SUS e Ministério da Saúde pelo projeto UNASUS"
+    "**The most challenging case.** My initial instructions were: don't do anything, because it isn't allowed. After a visit to the Indigenous Health museum and a conversation with the course coordinators, I was able to develop a design system built from images of items common to every village, a logo and a hand-lettered typeface.\n\nAll the materials from the 2017, 2018 and 2019 editions received new visual communication and navigation. A partnership between SUS and the Ministry of Health through the UNASUS project.",
+    "**O case mais desafiador.** Minhas instruções iniciais foram: não faça nada porque não é permitido. Depois de uma visita ao museu da Saúde Indígena e uma conversa com os coordenadores do curso, pude desenvolver um design system que envolveu imagens dos itens comuns em todas as aldeias, um logo e uma tipografia manuscrita.\n\nTodos os materiais de edições nos anos de 2017, 2018 e 2019 ganharam nova comunicação visual e navegação. Parceria SUS e Ministério da Saúde pelo projeto UNASUS"
    ],
    "chips": []
   }

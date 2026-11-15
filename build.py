@@ -1,4 +1,4 @@
-import json, html, shutil, subprocess, pathlib
+import json, html, re, shutil, subprocess, pathlib
 from PIL import Image
 R = pathlib.Path(__file__).parent
 D = R / 'dist'
@@ -27,6 +27,10 @@ def crops(data):
 
 def t(x):
     return ''.join(f'<span lang="{l}">{html.escape(x[i])}</span>' for i, l in enumerate(('en', 'pt')))
+
+def rich(x):
+    en, pt = (s.split('\n\n') for s in x)
+    return ''.join('<p>' + re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t([a, p])) + '</p>' for a, p in zip(en, pt))
 
 def imgs(d):
     return ''.join(f'<img loading="lazy" alt="" src="slides/{d.name}/{p.name}">' for p in sorted(d.glob('*.webp')))
@@ -343,10 +347,12 @@ def health(data, S):
         if b.get('fund'): rows.append((M['fund'], html.escape(b['fund'])))
         dl = ''.join(f'<dt>{t(a)}</dt><dd>{c}</dd>' for a, c in rows)
         chips = ''.join(f'<span>{t(r)}</span>' for r in b['role'])
+        chips = f'<div class="chips">{chips}</div>' if chips else ''
+        tx2 = f'<p class="tx2">{t(b["text"])}</p>' if b.get('text') else ''
         cvv = f'<p class="cvv">{t(P["cvv"])}</p>' if b.get('cvv') else ''
         blocks += (f'<article class="bk{" rev" if bi % 2 else ""}" id="{b["id"]}" style="--a:{b["accent"]};--t:{b["tint"]}">'
                    f'<button class="fan" data-g="{b["id"]}" aria-label="{html.escape(title)}">{fan}</button><div><span class="k">{t(b["kind"])}</span>'
-                   f'<h3>{t(b["title"])}</h3>{('<p class="tx2">'+t(b["text"])+'</p>') if b.get("text") else ''}<dl>{dl}</dl>{('<div class="chips">'+chips+'</div>') if chips else ''}'
+                   f'<h3>{t(b["title"])}</h3>{tx2}<dl>{dl}</dl>{chips}'
                    f'<button class="hb" data-g="{b["id"]}">{t(P["browse"])} ({b["n"]}) &#8599;</button>{cvv}</div></article>')
         if b['id'] == 'ijc':
             blocks += (f'<article class="if" id="infografico"><div><span class="k">{t(P["info_tag"])}</span><h3>{t(P["info_title"])}</h3><p>{t(P["info_text"])}</p>'
@@ -364,11 +370,12 @@ def health(data, S):
         tp = ''.join(f'<li>{t(x)}</li>' for x in c.get('topics', []))
         tp = f'<ul class="tp" aria-label="{html.escape(P["topics"][1])}">{tp}</ul>' if tp else ''
         chips = ''.join(f'<span>{t(r)}</span>' for r in c['chips'])
+        chips = f'<div class="chips">{chips}</div>' if chips else ''
         yr = f'<small>{c["year"]}</small>' if c.get('year') else ''
         lg = f'<img class="lg" alt="" src="assets/health/{c["logo"]}.webp">' if c.get('logo') else ''
         btn = f'<button class="hb" data-g="{I}" style="--a:{c["accent"]}">{t(P["tutorial"])} &#8599;</button>' if I else ''
         courses += (f'<article class="cs {c["cls"]}" id="{c["id"]}" style="--a:{c["accent"]};--t:{c["tint"]}"><div class="ci"><img loading="lazy" alt="" src="assets/health/{c["img"]}.webp"></div>'
-                    f'<div class="ct"><h3>{t(c["title"])}{yr}</h3>{lg}<p>{t(c["text"])}</p>{tp}{('<div class="chips">'+chips+'</div>') if chips else ''}{btn}</div></article>')
+                    f'<div class="ct"><h3>{t(c["title"])}{yr}</h3>{lg}{rich(c["text"])}{tp}{chips}{btn}</div></article>')
     if courses:
         chap += f'<section class="hc hcc"><h2>{t(P["courses"])}</h2><p>{t(P["courses2"])}</p><div class="cw">{courses}</div></section>'
     viewer = (f'<dialog class="hv" aria-label="Viewer"><div class="hh"><b></b><span></span><div class="nv"><button data-a="p">&#8249; {t(P["prev"])}</button> <button data-a="n">{t(P["next"])} &#8250;</button></div>'
