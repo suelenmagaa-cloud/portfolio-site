@@ -109,7 +109,7 @@
     "Print",
     "Impresso"
    ],
-   "area": "1/8/4/13",
+   "area": "1/8/3/13",
    "fit": "contain",
    "images": [
     "pharma_qr"
@@ -131,44 +131,12 @@
    ]
   },
   {
-   "id": "insert",
-   "tag": [
-    "Print",
-    "Impresso"
-   ],
-   "area": "3/1/5/8",
-   "fit": "contain",
-   "images": [
-    "pharma_insert"
-   ],
-   "title": [
-    "Safety information inside a three-quarter insert",
-    "A bula dentro de um encarte de três quartos"
-   ],
-   "did": [
-    [
-     "An inner insert that reaches ¾ of the sheet and holds the safety information.",
-     "Um encarte interno que alcança ¾ da folha e abriga a bula."
-    ],
-    [
-     "The “8 out of 10” and “9 out of 10” highlights were created by me and applied across all materials with that theme: not only my team's, but the whole brand's.",
-     "Os destaques de 8 out of 10 e 9 out of 10 foram criados por mim e implementados em todos os materiais que tinham esse tema: não somente da minha equipe, mas todos da marca."
-    ]
-   ],
-   "cons": [
-    [
-     "Another model with the same problem, a different solution: a simple front and back that has to come with the safety information.",
-     "Outro modelo com o mesmo problema, uma solução diferente: um frente e verso simples, que precisa vir acompanhado da bula."
-    ]
-   ]
-  },
-  {
    "id": "cling",
    "tag": [
     "Event",
     "Evento"
    ],
-   "area": "4/8/5/13",
+   "area": "5/1/8/9",
    "fit": "cover",
    "images": [
     "pharma_cling"
@@ -197,7 +165,7 @@
     "Icons and charts",
     "Ícones e gráficos"
    ],
-   "area": "5/1/7/6",
+   "area": "3/1/5/6",
    "fit": "contain",
    "images": [
     "pharma_icons"
@@ -229,7 +197,7 @@
     "Print · Digital",
     "Impresso · Digital"
    ],
-   "area": "5/6/7/13",
+   "area": "3/6/5/13",
    "fit": "contain",
    "images": [
     "pharma_brochure"
@@ -261,7 +229,7 @@
     "Digital",
     "Digital"
    ],
-   "area": "7/4/10/10",
+   "area": "5/9/8/13",
    "fit": "top",
    "images": [
     "pharma_email_dosing"
