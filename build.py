@@ -346,7 +346,7 @@ def health(data, S):
         cvv = f'<p class="cvv">{t(P["cvv"])}</p>' if b.get('cvv') else ''
         blocks += (f'<article class="bk{" rev" if bi % 2 else ""}" id="{b["id"]}" style="--a:{b["accent"]};--t:{b["tint"]}">'
                    f'<button class="fan" data-g="{b["id"]}" aria-label="{html.escape(title)}">{fan}</button><div><span class="k">{t(b["kind"])}</span>'
-                   f'<h3>{t(b["title"])}</h3><p class="tx2">{t(b["text"])}</p><dl>{dl}</dl><div class="chips">{chips}</div>'
+                   f'<h3>{t(b["title"])}</h3>{('<p class="tx2">'+t(b["text"])+'</p>') if b.get("text") else ''}<dl>{dl}</dl>{('<div class="chips">'+chips+'</div>') if chips else ''}'
                    f'<button class="hb" data-g="{b["id"]}">{t(P["browse"])} ({b["n"]}) &#8599;</button>{cvv}</div></article>')
         if b['id'] == 'ijc':
             blocks += (f'<article class="if" id="infografico"><div><span class="k">{t(P["info_tag"])}</span><h3>{t(P["info_title"])}</h3><p>{t(P["info_text"])}</p>'
@@ -368,7 +368,7 @@ def health(data, S):
         lg = f'<img class="lg" alt="" src="assets/health/{c["logo"]}.webp">' if c.get('logo') else ''
         btn = f'<button class="hb" data-g="{I}" style="--a:{c["accent"]}">{t(P["tutorial"])} &#8599;</button>' if I else ''
         courses += (f'<article class="cs {c["cls"]}" id="{c["id"]}" style="--a:{c["accent"]};--t:{c["tint"]}"><div class="ci"><img loading="lazy" alt="" src="assets/health/{c["img"]}.webp"></div>'
-                    f'<div class="ct"><h3>{t(c["title"])}{yr}</h3>{lg}<p>{t(c["text"])}</p>{tp}<div class="chips">{chips}</div>{btn}</div></article>')
+                    f'<div class="ct"><h3>{t(c["title"])}{yr}</h3>{lg}<p>{t(c["text"])}</p>{tp}{('<div class="chips">'+chips+'</div>') if chips else ''}{btn}</div></article>')
     if courses:
         chap += f'<section class="hc hcc"><h2>{t(P["courses"])}</h2><p>{t(P["courses2"])}</p><div class="cw">{courses}</div></section>'
     viewer = (f'<dialog class="hv" aria-label="Viewer"><div class="hh"><b></b><span></span><div class="nv"><button data-a="p">&#8249; {t(P["prev"])}</button> <button data-a="n">{t(P["next"])} &#8250;</button></div>'
@@ -392,8 +392,6 @@ BCSS = """body.br{background:#fff}.br .intro{display:none}
 .sc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--bar)}
 .sh{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:0 0 36px}.sh .n{font:700 clamp(3.4rem,8vw,6rem)/.8 Outfit,sans-serif;color:var(--ac);letter-spacing:-.04em}
 .sh h2{font:700 clamp(2rem,4.4vw,3.4rem)/1 Outfit,sans-serif;letter-spacing:-.03em;margin:0;color:inherit}.sh .m{display:block;font:600 .75rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-top:8px}
-.sc .sg figure{position:relative}.sc .sh{position:absolute;left:14px;bottom:12px;z-index:3;margin:0;gap:14px;pointer-events:none}.sc .sh .n{font-size:clamp(2.6rem,5vw,3.8rem)}.sc .sh h2{font-size:clamp(1.5rem,2.6vw,2.1rem)}.sc .sh .m{font-size:.62rem;margin-top:4px;-webkit-text-stroke:4px #fff;paint-order:stroke fill;opacity:1}.sc .sh .n,.sc .sh h2{-webkit-text-stroke:8px #fff;paint-order:stroke fill;text-shadow:0 0 12px #fff}
-
 .sg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;margin:0 0 28px;min-height:430px}
 .sg figure{margin:0}.sg figure img{display:block;width:100%;max-height:440px;object-fit:contain;border-radius:0;box-shadow:none}
 .sg blockquote{margin:0 0 18px;font:500 clamp(1.15rem,2vw,1.45rem)/1.3 Outfit,sans-serif;color:inherit;padding-left:20px;border-left:4px solid var(--ac)}
@@ -435,7 +433,8 @@ def brands(data, S):
         ap = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['apps'])
         apb = f'<h3>{t(P["apps"])}</h3><ol class="sb ap">{ap}</ol>' if ap else ''
         scenes += (f'<section class="sc lt" id="{b["id"]}" style="--fg:{b["fg"] if light else "#14122b"};--ac:{b["ac"] if light else b["bg"]};--bar:{b["ac"]}">'
-                   f'<div class="sg"><figure><img loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}"><figcaption class="sh"><span class="n">{b["n"]}</span><div><h2>{html.escape(b["name"])}</h2><span class="m">{t(b["kind"])} · {b["year"]}</span></div></figcaption></figure><div><blockquote>{t(b["quote"])}</blockquote>{paras}</div></div>'
+                   f'<header class="sh"><span class="n">{b["n"]}</span><div><h2>{html.escape(b["name"])}</h2><span class="m">{t(b["kind"])} · {b["year"]}</span></div></header>'
+                   f'<div class="sg"><figure><img loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}"></figure><div><blockquote>{t(b["quote"])}</blockquote>{paras}</div></div>'
                    f'<details class="mr"><summary><span class="o">{t(P["seemore"])}</span><span class="c">{t(P["seeless"])}</span><i></i></summary>'
                    f'<div class="mb"><h3>{t(P["frames"])}</h3><ol class="sb">{fr}</ol><h3>{t(P["palette"])}</h3><div class="pl">{sw}</div>{tyb}{apb}</div></details></section>')
     more = f'<section class="bm"><h2>{t(P["more"])}</h2><p>{t(P["more2"])}</p></section>'

@@ -6,8 +6,8 @@
   ],
   "tags": "Unifesp · UFT · Instituto Jô Clemente",
   "intro": [
-   "Scientific books and research reports in public and mental health. The researchers hand me the text; the graphic project, layout, charts, infographics and every page are mine.",
-   "Livros científicos e relatórios de pesquisa em saúde pública e saúde mental. Os pesquisadores me entregam o texto; o projeto gráfico, o layout, os gráficos, os infográficos e cada página são meus."
+   "Scientific books and journals, research reports and white papers in public and mental health. The researchers hand me the text: the graphic project, layout, charts, infographics and every page are mine.",
+   "Livros e revistas científicos, relatórios de pesquisa e whitepapers em saúde pública e mental. Os pesquisadores me entregam o texto: o projeto gráfico, layout, gráficos, infográficos e cada página são meus."
   ],
   "give": [
    "I receive",
@@ -23,19 +23,19 @@
   ],
   "make2": [
    "Cover and graphic project, layout, charts and infographics, art editing and the composition of every page.",
-   "Capa e projeto gráfico, layout, gráficos e infográficos, edição de arte e a diagramação de cada página."
+   "Capa e projeto gráfico, layout, gráficos e infográficos, edição de arte e diagramação de cada página"
   ],
   "chapter": [
    "Publications",
    "Publicações"
   ],
   "chapter2": [
-   "Four books, all published. Open any of them to browse selected pages.",
-   "Quatro livros, todos publicados. Abra qualquer um para folhear páginas selecionadas."
+   "All of these pieces have been published. Open any of them to browse selected pages.",
+   "Todas essas peças foram publicadas. Abra qualquer um para folhear páginas selecionadas."
   ],
   "process": [
-   "How every book is made",
-   "Como cada livro é feito"
+   "How each piece is produced",
+   "Como cada peça é produzida"
   ],
   "steps": [
    [
@@ -44,8 +44,8 @@
      "Conversa"
     ],
     [
-     "I talk with the researcher to understand the study and the readers.",
-     "Converso com o pesquisador para entender a pesquisa e os leitores."
+     "I talk with the researcher to understand the content and who it is for.",
+     "Converso com o pesquisador para entender o conteúdo e a quem se destina"
     ]
    ],
    [
@@ -54,8 +54,8 @@
      "Proposta de layout"
     ],
     [
-     "I build the visual system: cover, grid, typography, charts.",
-     "Monto o sistema visual: capa, grade, tipografia, gráficos."
+     "I build the visual system: cover, grid, typography, charts. The whole design system comes in here too: icons, visual elements and other graphic devices.",
+     "Monto o sistema visual: capa, grade, tipografia, gráficos. Aqui também entra todo o design system: ícones, elementos visuais e outros grafismos"
     ]
    ],
    [
@@ -64,8 +64,8 @@
      "Aprovação do layout"
     ],
     [
-     "The layout is reviewed and approved before any composition.",
-     "O layout é revisado e aprovado antes de qualquer diagramação."
+     "The layout is reviewed and approved.",
+     "O layout é revisado e aprovado"
     ]
    ],
    [
@@ -74,8 +74,8 @@
      "Diagramação completa"
     ],
     [
-     "I compose the whole book, page by page.",
-     "Diagramo o livro inteiro, página a página."
+     "Everything is done as agreed in the first conversation. If I have the freedom to propose new ways of presenting some piece of data, this is where I shine.",
+     "Tudo é feito de acordo com o combinado na conversa inicial. Se eu tenho liberdade para propor novos jeitos de apresentar algum dado, é nessa hora que eu brilho"
     ]
    ],
    [
@@ -84,8 +84,8 @@
      "Revisão e aprovação"
     ],
     [
-     "Proofreading, corrections and final sign-off.",
-     "Revisão, correções e aprovação final."
+     "Once the material is delivered, it goes through every round of review needed. Approved and published.",
+     "Assim que o material é entregue, ele passa por todas as rodadas de revisões necessárias. Aprovado e publicado."
     ]
    ]
   ],
@@ -181,7 +181,7 @@
    "tint": "#fbf1ed",
    "fan": [
     7,
-    17,
+    3,
     1
    ],
    "kind": [
@@ -196,10 +196,7 @@
    "year": "2022",
    "pages": "39",
    "fund": "FAPT",
-   "text": [
-    "A warm peach and terracotta system with flat illustrations. Charts, icons and highlighted indicators turn survey tables into pages that can be scanned.",
-    "Um sistema quente em pêssego e terracota, com ilustrações chapadas. Gráficos, ícones e indicadores em destaque transformam tabelas de pesquisa em páginas fáceis de percorrer."
-   ],
+   "text": null,
    "role": [
     [
      "Layout",
@@ -239,8 +236,8 @@
    "pages": "58",
    "org": "Gabriela Arantes Wagner",
    "text": [
-    "A magenta-to-violet cover system, chapter openers, a Brazil map with state-level data and sociodemographic pictograms. In one of the publications for Instituto Jô Clemente, I used AI to produce charts and tables.",
-    "Um sistema de capa do magenta ao violeta, aberturas de capítulo, mapa do Brasil com dados por estado e pictogramas sociodemográficos. Em uma das publicações para o Instituto Jô Clemente, usei IA para produzir gráficos e tabelas."
+    "The Instituto Jô Clemente colors are presented in a single look, produced especially for this material. AI was used to produce charts and tables that became cards and forms that are more intuitive and easier to read.",
+    "As cores do Instituto Jô Clemente são apresentadas num visual único, produzido especialmente para este material. Uso de IA para a produção de gráficos e tabelas que viram cards e formulários intuitivos e mais fáceis de ler."
    ],
    "role": [
     [
@@ -260,12 +257,12 @@
   {
    "id": "bombeiros",
    "key": "bomb",
-   "n": 10,
+   "n": 5,
    "accent": "#d9a400",
    "tint": "#fff8e0",
    "fan": [
-    6,
-    4,
+    3,
+    2,
     1
    ],
    "kind": [
@@ -282,8 +279,8 @@
    "fund": "FAPESP 2020/03703-6",
    "org": "Gabriela Arantes Wagner, Tiago Regis Franco de Almeida",
    "text": [
-    "A yellow ribbon system for the awareness theme: section openers, a flow diagram and a series of maps of the state of São Paulo, each indicator in its own color family. The maps were supplied by the research team; I composed them in the book. Only layout pages are shown here.",
-    "Um sistema com o laço amarelo para o tema da conscientização: aberturas de seção, um fluxograma e uma série de mapas do estado de São Paulo, cada indicador em sua família de cor. Os mapas foram fornecidos pela equipe da pesquisa; eu os diagramei no livro. Aqui aparecem apenas páginas de layout."
+    "A sensitive subject that needs full attention and care when presenting research data on the care provided by the Fire Department of the São Paulo State Military Police.",
+    "Um tema sensível que precisa de toda a atenção e cuidado ao apresentar dados da pesquisa sobre atendimento prestado pelo Corpo de Bombeiros da Polícia Militar do Estado de São Paulo."
    ],
    "role": [
     [
@@ -295,11 +292,40 @@
      "Layout"
     ],
     [
-     "Composition of supplied maps and tables",
-     "Diagramação de mapas e tabelas fornecidos"
+     "Composition",
+     "Diagramação"
     ]
    ],
    "cvv": true
+  },
+  {
+   "id": "tea",
+   "key": "tea",
+   "n": 10,
+   "accent": "#c2287e",
+   "tint": "#fdeff6",
+   "fan": [
+    7,
+    5,
+    1
+   ],
+   "kind": [
+    "White paper",
+    "White paper"
+   ],
+   "title": [
+    "Care pathway for people with Autism Spectrum Disorder (ASD), guided by value in Brazil",
+    "Linha de cuidado para Pessoas com Transtorno do Espectro Autista (TEA) orientada por valor no Brasil"
+   ],
+   "inst": "Instituto Jô Clemente (IJC) · Centro de Ensino, Pesquisa e Inovação (CEPI-IJC)",
+   "year": 2026,
+   "pages": 62,
+   "org": "Gabriela Tannus, Gabriela Galassi Guerra",
+   "text": [
+    "A strategic proposal for qualified screening, functional stratification, an individualized therapeutic plan and outcome measurement. AI was used to produce the cards.",
+    "Uma proposição estratégica para triagem qualificada, estratificação funcional, plano terapêutico individualizado e mensuração de desfechos. Uso de IA na produção dos cards."
+   ],
+   "role": []
   }
  ],
  "courses": [
@@ -320,7 +346,7 @@
    ],
    "year": "2019",
    "text": [
-    "A coral triangle identity, a guide character named Marjorie and six clinical-case characters. I also designed the navigation tutorial: annotated screens that take the learner from the pre-test through the clinical cases to the post-test and the certificate on Plataforma Arouca.",
+    "A coral triangle identity, a guide character named Marjorie and six characters for the clinical cases. I also designed the navigation tutorial: annotated screens that take the learner from the pre-test, through the clinical cases, to the post-test and the certificate on Plataforma Arouca.",
     "Uma identidade com o triângulo coral, uma personagem-guia chamada Marjorie e seis personagens para os casos clínicos. Também desenhei o tutorial de navegação: telas anotadas que levam o aluno do pré-teste, passando pelos casos clínicos, até o pós-teste e o certificado na Plataforma Arouca."
    ],
    "topics": [
@@ -371,19 +397,10 @@
     "Dermatologia na atenção básica"
    ],
    "text": [
-    "A teal and warm-brown system with line icons, a dotted texture and clinical-case screens, shown here on the acne theme.",
-    "Um sistema em verde-azulado e marrom quente, com ícones de linha, textura pontilhada e telas de caso clínico, aqui no tema da acne."
+    "A teal and warm-brown system with line icons, a dotted texture and clinical-case screens. A partnership between SUS and the Ministry of Health.",
+    "Um sistema em verde-azulado e marrom quente, com ícones de linha, textura pontilhada e telas de caso clínico. Parceria SUS e Ministério da Saúde"
    ],
-   "chips": [
-    [
-     "Course interface",
-     "Interface do curso"
-    ],
-    [
-     "Icons",
-     "Ícones"
-    ]
-   ]
+   "chips": []
   },
   {
    "id": "saude-indigena",
@@ -401,37 +418,10 @@
     "Saúde Indígena"
    ],
    "text": [
-    "A hand-drawn wordmark with an arrow, beads and feathers as decorative elements, and a hand-lettered type for the course themes.",
-    "Um logotipo desenhado à mão com uma flecha, contas e penas como elementos decorativos, e uma tipografia manuscrita para os temas do curso."
+    "The most challenging case. My initial instructions were: don't do anything, because it isn't allowed. After a visit to the Indigenous Health museum and a conversation with the course coordinators, I was able to develop a design system built from images of items common to every village, a logo and a hand-lettered typeface. All the materials from the 2017, 2018 and 2019 editions received new visual communication and navigation. A partnership between SUS and the Ministry of Health through the UNASUS project.",
+    "O case mais desafiador. Minhas instruções iniciais foram: não faça nada porque não é permitido. Depois de uma visita ao museu da Saúde Indígena e uma conversa com os coordenadores do curso, pude desenvolver um design system que envolveu imagens dos itens comuns em todas as aldeias, um logo e uma tipografia manuscrita. Todos os materiais de edições nos anos de 2017, 2018 e 2019 ganharam nova comunicação visual e navegação. Parceria SUS e Ministério da Saúde pelo projeto UNASUS"
    ],
-   "topics": [
-    [
-     "Adapting to the virtual environment and introduction to the Indigenous peoples of Brazil",
-     "Adaptação ao ambiente virtual e introdução aos povos indígenas do Brasil"
-    ],
-    [
-     "Anthropology and health",
-     "Antropologia e saúde"
-    ],
-    [
-     "Policies and organization of Indigenous health services",
-     "Políticas e organização dos serviços de saúde indígena"
-    ],
-    [
-     "Epidemiology and health surveillance",
-     "Epidemiologia e vigilância em saúde"
-    ]
-   ],
-   "chips": [
-    [
-     "Identity",
-     "Identidade"
-    ],
-    [
-     "Course interface",
-     "Interface do curso"
-    ]
-   ]
+   "chips": []
   }
  ]
 }
