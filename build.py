@@ -170,14 +170,14 @@ PCSS = """body.ph{background:#fff}.ph .intro{display:none}
 .pt h1{font:700 clamp(3rem,8vw,6.2rem)/.95 Outfit,sans-serif;letter-spacing:-.04em;color:var(--ink);margin:.2em 0 0}
 .pt p{font-size:1.1rem;margin:0;color:var(--navy)}.pf{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 28px;margin:34px 4px 0;padding-top:24px;border-top:5px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
 .pf b{font-size:.68em;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)}.pf p{margin:.1em 0;font-size:.85rem}
-.bh{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin:64px 4px 14px}.bh h2{font-size:1.7rem;margin:0;color:var(--ink);letter-spacing:-.02em}.bh span{font-size:.85rem}
+.bh{margin:72px 4px 26px}.bh h2{font:700 clamp(2rem,4.6vw,3.1rem)/1.05 Outfit,sans-serif;margin:0;color:var(--ink);letter-spacing:-.03em;padding-left:18px;border-left:6px solid var(--pink)}.bh>span{display:block;margin:12px 0 0 24px;font-size:1rem}
 .bd{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:44px 36px}
 .tl{width:100%;align-items:stretch;min-width:0;border:0;padding:0;background:none;cursor:pointer;text-align:left;font:inherit;color:var(--ink);display:flex;flex-direction:column;gap:14px;min-height:0}
 .tl .ims{position:relative;flex:1;min-height:0;min-width:0;border-radius:6px;overflow:hidden;display:flex;transition:transform .25s}
 .tl:hover .ims,.tl:focus-visible .ims{transform:translateY(-4px)}.tl:focus-visible{outline:2px solid var(--violet);outline-offset:6px}
 .tl img{flex:1 1 0;min-width:0;height:100%;display:block}
 .tl.fit .ims img{object-fit:contain;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);mask-composite:intersect}
-.tl.plain .ims{background:#e8e5f2;border-radius:10px}.tl.plain img{object-fit:cover}.tl.plain.top img{object-position:top;border-right:6px solid #e8e5f2}
+.tl.plain .ims{background:#e8e5f2;border-radius:10px}.tl.plain img{object-fit:cover}.tl.plain.top img{object-position:top;border-right:6px solid #e8e5f2}.tl.plain.top .ims{-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent);mask-image:linear-gradient(180deg,#000 82%,transparent)}
 .tl .lb{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
 .tl .lb i{display:block;font:600 .64rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-style:normal;margin-bottom:2px}.tl .lb b{font:500 1.15rem/1.2 Outfit,sans-serif}
 .tl .more{flex:none;font:600 .82rem Inter,sans-serif;color:var(--navy);border-bottom:2px solid var(--pink);padding-bottom:1px;white-space:nowrap;transition:color .2s}.tl:hover .more{color:var(--violet)}
@@ -185,7 +185,7 @@ dialog.pd{border:0;border-radius:18px;padding:0;width:min(1040px,94vw);max-heigh
 .pd .in{display:grid;grid-template-columns:1.35fr 1fr;max-height:90vh}.pd .pi{background:var(--pb,#eeeaf8);padding:16px;overflow:auto;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}.pd .pi img{max-width:100%;height:auto;display:block;border-radius:6px}
 .pd .px{padding:30px 30px 22px;overflow:auto}.pd .px i{font:600 .68rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-style:normal}
 .pd h3{font:700 1.7rem/1.1 Outfit,sans-serif;color:var(--ink);margin:.3em 0 .6em;letter-spacing:-.02em}.pd h4{font:600 .7rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);margin:1.2em 0 .3em}
-.pd ul{padding-left:1.1em;margin:0}.pd li{margin:.35em 0}.pd li::marker{color:var(--pink)}.pd p{margin:0}
+.pd ul{padding-left:1.1em;margin:0}.pd li{margin:.35em 0}.pd li::marker{color:var(--pink)}.pd p{margin:0 0 .7em}
 .pd .ct{position:sticky;bottom:-22px;display:flex;gap:8px;margin-top:22px;padding:12px 0 0;background:#fff}.pd .ct button{border:1px solid var(--pink);background:#fff;color:var(--navy);border-radius:999px;padding:7px 18px;cursor:pointer;font:600 .85rem Inter,sans-serif}.pd .ct button:first-child{margin-right:auto}
 @media(max-width:700px){.pt{grid-template-columns:1fr;margin-top:28px}.bd{grid-template-columns:1fr;grid-auto-rows:300px;gap:36px}.tl{grid-area:auto!important}.tl.top img:nth-child(n+3){display:none}.pd .in{grid-template-columns:1fr;overflow:auto}.pd .pi{max-height:44vh}.pd .px{overflow:visible}}"""
 PJS = """(()=>{const dl=document.querySelector('dialog.pd');if(!dl)return;const ts=[...document.querySelectorAll('.tl')],ds=[...dl.querySelectorAll('.dc')];let k=0;
@@ -219,8 +219,8 @@ def pharma(data, S, L):
                   f'<span class="lb"><span><i>{t(tl["tag"])}</i><b>{t(tl["title"])}</b></span><span class="more">{t(P.get("more", ["See more", "Ver mais"]))} &#8599;</span></span></button>')
         big = ''.join(f'<img alt="" data-s="assets/{k}.webp">' for k in tl['images'])
         dcs += (f'<div class="dc" hidden><div class="in"><div class="pi" style="--pb:{col}">{big}</div><div class="px"><i>{t(tl["tag"])}</i><h3>{t(tl["title"])}</h3>'
-                f'<h4>{t(P["constraint"])}</h4><p>{t(tl["constraint"])}</p><h4>{t(P["did"])}</h4><ul>' + ''.join(f'<li>{t(x)}</li>' for x in tl['did'])
-                + f'</ul><div class="ct"><button data-a="p">&#8249; {t(P["prev"])}</button><button data-a="n">{t(P["next"])} &#8250;</button><button data-a="x">{t(P["close"])}</button></div></div></div></div>')
+                f'<h4>{t(P["constraint"])}</h4>' + ''.join(f'<p>{t(x)}</p>' for x in tl['cons']) + (f'<h4>{t(P["did"])}</h4>' + ''.join(f'<p>{t(x)}</p>' for x in tl['did']) if tl['did'] else '')
+                + f'<div class="ct"><button data-a="p">&#8249; {t(P["prev"])}</button><button data-a="n">{t(P["next"])} &#8250;</button><button data-a="x">{t(P["close"])}</button></div></div></div></div>')
     board = f'<div class="bh"><h2>{t(P["board"])}</h2><span>{t(P["hint"])}</span></div><div class="bd">{tiles}</div>'
     dlg = f'<dialog class="pd" aria-label="Detail">{dcs}</dialog>'
     page = shell('Suelen Magalhães — Pharma design', head + menu + top + board + foot)

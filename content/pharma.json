@@ -6,8 +6,8 @@
   ],
   "tags": "Janssen · Tremfya® (guselkumab)",
   "intro": [
-   "Sales and educational materials for a regulated brand, where every piece carries dense clinical data and the full safety information. Developed together with the copywriter and the project manager.",
-   "Materiais de venda e educação para uma marca regulada, em que cada peça carrega dados clínicos densos e as informações de segurança completas. Desenvolvido junto com a redatora e a gerente de projeto."
+   "Materials for Janssen's “Reps”, the sales representatives who talk to HCPs (American healthcare professionals). Every piece carries dense clinical data and the full safety information. Regulated design to the tenth power, approved by several internal Janssen departments and finally by the FDA.",
+   "Materiais destinados aos “Reps”, representantes de vendas da Janssen para os HCPs (profissionais da saúde americanos). Cada peça carrega dados clínicos densos e informações de segurança completas. Design regulado a décima potência com aprovação de vários setores internos da Janssen e aprovação final do FDA."
   ],
   "facts": [
    [
@@ -16,8 +16,8 @@
      "Contexto"
     ],
     [
-     "Janssen, brand Tremfya® (guselkumab). Team: design, copy and project management",
-     "Janssen, marca Tremfya® (guselkumab). Equipe: design, copy e gestão de projeto"
+     "Janssen, brand Tremfya® (guselkumab). In charge of all the visual design and information architecture.",
+     "Janssen, marca Tremfya® (guselkumab). Responsável por todo o design visual e arquitetura da informação."
     ]
    ],
    [
@@ -36,8 +36,8 @@
      "Entregas"
     ],
     [
-     "Brochures, inserts, HCP e-mails, icons, charts, QR tent card, window cling",
-     "Brochuras, encartes, e-mails para HCPs, ícones, gráficos, tent card com QR, window cling"
+     "Brochures, inserts, e-mails, charts, animated ads",
+     "Brochuras, encartes, e-mails, gráficos, anúncios animados"
     ]
    ]
   ],
@@ -46,16 +46,16 @@
    "Restrições que viraram solução"
   ],
   "hint": [
-   "Select a piece to see the constraint and what I did",
-   "Selecione uma peça para ver a restrição e o que eu fiz"
+   "Select a piece to see what was done",
+   "Selecione uma peça para ver o que foi feito"
   ],
   "constraint": [
    "The constraint",
    "A restrição"
   ],
   "did": [
-   "What I did",
-   "O que eu fiz"
+   "The solution",
+   "A solução"
   ],
   "close": [
    "Close",
@@ -90,26 +90,24 @@
     "The full safety information, without one more page",
     "A bula inteira, sem uma página a mais"
    ],
-   "constraint": [
-    "It would be only a front and back, but there was a lot of information, and the full safety information had to fit.",
-    "Seria somente um frente e verso, mas havia muita informação, e a bula inteira precisava caber."
-   ],
    "did": [
     [
-     "A folded piece in a custom size avoided an extra page",
-     "Uma peça com dobra e tamanho específicos evitou uma página extra"
-    ],
+     "A piece with a slightly larger page, and the safety information runs front and back alongside the material. The extra size is minimal, the content was preserved, and the paper, printing and folding costs were preserved.",
+     "Uma peça com uma página maior e a bula vai frente e verso acompanhando o material, tamanho extra é mínimo, o conteúdo foi preservado e os gastos com papel, impressão e dobra foram preservados."
+    ]
+   ],
+   "cons": [
     [
-     "Saved paper, folding and printing, and the full safety information still fit",
-     "Economizou papel, dobra e impressão, e a bula inteira ainda coube"
+     "The piece had to be only a front and back, with content derived from a larger material, and the safety information would not fit. Under the FDA's fair balance rules, all medical content must come with the full safety information.",
+     "A peça precisava ser somente frente e verso, conteúdo derivado de um material maior, a bula não caberia. De acordo com as regras do fair balance impostas pelo FDA, todo conteúdo médico precisa vir acompanhado da bula."
     ]
    ]
   },
   {
    "id": "qr",
    "tag": [
-    "Print · Event",
-    "Impresso · Evento"
+    "Print",
+    "Impresso"
    ],
    "area": "1/8/4/13",
    "fit": "contain",
@@ -120,22 +118,15 @@
     "A QR code that is a photo",
     "Um QR code que é uma foto"
    ],
-   "constraint": [
-    "A QR code is usually just a block of dots, and materials were presented as flat files.",
-    "Um QR code costuma ser só um bloco de pontos, e os materiais eram apresentados como arquivos secos."
-   ],
-   "did": [
+   "did": [],
+   "cons": [
     [
-     "Proposed the photo in the background of the QR code",
-     "Propus a foto no fundo do QR code"
+     "At first, all materials pointed to the website. My suggestion was to place a QR code instead of a link. This became a practice built into all printed materials.",
+     "Inicialmente, todos os materiais direcionavam para o site, a minha sugestão foi inserir um QR ao invés de um link. Isso se tornou prática incorporada a todos os materiais impressos."
     ],
     [
-     "The team (me, the copywriter and the PM) studied it at length until reaching this model",
-     "A equipe (eu, a redatora e a gerente de projeto) estudou bastante até chegar neste modelo"
-    ],
-    [
-     "Materials are now presented applied on mockups, not flat",
-     "Os materiais agora são apresentados aplicados em mockups, e não secos"
+     "With the arrival of a patient library, the QR code evolved into one that carries the image of the brand's “heroes”.",
+     "Com o surgimento de uma biblioteca de pacientes, o QR evoluiu para um que tem a imagem dos “heros” da marca."
     ]
    ]
   },
@@ -154,18 +145,20 @@
     "Safety information inside a three-quarter insert",
     "A bula dentro de um encarte de três quartos"
    ],
-   "constraint": [
-    "Another model with the same problem: it would be a simple front and back, with the safety information to include.",
-    "Outro modelo com o mesmo problema: seria um frente e verso simples, com a bula para incluir."
-   ],
    "did": [
     [
-     "An inner insert that reaches three quarters of the sheet holds the safety information",
-     "Um encarte interno que alcança três quartos da folha abriga a bula"
+     "An inner insert that reaches ¾ of the sheet and holds the safety information.",
+     "Um encarte interno que alcança ¾ da folha e abriga a bula."
     ],
     [
-     "The “~8 out of 10” and “~9 out of 10” highlights were designed by me",
-     "Os destaques “~8 out of 10” e “~9 out of 10” foram criados por mim"
+     "The “8 out of 10” and “9 out of 10” highlights were created by me and applied across all materials with that theme: not only my team's, but the whole brand's.",
+     "Os destaques de 8 out of 10 e 9 out of 10 foram criados por mim e implementados em todos os materiais que tinham esse tema: não somente da minha equipe, mas todos da marca."
+    ]
+   ],
+   "cons": [
+    [
+     "Another model with the same problem, a different solution: a simple front and back that has to come with the safety information.",
+     "Outro modelo com o mesmo problema, uma solução diferente: um frente e verso simples, que precisa vir acompanhado da bula."
     ]
    ]
   },
@@ -184,23 +177,25 @@
     "A different material: window cling",
     "Um material diferente: window cling"
    ],
-   "constraint": [
-    "A booth at an event, with glass instead of paper.",
-    "Um estande em um evento, com vidro no lugar de papel."
-   ],
    "did": [
     [
-     "Window cling for the event booth, a material different from print",
-     "Window cling para o estande do evento, um material diferente do impresso"
+     "A material that sticks to the glass through static, with no extra cost to remove it.",
+     "Material que por meio de estática fica preso ao vidro, sem custos extras para a retirada."
     ]
    ],
-   "plain": true
+   "plain": true,
+   "cons": [
+    [
+     "An event booth, with glass instead of paper.",
+     "Estande de evento, com vidro no lugar de papel."
+    ]
+   ]
   },
   {
    "id": "icons",
    "tag": [
-    "Visual system",
-    "Sistema visual"
+    "Icons and charts",
+    "Ícones e gráficos"
    ],
    "area": "5/1/7/6",
    "fit": "contain",
@@ -208,25 +203,23 @@
     "pharma_icons"
    ],
    "title": [
-    "Icons that did not exist",
-    "Ícones que não existiam"
-   ],
-   "constraint": [
-    "The brand had no icons for the patient types shown in the data.",
-    "A marca não tinha ícones para os tipos de paciente mostrados nos dados."
+    "Visual system",
+    "Sistema visual"
    ],
    "did": [
     [
-     "Created the icons for Scalp, Nail, Palms/soles, Body weight and joints",
-     "Criei os ícones de Scalp, Nail, Palms/soles, Body weight e articulações"
+     "Creation of the scalp, nail, palms/soles, body weight and joint icons. These icons were incorporated into the design system of the whole brand and used in all of the agency's materials from then on.",
+     "Criação dos ícones de scalp, nail, palms/soles, body weight e articulações. Ícones estes que foram incorporados ao design system de toda a marca e utilizados em todos os materiais da agência daquele ponto em diante."
     ],
     [
-     "Later used by the agency and incorporated into the brand's visual system",
-     "Depois usados pela agência e incorporados ao sistema visual da marca"
-    ],
+     "Creation of charts that are visually pleasing and faithful to the data.",
+     "Criação de gráficos visualmente agradáveis e fiéis aos dados."
+    ]
+   ],
+   "cons": [
     [
-     "Data charts designed by me",
-     "Gráficos de dados desenhados por mim"
+     "When covering themes about the parts of the body where the medication acts most, there was no visual system developed by the parent agency.",
+     "Ao abordar temas que eram dedicados a partes do corpo em que o medicamento mais agia, não existia um sistema visual desenvolvido pela agência mãe."
     ]
    ]
   },
@@ -245,18 +238,20 @@
     "A chart with no numbers",
     "Um gráfico sem os números"
    ],
-   "constraint": [
-    "Tremfya Data compares the brand with its biggest competitors. One chart arrived without the underlying numbers.",
-    "O Tremfya Data compara a marca com seus maiores concorrentes. Um gráfico chegou sem os números por trás."
-   ],
    "did": [
     [
-     "Rebuilt the chart from another chart, since the numbers were not provided",
-     "Reconstruí o gráfico a partir de outro gráfico, já que os números não foram fornecidos"
+     "Every printed material gets an online version, lighter, adapted to digital needs and with a special visualization, thanks to specific software the team found after a lot of research. Viewing it digitally is as good as, or even better than, the printed experience.",
+     "Todos os materiais impressos ganham uma versão online, mais leve, adaptada às necessidades do digital e com uma visualização especial, graças a um software específico que a equipe encontrou depois de muita pesquisa. A experiência de ver no digital é tão boa ou até melhor que a do impresso."
     ],
     [
-     "The brochure also exists in a digital version, where it can be flipped through like a printed one",
-     "A brochura também existe em versão digital, em que dá para folhear como um impresso"
+     "Materials the rep no longer had at hand could be sent to HCPs later, with no loss of information.",
+     "Materiais que o rep não tinha mais à mão, poderiam ser enviados posteriormente aos HCPs, sem prejuízo à informação."
+    ]
+   ],
+   "cons": [
+    [
+     "The printed materials also had to be available to the reps on the tablet provided by the brand. The visualization had to be adjusted to make better use of the data and of the conversation.",
+     "Os materiais impressos também precisavam estar disponíveis para os representantes no tablet que lhes é disponibilizado pela marca. A visualização precisava ser ajustada para melhor aproveitamento dos dados e da conversa."
     ]
    ]
   },
@@ -266,32 +261,36 @@
     "Digital",
     "Digital"
    ],
-   "area": "7/1/9/13",
+   "area": "7/4/10/10",
    "fit": "top",
    "images": [
-    "pharma_email_commitment",
-    "pharma_email_dosing",
-    "pharma_email_onset"
+    "pharma_email_dosing"
    ],
    "title": [
-    "E-mails the reps can edit",
-    "E-mails que os representantes editam"
-   ],
-   "constraint": [
-    "Each rep needs to speak to their own physicians, inside a regulated template.",
-    "Cada representante precisa falar com os próprios médicos, dentro de um template regulado."
+    "E-mails",
+    "E-mails"
    ],
    "did": [
     [
-     "HCP e-mails with text customizable directly in the reps' platform",
-     "E-mails para HCPs com textos customizáveis direto na plataforma dos representantes"
+     "Development of a mobile-first mindset: every e-mail had two versions, desktop and mobile. Charts, images, tables and text were adapted to the platform where they would be viewed.",
+     "Desenvolvimento do mindset mobile-first, todos os e-mails tinham duas versões: a do desktop e a mobile – gráficos, imagens, tabela e texto eram adaptados para a plataforma em que seriam visualizados."
     ],
     [
-     "Animated GIFs and alt text for every image",
-     "GIFs animados e texto alternativo em todas as imagens"
+     "Animated GIFs highlighting data or showing the brand.",
+     "Inserção de gifs animados com dados em destaque ou demonstrando a marca."
+    ],
+    [
+     "Testing: in the final approval round, each e-mail went through tests by the POD team, QA and the representatives of the areas (regulatory, medical, legal) before being sent. Any display error was fixed there.",
+     "Implementação dos testes: cada e-mail, na rodada final de aprovação passava por testes da equipe da POD, QA e dos representantes da área (regulatório, médico, legal) antes de serem enviados – qualquer erro de visualização era corrigido ali."
     ]
    ],
-   "plain": true
+   "plain": true,
+   "cons": [
+    [
+     "Long, dense e-mails, with a lot of data and a lot of text. Viewing was prioritized for desktop, and there was no mobile version.",
+     "E-mails longos, densos, com muitos dados e muito texto. A visualização era priorizada no desktop, não existia versão mobile."
+    ]
+   ]
   }
  ]
 }
