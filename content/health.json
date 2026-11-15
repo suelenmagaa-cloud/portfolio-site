@@ -1,437 +1,437 @@
 {
-  "page": {
-    "title": [
-      "Health",
-      "Saúde"
+ "page": {
+  "title": [
+   "Health",
+   "Saúde"
+  ],
+  "tags": "Unifesp · UFT · Instituto Jô Clemente",
+  "intro": [
+   "Scientific books and research reports in public and mental health. The researchers hand me the text; the graphic project, layout, charts, infographics and every page are mine.",
+   "Livros científicos e relatórios de pesquisa em saúde pública e saúde mental. Os pesquisadores me entregam o texto; o projeto gráfico, o layout, os gráficos, os infográficos e cada página são meus."
+  ],
+  "give": [
+   "I receive",
+   "Eu recebo"
+  ],
+  "give2": [
+   "The manuscript. Text only.",
+   "O manuscrito. Somente o texto."
+  ],
+  "make": [
+   "I create",
+   "Eu crio"
+  ],
+  "make2": [
+   "Cover and graphic project, layout, charts and infographics, art editing and the composition of every page.",
+   "Capa e projeto gráfico, layout, gráficos e infográficos, edição de arte e a diagramação de cada página."
+  ],
+  "chapter": [
+   "Publications",
+   "Publicações"
+  ],
+  "chapter2": [
+   "Four books, all published. Open any of them to browse selected pages.",
+   "Quatro livros, todos publicados. Abra qualquer um para folhear páginas selecionadas."
+  ],
+  "process": [
+   "How every book is made",
+   "Como cada livro é feito"
+  ],
+  "steps": [
+   [
+    [
+     "Conversation",
+     "Conversa"
     ],
-    "tags": "Unifesp · UFT · Instituto Jô Clemente",
-    "intro": [
-      "Scientific books and research reports in public and mental health. The researchers hand me the text; the graphic project, layout, charts, infographics and every page are mine.",
-      "Livros científicos e relatórios de pesquisa em saúde pública e saúde mental. Os pesquisadores me entregam o texto; o projeto gráfico, o layout, os gráficos, os infográficos e cada página são meus."
-    ],
-    "give": [
-      "I receive",
-      "Eu recebo"
-    ],
-    "give2": [
-      "The manuscript. Text only.",
-      "O manuscrito. Somente o texto."
-    ],
-    "make": [
-      "I create",
-      "Eu crio"
-    ],
-    "make2": [
-      "Cover and graphic project, layout, charts and infographics, art editing and the composition of every page.",
-      "Capa e projeto gráfico, layout, gráficos e infográficos, edição de arte e a diagramação de cada página."
-    ],
-    "chapter": [
-      "Publications",
-      "Publicações"
-    ],
-    "chapter2": [
-      "Four books, all published. Open any of them to browse selected pages.",
-      "Quatro livros, todos publicados. Abra qualquer um para folhear páginas selecionadas."
-    ],
-    "process": [
-      "How every book is made",
-      "Como cada livro é feito"
-    ],
-    "steps": [
-      [
-        [
-          "Conversation",
-          "Conversa"
-        ],
-        [
-          "I talk with the researcher to understand the study and the readers.",
-          "Converso com o pesquisador para entender a pesquisa e os leitores."
-        ]
-      ],
-      [
-        [
-          "Layout proposal",
-          "Proposta de layout"
-        ],
-        [
-          "I build the visual system: cover, grid, typography, charts.",
-          "Monto o sistema visual: capa, grade, tipografia, gráficos."
-        ]
-      ],
-      [
-        [
-          "Layout approval",
-          "Aprovação do layout"
-        ],
-        [
-          "The layout is reviewed and approved before any composition.",
-          "O layout é revisado e aprovado antes de qualquer diagramação."
-        ]
-      ],
-      [
-        [
-          "Full composition",
-          "Diagramação completa"
-        ],
-        [
-          "I compose the whole book, page by page.",
-          "Diagramo o livro inteiro, página a página."
-        ]
-      ],
-      [
-        [
-          "Review and approval",
-          "Revisão e aprovação"
-        ],
-        [
-          "Proofreading, corrections and final sign-off.",
-          "Revisão, correções e aprovação final."
-        ]
-      ]
-    ],
-    "browse": [
-      "Browse pages",
-      "Folhear páginas"
-    ],
-    "close": [
-      "Close",
-      "Fechar"
-    ],
-    "prev": [
-      "Previous",
-      "Anterior"
-    ],
-    "next": [
-      "Next",
-      "Próxima"
-    ],
-    "meta": {
-      "inst": [
-        "Institution",
-        "Instituição"
-      ],
-      "year": [
-        "Year",
-        "Ano"
-      ],
-      "pages": [
-        "Pages",
-        "Páginas"
-      ],
-      "role": [
-        "My role",
-        "Meu papel"
-      ],
-      "fund": [
-        "Funding",
-        "Financiamento"
-      ],
-      "org": [
-        "Organization",
-        "Organização"
-      ]
-    },
-    "info_tag": [
-      "Infographic",
-      "Infográfico"
-    ],
-    "info_title": [
-      "From survey data to a single long read",
-      "Dos dados da pesquisa a uma leitura contínua"
-    ],
-    "info_text": [
-      "A vertical infographic for the Observatório da Deficiência Intelectual: a Brazil map with state percentages, bars, pictograms and donut charts for sociodemographics, health care and mental-health access. Two versions; scroll inside each one.",
-      "Um infográfico vertical para o Observatório da Deficiência Intelectual: mapa do Brasil com porcentagens por estado, barras, pictogramas e rosquinhas para dados sociodemográficos, atendimento em saúde e acesso à saúde mental. Duas versões; role dentro de cada uma."
-    ],
-    "info_src": [
-      "Source cited in the piece: Pesquisa Nacional de Saúde 2019 (IBGE).",
-      "Fonte citada na peça: Pesquisa Nacional de Saúde 2019 (IBGE)."
-    ],
-    "info_open": [
-      "Open full size",
-      "Abrir em tamanho real"
-    ],
-    "cvv": [
-      "Support in Brazil: CVV, call 188 (free, 24 hours).",
-      "Apoio no Brasil: CVV, ligue 188 (gratuito, 24 horas)."
-    ],
-    "courses": [
-      "Online courses",
-      "Cursos online"
-    ],
-    "courses2": [
-      "Learning experiences for health professionals: how each course looks, navigates and guides the learner.",
-      "Experiências de aprendizagem para profissionais da saúde: como cada curso aparece, navega e conduz o aluno."
-    ],
-    "topics": [
-      "Course themes",
-      "Temas do curso"
-    ],
-    "tutorial": [
-      "Browse the navigation tutorial",
-      "Ver o tutorial de navegação"
+    [
+     "I talk with the researcher to understand the study and the readers.",
+     "Converso com o pesquisador para entender a pesquisa e os leitores."
     ]
+   ],
+   [
+    [
+     "Layout proposal",
+     "Proposta de layout"
+    ],
+    [
+     "I build the visual system: cover, grid, typography, charts.",
+     "Monto o sistema visual: capa, grade, tipografia, gráficos."
+    ]
+   ],
+   [
+    [
+     "Layout approval",
+     "Aprovação do layout"
+    ],
+    [
+     "The layout is reviewed and approved before any composition.",
+     "O layout é revisado e aprovado antes de qualquer diagramação."
+    ]
+   ],
+   [
+    [
+     "Full composition",
+     "Diagramação completa"
+    ],
+    [
+     "I compose the whole book, page by page.",
+     "Diagramo o livro inteiro, página a página."
+    ]
+   ],
+   [
+    [
+     "Review and approval",
+     "Revisão e aprovação"
+    ],
+    [
+     "Proofreading, corrections and final sign-off.",
+     "Revisão, correções e aprovação final."
+    ]
+   ]
+  ],
+  "browse": [
+   "Browse pages",
+   "Folhear páginas"
+  ],
+  "close": [
+   "Close",
+   "Fechar"
+  ],
+  "prev": [
+   "Previous",
+   "Anterior"
+  ],
+  "next": [
+   "Next",
+   "Próxima"
+  ],
+  "meta": {
+   "inst": [
+    "Institution",
+    "Instituição"
+   ],
+   "year": [
+    "Year",
+    "Ano"
+   ],
+   "pages": [
+    "Pages",
+    "Páginas"
+   ],
+   "role": [
+    "My role",
+    "Meu papel"
+   ],
+   "fund": [
+    "Funding",
+    "Financiamento"
+   ],
+   "org": [
+    "Organization",
+    "Organização"
+   ]
   },
-  "books": [
-    {
-      "id": "cuidadores",
-      "key": "cuid",
-      "n": 10,
-      "accent": "#c9806a",
-      "tint": "#fbf1ed",
-      "fan": [
-        7,
-        17,
-        1
-      ],
-      "kind": [
-        "Research report",
-        "Relatório de pesquisa"
-      ],
-      "title": [
-        "Cuidadores de idosos acamados residentes na cidade de Palmas: principais achados",
-        "Cuidadores de idosos acamados residentes na cidade de Palmas: principais achados"
-      ],
-      "inst": "Universidade Federal do Tocantins · Colegiado de Enfermagem",
-      "year": "2022",
-      "pages": "39",
-      "fund": "FAPT",
-      "text": [
-        "A warm peach and terracotta system with flat illustrations. Charts, icons and highlighted indicators turn survey tables into pages that can be scanned.",
-        "Um sistema quente em pêssego e terracota, com ilustrações chapadas. Gráficos, ícones e indicadores em destaque transformam tabelas de pesquisa em páginas fáceis de percorrer."
-      ],
-      "role": [
-        [
-          "Layout",
-          "Layout"
-        ],
-        [
-          "Charts and infographics",
-          "Gráficos e infográficos"
-        ],
-        [
-          "Art editing",
-          "Edição de arte"
-        ]
-      ]
-    },
-    {
-      "id": "ijc",
-      "key": "ijc",
-      "n": 10,
-      "accent": "#8f1d7a",
-      "tint": "#f8eef6",
-      "fan": [
-        8,
-        3,
-        1
-      ],
-      "kind": [
-        "Book",
-        "Livro"
-      ],
-      "title": [
-        "Saúde mental de pessoas com deficiência intelectual",
-        "Saúde mental de pessoas com deficiência intelectual"
-      ],
-      "inst": "Instituto Jô Clemente · parceria Unifesp",
-      "year": "2024",
-      "pages": "58",
-      "org": "Gabriela Arantes Wagner",
-      "text": [
-        "A magenta-to-violet cover system, chapter openers, a Brazil map with state-level data and sociodemographic pictograms. In one of the publications for Instituto Jô Clemente, I used AI to produce charts and tables.",
-        "Um sistema de capa do magenta ao violeta, aberturas de capítulo, mapa do Brasil com dados por estado e pictogramas sociodemográficos. Em uma das publicações para o Instituto Jô Clemente, usei IA para produzir gráficos e tabelas."
-      ],
-      "role": [
-        [
-          "Cover and graphic project",
-          "Capa e projeto gráfico"
-        ],
-        [
-          "Layout",
-          "Layout"
-        ],
-        [
-          "Infographic",
-          "Infográfico"
-        ]
-      ]
-    },
-    {
-      "id": "bombeiros",
-      "key": "bomb",
-      "n": 10,
-      "accent": "#d9a400",
-      "tint": "#fff8e0",
-      "fan": [
-        6,
-        4,
-        1
-      ],
-      "kind": [
-        "Book",
-        "Livro"
-      ],
-      "title": [
-        "Tentativas de suicídio atendidas pelo Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
-        "Tentativas de suicídio atendidas pelo Corpo de Bombeiros da Polícia Militar do Estado de São Paulo"
-      ],
-      "inst": "Unifesp · Programa de Pós-Graduação em Saúde Coletiva · Corpo de Bombeiros PMESP",
-      "year": "2022",
-      "pages": "58",
-      "fund": "FAPESP 2020/03703-6",
-      "org": "Gabriela Arantes Wagner, Tiago Regis Franco de Almeida",
-      "text": [
-        "A yellow ribbon system for the awareness theme: section openers, a flow diagram and a series of maps of the state of São Paulo, each indicator in its own color family. The maps were supplied by the research team; I composed them in the book. Only layout pages are shown here.",
-        "Um sistema com o laço amarelo para o tema da conscientização: aberturas de seção, um fluxograma e uma série de mapas do estado de São Paulo, cada indicador em sua família de cor. Os mapas foram fornecidos pela equipe da pesquisa; eu os diagramei no livro. Aqui aparecem apenas páginas de layout."
-      ],
-      "role": [
-        [
-          "Cover and art",
-          "Capa e arte"
-        ],
-        [
-          "Layout",
-          "Layout"
-        ],
-        [
-          "Composition of supplied maps and tables",
-          "Diagramação de mapas e tabelas fornecidos"
-        ]
-      ],
-      "cvv": true
-    }
+  "info_tag": [
+   "Infographic",
+   "Infográfico"
+  ],
+  "info_title": [
+   "From survey data to a single long read",
+   "Dos dados da pesquisa a uma leitura contínua"
+  ],
+  "info_text": [
+   "A vertical infographic for the Observatório da Deficiência Intelectual: a Brazil map with state percentages, bars, pictograms and donut charts for sociodemographics, health care and mental-health access. Two versions; scroll inside each one.",
+   "Um infográfico vertical para o Observatório da Deficiência Intelectual: mapa do Brasil com porcentagens por estado, barras, pictogramas e rosquinhas para dados sociodemográficos, atendimento em saúde e acesso à saúde mental. Duas versões; role dentro de cada uma."
+  ],
+  "info_src": [
+   "Source cited in the piece: Pesquisa Nacional de Saúde 2019 (IBGE).",
+   "Fonte citada na peça: Pesquisa Nacional de Saúde 2019 (IBGE)."
+  ],
+  "info_open": [
+   "Open full size",
+   "Abrir em tamanho real"
+  ],
+  "cvv": [
+   "Support in Brazil: CVV, call 188 (free, 24 hours).",
+   "Apoio no Brasil: CVV, ligue 188 (gratuito, 24 horas)."
   ],
   "courses": [
-    {
-      "id": "saude-da-mulher",
-      "cls": "c1",
-      "accent": "#ec6e57",
-      "tint": "#fdf0ec",
-      "img": "cur_mulher",
-      "viewer": "tutorial",
-      "kind": [
-        "Online course",
-        "Curso online"
-      ],
-      "title": [
-        "Saúde da Mulher",
-        "Saúde da Mulher"
-      ],
-      "year": "2019",
-      "text": [
-        "A coral triangle identity, a guide character named Marjorie and six clinical-case characters. I also designed the navigation tutorial: annotated screens that take the learner from the pre-test through the clinical cases to the post-test and the certificate on Plataforma Arouca.",
-        "Uma identidade com o triângulo coral, uma personagem-guia chamada Marjorie e seis personagens para os casos clínicos. Também desenhei o tutorial de navegação: telas anotadas que levam o aluno do pré-teste, passando pelos casos clínicos, até o pós-teste e o certificado na Plataforma Arouca."
-      ],
-      "topics": [
-        [
-          "Saúde integral da mulher & SUS",
-          "Saúde integral da mulher & SUS"
-        ],
-        [
-          "Cuidado da mulher na atenção básica",
-          "Cuidado da mulher na atenção básica"
-        ],
-        [
-          "Protocolos de cuidado às mulheres",
-          "Protocolos de cuidado às mulheres"
-        ],
-        [
-          "Casos clínicos e avaliação",
-          "Casos clínicos e avaliação"
-        ]
-      ],
-      "chips": [
-        [
-          "Identity",
-          "Identidade"
-        ],
-        [
-          "Course interface",
-          "Interface do curso"
-        ],
-        [
-          "Navigation tutorial",
-          "Tutorial de navegação"
-        ]
-      ]
-    },
-    {
-      "id": "dermatologia",
-      "cls": "c2",
-      "accent": "#1f7a75",
-      "tint": "#eef7f6",
-      "img": "cur_derm",
-      "kind": [
-        "Online course",
-        "Curso online"
-      ],
-      "title": [
-        "Dermatologia na atenção básica",
-        "Dermatologia na atenção básica"
-      ],
-      "text": [
-        "A teal and warm-brown system with line icons, a dotted texture and clinical-case screens, shown here on the acne theme.",
-        "Um sistema em verde-azulado e marrom quente, com ícones de linha, textura pontilhada e telas de caso clínico, aqui no tema da acne."
-      ],
-      "chips": [
-        [
-          "Course interface",
-          "Interface do curso"
-        ],
-        [
-          "Icons",
-          "Ícones"
-        ]
-      ]
-    },
-    {
-      "id": "saude-indigena",
-      "cls": "c3",
-      "accent": "#c0453a",
-      "tint": "#fbf0ee",
-      "img": "cur_ind",
-      "logo": "cur_ind_logo",
-      "kind": [
-        "Online course",
-        "Curso online"
-      ],
-      "title": [
-        "Saúde Indígena",
-        "Saúde Indígena"
-      ],
-      "text": [
-        "A hand-drawn wordmark with an arrow, beads and feathers as decorative elements, and a hand-lettered type for the course themes.",
-        "Um logotipo desenhado à mão com uma flecha, contas e penas como elementos decorativos, e uma tipografia manuscrita para os temas do curso."
-      ],
-      "topics": [
-        [
-          "Adaptação ao ambiente virtual e introdução aos povos indígenas do Brasil",
-          "Adaptação ao ambiente virtual e introdução aos povos indígenas do Brasil"
-        ],
-        [
-          "Antropologia e saúde",
-          "Antropologia e saúde"
-        ],
-        [
-          "Políticas e organização dos serviços de saúde indígena",
-          "Políticas e organização dos serviços de saúde indígena"
-        ],
-        [
-          "Epidemiologia e vigilância em saúde",
-          "Epidemiologia e vigilância em saúde"
-        ]
-      ],
-      "chips": [
-        [
-          "Identity",
-          "Identidade"
-        ],
-        [
-          "Course interface",
-          "Interface do curso"
-        ]
-      ]
-    }
+   "Online courses",
+   "Cursos online"
+  ],
+  "courses2": [
+   "Learning experiences for health professionals: how each course looks, navigates and guides the learner.",
+   "Experiências de aprendizagem para profissionais da saúde: como cada curso aparece, navega e conduz o aluno."
+  ],
+  "topics": [
+   "Course themes",
+   "Temas do curso"
+  ],
+  "tutorial": [
+   "Browse the navigation tutorial",
+   "Ver o tutorial de navegação"
   ]
+ },
+ "books": [
+  {
+   "id": "cuidadores",
+   "key": "cuid",
+   "n": 10,
+   "accent": "#c9806a",
+   "tint": "#fbf1ed",
+   "fan": [
+    7,
+    17,
+    1
+   ],
+   "kind": [
+    "Research report",
+    "Relatório de pesquisa"
+   ],
+   "title": [
+    "Caregivers of bedridden elderly people living in the city of Palmas: main findings",
+    "Cuidadores de idosos acamados residentes na cidade de Palmas: principais achados"
+   ],
+   "inst": "Universidade Federal do Tocantins · Colegiado de Enfermagem",
+   "year": "2022",
+   "pages": "39",
+   "fund": "FAPT",
+   "text": [
+    "A warm peach and terracotta system with flat illustrations. Charts, icons and highlighted indicators turn survey tables into pages that can be scanned.",
+    "Um sistema quente em pêssego e terracota, com ilustrações chapadas. Gráficos, ícones e indicadores em destaque transformam tabelas de pesquisa em páginas fáceis de percorrer."
+   ],
+   "role": [
+    [
+     "Layout",
+     "Layout"
+    ],
+    [
+     "Charts and infographics",
+     "Gráficos e infográficos"
+    ],
+    [
+     "Art editing",
+     "Edição de arte"
+    ]
+   ]
+  },
+  {
+   "id": "ijc",
+   "key": "ijc",
+   "n": 10,
+   "accent": "#8f1d7a",
+   "tint": "#f8eef6",
+   "fan": [
+    8,
+    3,
+    1
+   ],
+   "kind": [
+    "Book",
+    "Livro"
+   ],
+   "title": [
+    "Mental health of people with intellectual disability",
+    "Saúde mental de pessoas com deficiência intelectual"
+   ],
+   "inst": "Instituto Jô Clemente · parceria Unifesp",
+   "year": "2024",
+   "pages": "58",
+   "org": "Gabriela Arantes Wagner",
+   "text": [
+    "A magenta-to-violet cover system, chapter openers, a Brazil map with state-level data and sociodemographic pictograms. In one of the publications for Instituto Jô Clemente, I used AI to produce charts and tables.",
+    "Um sistema de capa do magenta ao violeta, aberturas de capítulo, mapa do Brasil com dados por estado e pictogramas sociodemográficos. Em uma das publicações para o Instituto Jô Clemente, usei IA para produzir gráficos e tabelas."
+   ],
+   "role": [
+    [
+     "Cover and graphic project",
+     "Capa e projeto gráfico"
+    ],
+    [
+     "Layout",
+     "Layout"
+    ],
+    [
+     "Infographic",
+     "Infográfico"
+    ]
+   ]
+  },
+  {
+   "id": "bombeiros",
+   "key": "bomb",
+   "n": 10,
+   "accent": "#d9a400",
+   "tint": "#fff8e0",
+   "fan": [
+    6,
+    4,
+    1
+   ],
+   "kind": [
+    "Book",
+    "Livro"
+   ],
+   "title": [
+    "Suicide attempts attended by the Fire Department of the São Paulo State Military Police",
+    "Tentativas de suicídio atendidas pelo Corpo de Bombeiros da Polícia Militar do Estado de São Paulo"
+   ],
+   "inst": "Unifesp · Programa de Pós-Graduação em Saúde Coletiva · Corpo de Bombeiros PMESP",
+   "year": "2022",
+   "pages": "58",
+   "fund": "FAPESP 2020/03703-6",
+   "org": "Gabriela Arantes Wagner, Tiago Regis Franco de Almeida",
+   "text": [
+    "A yellow ribbon system for the awareness theme: section openers, a flow diagram and a series of maps of the state of São Paulo, each indicator in its own color family. The maps were supplied by the research team; I composed them in the book. Only layout pages are shown here.",
+    "Um sistema com o laço amarelo para o tema da conscientização: aberturas de seção, um fluxograma e uma série de mapas do estado de São Paulo, cada indicador em sua família de cor. Os mapas foram fornecidos pela equipe da pesquisa; eu os diagramei no livro. Aqui aparecem apenas páginas de layout."
+   ],
+   "role": [
+    [
+     "Cover and art",
+     "Capa e arte"
+    ],
+    [
+     "Layout",
+     "Layout"
+    ],
+    [
+     "Composition of supplied maps and tables",
+     "Diagramação de mapas e tabelas fornecidos"
+    ]
+   ],
+   "cvv": true
+  }
+ ],
+ "courses": [
+  {
+   "id": "saude-da-mulher",
+   "cls": "c1",
+   "accent": "#ec6e57",
+   "tint": "#fdf0ec",
+   "img": "cur_mulher",
+   "viewer": "tutorial",
+   "kind": [
+    "Online course",
+    "Curso online"
+   ],
+   "title": [
+    "Women's Health",
+    "Saúde da Mulher"
+   ],
+   "year": "2019",
+   "text": [
+    "A coral triangle identity, a guide character named Marjorie and six clinical-case characters. I also designed the navigation tutorial: annotated screens that take the learner from the pre-test through the clinical cases to the post-test and the certificate on Plataforma Arouca.",
+    "Uma identidade com o triângulo coral, uma personagem-guia chamada Marjorie e seis personagens para os casos clínicos. Também desenhei o tutorial de navegação: telas anotadas que levam o aluno do pré-teste, passando pelos casos clínicos, até o pós-teste e o certificado na Plataforma Arouca."
+   ],
+   "topics": [
+    [
+     "Comprehensive women's health & SUS",
+     "Saúde integral da mulher & SUS"
+    ],
+    [
+     "Women's care in primary care",
+     "Cuidado da mulher na atenção básica"
+    ],
+    [
+     "Care protocols for women",
+     "Protocolos de cuidado às mulheres"
+    ],
+    [
+     "Clinical cases and assessment",
+     "Casos clínicos e avaliação"
+    ]
+   ],
+   "chips": [
+    [
+     "Identity",
+     "Identidade"
+    ],
+    [
+     "Course interface",
+     "Interface do curso"
+    ],
+    [
+     "Navigation tutorial",
+     "Tutorial de navegação"
+    ]
+   ]
+  },
+  {
+   "id": "dermatologia",
+   "cls": "c2",
+   "accent": "#1f7a75",
+   "tint": "#eef7f6",
+   "img": "cur_derm",
+   "kind": [
+    "Online course",
+    "Curso online"
+   ],
+   "title": [
+    "Dermatology in primary care",
+    "Dermatologia na atenção básica"
+   ],
+   "text": [
+    "A teal and warm-brown system with line icons, a dotted texture and clinical-case screens, shown here on the acne theme.",
+    "Um sistema em verde-azulado e marrom quente, com ícones de linha, textura pontilhada e telas de caso clínico, aqui no tema da acne."
+   ],
+   "chips": [
+    [
+     "Course interface",
+     "Interface do curso"
+    ],
+    [
+     "Icons",
+     "Ícones"
+    ]
+   ]
+  },
+  {
+   "id": "saude-indigena",
+   "cls": "c3",
+   "accent": "#c0453a",
+   "tint": "#fbf0ee",
+   "img": "cur_ind",
+   "logo": "cur_ind_logo",
+   "kind": [
+    "Online course",
+    "Curso online"
+   ],
+   "title": [
+    "Indigenous Health",
+    "Saúde Indígena"
+   ],
+   "text": [
+    "A hand-drawn wordmark with an arrow, beads and feathers as decorative elements, and a hand-lettered type for the course themes.",
+    "Um logotipo desenhado à mão com uma flecha, contas e penas como elementos decorativos, e uma tipografia manuscrita para os temas do curso."
+   ],
+   "topics": [
+    [
+     "Adapting to the virtual environment and introduction to the Indigenous peoples of Brazil",
+     "Adaptação ao ambiente virtual e introdução aos povos indígenas do Brasil"
+    ],
+    [
+     "Anthropology and health",
+     "Antropologia e saúde"
+    ],
+    [
+     "Policies and organization of Indigenous health services",
+     "Políticas e organização dos serviços de saúde indígena"
+    ],
+    [
+     "Epidemiology and health surveillance",
+     "Epidemiologia e vigilância em saúde"
+    ]
+   ],
+   "chips": [
+    [
+     "Identity",
+     "Identidade"
+    ],
+    [
+     "Course interface",
+     "Interface do curso"
+    ]
+   ]
+  }
+ ]
 }
