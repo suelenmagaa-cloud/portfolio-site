@@ -129,8 +129,10 @@ html[data-embed] .site:not(.shero){display:none}html[data-embed] .top{justify-co
 .g.m{display:none}dialog{border:0;background:none;padding:0}dialog img{max-width:92vw;max-height:90vh}"""
 JS = """const D=document.documentElement,ping=()=>parent.postMessage({h:D.scrollHeight},'*'),
 set=l=>{D.dataset.lang=l;ping()};
-set(new URLSearchParams(location.search).get('lang')||(navigator.language.startsWith('pt')?'pt':'en'));
-document.querySelectorAll('.bar button').forEach(b=>b.onclick=()=>set(b.dataset.l));
+let sv='';try{sv=localStorage.sl||''}catch(e){}
+set(new URLSearchParams(location.search).get('lang')||sv||(navigator.language.startsWith('pt')?'pt':'en'));
+addEventListener('storage',e=>{if(e.key=='sl'&&e.newValue)set(e.newValue)});
+document.querySelectorAll('.bar button').forEach(b=>b.onclick=()=>{set(b.dataset.l);try{localStorage.sl=b.dataset.l}catch(e){}});
 addEventListener('message',e=>{if(e.data&&e.data.lang)set(String(e.data.lang).slice(0,2))});
 addEventListener('load',ping);addEventListener('resize',ping);
 document.querySelectorAll('details').forEach(d=>d.ontoggle=ping);
