@@ -229,14 +229,22 @@ def pharma(data, S, L):
 
 HCSS = """body.hl{background:#fff}.hl .intro{display:none}
 .ht{margin:48px 4px 0;max-width:980px}.ht small{display:inline-block;border:1px solid var(--pink);border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em;color:var(--navy)}
-.ht h1{font:700 clamp(3.4rem,9vw,7rem)/.92 Outfit,sans-serif;letter-spacing:-.045em;color:var(--ink);margin:.18em 0 .25em}.ht p{font-size:1.25rem;line-height:1.45;color:var(--navy);margin:0;max-width:44ch}
+.ht{display:grid;grid-template-columns:1.2fr 1fr;gap:20px 56px;align-items:end;max-width:none}.ht h1{font:700 clamp(3rem,8vw,6.2rem)/.95 Outfit,sans-serif;letter-spacing:-.04em;color:var(--ink);margin:.2em 0 0}.ht p{font-size:1.1rem;line-height:1.5;color:var(--navy);margin:0;max-width:none}@media(max-width:700px){.ht{grid-template-columns:1fr;margin-top:28px}}
 .hg{display:grid;grid-template-columns:1fr 1fr;margin:44px 4px 0;border-top:5px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
 .hg>div{padding:26px 36px 8px 0}.hg>div+div{padding-left:36px;border-left:1px solid #e4e0ee}.hg b{font:600 .7rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}.hg p{font:500 1.35rem/1.3 Outfit,sans-serif;color:var(--ink);margin:.35em 0 0}
 .hp{margin:72px 4px 0}.hp h2,.hc h2{font-size:1.7rem;margin:0 0 22px;color:var(--ink);letter-spacing:-.02em}
 .hs{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;counter-reset:s}.hs::before{content:"";position:absolute;left:0;right:0;top:19px;height:3px;background:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%)}
 .hs li{list-style:none;position:relative;padding:50px 22px 0 0;counter-increment:s}.hs li::before{content:counter(s);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:#fff;border:3px solid var(--navy);display:grid;place-items:center;font:700 .95rem Outfit,sans-serif;color:var(--navy)}
+.hs{padding-left:0;margin-left:0}.hs::before{display:none!important}.hs li:nth-child(1){--c:#1c1140;--n:#235070;--tc:#fff}.hs li:nth-child(2){--c:#235070;--n:#7c6cf6;--tc:#fff}.hs li:nth-child(3){--c:#7c6cf6;--n:#e0568f;--tc:#fff}.hs li:nth-child(4){--c:#e0568f;--n:#f28db1;--tc:#fff}.hs li:nth-child(5){--c:#f28db1;--n:#f28db1;--tc:#14122b}
+.hs li::before{background:var(--c)!important;border-color:var(--c)!important;color:var(--tc)!important;z-index:1}.hs li b{color:var(--c)}.hs li:nth-child(5) b{color:#d6628f}
+.hs li::after{content:"";position:absolute;left:40px;right:0;top:19px;height:3px;background:linear-gradient(90deg,var(--c),var(--n));transform-origin:left;transform:scaleX(0);transition:transform .7s ease calc(var(--i)*.45s)}.hs li:last-child::after{display:none}
+.hs li{opacity:0;transform:translateY(10px);transition:opacity .5s ease calc(var(--i)*.45s),transform .5s ease calc(var(--i)*.45s)}
+.hs.go li{opacity:1;transform:none}.hs.go li::after{transform:scaleX(1)}
+@keyframes hsr{0%{box-shadow:0 0 0 0 var(--c);transform:scale(1)}7%{transform:scale(1.2)}16%{box-shadow:0 0 0 12px transparent;transform:scale(1)}100%{box-shadow:0 0 0 0 transparent;transform:scale(1)}}
+.hs.go li::before{animation:hsr 7s ease-out infinite;animation-delay:calc(2.4s + var(--i)*1.1s)}
+@media(prefers-reduced-motion:reduce){.hs li{opacity:1;transform:none;transition:none}.hs li::after{transform:none;transition:none}.hs.go li::before{animation:none}}
 .hs b{display:block;font:600 1.05rem Outfit,sans-serif;color:var(--ink);margin-bottom:.3em}.hs span{font-size:.85rem;line-height:1.45;color:var(--navy)}.hs ol{display:contents;margin:0;padding:0}
-.hc{margin:88px 4px 0}.hc>p{margin:-12px 0 36px;font-size:.95rem}
+.hc{margin:88px 4px 0}.hc>p{margin:-12px 0 36px;font-size:.95rem}.hcc{margin-top:120px}.hp h2.x{}.hcc h2{font:700 clamp(2.2rem,5vw,3.4rem)/1.05 Outfit,sans-serif;letter-spacing:-.03em;margin:0 0 16px;padding-left:18px;border-left:6px solid var(--pink)}.hcc>p{margin:0 0 40px 24px;font-size:1rem}
 .bk{--a:#c9806a;--t:#fbf1ed;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;align-items:center;border-radius:24px;padding:34px 40px;margin:0 0 26px!important;background:linear-gradient(var(--a),var(--a)) top/100% 7px no-repeat,var(--t)}
 .bk.rev{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}.bk.rev .fan{order:2}
 .fan{position:relative;aspect-ratio:1/1.12;max-width:290px;width:100%;margin:0 auto;border:0;padding:0;background:none;cursor:pointer}
@@ -271,9 +279,10 @@ dialog.hv[open]{display:flex;flex-direction:column}.hv .hh{display:flex;align-it
 .hv .st{flex:1;min-height:0;overflow:auto;display:flex;justify-content:center;padding:20px;background:#2a2740}.hv .st img{display:block;max-width:100%;height:auto;align-self:flex-start;box-shadow:0 10px 30px rgba(0,0,0,.4)}.hv.pg .st{align-items:center}.hv.pg .st img{max-height:100%;width:auto;align-self:center}
 .hv .th{display:flex;gap:8px;padding:12px 20px;overflow-x:auto;border-top:1px solid rgba(255,255,255,.12)}.hv .th img{height:64px;width:auto;border-radius:3px;opacity:.5;cursor:pointer;flex:none;border:2px solid transparent}.hv .th img.on{opacity:1;border-color:var(--pink)}
 .hv .nv{display:flex;gap:8px}
-@media(max-width:860px){.hg{grid-template-columns:1fr}.hg>div,.hg>div+div{padding:20px 0 6px;border-left:0}.hs{grid-template-columns:1fr}.hs::before{left:19px;right:auto;top:0;bottom:0;width:3px;height:auto}.hs li{padding:0 0 26px 58px;min-height:40px}
+@media(max-width:860px){.hs li::after{left:19px;right:auto;top:40px;bottom:0;width:3px;height:auto;background:linear-gradient(180deg,var(--c),var(--n));transform-origin:top;transform:scaleY(0)}.hs.go li::after{transform:scaleY(1)}.hg{grid-template-columns:1fr}.hg>div,.hg>div+div{padding:20px 0 6px;border-left:0}.hs{grid-template-columns:1fr}.hs::before{left:19px;right:auto;top:0;bottom:0;width:3px;height:auto}.hs li{padding:0 0 26px 58px;min-height:40px}
 .bk,.bk.rev,.if{grid-template-columns:minmax(0,1fr);padding:30px 22px;gap:30px;border-radius:22px}.bk.rev .fan{order:0}.fan{max-width:340px}.ifr{gap:12px}.ifr{align-items:flex-start}.ifr .ifs{height:auto;max-height:560px;flex:1 1 0}.hv .th img{height:48px}}"""
-HJS = """(()=>{const dl=document.querySelector('dialog.hv');if(!dl)return;const G=JSON.parse(document.getElementById('hg').textContent),st=dl.querySelector('.st'),th=dl.querySelector('.th'),ct=dl.querySelector('.hh span'),tt=dl.querySelector('.hh b');let g=null,k=0;
+HJS = """(()=>{const hs=document.querySelector('.hs');if(hs){if('IntersectionObserver' in window){new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){hs.classList.add('go');o.disconnect()}},{threshold:.3}).observe(hs)}else hs.classList.add('go')}
+const dl=document.querySelector('dialog.hv');if(!dl)return;const G=JSON.parse(document.getElementById('hg').textContent),st=dl.querySelector('.st'),th=dl.querySelector('.th'),ct=dl.querySelector('.hh span'),tt=dl.querySelector('.hh b');let g=null,k=0;
 const show=n=>{k=(n+g.i.length)%g.i.length;st.innerHTML='<img alt="" src="'+g.i[k]+'">';st.scrollTop=0;ct.textContent=(k+1)+' / '+g.i.length;[...th.children].forEach((x,j)=>x.className=j==k?'on':'');th.children[k]&&th.children[k].scrollIntoView({inline:'center',block:'nearest'})};
 const open=(id,n)=>{g=G[id];tt.textContent=g.t;dl.classList.toggle('pg',g.p);th.innerHTML=g.i.length>1?g.i.map((s,j)=>'<img alt="" loading="lazy" data-j="'+j+'" src="'+g.h[j]+'">').join(''):'';th.style.display=g.i.length>1?'flex':'none';dl.querySelector('.nv').style.visibility=g.i.length>1?'visible':'hidden';show(n||0);dl.showModal();ping()};
 document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>open(b.dataset.g,+b.dataset.n||0));
@@ -284,9 +293,9 @@ dl.addEventListener('keydown',e=>{if(e.key=='ArrowRight')show(k+1);if(e.key=='Ar
 def health(data, S):
     P = data['page']; M = P['meta']
     head, menu, foot = chrome(S, 3)
-    top = ('<section class="ht"><small>' + html.escape(P['tags']) + '</small><h1>' + t(P['title']) + '</h1><p>' + t(P['intro']) + '</p></section>'
+    top = ('<section class="ht"><div><small>' + html.escape(P['tags']) + '</small><h1>' + t(P['title']) + '</h1></div><p>' + t(P['intro']) + '</p></section>'
            f'<div class="hg"><div><b>{t(P["give"])}</b><p>{t(P["give2"])}</p></div><div><b>{t(P["make"])}</b><p>{t(P["make2"])}</p></div></div>')
-    steps = ''.join(f'<li><b>{t(a)}</b><span>{t(b)}</span></li>' for a, b in P['steps'])
+    steps = ''.join(f'<li style="--i:{i}"><b>{t(a)}</b><span>{t(b)}</span></li>' for i, (a, b) in enumerate(P['steps']))
     proc = f'<section class="hp"><h2>{t(P["process"])}</h2><ol class="hs">{steps}</ol></section>'
     G = {}; blocks = ''
     def ims(key, n): return [f'assets/health/{key}_{i:02d}.webp' for i in range(1, n + 1)]
@@ -326,7 +335,7 @@ def health(data, S):
         courses += (f'<article class="cs {c["cls"]}" id="{c["id"]}" style="--a:{c["accent"]};--t:{c["tint"]}"><div class="ci"><img loading="lazy" alt="" src="assets/health/{c["img"]}.webp"></div>'
                     f'<div class="ct"><span class="k">{t(c["kind"])}</span><h3>{t(c["title"])}{yr}</h3>{lg}<p>{t(c["text"])}</p>{tp}<div class="chips">{chips}</div>{btn}</div></article>')
     if courses:
-        chap += f'<section class="hc"><h2>{t(P["courses"])}</h2><p>{t(P["courses2"])}</p><div class="cw">{courses}</div></section>'
+        chap += f'<section class="hc hcc"><h2>{t(P["courses"])}</h2><p>{t(P["courses2"])}</p><div class="cw">{courses}</div></section>'
     viewer = (f'<dialog class="hv" aria-label="Viewer"><div class="hh"><b></b><span></span><div class="nv"><button data-a="p">&#8249; {t(P["prev"])}</button> <button data-a="n">{t(P["next"])} &#8250;</button></div>'
               f'<button data-a="x">{t(P["close"])}</button></div><div class="st"></div><div class="th"></div></dialog>')
     page = shell('Suelen Magalhães — Health', head + menu + top + proc + chap + foot)
