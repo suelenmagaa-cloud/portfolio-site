@@ -174,6 +174,77 @@
  },
  "books": [
   {
+   "id": "tea",
+   "key": "tea",
+   "n": 8,
+   "accent": "#c2287e",
+   "tint": "#fdeff6",
+   "fan": [
+    3,
+    5,
+    1
+   ],
+   "kind": [
+    "White paper",
+    "White paper"
+   ],
+   "title": [
+    "Care pathway for people with Autism Spectrum Disorder (ASD), guided by value in Brazil",
+    "Linha de cuidado para Pessoas com Transtorno do Espectro Autista (TEA) orientada por valor no Brasil"
+   ],
+   "inst": "Instituto Jô Clemente (IJC) · Centro de Ensino, Pesquisa e Inovação (CEPI-IJC)",
+   "year": 2026,
+   "pages": 62,
+   "org": "Gabriela Tannus, Gabriela Galassi Guerra",
+   "text": [
+    "A strategic proposal for qualified screening, functional stratification, an individualized therapeutic plan and outcome measurement. AI was used to produce the cards.",
+    "Uma proposição estratégica para triagem qualificada, estratificação funcional, plano terapêutico individualizado e mensuração de desfechos. Uso de IA na produção dos cards."
+   ],
+   "role": []
+  },
+  {
+   "id": "ijc",
+   "key": "ijc",
+   "n": 10,
+   "accent": "#8f1d7a",
+   "tint": "#f8eef6",
+   "fan": [
+    8,
+    3,
+    1
+   ],
+   "kind": [
+    "Book",
+    "Livro"
+   ],
+   "title": [
+    "Mental health of people with intellectual disability",
+    "Saúde mental de pessoas com deficiência intelectual"
+   ],
+   "inst": "Instituto Jô Clemente · parceria Unifesp",
+   "year": "2024",
+   "pages": "58",
+   "org": "Gabriela Arantes Wagner",
+   "text": [
+    "The Instituto Jô Clemente colors are presented in a single look, produced especially for this material. AI was used to produce charts and tables that became cards and forms that are more intuitive and easier to read.",
+    "As cores do Instituto Jô Clemente são apresentadas num visual único, produzido especialmente para este material. Uso de IA para a produção de gráficos e tabelas que viram cards e formulários intuitivos e mais fáceis de ler."
+   ],
+   "role": [
+    [
+     "Cover and graphic project",
+     "Capa e projeto gráfico"
+    ],
+    [
+     "Layout",
+     "Layout"
+    ],
+    [
+     "Infographic",
+     "Infográfico"
+    ]
+   ]
+  },
+  {
    "id": "cuidadores",
    "key": "cuid",
    "n": 10,
@@ -255,77 +326,6 @@
     ]
    ],
    "cvv": true
-  },
-  {
-   "id": "ijc",
-   "key": "ijc",
-   "n": 10,
-   "accent": "#8f1d7a",
-   "tint": "#f8eef6",
-   "fan": [
-    8,
-    3,
-    1
-   ],
-   "kind": [
-    "Book",
-    "Livro"
-   ],
-   "title": [
-    "Mental health of people with intellectual disability",
-    "Saúde mental de pessoas com deficiência intelectual"
-   ],
-   "inst": "Instituto Jô Clemente · parceria Unifesp",
-   "year": "2024",
-   "pages": "58",
-   "org": "Gabriela Arantes Wagner",
-   "text": [
-    "The Instituto Jô Clemente colors are presented in a single look, produced especially for this material. AI was used to produce charts and tables that became cards and forms that are more intuitive and easier to read.",
-    "As cores do Instituto Jô Clemente são apresentadas num visual único, produzido especialmente para este material. Uso de IA para a produção de gráficos e tabelas que viram cards e formulários intuitivos e mais fáceis de ler."
-   ],
-   "role": [
-    [
-     "Cover and graphic project",
-     "Capa e projeto gráfico"
-    ],
-    [
-     "Layout",
-     "Layout"
-    ],
-    [
-     "Infographic",
-     "Infográfico"
-    ]
-   ]
-  },
-  {
-   "id": "tea",
-   "key": "tea",
-   "n": 8,
-   "accent": "#c2287e",
-   "tint": "#fdeff6",
-   "fan": [
-    3,
-    5,
-    1
-   ],
-   "kind": [
-    "White paper",
-    "White paper"
-   ],
-   "title": [
-    "Care pathway for people with Autism Spectrum Disorder (ASD), guided by value in Brazil",
-    "Linha de cuidado para Pessoas com Transtorno do Espectro Autista (TEA) orientada por valor no Brasil"
-   ],
-   "inst": "Instituto Jô Clemente (IJC) · Centro de Ensino, Pesquisa e Inovação (CEPI-IJC)",
-   "year": 2026,
-   "pages": 62,
-   "org": "Gabriela Tannus, Gabriela Galassi Guerra",
-   "text": [
-    "A strategic proposal for qualified screening, functional stratification, an individualized therapeutic plan and outcome measurement. AI was used to produce the cards.",
-    "Uma proposição estratégica para triagem qualificada, estratificação funcional, plano terapêutico individualizado e mensuração de desfechos. Uso de IA na produção dos cards."
-   ],
-   "role": []
   }
  ],
  "courses": [
