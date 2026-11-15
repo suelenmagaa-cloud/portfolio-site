@@ -449,6 +449,76 @@ def brands(data, S):
     page = page.replace('</style>', BCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
     return page.replace('</body>', '<script>document.querySelectorAll("details.mr").forEach(d=>d.addEventListener("toggle",()=>{try{ping()}catch(e){}}))</script></body>', 1)
 
+NCSS = """
+.bs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:56px 4px 0;padding:0}
+.bs button{all:unset;box-sizing:border-box;cursor:pointer;display:block;aspect-ratio:2/1;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #e6e2f2;opacity:.55;transition:opacity .25s,transform .25s,box-shadow .25s;--ac:#054557}
+.bs button img{width:100%;height:100%;object-fit:cover;display:block}.bs button:hover{opacity:.9}.bs button:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.bs button[aria-pressed=true]{opacity:1;box-shadow:0 0 0 3px #fff,0 0 0 6px var(--ac),0 14px 28px rgba(20,18,43,.18);transform:translateY(-3px)}
+.bx{display:none;--ac:#054557;--bar:var(--ac);margin:36px 4px 0;border:1px solid #e6e2f2;border-radius:32px;overflow:hidden;position:relative;background:color-mix(in srgb,var(--ac) 7%,#fff);grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.bx.on{display:grid}.bx::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:var(--bar);z-index:2}
+.bx .lv{padding:56px 36px 44px 44px;display:flex;flex-direction:column;justify-content:center;gap:24px}
+.bx .lv figure{margin:0}.bx .lv img{display:block;width:100%;border-radius:16px;box-shadow:0 16px 36px rgba(20,18,43,.16)}
+.bx .ps{display:flex;height:16px;border-radius:999px;overflow:hidden;box-shadow:0 0 0 1px rgba(20,18,43,.1)}.bx .ps i{flex:1}
+.bx .rv{padding:52px 48px 40px 20px;background:#fff;margin:8px 0 0}
+.bx .hd{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;margin:0 0 22px}.bx .hd .n{font:700 clamp(3rem,6vw,4.6rem)/.8 Outfit,sans-serif;color:var(--ac);letter-spacing:-.04em}
+.bx .hd h2{font:700 clamp(1.9rem,3.6vw,2.8rem)/1 Outfit,sans-serif;letter-spacing:-.03em;margin:0;color:var(--ink)}.bx .hd .m{display:block;font:600 .72rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-top:8px}
+.bx blockquote{margin:0 0 24px;font:500 clamp(1.1rem,1.8vw,1.35rem)/1.3 Outfit,sans-serif;color:var(--ink);padding-left:18px;border-left:4px solid var(--bar)}
+.bx .tb{display:flex;gap:8px;flex-wrap:wrap;margin:0}.bx .tb button{all:unset;box-sizing:border-box;cursor:pointer;padding:8px 16px;border-radius:999px;border:1px solid #d9d5ea;font:600 .84rem Inter,sans-serif;color:var(--navy);transition:background .2s,color .2s}
+.bx .tb button:hover{border-color:var(--ac)}.bx .tb button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}.bx .tb button[aria-selected=true]{background:var(--ac);border-color:var(--ac);color:#fff}
+.bx .tp{display:none;margin-top:24px}.bx .tp.on{display:block}.bx .tp>p{font-size:.95rem;line-height:1.55;margin:0 0 12px;color:var(--ink)}
+.bx .sb{display:flex;overflow-x:auto;gap:16px;scroll-snap-type:x mandatory;padding:4px 4px 14px;margin:0}.bx .sb li{flex:0 0 190px;scroll-snap-align:start}
+.bx .sb li img{box-shadow:0 8px 20px rgba(20,18,43,.18)}.bx .sb b{color:var(--ink)}.bx .sb span.d{color:var(--navy)}
+.bx .pl{margin:0}.bx .pl .sw{color:var(--ink)}.bx .pl .ch{border:1px solid rgba(0,0,0,.12)}.bx .ty{margin:0}.bx .ty p{color:var(--ink)}
+@media(max-width:860px){.bs{grid-template-columns:repeat(3,minmax(0,1fr))}.bx.on{display:block}.bx .lv{padding:36px 22px 20px}.bx .rv{padding:24px 22px 30px;margin:0}.bx .tb{flex-wrap:nowrap;overflow-x:auto}.bx .tb button{white-space:nowrap}}
+"""
+
+def brands_novo(data, S):
+    P = data['page']
+    head, menu, foot = chrome(S, 4)
+    def im(k, n): return f'assets/brands/{k}_{n:02d}.webp'
+    def lum(c):
+        c = c.lstrip('#')
+        if len(c) != 6: return 1
+        r, g, b_ = (int(c[i:i+2], 16) for i in (0, 2, 4)); return (0.299*r + 0.587*g + 0.114*b_) / 255
+    top = (f'<section class="bt"><small>{html.escape(P["tags"])}</small><h1>{t(P["title"])}</h1><div class="br"><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></div></section>')
+    cols = {}
+    for b in data['brands']:
+        cols[b['id']] = b['ac'] if lum(b['fg']) < .5 else b['bg']
+    sel = ''.join(f'<li style="display:contents"><button type="button" data-b="{b["id"]}" aria-pressed="false" aria-label="{html.escape(b["name"])}" style="--ac:{cols[b["id"]]}"><img loading="lazy" alt="" src="{im(b["key"], b["hero"])}"></button></li>' for b in data['brands'])
+    bar = f'<ol class="bs" aria-label="{html.escape(P["index"][1])}">{sel}</ol>'
+    xs = ''
+    for b in data['brands']:
+        tabs = [('c', t(['Concept', 'Conceito']), ''.join(f'<p>{t(x)}</p>' for x in b['text']))]
+        if b['frames']:
+            fr = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['frames'])
+            tabs.append(('f', t(P['frames']), f'<ol class="sb">{fr}</ol>'))
+        if b['swatches']:
+            sw = ''.join(f'<div class="sw"><div class="ch" style="background:{s["c"]}"></div><b>{t(s["n"])}</b><code>{s["c"].upper()}</code><span>{t(s["d"])}</span></div>' for s in b['swatches'])
+            tabs.append(('p', t(P['palette']), f'<div class="pl">{sw}</div>'))
+        if b['type']:
+            ty = ''.join(f'<p><b>{html.escape(x[0])}</b> · {t([x[1], x[2]])}</p>' for x in b['type'])
+            tabs.append(('y', t(P['type']), f'<div class="ty">{ty}</div>'))
+        if b['apps']:
+            ap = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['apps'])
+            tabs.append(('a', t(P['apps']), f'<ol class="sb ap">{ap}</ol>'))
+        tb = ''.join(f'<button type="button" role="tab" aria-selected="{"true" if i == 0 else "false"}">{lab}</button>' for i, (_, lab, _) in enumerate(tabs))
+        tp = ''.join(f'<div class="tp{" on" if i == 0 else ""}" role="tabpanel">{body}</div>' for i, (_, _, body) in enumerate(tabs))
+        ps = ''.join(f'<i style="background:{s["c"]}" title="{s["c"].upper()}"></i>' for s in b['swatches'])
+        ps = f'<div class="ps" aria-hidden="true">{ps}</div>' if ps else ''
+        xs += (f'<article class="bx" id="{b["id"]}" style="--ac:{cols[b["id"]]};--bar:{b["ac"]}">'
+               f'<div class="lv"><figure><img loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}"></figure>{ps}</div>'
+               f'<div class="rv"><header class="hd"><span class="n">{b["n"]}</span><div><h2>{html.escape(b["name"])}</h2><span class="m">{t(b["kind"])} · {b["year"]}</span></div></header>'
+               f'<blockquote>{t(b["quote"])}</blockquote><div class="tb" role="tablist">{tb}</div>{tp}</div></article>')
+    more = f'<section class="bm"><h2>{t(P["more"])}</h2><p>{t(P["more2"])}</p></section>'
+    js = ('<script>(()=>{const bs=[...document.querySelectorAll(".bs button")],xs=[...document.querySelectorAll(".bx")];'
+          'const show=id=>{xs.forEach(x=>x.classList.toggle("on",x.id==id));bs.forEach(b=>b.setAttribute("aria-pressed",b.dataset.b==id));try{ping()}catch(e){}};'
+          'bs.forEach(b=>b.addEventListener("click",()=>show(b.dataset.b)));'
+          'xs.forEach(x=>{const tb=[...x.querySelectorAll(".tb button")],tp=[...x.querySelectorAll(".tp")];tb.forEach((b,i)=>b.addEventListener("click",()=>{tb.forEach((y,j)=>y.setAttribute("aria-selected",j==i));tp.forEach((p,j)=>p.classList.toggle("on",j==i));try{ping()}catch(e){}}))});'
+          'const h=(location.hash||"").slice(1);show(xs.some(x=>x.id==h)?h:xs[0].id)})()</script>')
+    page = shell('Suelen Magalhães — Brands', head + menu + top + bar + xs + more + foot)
+    page = page.replace('</style>', BCSS + NCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
+    return page.replace('</body>', js + '</body>', 1)
+
 ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .fb{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative;overflow:hidden}.in{max-width:1080px;margin:0 auto;padding:0 16px}
 .ia .k{display:inline-block;font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f28db1;margin-bottom:14px}
@@ -566,6 +636,7 @@ def main():
     bj = R / 'content' / 'brands.json'
     if bj.exists():
         (D / 'brands.html').write_text(brands(json.loads(bj.read_text('utf-8')), S), 'utf-8')
+        (D / 'brands-novo.html').write_text(brands_novo(json.loads(bj.read_text('utf-8')), S), 'utf-8')
     ij = R / 'content' / 'ia.json'
     if ij.exists():
         (D / 'ia.html').write_text(ia(json.loads(ij.read_text('utf-8')), S), 'utf-8')
