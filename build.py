@@ -450,72 +450,82 @@ def brands(data, S):
     return page.replace('</body>', '<script>document.querySelectorAll("details.mr").forEach(d=>d.addEventListener("toggle",()=>{try{ping()}catch(e){}}))</script></body>', 1)
 
 NCSS = """
-.bs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:56px 4px 0;padding:0}
-.bs button{all:unset;box-sizing:border-box;cursor:pointer;display:block;aspect-ratio:2/1;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #e6e2f2;opacity:.55;transition:opacity .25s,transform .25s,box-shadow .25s;--ac:#054557}
-.bs button img{width:100%;height:100%;object-fit:cover;display:block}.bs button:hover{opacity:.9}.bs button:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
-.bs button[aria-pressed=true]{opacity:1;box-shadow:0 0 0 3px #fff,0 0 0 6px var(--ac),0 14px 28px rgba(20,18,43,.18);transform:translateY(-3px)}
-.bx{display:none;--ac:#054557;--bar:var(--ac);margin:36px 4px 0;border:1px solid #e6e2f2;border-radius:32px;overflow:hidden;position:relative;background:color-mix(in srgb,var(--ac) 7%,#fff);grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
-.bx.on{display:grid}.bx::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:var(--bar);z-index:2}
-.bx .lv{padding:56px 36px 44px 44px;display:flex;flex-direction:column;justify-content:center;gap:24px}
-.bx .lv figure{margin:0}.bx .lv img{display:block;width:100%;border-radius:16px;box-shadow:0 16px 36px rgba(20,18,43,.16)}
-.bx .ps{display:flex;height:16px;border-radius:999px;overflow:hidden;box-shadow:0 0 0 1px rgba(20,18,43,.1)}.bx .ps i{flex:1}
-.bx .rv{padding:52px 48px 40px 20px;background:#fff;margin:8px 0 0}
-.bx .hd{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;margin:0 0 22px}.bx .hd .n{font:700 clamp(3rem,6vw,4.6rem)/.8 Outfit,sans-serif;color:var(--ac);letter-spacing:-.04em}
-.bx .hd h2{font:700 clamp(1.9rem,3.6vw,2.8rem)/1 Outfit,sans-serif;letter-spacing:-.03em;margin:0;color:var(--ink)}.bx .hd .m{display:block;font:600 .72rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-top:8px}
-.bx blockquote{margin:0 0 24px;font:500 clamp(1.1rem,1.8vw,1.35rem)/1.3 Outfit,sans-serif;color:var(--ink);padding-left:18px;border-left:4px solid var(--bar)}
-.bx .tb{display:flex;gap:8px;flex-wrap:wrap;margin:0}.bx .tb button{all:unset;box-sizing:border-box;cursor:pointer;padding:8px 16px;border-radius:999px;border:1px solid #d9d5ea;font:600 .84rem Inter,sans-serif;color:var(--navy);transition:background .2s,color .2s}
-.bx .tb button:hover{border-color:var(--ac)}.bx .tb button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}.bx .tb button[aria-selected=true]{background:var(--ac);border-color:var(--ac);color:#fff}
-.bx .tp{display:none;margin-top:24px}.bx .tp.on{display:block}.bx .tp>p{font-size:.95rem;line-height:1.55;margin:0 0 12px;color:var(--ink)}
-.bx .sb{display:flex;overflow-x:auto;gap:16px;scroll-snap-type:x mandatory;padding:4px 4px 14px;margin:0}.bx .sb li{flex:0 0 190px;scroll-snap-align:start}
-.bx .sb li img{box-shadow:0 8px 20px rgba(20,18,43,.18)}.bx .sb b{color:var(--ink)}.bx .sb span.d{color:var(--navy)}
-.bx .pl{margin:0}.bx .pl .sw{color:var(--ink)}.bx .pl .ch{border:1px solid rgba(0,0,0,.12)}.bx .ty{margin:0}.bx .ty p{color:var(--ink)}
-@media(max-width:860px){.bs{grid-template-columns:repeat(3,minmax(0,1fr))}.bx.on{display:block}.bx .lv{padding:36px 22px 20px}.bx .rv{padding:24px 22px 30px;margin:0}.bx .tb{flex-wrap:nowrap;overflow-x:auto}.bx .tb button{white-space:nowrap}}
+.pd{display:flex;gap:10px;flex-wrap:wrap;margin:44px 4px 0;padding:0}
+.pd a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--bg);color:var(--fg);font:700 .9rem Outfit,sans-serif;text-decoration:none;box-shadow:0 0 0 1px rgba(20,18,43,.12);transition:transform .2s}.pd a:hover{transform:translateY(-3px)}.pd a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.pz{--bg:#054557;--fg:#fff;--ac:#eacf19;margin:28px 4px 0;border-radius:36px;background:var(--bg);color:var(--fg);padding:clamp(28px,5vw,60px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:0 clamp(28px,5vw,64px);align-items:center;position:relative;overflow:hidden}
+.pz.r .px{order:2}.pz.r .py{order:1}
+.px{display:flex;flex-direction:column;align-items:flex-start}
+.pt{display:flex;align-items:baseline;gap:18px;margin:0 0 6px}
+.pn{font:800 clamp(4.4rem,10vw,8rem)/.8 Outfit,sans-serif;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px var(--fg);opacity:.9}
+.pk{font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.pm{margin:10px 0 22px;font:700 clamp(2.7rem,6.2vw,5.2rem)/.92 Outfit,sans-serif;letter-spacing:-.045em}.pm span{display:block}
+.pz blockquote{margin:0 0 16px;font:500 clamp(1.1rem,1.9vw,1.4rem)/1.3 Outfit,sans-serif;padding-left:18px;border-left:4px solid var(--ac);max-width:34ch}
+.pp{margin:0 0 24px;font-size:.95rem;line-height:1.55;opacity:.92;max-width:46ch}
+.pb{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:var(--fg);color:var(--on,#fff);font:600 .9rem Inter,sans-serif;transition:transform .2s}.pb:hover{transform:translateX(4px)}.pb:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.pb i{font-style:normal}
+.py{padding:clamp(18px,3vw,34px) clamp(8px,2vw,22px) 0}
+.pf{margin:0;position:relative;width:84%;margin-bottom:clamp(48px,10vw,104px)}.pz.r .pf{margin-left:auto}
+.pf img{display:block;border-radius:18px;box-shadow:0 22px 48px rgba(0,0,0,.3);background:#fff;transition:transform .5s cubic-bezier(.2,.9,.2,1)}
+.pf .m0{width:100%;position:relative;z-index:1}
+.pf .m1{position:absolute;z-index:3;width:44%;right:-19%;bottom:-24%;transform:rotate(4deg)}
+.pf .m2{position:absolute;z-index:2;width:32%;left:-11%;top:-17%;transform:rotate(-5deg)}
+.pz:hover .m1{transform:rotate(6deg) translate(10px,10px)}.pz:hover .m2{transform:rotate(-7deg) translate(-8px,-8px)}.pz:hover .m0{transform:scale(1.02)}
+@media(prefers-reduced-motion:reduce){.pf img{transition:none}.pz:hover .m0,.pz:hover .m1,.pz:hover .m2{transform:none}}
+.pz.r .pf .m1{right:auto;left:-19%}.pz.r .pf .m2{left:auto;right:-9%;transform:rotate(5deg)}.pz.r:hover .m2{transform:rotate(7deg) translate(8px,-8px)}.pz.r .m1{transform:rotate(-4deg)}.pz.r:hover .m1{transform:rotate(-6deg) translate(-10px,10px)}
+.pw{width:84%}.pz.r .pw{margin-left:auto}
+.pw{display:flex;height:18px;margin-top:0;border-radius:999px;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,.55)}.pw i{flex:1}
+dialog.bd{border:0;border-radius:28px;padding:0;width:min(940px,94vw);background:#fff;color:var(--ink)}dialog.bd::backdrop{background:rgba(20,18,43,.62)}
+html:not([data-embed]) dialog.bd{max-height:92vh;overflow:auto}
+.bd .dh{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 32px;border-bottom:1px solid #e6e2f2;position:sticky;top:0;background:#fff;z-index:2}
+.bd .dh h2{margin:0;font:700 1.7rem/1 Outfit,sans-serif;letter-spacing:-.03em;color:var(--ink)}.bd .dh h2 span.n{color:var(--ac);margin-right:12px}
+.bd .x{all:unset;cursor:pointer;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid #d9d5ea;font-size:1.1rem;color:var(--ink)}.bd .x:hover{background:#f3efff}.bd .x:focus-visible{outline:2px solid var(--ac)}
+.bd .dc{padding:10px 32px 40px}.bd h3{font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin:30px 0 16px}
+.bd .cp p{font-size:.98rem;line-height:1.6;margin:0 0 12px;color:var(--ink)}.bd .sb{margin:0}.bd .sb b{color:var(--ink)}.bd .sb span.d{color:var(--navy)}.bd .pl{margin:0}.bd .pl .sw{color:var(--ink)}.bd .pl .ch{border:1px solid rgba(0,0,0,.12)}.bd .ty{margin:0}.bd .ty p{color:var(--ink)}
+@media(max-width:860px){.pf{width:88%}.pw{width:88%}.pf .m1{right:-10%}.pz.r .pf .m1{left:-10%}.pf .m2{left:-6%}.pz.r .pf .m2{right:-6%}.pz{grid-template-columns:minmax(0,1fr);border-radius:26px}.pz.r .px{order:0}.px{display:contents}.pt{order:0}.pm{order:1}.py{order:2;margin:0 0 22px}.pz blockquote{order:3}.pp{order:4}.pb{order:5}.bd .dh,.bd .dc{padding-left:20px;padding-right:20px}}
 """
+
+COLLAGE = {'mar': [9, 10], 'gis': [13, 12], 'eff': [6, 3], 'fkl': [4, 2], 'tel': [7, 6], 'hel': [3, 4]}
 
 def brands_novo(data, S):
     P = data['page']
     head, menu, foot = chrome(S, 4)
     def im(k, n): return f'assets/brands/{k}_{n:02d}.webp'
+    top = (f'<section class="bt"><small>{html.escape(P["tags"])}</small><h1>{t(P["title"])}</h1><div class="br"><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></div></section>')
+    nav = ''.join(f'<a href="#{b["id"]}" aria-label="{html.escape(b["name"])}" style="--bg:{b["bg"]};--fg:{b["fg"]}">{b["n"]}</a>' for b in data['brands'])
+    nav = f'<nav class="pd" aria-label="{html.escape(P["index"][1])}">{nav}</nav>'
+    posters = ''; dialogs = ''
     def lum(c):
         c = c.lstrip('#')
         if len(c) != 6: return 1
         r, g, b_ = (int(c[i:i+2], 16) for i in (0, 2, 4)); return (0.299*r + 0.587*g + 0.114*b_) / 255
-    top = (f'<section class="bt"><small>{html.escape(P["tags"])}</small><h1>{t(P["title"])}</h1><div class="br"><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></div></section>')
-    cols = {}
-    for b in data['brands']:
-        cols[b['id']] = b['ac'] if lum(b['fg']) < .5 else b['bg']
-    sel = ''.join(f'<li style="display:contents"><button type="button" data-b="{b["id"]}" aria-pressed="false" aria-label="{html.escape(b["name"])}" style="--ac:{cols[b["id"]]}"><img loading="lazy" alt="" src="{im(b["key"], b["hero"])}"></button></li>' for b in data['brands'])
-    bar = f'<ol class="bs" aria-label="{html.escape(P["index"][1])}">{sel}</ol>'
-    xs = ''
-    for b in data['brands']:
-        tabs = [('c', t(['Concept', 'Conceito']), ''.join(f'<p>{t(x)}</p>' for x in b['text']))]
-        if b['frames']:
-            fr = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['frames'])
-            tabs.append(('f', t(P['frames']), f'<ol class="sb">{fr}</ol>'))
-        if b['swatches']:
-            sw = ''.join(f'<div class="sw"><div class="ch" style="background:{s["c"]}"></div><b>{t(s["n"])}</b><code>{s["c"].upper()}</code><span>{t(s["d"])}</span></div>' for s in b['swatches'])
-            tabs.append(('p', t(P['palette']), f'<div class="pl">{sw}</div>'))
-        if b['type']:
-            ty = ''.join(f'<p><b>{html.escape(x[0])}</b> · {t([x[1], x[2]])}</p>' for x in b['type'])
-            tabs.append(('y', t(P['type']), f'<div class="ty">{ty}</div>'))
-        if b['apps']:
-            ap = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['apps'])
-            tabs.append(('a', t(P['apps']), f'<ol class="sb ap">{ap}</ol>'))
-        tb = ''.join(f'<button type="button" role="tab" aria-selected="{"true" if i == 0 else "false"}">{lab}</button>' for i, (_, lab, _) in enumerate(tabs))
-        tp = ''.join(f'<div class="tp{" on" if i == 0 else ""}" role="tabpanel">{body}</div>' for i, (_, _, body) in enumerate(tabs))
+    for i, b in enumerate(data['brands']):
+        dac = b['ac'] if lum(b['fg']) < .5 else (b['bg'] if b['bg'].startswith('#') and len(b['bg']) == 7 else '#235070')
+        on = '#fff' if lum(b['fg']) < .5 else (b['bg'] if b['bg'].startswith('#') and len(b['bg']) == 7 else '#14122b')
+        cl = ''.join(f'<img class="m{j}" loading="lazy" alt="" src="{im(b["key"], n)}">' for j, n in enumerate(COLLAGE.get(b['key'], []), 1))
+        words = ''.join(f'<span>{html.escape(w)}</span>' for w in b['name'].split())
         ps = ''.join(f'<i style="background:{s["c"]}" title="{s["c"].upper()}"></i>' for s in b['swatches'])
-        ps = f'<div class="ps" aria-hidden="true">{ps}</div>' if ps else ''
-        xs += (f'<article class="bx" id="{b["id"]}" style="--ac:{cols[b["id"]]};--bar:{b["ac"]}">'
-               f'<div class="lv"><figure><img loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}"></figure>{ps}</div>'
-               f'<div class="rv"><header class="hd"><span class="n">{b["n"]}</span><div><h2>{html.escape(b["name"])}</h2><span class="m">{t(b["kind"])} · {b["year"]}</span></div></header>'
-               f'<blockquote>{t(b["quote"])}</blockquote><div class="tb" role="tablist">{tb}</div>{tp}</div></article>')
+        ps = f'<div class="pw" aria-hidden="true">{ps}</div>' if ps else ''
+        posters += (f'<section class="pz{" r" if i % 2 else ""}" id="{b["id"]}" style="--bg:{b["bg"]};--fg:{b["fg"]};--ac:{b["ac"]};--on:{on}">'
+                    f'<div class="px"><div class="pt"><span class="pn">{b["n"]}</span><span class="pk">{t(b["kind"])} · {b["year"]}</span></div>'
+                    f'<h2 class="pm">{words}</h2><blockquote>{t(b["quote"])}</blockquote><p class="pp">{t(b["text"][0])}</p>'
+                    f'<button type="button" class="pb" data-d="d-{b["id"]}">{t(["See the full story", "Ver a história completa"])} <i>&#8594;</i></button></div>'
+                    f'<div class="py"><figure class="pf"><img class="m0" loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}">{cl}</figure>{ps}</div></section>')
+        paras = ''.join(f'<p>{t(x)}</p>' for x in b['text'])
+        fr = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['frames'])
+        sw = ''.join(f'<div class="sw"><div class="ch" style="background:{x["c"]}"></div><b>{t(x["n"])}</b><code>{x["c"].upper()}</code><span>{t(x["d"])}</span></div>' for x in b['swatches'])
+        ty = ''.join(f'<p><b>{html.escape(x[0])}</b> · {t([x[1], x[2]])}</p>' for x in b['type'])
+        ap = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['apps'])
+        body = f'<div class="cp">{paras}</div>'
+        if fr: body += f'<h3>{t(P["frames"])}</h3><ol class="sb">{fr}</ol>'
+        if sw: body += f'<h3>{t(P["palette"])}</h3><div class="pl">{sw}</div>'
+        if ty: body += f'<h3>{t(P["type"])}</h3><div class="ty">{ty}</div>'
+        if ap: body += f'<h3>{t(P["apps"])}</h3><ol class="sb ap">{ap}</ol>'
+        dialogs += (f'<dialog class="bd" id="d-{b["id"]}" style="--ac:{dac}" aria-labelledby="t-{b["id"]}"><div class="dh"><h2 id="t-{b["id"]}"><span class="n">{b["n"]}</span>{html.escape(b["name"])}</h2>'
+                    f'<button type="button" class="x" aria-label="{html.escape("Fechar")}">&#10005;</button></div><div class="dc">{body}</div></dialog>')
     more = f'<section class="bm"><h2>{t(P["more"])}</h2><p>{t(P["more2"])}</p></section>'
-    js = ('<script>(()=>{const bs=[...document.querySelectorAll(".bs button")],xs=[...document.querySelectorAll(".bx")];'
-          'const show=id=>{xs.forEach(x=>x.classList.toggle("on",x.id==id));bs.forEach(b=>b.setAttribute("aria-pressed",b.dataset.b==id));try{ping()}catch(e){}};'
-          'bs.forEach(b=>b.addEventListener("click",()=>show(b.dataset.b)));'
-          'xs.forEach(x=>{const tb=[...x.querySelectorAll(".tb button")],tp=[...x.querySelectorAll(".tp")];tb.forEach((b,i)=>b.addEventListener("click",()=>{tb.forEach((y,j)=>y.setAttribute("aria-selected",j==i));tp.forEach((p,j)=>p.classList.toggle("on",j==i));try{ping()}catch(e){}}))});'
-          'const h=(location.hash||"").slice(1);show(xs.some(x=>x.id==h)?h:xs[0].id)})()</script>')
-    page = shell('Suelen Magalhães — Brands', head + menu + top + bar + xs + more + foot)
+    js = ('<script>document.addEventListener("click",e=>{const o=e.target.closest(".pb");if(o){const d=document.getElementById(o.dataset.d);if(d){d.showModal();try{ping()}catch(x){}}return}'
+          'const d=e.target.closest("dialog.bd");if(d&&(e.target===d||e.target.closest(".x")))d.close()})</script>')
+    page = shell('Suelen Magalhães — Brands', head + menu + top + nav + posters + more + dialogs + foot)
     page = page.replace('</style>', BCSS + NCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
     return page.replace('</body>', js + '</body>', 1)
 
