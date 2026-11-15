@@ -241,7 +241,7 @@ HCSS = """body.hl{background:#fff}.hl .intro{display:none}
 .tst:focus-visible .ti.d{outline:2px solid var(--pink);outline-offset:6px;border-radius:8px}
 .ti{display:block;width:60px;height:60px;margin:0 auto 30px;fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;transition:opacity .25s}
 .ti.d{stroke:#a9a5c2}.ti.a{position:absolute;top:0;left:50%;margin:0 0 0 -30px;stroke:url(#ig2);opacity:0}
-.tst.on .ti.d,.tst:not(.on):hover .ti.d{opacity:0}.tst.on .ti.a,.tst:not(.on):hover .ti.a{opacity:1}
+.tst.on .ti.d{opacity:0}.tst.on .ti.a{opacity:1}
 .tt{display:block;position:relative;padding-top:28px;border-top:3px solid #e4e0ee;font:500 .95rem/1.5 Outfit,Inter,sans-serif;color:var(--navy)}
 .tst.on .tt{font-weight:700;color:var(--ink)}
 .tt::before,.tt::after{content:"";position:absolute;left:50%;border-radius:50%}
@@ -249,10 +249,10 @@ HCSS = """body.hl{background:#fff}.hl .intro{display:none}
 .tt::after{top:-14px;width:25px;height:25px;margin-left:-12.5px;background:linear-gradient(122deg,#f28db1,#e0568f 45%,#235070);opacity:.35;transform:scale(0);transition:transform .25s}
 .tst.on .tt::before{background:#e0568f;border-color:#e0568f}.tst.on .tt::after{transform:scale(1)}
 .tmk{position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,#1c1140 0%,#235070 40%,#f28db1 140%);transition:transform .35s cubic-bezier(0,0,0,1.2),width .35s;pointer-events:none}
-.tlc{position:relative;isolation:isolate;max-width:600px;margin:0 auto;border-radius:10px;height:var(--th,200px);transition:height .3s}
+.tlc{position:relative;isolation:isolate;max-width:none;margin:0;border-radius:10px;height:var(--th,200px);transition:height .3s}
 .tlc::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:10px;background:#fff}.tlc::before{content:"";position:absolute;inset:0;z-index:-2;border-radius:10px;background:linear-gradient(122deg,#f28db1 0%,#e0568f 38%,#235070 100%);opacity:.6;filter:blur(20px);transform:translateY(20px)}
-.tsl{position:absolute;left:0;top:0;width:100%;box-sizing:border-box;padding:40px 30px;opacity:0;visibility:hidden}.tsl.on{opacity:1;visibility:visible;transition:opacity .25s}
-.tsl h3{margin:0 0 .5em;font:700 1.5rem/1.15 Outfit,sans-serif;color:var(--ink)}.tsl p{margin:0;line-height:1.7;color:var(--navy)}
+.tsl{position:absolute;left:0;top:0;width:100%;box-sizing:border-box;padding:40px 44px;opacity:0;visibility:hidden}.tsl.on{opacity:1;visibility:visible;transition:opacity .25s}
+.tsl h3{margin:0 0 .5em;font:700 1.5rem/1.15 Outfit,sans-serif;color:#e0568f}.tsl p{margin:0;line-height:1.7;color:var(--navy)}
 @media(max-width:700px){.tls{display:grid;grid-template-columns:repeat(5,1fr);margin-bottom:28px}.ti{width:40px;height:40px;margin-bottom:0}.ti.a{margin-left:-20px}.tt{display:none}.tmk{display:none}.tst.on::after{content:"";display:block;height:3px;margin-top:12px;background:linear-gradient(90deg,#235070,#f28db1)}.tsl{padding:28px 22px}}
 .hs{display:flex;gap:0;height:300px;margin:0;padding:0;list-style:none;counter-reset:s}
 .hs li:nth-child(1){--c:#1c1140;--n:#1f3a66;--tc:#fff}.hs li:nth-child(2){--c:#3a7aa8;--n:#4a6cb0;--tc:#fff}.hs li:nth-child(3){--c:#6e72b8;--n:#a070b8;--tc:#fff}.hs li:nth-child(4){--c:#d174a6;--n:#a8467f;--tc:#fff}.hs li:nth-child(5){--c:#f28db1;--n:#d46a98;--tc:#14122b}
@@ -312,7 +312,7 @@ dialog.hv[open]{display:flex;flex-direction:column}.hv .hh{display:flex;align-it
 HJS = """(()=>{const tl=document.querySelector('.tl');if(tl){const st=[...tl.querySelectorAll('.tst')],sl=[...tl.querySelectorAll('.tsl')],bx=tl.querySelector('.tlc'),mk=tl.querySelector('.tmk'),sp=tl.querySelector('.tls');let a=0;
 const lay=()=>{const c=st[a],tt=c.querySelector('.tt'),r=sp.getBoundingClientRect(),cr=c.getBoundingClientRect(),tr=tt.getBoundingClientRect();mk.style.width=cr.width+'px';mk.style.transform='translate('+(cr.left-r.left)+'px,'+(tr.top-r.top)+'px)';bx.style.setProperty('--th',sl[a].offsetHeight+'px')};
 const go=i=>{a=i;st.forEach((x,j)=>x.classList.toggle('on',j==i));sl.forEach((x,j)=>x.classList.toggle('on',j==i));lay();setTimeout(ping,350)};
-st.forEach((x,i)=>x.addEventListener('click',()=>go(i)));addEventListener('resize',lay);addEventListener('load',lay);if(window.ResizeObserver){const ro=new ResizeObserver(()=>{lay();ping()});sl.forEach(x=>ro.observe(x));ro.observe(sp)}if(document.fonts)document.fonts.ready.then(lay);new MutationObserver(()=>setTimeout(lay,50)).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang']});go(0)}
+let tm;const auto=()=>{clearTimeout(tm);if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;tm=setTimeout(()=>{go((a+1)%st.length);auto()},15000)};st.forEach((x,i)=>x.addEventListener('click',()=>{go(i);auto()}));addEventListener('resize',lay);addEventListener('load',lay);if(window.ResizeObserver){const ro=new ResizeObserver(()=>{lay();ping()});sl.forEach(x=>ro.observe(x));ro.observe(sp)}if(document.fonts)document.fonts.ready.then(lay);new MutationObserver(()=>setTimeout(lay,50)).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang']});go(0);auto()}
 const hs=document.querySelector('.hs');if(hs){const L=[...hs.children];let a=0,tm;const go=n=>{a=(n+L.length)%L.length;L.forEach((x,i)=>x.classList.toggle('on',i==a));setTimeout(ping,750)};const tick=()=>{clearTimeout(tm);if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;tm=setTimeout(()=>{go(a+1);tick()},3400)};go(0);tick();L.forEach((x,i)=>{x.addEventListener('click',()=>{go(i);tick()});x.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover)').matches){go(i);clearTimeout(tm)}})});hs.addEventListener('mouseleave',tick)}
 const dl=document.querySelector('dialog.hv');if(!dl)return;const G=JSON.parse(document.getElementById('hg').textContent),st=dl.querySelector('.st'),th=dl.querySelector('.th'),ct=dl.querySelector('.hh span'),tt=dl.querySelector('.hh b');let g=null,k=0;
 const show=n=>{k=(n+g.i.length)%g.i.length;st.innerHTML='<img alt="" src="'+g.i[k]+'">';st.scrollTop=0;ct.textContent=(k+1)+' / '+g.i.length;[...th.children].forEach((x,j)=>x.className=j==k?'on':'');th.children[k]&&th.children[k].scrollIntoView({inline:'center',block:'nearest'})};
