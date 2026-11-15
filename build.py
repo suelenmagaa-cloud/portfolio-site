@@ -357,14 +357,14 @@ BCSS = """body.br{background:#fff}.br .intro{display:none}
 .bl a{display:block;text-decoration:none;color:inherit}.bl .th{aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:#f2f1f7;transition:transform .25s,box-shadow .25s}.bl .th img{width:100%;height:100%;object-fit:contain;display:block}
 .bl a:hover .th{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,18,43,.16)}
 .bl b{display:block;font:600 1rem Outfit,sans-serif;color:var(--ink);margin-top:10px}.bl span{display:block;font-size:.8rem;color:var(--navy)}.bl i{font:600 .68rem Inter,sans-serif;font-style:normal;color:var(--pink);letter-spacing:.1em}
-.sc{--bg:#054557;--fg:#fff;--ac:#eacf19;background:var(--bg);color:var(--fg);border-radius:32px;padding:56px;margin:56px 0 0!important;position:relative;overflow:hidden}
-.sc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--ac)}
+.sc{--fg:#14122b;--ac:#054557;--bar:var(--ac);background:#fff;color:var(--fg);border:1px solid #e6e2f2;border-radius:32px;padding:48px 52px;margin:56px 0 0!important;position:relative;overflow:hidden}
+.sc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--bar)}
 .sh{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:0 0 36px}.sh .n{font:700 clamp(3.4rem,8vw,6rem)/.8 Outfit,sans-serif;color:var(--ac);letter-spacing:-.04em}
 .sh h2{font:700 clamp(2rem,4.4vw,3.4rem)/1 Outfit,sans-serif;letter-spacing:-.03em;margin:0;color:inherit}.sh .m{display:block;font:600 .75rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-top:8px}
-.sg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;margin:0 0 32px}
-.sg figure{margin:0}.sg figure img{display:block;width:100%;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
-.sg blockquote{margin:0 0 22px;font:500 clamp(1.25rem,2.2vw,1.65rem)/1.3 Outfit,sans-serif;color:inherit;padding-left:20px;border-left:4px solid var(--ac)}
-.sg p{font-size:.98rem;line-height:1.6;margin:0 0 14px;opacity:.92;color:inherit}
+.sg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;margin:0 0 28px;min-height:430px}
+.sg figure{margin:0}.sg figure img{display:block;width:100%;max-height:440px;object-fit:contain;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.sg blockquote{margin:0 0 18px;font:500 clamp(1.15rem,2vw,1.45rem)/1.3 Outfit,sans-serif;color:inherit;padding-left:20px;border-left:4px solid var(--ac)}
+.sg p{font-size:.92rem;line-height:1.5;margin:0 0 12px;opacity:.92;color:inherit}
 .sc h3{font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin:0 0 16px;filter:brightness(.92)}
 .sb{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px;margin:0 0 48px;padding:0;list-style:none;counter-reset:f}
 .sb li{counter-increment:f}.sb li img{display:block;width:100%;border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.2)}
@@ -378,7 +378,7 @@ BCSS = """body.br{background:#fff}.br .intro{display:none}
 .mr summary i{width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .25s}.mr[open] summary i{transform:rotate(-135deg) translateY(-2px)}
 .mr .c{display:none}.mr[open] .c{display:inline}.mr[open] .o{display:none}.mr summary:hover{opacity:.8}.mr summary:focus-visible{outline:2px solid var(--ac);outline-offset:6px}.mb{margin-top:44px}
 .bm{margin:56px 4px 0}.bm h2{font-size:1.3rem;margin:0 0 8px;color:var(--ink)}.bm p{margin:0;font-size:.95rem;color:var(--navy);line-height:1.6}
-@media(max-width:860px){.bl{grid-template-columns:repeat(2,minmax(0,1fr))}.bl{gap:16px}.sc{padding:34px 22px;border-radius:24px}.sg{grid-template-columns:minmax(0,1fr);gap:28px}.sb{grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:16px}}"""
+@media(max-width:860px){.bl{grid-template-columns:repeat(2,minmax(0,1fr))}.bl{gap:16px}.sc{padding:34px 22px;border-radius:24px}.sg{grid-template-columns:minmax(0,1fr);gap:28px;min-height:0}.sb{grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:16px}}"""
 
 def brands(data, S):
     P = data['page']
@@ -401,7 +401,7 @@ def brands(data, S):
         tyb = f'<h3>{t(P["type"])}</h3><div class="ty">{ty}</div>' if ty else '<div style="height:28px"></div>'
         ap = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['apps'])
         apb = f'<h3>{t(P["apps"])}</h3><ol class="sb ap">{ap}</ol>' if ap else ''
-        scenes += (f'<section class="sc{" lt" if light else ""}" id="{b["id"]}" style="--bg:{b["bg"]};--fg:{b["fg"]};--ac:{b["ac"]}">'
+        scenes += (f'<section class="sc lt" id="{b["id"]}" style="--fg:{b["fg"] if light else "#14122b"};--ac:{b["ac"] if light else b["bg"]};--bar:{b["ac"]}">'
                    f'<header class="sh"><span class="n">{b["n"]}</span><div><h2>{html.escape(b["name"])}</h2><span class="m">{t(b["kind"])} · {b["year"]}</span></div></header>'
                    f'<div class="sg"><figure><img loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}"></figure><div><blockquote>{t(b["quote"])}</blockquote>{paras}</div></div>'
                    f'<details class="mr"><summary><span class="o">{t(P["seemore"])}</span><span class="c">{t(P["seeless"])}</span><i></i></summary>'
