@@ -392,10 +392,8 @@ BCSS = """body.br{background:#fff}.br .intro{display:none}
 .sc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--bar)}
 .sh{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:0 0 36px}.sh .n{font:700 clamp(3.4rem,8vw,6rem)/.8 Outfit,sans-serif;color:var(--ac);letter-spacing:-.04em}
 .sh h2{font:700 clamp(2rem,4.4vw,3.4rem)/1 Outfit,sans-serif;letter-spacing:-.03em;margin:0;color:inherit}.sh .m{display:block;font:600 .75rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-top:8px}
-.sc .sh{position:relative;z-index:3;margin-bottom:-70px;pointer-events:none}.sc .sg>div:last-child{padding-top:70px}.sc .sg figure{margin-top:-46px}.sc .sh .m{-webkit-text-stroke:5px #fff;paint-order:stroke fill;opacity:1}.sc .sh .n,.sc .sh h2{-webkit-text-stroke:10px #fff;paint-order:stroke fill;text-shadow:0 0 14px #fff}
-.js-rv .rv{opacity:0;transform:translateY(110px) skewY(14deg);transition:opacity 1.1s cubic-bezier(.16,1,.3,1),transform 1.3s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s);will-change:transform}.js-rv .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.js-rv .rv{opacity:1;transform:none;transition:none}}
-@media(max-width:860px){.sc .sh{margin-bottom:-30px}.sc .sg>div:last-child{padding-top:0}.sc .sg figure{margin-top:0}}
+.sc .sg figure{position:relative}.sc .sh{position:absolute;left:14px;bottom:12px;z-index:3;margin:0;gap:14px;pointer-events:none}.sc .sh .n{font-size:clamp(2.6rem,5vw,3.8rem)}.sc .sh h2{font-size:clamp(1.5rem,2.6vw,2.1rem)}.sc .sh .m{font-size:.62rem;margin-top:4px;-webkit-text-stroke:4px #fff;paint-order:stroke fill;opacity:1}.sc .sh .n,.sc .sh h2{-webkit-text-stroke:8px #fff;paint-order:stroke fill;text-shadow:0 0 12px #fff}
+
 .sg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;margin:0 0 28px;min-height:430px}
 .sg figure{margin:0}.sg figure img{display:block;width:100%;max-height:440px;object-fit:contain;border-radius:0;box-shadow:none}
 .sg blockquote{margin:0 0 18px;font:500 clamp(1.15rem,2vw,1.45rem)/1.3 Outfit,sans-serif;color:inherit;padding-left:20px;border-left:4px solid var(--ac)}
@@ -437,14 +435,13 @@ def brands(data, S):
         ap = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['apps'])
         apb = f'<h3>{t(P["apps"])}</h3><ol class="sb ap">{ap}</ol>' if ap else ''
         scenes += (f'<section class="sc lt" id="{b["id"]}" style="--fg:{b["fg"] if light else "#14122b"};--ac:{b["ac"] if light else b["bg"]};--bar:{b["ac"]}">'
-                   f'<header class="sh"><span class="n">{b["n"]}</span><div><h2>{html.escape(b["name"])}</h2><span class="m">{t(b["kind"])} · {b["year"]}</span></div></header>'
-                   f'<div class="sg"><figure><img loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}"></figure><div><blockquote>{t(b["quote"])}</blockquote>{paras}</div></div>'
+                   f'<div class="sg"><figure><img loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}"><figcaption class="sh"><span class="n">{b["n"]}</span><div><h2>{html.escape(b["name"])}</h2><span class="m">{t(b["kind"])} · {b["year"]}</span></div></figcaption></figure><div><blockquote>{t(b["quote"])}</blockquote>{paras}</div></div>'
                    f'<details class="mr"><summary><span class="o">{t(P["seemore"])}</span><span class="c">{t(P["seeless"])}</span><i></i></summary>'
                    f'<div class="mb"><h3>{t(P["frames"])}</h3><ol class="sb">{fr}</ol><h3>{t(P["palette"])}</h3><div class="pl">{sw}</div>{tyb}{apb}</div></details></section>')
     more = f'<section class="bm"><h2>{t(P["more"])}</h2><p>{t(P["more2"])}</p></section>'
     page = shell('Suelen Magalhães — Brands', head + menu + top + index + scenes + more + foot)
     page = page.replace('</style>', BCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
-    return page.replace('</body>', '<script>(()=>{const D=document.documentElement;if(matchMedia(\'(prefers-reduced-motion:reduce)\').matches||!window.IntersectionObserver)return;D.classList.add(\'js-rv\');document.querySelectorAll(\'.sc\').forEach(sc=>{[sc.querySelector(\'.sh .n\'),sc.querySelector(\'.sh h2\'),sc.querySelector(\'.sh .m\'),sc.querySelector(\'.sg figure img\'),sc.querySelector(\'.sg blockquote\')].forEach((e,i)=>{if(e){e.classList.add(\'rv\');e.style.setProperty(\'--d\',(i*.12)+\'s\');e.dataset.sc=\'\'}})});const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add(\'in\');io.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll(\'.rv\').forEach(e=>io.observe(e))})()</script><script>document.querySelectorAll("details.mr").forEach(d=>d.addEventListener("toggle",()=>{try{ping()}catch(e){}}))</script></body>', 1)
+    return page.replace('</body>', '<script>document.querySelectorAll("details.mr").forEach(d=>d.addEventListener("toggle",()=>{try{ping()}catch(e){}}))</script></body>', 1)
 
 ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .fb{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative;overflow:hidden}.in{max-width:1080px;margin:0 auto;padding:0 16px}
