@@ -98,12 +98,12 @@ h2{font-size:clamp(2.3rem,5.2vw,3.8rem);line-height:1.02;font-weight:700;letter-
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 28px;margin:20px 4px 0}.facts b{font-size:.68em;text-transform:uppercase;letter-spacing:.1em;color:var(--pink)}.facts p{margin:.1em 0;font-size:.85rem}
 .res{font:600 1.2rem/1.4 Outfit,sans-serif;color:var(--ink);margin:22px 4px 8px;padding-left:16px;border-left:5px solid var(--pink)}
 .car{position:relative;margin-top:26px}.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.track::-webkit-scrollbar{display:none}
-.slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;padding:4px 60px;min-height:280px}
+.slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;padding:8px 60px;min-height:380px}
 h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}.num{display:block;font:700 3rem/1 Outfit,sans-serif;color:transparent;-webkit-text-stroke:1.3px var(--violet);margin-bottom:2px}
 .tx ul{padding-left:1.1em;margin:0;font-size:.95rem}li{margin:.35em 0}li::marker{color:var(--pink)}
-.im{padding:0;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:0}.im:empty{display:none}
+.im{padding:0;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:280px}.im:empty{display:none}
 
-.im img{position:relative;max-width:100%;max-height:230px;width:auto;height:auto;object-fit:contain;display:block;cursor:zoom-in}
+.im img{position:relative;max-width:100%;max-height:340px;width:auto;height:auto;object-fit:contain;display:block;cursor:zoom-in}
 .ar{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--pink);background:#fff;color:var(--navy);font-size:1.7rem;line-height:1;cursor:pointer}.ar.l{left:0}.ar.r{right:0}
 .dots{display:flex;justify-content:center;gap:8px;margin-top:10px}.dots i{width:8px;height:8px;border-radius:99px;background:#e0d9ff;transition:.2s}.dots i.on{background:var(--pink);width:22px}
 .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:10px 16px;margin:0 -16px;border-bottom:1px solid #f0ecff}article{scroll-margin-top:56px}.pills a{border:1px solid var(--pink);border-radius:999px;padding:6px 20px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.85rem}
@@ -350,13 +350,13 @@ def health(data, S):
     return page.replace('</body>', viewer + js + f'<script>{HJS}</script></body>', 1)
 
 BCSS = """body.br{background:#fff}.br .intro{display:none}
-.bt{margin:48px 4px 0;max-width:980px}.bt small{display:inline-block;border:1px solid var(--pink);border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em;color:var(--navy)}
-.bt h1{font:700 clamp(3.2rem,8.5vw,6.6rem)/.95 Outfit,sans-serif;letter-spacing:-.045em;color:var(--ink);margin:.18em 0 .3em}
+.bt{margin:48px 4px 0;max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:20px 0;align-items:end}.bt small{justify-self:start;grid-column:1/-1}.bt .br{padding-left:36px}@media(max-width:700px){.bt{grid-template-columns:1fr}.bt .br{padding-left:0}}.bt small{display:inline-block;border:1px solid var(--pink);border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em;color:var(--navy)}
+.bt h1{font:700 clamp(3.2rem,8.5vw,6.6rem)/.95 Outfit,sans-serif;letter-spacing:-.045em;color:var(--ink);margin:.18em 0 0}
 .bt .ld{font:500 clamp(1.4rem,2.6vw,2rem)/1.25 Outfit,sans-serif;color:var(--ink);margin:0 0 18px;max-width:28ch;padding-left:22px;border-left:6px solid;border-image:linear-gradient(180deg,#1c1140,#235070 62%,#f28db1) 1}
 .bt p{font-size:1.1rem;line-height:1.5;color:var(--navy);max-width:52ch;margin:0}
 .bi{margin:64px 4px 0}.bi h2{font-size:1.7rem;margin:0 0 22px;color:var(--ink);letter-spacing:-.02em}
 .bl{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
-.bl a{display:block;text-decoration:none;color:inherit}.bl .th{aspect-ratio:2/1;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #e6e2f2;transition:transform .25s,box-shadow .25s}.bl .th img{width:100%;height:100%;object-fit:contain;display:block}
+.bl a{display:block;text-decoration:none;color:inherit}.bl .th{aspect-ratio:2/1;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #e6e2f2;transition:transform .25s,box-shadow .25s}.bl .th img{width:100%;height:100%;object-fit:cover;display:block}
 .bl a:hover .th{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,18,43,.16)}
 .bl .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.bl b{display:block;font:600 1rem Outfit,sans-serif;color:var(--ink);margin-top:10px}.bl span{display:block;font-size:.8rem;color:var(--navy)}.bl i{font:600 .68rem Inter,sans-serif;font-style:normal;color:var(--pink);letter-spacing:.1em}
 .sc{--fg:#14122b;--ac:#054557;--bar:var(--ac);background:#fff;color:var(--fg);border:1px solid #e6e2f2;border-radius:32px;padding:48px 52px;margin:56px 0 0!important;position:relative;overflow:hidden}
@@ -386,7 +386,7 @@ def brands(data, S):
     P = data['page']
     head, menu, foot = chrome(S, 4)
     def im(k, n): return f'assets/brands/{k}_{n:02d}.webp'
-    top = (f'<section class="bt"><small>{html.escape(P["tags"])}</small><h1>{t(P["title"])}</h1><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></section>')
+    top = (f'<section class="bt"><small>{html.escape(P["tags"])}</small><h1>{t(P["title"])}</h1><div class="br"><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></div></section>')
     idx = ''.join(f'<li><a href="#{b["id"]}"><div class="th"><img loading="lazy" alt="" src="{im(b["key"], b["hero"])}"></div><span class="sr">{html.escape(b["name"])}</span></a></li>' for b in data['brands'])
     index = f'<section class="bi"><h2>{t(P["index"])}</h2><ol class="bl">{idx}</ol></section>'
     scenes = ''
