@@ -213,48 +213,6 @@
    ]
   },
   {
-   "id": "ijc",
-   "key": "ijc",
-   "n": 10,
-   "accent": "#8f1d7a",
-   "tint": "#f8eef6",
-   "fan": [
-    8,
-    3,
-    1
-   ],
-   "kind": [
-    "Book",
-    "Livro"
-   ],
-   "title": [
-    "Mental health of people with intellectual disability",
-    "Saúde mental de pessoas com deficiência intelectual"
-   ],
-   "inst": "Instituto Jô Clemente · parceria Unifesp",
-   "year": "2024",
-   "pages": "58",
-   "org": "Gabriela Arantes Wagner",
-   "text": [
-    "The Instituto Jô Clemente colors are presented in a single look, produced especially for this material. AI was used to produce charts and tables that became cards and forms that are more intuitive and easier to read.",
-    "As cores do Instituto Jô Clemente são apresentadas num visual único, produzido especialmente para este material. Uso de IA para a produção de gráficos e tabelas que viram cards e formulários intuitivos e mais fáceis de ler."
-   ],
-   "role": [
-    [
-     "Cover and graphic project",
-     "Capa e projeto gráfico"
-    ],
-    [
-     "Layout",
-     "Layout"
-    ],
-    [
-     "Infographic",
-     "Infográfico"
-    ]
-   ]
-  },
-  {
    "id": "bombeiros",
    "key": "bomb",
    "n": 5,
@@ -297,6 +255,48 @@
     ]
    ],
    "cvv": true
+  },
+  {
+   "id": "ijc",
+   "key": "ijc",
+   "n": 10,
+   "accent": "#8f1d7a",
+   "tint": "#f8eef6",
+   "fan": [
+    8,
+    3,
+    1
+   ],
+   "kind": [
+    "Book",
+    "Livro"
+   ],
+   "title": [
+    "Mental health of people with intellectual disability",
+    "Saúde mental de pessoas com deficiência intelectual"
+   ],
+   "inst": "Instituto Jô Clemente · parceria Unifesp",
+   "year": "2024",
+   "pages": "58",
+   "org": "Gabriela Arantes Wagner",
+   "text": [
+    "The Instituto Jô Clemente colors are presented in a single look, produced especially for this material. AI was used to produce charts and tables that became cards and forms that are more intuitive and easier to read.",
+    "As cores do Instituto Jô Clemente são apresentadas num visual único, produzido especialmente para este material. Uso de IA para a produção de gráficos e tabelas que viram cards e formulários intuitivos e mais fáceis de ler."
+   ],
+   "role": [
+    [
+     "Cover and graphic project",
+     "Capa e projeto gráfico"
+    ],
+    [
+     "Layout",
+     "Layout"
+    ],
+    [
+     "Infographic",
+     "Infográfico"
+    ]
+   ]
   },
   {
    "id": "tea",
