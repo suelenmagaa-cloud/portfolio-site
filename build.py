@@ -648,7 +648,11 @@ async function loop(){var id=++run,l=L(),p,i;if(rm){p=P[0];for(i=0;i<4;i++){E[i]
 while(id==run){p=P[k%P.length];l=L();for(i=0;i<4;i++){E[i].textContent='';E[i].parentNode.classList.remove('on')}for(i=0;i<4;i++){cur(i);if(!await type(E[i],p[i][l],SP[i],id))return;await wait(i==1?900:420)}cur(-1);await wait(3400);k++}}
 new MutationObserver(function(){loop()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang']});loop()})();"""
 
-ICSS = """.a9{margin:clamp(28px,4vw,48px) calc(50% - 50vw) 0;padding:clamp(28px,4vw,44px) calc(50vw - 50%);background:radial-gradient(60% 140% at 100% 100%,rgba(242,141,177,.38),transparent 70%),linear-gradient(115deg,#07142e 0%,#0e2b52 45%,#1b4a78 100%)}section.a9 .k{color:#f9b4cf}section.a9 .c9>span{border:1px solid rgba(255,255,255,.38);color:#fff;background:rgba(255,255,255,.12)}
+ICSS = """section.ih{flex-direction:column;align-items:flex-start;justify-content:center;gap:clamp(36px,5vw,56px)}.ihq{position:relative;width:100%;max-width:1100px;border-top:1px solid rgba(191,224,255,.22);padding-top:clamp(24px,3vw,34px)}
+.ihq .k{display:block;color:#f9b4cf}.ihq .pc{color:#d6e8fa;max-width:62ch;font-size:1rem}
+.ihq .stp li{color:#7f9bbb}.ihq .stp li.on,.ihq .stp li.dn{color:#fff}.ihq .stp i{background:rgba(255,255,255,.08);border-color:rgba(191,224,255,.35);color:#bfe0ff}.ihq .stp li.on i{background:#f28db1;border-color:#f28db1;color:#fff}.ihq .stp li.dn i{background:#fff;border-color:#fff;color:#235070}
+.ihq .stp li:not(:last-child)::after{background:rgba(191,224,255,.22)}.ihq .stp li:not(:last-child)::before{background:#f28db1}
+.a9{margin:clamp(28px,4vw,48px) calc(50% - 50vw) 0;padding:clamp(28px,4vw,44px) calc(50vw - 50%);background:radial-gradient(60% 140% at 100% 100%,rgba(242,141,177,.38),transparent 70%),linear-gradient(115deg,#07142e 0%,#0e2b52 45%,#1b4a78 100%)}section.a9 .k{color:#f9b4cf}section.a9 .c9>span{border:1px solid rgba(255,255,255,.38);color:#fff;background:rgba(255,255,255,.12)}
 .stp{display:flex;list-style:none;margin:8px 0 0;padding:0}.stp li{flex:1;position:relative;text-align:center;font:600 .95rem Outfit,sans-serif;color:#8d89a8;transition:color .4s}.stp li.on,.stp li.dn{color:#14122b}
 .stp i{display:grid;place-items:center;position:relative;z-index:2;width:44px;height:44px;margin:0 auto 10px;border-radius:50%;background:#fff;border:2px solid #cfcce0;font:700 1rem Outfit,sans-serif;font-style:normal;transition:background .4s,border-color .4s,color .4s,box-shadow .4s}.stp i s{display:none;text-decoration:none}
 .stp li.on i{border-color:#f28db1;background:#f28db1;color:#fff;box-shadow:0 0 0 7px rgba(242,141,177,.25)}.stp li.dn i{background:#235070;border-color:#235070;color:#fff}.stp li.dn i b{display:none}.stp li.dn i s{display:block}
@@ -675,7 +679,7 @@ ICSS = """.a9{margin:clamp(28px,4vw,48px) calc(50% - 50vw) 0;padding:clamp(28px,
 .ihp .r1 b{color:#9db6d0}.ihp em{font-style:normal;min-width:0;overflow-wrap:anywhere}
 .ihp .cu::after{content:"";display:inline-block;width:.55em;height:1.05em;margin-left:3px;vertical-align:-.15em;background:#8fd0ff;animation:ibk 1s steps(2) infinite}
 @keyframes ibk{50%{opacity:0}}
-@media(max-width:700px){.ih{padding:36px 22px;min-height:0;align-items:flex-start}.iht h1{font-size:clamp(2.4rem,11.5vw,3.2rem)}.ihp b{width:9.6em;white-space:nowrap;letter-spacing:.05em;font-size:.6rem}.ihp{padding:14px 16px}}
+@media(max-width:700px){.ih{padding:36px 22px;min-height:0;align-items:stretch}.iht h1{font-size:clamp(2.4rem,11.5vw,3.2rem)}.ihp b{width:9.6em;white-space:nowrap;letter-spacing:.05em;font-size:.6rem}.ihp{padding:14px 16px}}
 @media(prefers-reduced-motion:reduce){.ihb i,.iht h1,.ihp .cu::after{animation:none}.iht h1{background:none;-webkit-text-fill-color:#fff;color:#fff}}
 body.ia{background:#fff}.ia .intro{display:none}
 .fb{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative;overflow:hidden}.in{max-width:1080px;margin:0 auto;padding:0 16px}
@@ -744,7 +748,7 @@ def ia(data, S):
             f'<div class="iht"><small>{t(P["tag"])}</small><h1>{t(P["title"])}</h1><p class="ihs">{t(P["intro"])}</p>'
             f'<div class="ihp" data-p="{html.escape(json.dumps(pairs, ensure_ascii=False), quote=True)}">'
             + ''.join(f'<div class="r{i}"><b>{t(P["hp_k"][i])}</b><em></em></div>' for i in range(4)) + '</div></div>'
-            '<script>' + IHJS + '</script></section>')
+            '@@PIPE@@<script>' + IHJS + '</script></section>')
     top3 = '<section class="a0">' + ''.join(f'<div><h3>{t(a)}</h3><p>{t(b)}</p></div>' for a, b in zip(P['close'], P['close_t'])) + '</section>'
     time_ = (f'<section class="a2"><span class="k">{t(P["time_k"])}</span><div class="big"><s>{t(P["time_old"])}</s><em>{t(P["time_new"])}</em></div>'
              f'<p>{t(P["time_t"])}</p><small>{t(P["time_n"])}</small></section>')
@@ -772,15 +776,16 @@ def ia(data, S):
             'function go(i){it.forEach(function(e,k){e.classList.toggle("on",k==i);bs[k].setAttribute("aria-expanded",k==i)});pd.forEach(function(e,k){e.classList.toggle("on",k==i)});pos();try{ping()}catch(e){}}'
             'bs.forEach(function(b){b.addEventListener("click",function(){go(+b.dataset.i)})});window.addEventListener("resize",pos);window.addEventListener("load",pos);setTimeout(pos,50)})()</script></section>')
     pl = ''.join(f'<li><i><b>{i+1}</b><s>✓</s></i><span>{t(x)}</span></li>' for i, x in enumerate(P['pl']))
-    pipe_ = (f'<section class="a6"><span class="k">{t(P["pipe_k"])}</span><p class="pc">{t(P["proc"])}</p><ol class="stp">{pl}</ol>'
+    pipe_ = (f'<div class="ihq"><span class="k">{t(P["pipe_k"])}</span><p class="pc">{t(P["proc"])}</p><ol class="stp">{pl}</ol>'
              '<script>(function(){var o=document.currentScript.parentNode.querySelector(".stp"),L=[].slice.call(o.children),n=L.length,i=0;'
              'function set(k){L.forEach(function(e,j){e.classList.toggle("dn",j<k);e.classList.toggle("on",j==k)})}'
              'if(matchMedia("(prefers-reduced-motion:reduce)").matches){set(n);return}set(0);'
-             'setInterval(function(){i=(i+1)%(n+2);set(Math.min(i,n))},1500)})()</script></section>')
+             'setInterval(function(){i=(i+1)%(n+2);set(Math.min(i,n))},1500)})()</script></div>')
+    hero = hero.replace('@@PIPE@@', pipe_)
     rules_ = f'<section class="fb a7"><div class="in"><span class="k">{t(P["rules_k"])}</span><ol>' + ''.join(f'<li>{t(x)}</li>' for x in P['rules']) + '</ol></div></section>'
     out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
     rules9 = (f'<section class="a9"><span class="k">{t(P["rr_k"])}</span><div class="c9">' + ''.join(f'<span>{t(x)}</span>' for x in P['ticker']) + '</div></section>')
-    body = head + menu + hero + top3 + time_ + bars_ + tools_ + rules9 + pipe_ + out_ + foot
+    body = head + menu + hero + top3 + time_ + bars_ + tools_ + rules9 + out_ + foot
     page = shell('Suelen Magalhães — AI', body)
     return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
 
