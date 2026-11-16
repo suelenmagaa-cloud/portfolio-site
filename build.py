@@ -648,7 +648,14 @@ async function loop(){var id=++run,l=L(),p,i;if(rm){p=P[0];for(i=0;i<4;i++)E[i].
 while(id==run){p=P[k%P.length];l=L();for(i=0;i<4;i++)E[i].textContent='';for(i=0;i<4;i++){cur(i);if(!await type(E[i],p[i][l],SP[i],id))return;await wait(i==1?900:420)}cur(-1);await wait(3400);k++}}
 new MutationObserver(function(){loop()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang']});loop()})();"""
 
-ICSS = """.a9{padding:clamp(32px,5vw,56px) 0 8px}.a9 .c9{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.a9 .c9>span{border:1px solid #235070;color:#235070;background:#fff;border-radius:999px;padding:9px 16px;font-size:.92rem}
+ICSS = """.a9{margin:clamp(28px,4vw,48px) calc(50% - 50vw) 0;padding:clamp(28px,4vw,44px) calc(50vw - 50%);background:linear-gradient(100deg,#0e2b52 0%,#235070 52%,#f28db1 140%)}section.a9 .k{color:#f9b4cf}section.a9 .c9>span{border:1px solid rgba(255,255,255,.38);color:#fff;background:rgba(255,255,255,.12)}
+.stp{display:flex;list-style:none;margin:8px 0 0;padding:0}.stp li{flex:1;position:relative;text-align:center;font:600 .95rem Outfit,sans-serif;color:#8d89a8;transition:color .4s}.stp li.on,.stp li.dn{color:#14122b}
+.stp i{display:grid;place-items:center;position:relative;z-index:2;width:44px;height:44px;margin:0 auto 10px;border-radius:50%;background:#fff;border:2px solid #cfcce0;font:700 1rem Outfit,sans-serif;font-style:normal;transition:background .4s,border-color .4s,color .4s,box-shadow .4s}.stp i s{display:none;text-decoration:none}
+.stp li.on i{border-color:#f28db1;box-shadow:0 0 0 7px rgba(242,141,177,.25)}.stp li.dn i{background:linear-gradient(135deg,#f28db1,#235070);border-color:transparent;color:#fff}.stp li.dn i b{display:none}.stp li.dn i s{display:block}
+.stp li:not(:last-child)::after,.stp li:not(:last-child)::before{content:"";position:absolute;top:21px;left:calc(50% + 28px);width:calc(100% - 56px);height:3px;border-radius:3px;background:#e4e1f0}.stp li:not(:last-child)::before{z-index:1;background:linear-gradient(90deg,#f28db1,#235070);transform:scaleX(0);transform-origin:left;transition:transform .9s ease}.stp li.dn:not(:last-child)::before{transform:scaleX(1)}
+@media(max-width:820px){.stp{flex-direction:column}.stp li{display:flex;align-items:center;gap:14px;text-align:left;padding-bottom:22px}.stp li:last-child{padding-bottom:0}.stp i{margin:0;flex:none}.stp li:not(:last-child)::after,.stp li:not(:last-child)::before{top:46px;left:21px;width:3px;height:calc(100% - 48px)}.stp li:not(:last-child)::before{transform:scaleY(0);transform-origin:top}.stp li.dn:not(:last-child)::before{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){.stp li,.stp i,.stp li::before{transition:none}}
+.a9 .k{display:block}.a9 .c9{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.a9 .c9>span{border:1px solid #235070;color:#235070;background:#fff;border-radius:999px;padding:9px 16px;font-size:.92rem}
 .ih{position:relative;isolation:isolate;overflow:hidden;color:#fff;margin:12px calc(50% - 50vw) 0;padding:clamp(48px,7vw,96px) calc(50vw - 50%);min-height:clamp(440px,52vw,600px);display:flex;align-items:center;box-sizing:border-box;background:linear-gradient(115deg,#07142e 0%,#0e2b52 38%,#1b4a78 70%,#2a6a9c 100%)}
 .ih::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--hex);opacity:.55}
 .ihc{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
@@ -718,7 +725,7 @@ body.ia{background:#fff}.ia .intro{display:none}
 .pl li{flex:1;position:relative;text-align:center;padding:12px 8px;border-radius:999px;color:#fff;font:600 .95rem Outfit,sans-serif;animation:pls 10s infinite;animation-delay:calc(var(--i)*2s)}.pl li:not(:last-child):after{content:"→";position:absolute;right:-8px;top:50%;transform:translateY(-50%);z-index:1;font-weight:400}
 @keyframes pls{0%,19%{background:#fff;color:#14122b}20%,100%{background:transparent;color:#fff}}@media(prefers-reduced-motion:reduce){.pl li{animation:none}}
 @media(max-width:820px){.pl{flex-direction:column;border-radius:28px}.pl li:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-10px;transform:translateX(-50%)}}
-.a8{margin-top:clamp(40px,6vw,64px);border-top:1px dashed #cfcce0;padding:18px 0 8px}.a8 .k{color:#6b6985}.a8 .og{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 30px}.a8 b{display:block;font:700 1rem Outfit,sans-serif;color:var(--ink)}.a8 p{margin:3px 0 0;font-size:.9rem;line-height:1.4;color:#4f5d78}
+.a8{margin-top:clamp(40px,6vw,64px);border-top:1px dashed #cfcce0;padding:18px 0 8px}.a8 .k{color:#6b6985}.a8 .og{display:grid;grid-template-columns:minmax(0,1fr);gap:12px 30px}.a8 b{display:block;font:700 1rem Outfit,sans-serif;color:var(--ink)}.a8 p{margin:3px 0 0;font-size:.9rem;line-height:1.4;color:#4f5d78}
 @media(max-width:820px){.a1 .g{grid-template-columns:1fr}.mk{justify-self:start;max-width:300px;transform:rotate(2deg)}.a0{grid-template-columns:1fr}.rc{grid-template-columns:1fr}.rc.hd{display:none}.rc div small{display:block;font:600 .62rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:3px}.tl{grid-template-columns:1fr}.fw{grid-template-columns:1fr}.fw .fa{transform:rotate(90deg);padding:6px 0}.a8 .og{grid-template-columns:1fr}.br2,.ax{grid-template-columns:62px 1fr}}
 """
 
@@ -764,8 +771,12 @@ def ia(data, S):
             'function pos(){var a=s.querySelector(".ri.on .rb");if(!a||!c||getComputedStyle(c).display=="none")return;var y=a.getBoundingClientRect().top+a.offsetHeight/2-c.getBoundingClientRect().top-34;n.style.top=Math.max(14,Math.min(y,c.offsetHeight-82))+"px"}'
             'function go(i){it.forEach(function(e,k){e.classList.toggle("on",k==i);bs[k].setAttribute("aria-expanded",k==i)});pd.forEach(function(e,k){e.classList.toggle("on",k==i)});pos();try{ping()}catch(e){}}'
             'bs.forEach(function(b){b.addEventListener("click",function(){go(+b.dataset.i)})});window.addEventListener("resize",pos);window.addEventListener("load",pos);setTimeout(pos,50)})()</script></section>')
-    pl = ''.join(f'<li style="--i:{i}">{t(x)}</li>' for i, x in enumerate(P['pl']))
-    pipe_ = f'<section class="a6"><span class="k">{t(P["pipe_k"])}</span><p class="pc">{t(P["proc"])}</p><ol class="pl">{pl}</ol></section>'
+    pl = ''.join(f'<li><i><b>{i+1}</b><s>✓</s></i><span>{t(x)}</span></li>' for i, x in enumerate(P['pl']))
+    pipe_ = (f'<section class="a6"><span class="k">{t(P["pipe_k"])}</span><p class="pc">{t(P["proc"])}</p><ol class="stp">{pl}</ol>'
+             '<script>(function(){var o=document.currentScript.parentNode.querySelector(".stp"),L=[].slice.call(o.children),n=L.length,i=0;'
+             'function set(k){L.forEach(function(e,j){e.classList.toggle("dn",j<k);e.classList.toggle("on",j==k)})}'
+             'if(matchMedia("(prefers-reduced-motion:reduce)").matches){set(n);return}set(0);'
+             'setInterval(function(){i=(i+1)%(n+2);set(Math.min(i,n))},1500)})()</script></section>')
     rules_ = f'<section class="fb a7"><div class="in"><span class="k">{t(P["rules_k"])}</span><ol>' + ''.join(f'<li>{t(x)}</li>' for x in P['rules']) + '</ol></div></section>'
     out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
     rules9 = (f'<section class="a9"><span class="k">{t(P["rr_k"])}</span><div class="c9">' + ''.join(f'<span>{t(x)}</span>' for x in P['ticker']) + '</div></section>')

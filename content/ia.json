@@ -464,22 +464,12 @@
   "out": [
    [
     [
-     "Instituto Jô Clemente",
-     "Instituto Jô Clemente"
-    ],
-    [
-     "In one publication I used AI for charts and tables, and turned a table into a card.",
-     "Em uma publicação usei IA para gráficos e tabelas, e transformei uma tabela em card."
-    ]
-   ],
-   [
-    [
      "Political radar",
      "Radar político"
     ],
     [
-     "In progress: the same approach on another tool.",
-     "Em andamento: a mesma abordagem em outra ferramenta."
+     "In progress: client tracking with Lovable.",
+     "Em andamento: acompanhamento de clientes com Lovable."
     ]
    ]
   ],
@@ -713,8 +703,8 @@
     "Eu corrigi"
    ],
    [
-    "Result",
-    "Ficou assim"
+    "How it turned out",
+    "Como ficou"
    ]
   ]
  }
