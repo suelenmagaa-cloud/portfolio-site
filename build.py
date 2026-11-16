@@ -464,7 +464,8 @@ NCSS = """
 .pb{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:var(--fg);color:var(--on,#fff);font:600 .9rem Inter,sans-serif;transition:transform .2s}.pb:hover{transform:translateX(4px)}.pb:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
 .pb i{font-style:normal}
 .py{padding:clamp(18px,3vw,34px) clamp(8px,2vw,22px) 0}
-.pf{margin:0;position:relative;width:84%;margin-bottom:clamp(48px,10vw,104px)}.pz.r .pf{margin-left:auto}
+.gm{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:22px 0 8px}.gm img{width:100%;border-radius:12px;display:block}
+.pf{cursor:pointer;margin:0;position:relative;width:90%;margin-bottom:clamp(48px,10vw,104px)}.pz.r .pf{margin-left:auto}
 .pf img{display:block;border-radius:18px;box-shadow:0 22px 48px rgba(0,0,0,.3);background:#fff;transition:transform .5s cubic-bezier(.2,.9,.2,1)}
 .pf .m0{width:100%;position:relative;z-index:1}
 .pf .m1{position:absolute;z-index:3;width:44%;right:-19%;bottom:-24%;transform:rotate(4deg)}
@@ -472,7 +473,7 @@ NCSS = """
 .pz:hover .m1{transform:rotate(6deg) translate(10px,10px)}.pz:hover .m2{transform:rotate(-7deg) translate(-8px,-8px)}.pz:hover .m0{transform:scale(1.02)}
 @media(prefers-reduced-motion:reduce){.pf img{transition:none}.pz:hover .m0,.pz:hover .m1,.pz:hover .m2{transform:none}}
 .pz.r .pf .m1{right:auto;left:-19%}.pz.r .pf .m2{left:auto;right:-9%;transform:rotate(5deg)}.pz.r:hover .m2{transform:rotate(7deg) translate(8px,-8px)}.pz.r .m1{transform:rotate(-4deg)}.pz.r:hover .m1{transform:rotate(-6deg) translate(-10px,10px)}
-.pw{width:84%}.pz.r .pw{margin-left:auto}
+.pw{width:90%}.pz.r .pw{margin-left:auto}
 .pw{display:flex;height:18px;margin-top:0;border-radius:999px;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,.55)}.pw i{flex:1}
 dialog.bd{border:0;border-radius:28px;padding:0;width:min(940px,94vw);background:#fff;color:var(--ink)}dialog.bd::backdrop{background:rgba(20,18,43,.62)}
 html:not([data-embed]) dialog.bd{max-height:92vh;overflow:auto}
@@ -484,7 +485,7 @@ html:not([data-embed]) dialog.bd{max-height:92vh;overflow:auto}
 @media(max-width:860px){.pf{width:88%}.pw{width:88%}.pf .m1{right:-10%}.pz.r .pf .m1{left:-10%}.pf .m2{left:-6%}.pz.r .pf .m2{right:-6%}.pz{grid-template-columns:minmax(0,1fr);border-radius:26px}.pz.r .px{order:0}.px{display:contents}.pt{order:0}.pm{order:1}.py{order:2;margin:0 0 22px}.pz blockquote{order:3}.pp{order:4}.pb{order:5}.bd .dh,.bd .dc{padding-left:20px;padding-right:20px}}
 """
 
-COLLAGE = {'mar': [9, 10], 'gis': [13, 12], 'eff': [6, 3], 'fkl': [4, 2], 'tel': [7, 6], 'hel': [3, 4]}
+MOCK = {'mar': 2, 'gis': 2, 'eff': 2, 'fkl': 3, 'tel': 1, 'hel': 3}
 
 def brands_novo(data, S):
     P = data['page']
@@ -501,7 +502,9 @@ def brands_novo(data, S):
     for i, b in enumerate(data['brands']):
         dac = b['ac'] if lum(b['fg']) < .5 else (b['bg'] if b['bg'].startswith('#') and len(b['bg']) == 7 else '#235070')
         on = '#fff' if lum(b['fg']) < .5 else (b['bg'] if b['bg'].startswith('#') and len(b['bg']) == 7 else '#14122b')
-        cl = ''.join(f'<img class="m{j}" loading="lazy" alt="" src="{im(b["key"], n)}">' for j, n in enumerate(COLLAGE.get(b['key'], []), 1))
+        nm = MOCK.get(b['key'], 1)
+        mk = lambda j: f'assets/brands/{b["key"]}_m{j}.webp'
+        cl = ''.join(f'<img class="m{j-1}" loading="lazy" alt="" src="{mk(j)}">' for j in range(2, nm + 1))
         words = ''.join(f'<span>{html.escape(w)}</span>' for w in b['name'].split())
         ps = ''.join(f'<i style="background:{s["c"]}" title="{s["c"].upper()}"></i>' for s in b['swatches'])
         ps = f'<div class="pw" aria-hidden="true">{ps}</div>' if ps else ''
@@ -509,13 +512,14 @@ def brands_novo(data, S):
                     f'<div class="px"><div class="pt"><span class="pn">{b["n"]}</span><span class="pk">{t(b["kind"])} · {b["year"]}</span></div>'
                     f'<h2 class="pm">{words}</h2><blockquote>{t(b["quote"])}</blockquote><p class="pp">{t(b["text"][0])}</p>'
                     f'<button type="button" class="pb" data-d="d-{b["id"]}">{t(["See the full story", "Ver a história completa"])} <i>&#8594;</i></button></div>'
-                    f'<div class="py"><figure class="pf"><img class="m0" loading="lazy" alt="{html.escape(b["name"])}" src="{im(b["key"], b["hero"])}">{cl}</figure>{ps}</div></section>')
+                    f'<div class="py"><figure class="pf" data-d="d-{b["id"]}"><img class="m0" loading="lazy" alt="{html.escape(b["name"])}" src="{mk(1)}">{cl}</figure>{ps}</div></section>')
         paras = ''.join(f'<p>{t(x)}</p>' for x in b['text'])
         fr = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['frames'])
         sw = ''.join(f'<div class="sw"><div class="ch" style="background:{x["c"]}"></div><b>{t(x["n"])}</b><code>{x["c"].upper()}</code><span>{t(x["d"])}</span></div>' for x in b['swatches'])
         ty = ''.join(f'<p><b>{html.escape(x[0])}</b> · {t([x[1], x[2]])}</p>' for x in b['type'])
         ap = ''.join(f'<li><img loading="lazy" alt="" src="{im(b["key"], f["img"])}"><b>{t(f["t"])}</b><span class="d">{t(f["d"])}</span></li>' for f in b['apps'])
-        body = f'<div class="cp">{paras}</div>'
+        gal = ''.join(f'<img loading="lazy" alt="" src="{mk(j)}">' for j in range(1, nm + 1))
+        body = f'<div class="cp">{paras}</div><div class="gm">{gal}</div>'
         if fr: body += f'<h3>{t(P["frames"])}</h3><ol class="sb">{fr}</ol>'
         if sw: body += f'<h3>{t(P["palette"])}</h3><div class="pl">{sw}</div>'
         if ty: body += f'<h3>{t(P["type"])}</h3><div class="ty">{ty}</div>'
@@ -523,7 +527,7 @@ def brands_novo(data, S):
         dialogs += (f'<dialog class="bd" id="d-{b["id"]}" style="--ac:{dac}" aria-labelledby="t-{b["id"]}"><div class="dh"><h2 id="t-{b["id"]}"><span class="n">{b["n"]}</span>{html.escape(b["name"])}</h2>'
                     f'<button type="button" class="x" aria-label="{html.escape("Fechar")}">&#10005;</button></div><div class="dc">{body}</div></dialog>')
     more = f'<section class="bm"><h2>{t(P["more"])}</h2><p>{t(P["more2"])}</p></section>'
-    js = ('<script>document.addEventListener("click",e=>{const o=e.target.closest(".pb");if(o){const d=document.getElementById(o.dataset.d);if(d){d.showModal();try{ping()}catch(x){}}return}'
+    js = ('<script>document.addEventListener("click",e=>{const o=e.target.closest(".pb,.pf");if(o){const d=document.getElementById(o.dataset.d);if(d){d.showModal();try{ping()}catch(x){}}return}'
           'const d=e.target.closest("dialog.bd");if(d&&(e.target===d||e.target.closest(".x")))d.close()})</script>')
     page = shell('Suelen Magalhães — Brands', head + menu + top + nav + posters + more + dialogs + foot)
     page = page.replace('</style>', BCSS + NCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
