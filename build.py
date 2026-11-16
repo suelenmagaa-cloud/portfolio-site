@@ -118,7 +118,7 @@ h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}.num{display:block;font:700
 .intro{font-size:1.15rem;margin:26px 0 16px;text-align:left}
 footer.site{margin-top:42px}.bandbar{height:14px;margin:0 calc(50% - 50vw);background:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%)}.ft{display:flex;justify-content:space-between;align-items:center;padding:34px 8px}
 .ft h4{font:500 1.6rem Outfit,sans-serif;margin:0;color:var(--ink)}.ft p{margin:.2em 0 0;font-size:.9rem}.btn{border:1px solid #d9d2ff;border-radius:999px;padding:10px 34px;text-decoration:none;color:var(--navy)}
-.fl{display:flex;gap:26px;justify-content:center;font-size:.85rem;padding-bottom:24px}.fl a{color:var(--navy)}
+.fl{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:center;text-align:center;font-size:.85rem;padding:0 8px 24px}.fl a{color:var(--navy);overflow-wrap:anywhere}
 html[data-embed] .site:not(.shero):not(footer){display:none}html[data-embed] .top{justify-content:flex-end}html[data-embed=body] .shero{display:none}html[data-embed],html[data-embed] body{overflow:hidden!important}html[data-embed] [id]{scroll-margin-top:90px}html[data-embed] dialog[open]{position:absolute;top:var(--dy,20px);bottom:auto;left:0;right:0;margin:0 auto;max-height:none}html[data-embed] dialog.hv{height:min(86vh,780px)}html[data-embed] dialog img{max-height:720px}html[data-embed=hero] main>*:not(.shero),html[data-embed=hero] footer,html[data-embed=hero] body>*:not(main){display:none!important}html[data-embed=hero] .shero{margin:0;min-height:100vh;box-sizing:border-box}html[data-embed=hero] body{margin:0;padding:0}html[data-embed=hero] main{max-width:none;padding:0;margin:0;width:100%}html[data-embed=hero],html[data-embed=hero] body{overflow:hidden;height:100%;background:transparent!important}html[data-embed=hero] .shero{background:none!important}html[data-embed=hero] .shero{margin:0!important;padding:20px max(20px,calc((100vw - 900px)/2))!important;border-radius:0;height:100vh;min-height:0!important;overflow:hidden}html[data-embed=hero] .shero h1{font-size:clamp(44px,9vh,64px);line-height:1.05}html[data-embed=hero] .stats{gap:0}
 .fg{width:100%;height:520px;border:0;border-radius:24px;background:var(--soft);margin-top:20px}summary{cursor:pointer;font-weight:600;margin-top:18px;color:var(--violet)}
 .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}.g img{width:100%;border-radius:10px;cursor:zoom-in}
@@ -131,6 +131,20 @@ html[data-embed] .site:not(.shero):not(footer){display:none}html[data-embed] .to
 .feat{display:grid;grid-template-columns:1fr 1.5fr;gap:32px;align-items:center;margin:48px 4px 0;padding-top:36px;border-top:1px solid #ece8fb}.feat h3{font-size:1.6rem}.feat p{margin:.2em 0 .8em}.fim img{width:100%;height:auto;display:block;cursor:zoom-in;border-radius:10px}
 @media(max-width:700px){.feat{grid-template-columns:1fr}.im.row{flex-direction:column}.im.row img{max-height:300px;width:100%}.im.tall img{height:260px}}
 .g.m{display:none}dialog{border:0;background:none;padding:0}dialog img{max-width:92vw;max-height:90vh}
+/* mobile: ajustes gerais */
+@media(max-width:700px){
+html[data-embed] .top{margin-bottom:14px}
+.pills{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:12px 16px;margin:0 -16px}.pills::-webkit-scrollbar{display:none}.pills a{flex:none;white-space:nowrap}
+.ft{padding:28px 8px}.btn{padding:10px 28px}
+html[data-embed=hero] .shero{height:auto!important;min-height:0!important;overflow:visible!important;padding:22px 20px!important;gap:22px}
+html[data-embed=hero] .shero h1{font-size:clamp(2rem,9vw,2.6rem)!important;line-height:1.08}
+html[data-embed=hero],html[data-embed=hero] body{overflow:visible!important;height:auto!important}
+.stats{min-width:0;width:100%}.stats div{padding:14px 0}
+}
+@media(max-width:560px){
+body.ab .ac li a{flex-wrap:wrap;gap:6px 12px;padding:14px 16px}body.ab .ac li b{margin-right:0}body.ab .ac li span{flex:1 0 100%;min-width:0;font-size:.98rem;overflow-wrap:anywhere;word-break:normal}
+.ac{padding:26px 22px}
+}
 /* padrão de cabeçalho: pharma, health, brands, about */
 body.ph .pt,body.hl .ht,body.br .bt,body.ab .at{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 0;align-items:center;margin:48px 4px 0;max-width:none}
 body.ph .pt>div,body.hl .ht>div,body.ab .at>div{display:contents}
