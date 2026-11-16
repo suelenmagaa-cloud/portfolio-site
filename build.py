@@ -540,15 +540,15 @@ ACSS = """body.ab{background:#fff}.ab .intro{display:none}.ab footer .ft{display
 .at small{display:inline-block;border:1px solid var(--pink);border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em;color:var(--navy)}
 .at h1{font:700 clamp(3.6rem,11vw,8.4rem)/.9 Outfit,sans-serif;letter-spacing:-.05em;color:var(--ink);margin:.12em 0 0}
 .at p{margin:0;font:500 clamp(1.05rem,2.1vw,1.45rem)/1.45 Inter,sans-serif;color:var(--ink);padding-left:20px;border-left:6px solid var(--pink)}
-.as{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px 26px;margin:46px 4px 0;padding-top:26px;border-top:3px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
-.as b{display:block;font:700 clamp(2.4rem,5vw,3.6rem)/1 Outfit,sans-serif;letter-spacing:-.04em;background:linear-gradient(90deg,#235070,#f28db1);-webkit-background-clip:text;background-clip:text;color:transparent}.as div>span{display:block;margin-top:6px;font-size:.88rem;line-height:1.4;color:var(--navy)}
-.ab2{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px clamp(28px,6vw,72px);margin:60px 4px 0}.ab2 p{margin:0;font-size:1.05rem;line-height:1.65;color:var(--navy)}.ab2 div+div p{font:600 1.15rem/1.5 Outfit,sans-serif;color:var(--ink)}
-.ac{margin:72px 4px 40px;border-radius:32px;padding:clamp(28px,5vw,60px);color:#fff;background:radial-gradient(800px 420px at 90% 10%,rgba(124,108,246,.4),transparent 60%),linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px clamp(24px,5vw,60px);align-items:end}
+.as{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:34px 26px;margin:46px 4px 0;padding-top:26px;border-top:3px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
+.as>div{grid-column:span 2}.as>div:nth-child(n+4){grid-column:span 3}.as b{display:block;font:800 clamp(3.6rem,9.5vw,7.4rem)/.9 Outfit,sans-serif;letter-spacing:-.04em;background:linear-gradient(90deg,#235070,#f28db1);-webkit-background-clip:text;background-clip:text;color:transparent}.as div>span{display:block;margin-top:10px;font:600 1rem/1.4 Inter,sans-serif;max-width:26ch;color:var(--ink)}
+.ab2{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px clamp(28px,6vw,72px);margin:60px 4px 0}.ab2 p{margin:0;font-size:1.05rem;line-height:1.65;color:var(--navy)}
+.ac{margin:72px 4px 40px;border-radius:32px;padding:clamp(28px,5vw,60px);color:#fff;background:radial-gradient(800px 420px at 90% 10%,rgba(124,108,246,.4),transparent 60%),var(--hex),linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px clamp(24px,5vw,60px);align-items:end}
 .ac small{font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f28db1}.ac h2{font:700 clamp(2.4rem,6.4vw,5rem)/.95 Outfit,sans-serif;letter-spacing:-.04em;margin:.15em 0 .25em}.ac .ct{margin:0;font-size:1.1rem;opacity:.92}.ac .pl{margin:14px 0 0;font:600 .8rem Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
 .ac ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.ac li a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;text-decoration:none;color:#fff;padding:14px 18px;border:1px solid rgba(255,255,255,.28);border-radius:16px;transition:background .2s,color .2s,transform .2s}
-.ac li a:hover,.ac li a:focus-visible{background:#fff;color:#14122b;transform:translateX(4px);outline:0}.ac li b{font:600 .72rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75}.ac li span{font:500 1rem Inter,sans-serif;overflow-wrap:anywhere}
+.ac li a:hover,.ac li a:focus-visible{background:#fff;color:#14122b;transform:translateX(4px);outline:0}.ac li svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.ac li svg.f{fill:currentColor;stroke:none}.ac li a{align-items:center;flex-wrap:nowrap}.ac li b{margin-right:auto}.ac li b{font:600 .72rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75}.ac li span{font:500 1rem Inter,sans-serif;overflow-wrap:anywhere}
 .ac li:first-child a{background:#f28db1;border-color:#f28db1;color:#14122b}.ac li:first-child a:hover{background:#fff}
-@media(max-width:860px){.at,.ab2,.ac{grid-template-columns:minmax(0,1fr)}.ac{border-radius:24px}}"""
+@media(max-width:860px){.as{grid-template-columns:repeat(2,minmax(0,1fr))}.as>div,.as>div:nth-child(n+4){grid-column:span 1}.as>div:nth-child(5){grid-column:span 2}.at,.ab2,.ac{grid-template-columns:minmax(0,1fr)}.ac{border-radius:24px}}"""
 
 def about(data, S):
     P = data['page']
@@ -558,7 +558,9 @@ def about(data, S):
     top = f'<section class="at"><div><small>{t(P["tag"])}</small><h1>{t(P["title"])}</h1></div><p>{t(P["lead"])}</p></section>'
     st = ''.join(f'<div><b>{t(a) if isinstance(a, list) else html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in P['stats'])
     body = ''.join(f'<div><p>{t(x)}</p></div>' for x in P['body'])
-    lk = ''.join(f'<li><a href="{html.escape(u)}"><b>{html.escape(a)}</b><span>{html.escape(b)}</span></a></li>' for a, b, u in P['links'])
+    IC = {'Email': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/></svg>',
+          'LinkedIn': '<svg viewBox="0 0 24 24" aria-hidden="true" class="f"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2 3.75-2 4 0 4.74 2.6 4.74 6V21h-4v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V21h-4z"/></svg>'}
+    lk = ''.join(f'<li><a href="{html.escape(u)}"' + (' target="_blank" rel="noopener"' if u.startswith('http') else '') + f'>{IC.get(a, "")}<b>{html.escape(a)}</b><span>{html.escape(b)}</span></a></li>' for a, b, u in P['links'])
     ct = (f'<section class="ac" id="contact"><div><small>{t(P["contact_k"])}</small><h2>{t(P["contact_h"])}</h2><p class="ct">{t(P["contact_t"])}</p><p class="pl">{t(P["place"])}</p></div><ul>{lk}</ul></section>')
     page = shell('Suelen Magalhães — About & Contact', head + menu + top + f'<section class="as">{st}</section><section class="ab2">{body}</section>' + ct + foot)
     page = page.replace('</style>', ACSS + '</style>', 1).replace('<body>', '<body class="ab">', 1)
