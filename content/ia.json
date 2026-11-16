@@ -698,6 +698,24 @@
     ],
     "r": []
    }
+  ],
+  "hp_k": [
+   [
+    "I asked",
+    "Eu pedi"
+   ],
+   [
+    "AI delivered",
+    "A IA entregou"
+   ],
+   [
+    "I corrected",
+    "Eu corrigi"
+   ],
+   [
+    "Result",
+    "Ficou assim"
+   ]
   ]
  }
 }
