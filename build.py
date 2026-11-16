@@ -534,6 +534,36 @@ def brands_novo(data, S):
     page = page.replace('</style>', BCSS + NCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
     return page.replace('</body>', js + '</body>', 1)
 
+
+ACSS = """body.ab{background:#fff}.ab .intro{display:none}.ab footer .ft{display:none}.ab footer .bandbar{display:none}.ab footer .fl a{display:none}.ab footer .fl{justify-content:center}
+.at{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:22px clamp(28px,6vw,72px);align-items:end;margin:44px 4px 0}
+.at small{display:inline-block;border:1px solid var(--pink);border-radius:999px;padding:3px 16px;font:600 .75rem Inter,sans-serif;letter-spacing:.06em;color:var(--navy)}
+.at h1{font:700 clamp(3.6rem,11vw,8.4rem)/.9 Outfit,sans-serif;letter-spacing:-.05em;color:var(--ink);margin:.12em 0 0}
+.at p{margin:0;font:500 clamp(1.05rem,2.1vw,1.45rem)/1.45 Inter,sans-serif;color:var(--ink);padding-left:20px;border-left:6px solid var(--pink)}
+.as{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px 26px;margin:46px 4px 0;padding-top:26px;border-top:3px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
+.as b{display:block;font:700 clamp(2.4rem,5vw,3.6rem)/1 Outfit,sans-serif;letter-spacing:-.04em;background:linear-gradient(90deg,#235070,#f28db1);-webkit-background-clip:text;background-clip:text;color:transparent}.as div>span{display:block;margin-top:6px;font-size:.88rem;line-height:1.4;color:var(--navy)}
+.ab2{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px clamp(28px,6vw,72px);margin:60px 4px 0}.ab2 p{margin:0;font-size:1.05rem;line-height:1.65;color:var(--navy)}.ab2 div+div p{font:600 1.15rem/1.5 Outfit,sans-serif;color:var(--ink)}
+.ac{margin:72px 4px 40px;border-radius:32px;padding:clamp(28px,5vw,60px);color:#fff;background:radial-gradient(800px 420px at 90% 10%,rgba(124,108,246,.4),transparent 60%),linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px clamp(24px,5vw,60px);align-items:end}
+.ac small{font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f28db1}.ac h2{font:700 clamp(2.4rem,6.4vw,5rem)/.95 Outfit,sans-serif;letter-spacing:-.04em;margin:.15em 0 .25em}.ac .ct{margin:0;font-size:1.1rem;opacity:.92}.ac .pl{margin:14px 0 0;font:600 .8rem Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.ac ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.ac li a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;text-decoration:none;color:#fff;padding:14px 18px;border:1px solid rgba(255,255,255,.28);border-radius:16px;transition:background .2s,color .2s,transform .2s}
+.ac li a:hover,.ac li a:focus-visible{background:#fff;color:#14122b;transform:translateX(4px);outline:0}.ac li b{font:600 .72rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75}.ac li span{font:500 1rem Inter,sans-serif;overflow-wrap:anywhere}
+.ac li:first-child a{background:#f28db1;border-color:#f28db1;color:#14122b}.ac li:first-child a:hover{background:#fff}
+@media(max-width:860px){.at,.ab2,.ac{grid-template-columns:minmax(0,1fr)}.ac{border-radius:24px}}"""
+
+def about(data, S):
+    P = data['page']
+    S2 = dict(S); S2['menu'] = [m for m in S['menu'] if m[0] != 'CONTACT']
+    S2['menu'] = [[P['menu_about'][0], P['menu_about'][1], m[2]] if m[0] == 'ABOUT' else m for m in S2['menu']]
+    head, menu, foot = chrome(S2, 7)
+    top = f'<section class="at"><div><small>{t(P["tag"])}</small><h1>{t(P["title"])}</h1></div><p>{t(P["lead"])}</p></section>'
+    st = ''.join(f'<div><b>{t(a) if isinstance(a, list) else html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in P['stats'])
+    body = ''.join(f'<div><p>{t(x)}</p></div>' for x in P['body'])
+    lk = ''.join(f'<li><a href="{html.escape(u)}"><b>{html.escape(a)}</b><span>{html.escape(b)}</span></a></li>' for a, b, u in P['links'])
+    ct = (f'<section class="ac" id="contact"><div><small>{t(P["contact_k"])}</small><h2>{t(P["contact_h"])}</h2><p class="ct">{t(P["contact_t"])}</p><p class="pl">{t(P["place"])}</p></div><ul>{lk}</ul></section>')
+    page = shell('Suelen Magalhães — About & Contact', head + menu + top + f'<section class="as">{st}</section><section class="ab2">{body}</section>' + ct + foot)
+    page = page.replace('</style>', ACSS + '</style>', 1).replace('<body>', '<body class="ab">', 1)
+    return page
+
 ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .fb{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative;overflow:hidden}.in{max-width:1080px;margin:0 auto;padding:0 16px}
 .ia .k{display:inline-block;font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f28db1;margin-bottom:14px}
@@ -652,6 +682,9 @@ def main():
     if bj.exists():
         (D / 'brands.html').write_text(brands(json.loads(bj.read_text('utf-8')), S), 'utf-8')
         (D / 'brands-novo.html').write_text(brands_novo(json.loads(bj.read_text('utf-8')), S), 'utf-8')
+    aj = R / 'content' / 'about.json'
+    if aj.exists():
+        (D / 'about.html').write_text(about(json.loads(aj.read_text('utf-8')), S), 'utf-8')
     ij = R / 'content' / 'ia.json'
     if ij.exists():
         (D / 'ia.html').write_text(ia(json.loads(ij.read_text('utf-8')), S), 'utf-8')
