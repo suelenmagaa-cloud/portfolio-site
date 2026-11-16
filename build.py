@@ -134,7 +134,7 @@ html[data-embed] .nx a[href='#top']{display:none}html[data-embed] .site:not(.she
 /* mobile: ajustes gerais */
 @media(max-width:700px){
 html[data-embed] main{padding-top:0}html[data-embed] .top{margin:0}
-.pills{flex-wrap:wrap;justify-content:center;gap:6px;padding:10px 8px;margin:0 -16px}.pills a{padding:5px 12px!important;font-size:.8rem!important;white-space:nowrap}
+.pills{flex-wrap:wrap;justify-content:center;gap:8px;padding:10px 8px;margin:0 -16px}.pills a{flex:1 1 auto;text-align:center;padding:9px 12px!important;font-size:.82rem!important;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
 .fl{flex-direction:column;align-items:center;gap:6px}
 .ft{padding:28px 8px}.btn{padding:10px 28px}
 html[data-embed=hero] .shero{height:auto!important;min-height:0!important;overflow:visible!important;padding:22px 20px!important;gap:22px}
@@ -210,7 +210,7 @@ def pimg(k, alt=''):
     return f'<img loading="lazy" alt="{html.escape(alt)}" src="assets/{k}.webp">' if (R / 'assets' / f'{k}.webp').exists() else ''
 
 CCSS = """.cc{position:absolute;z-index:99;width:min(320px,calc(100vw - 24px));background:#fff;border:1px solid #d9d2ff;border-radius:18px;box-shadow:0 12px 36px rgba(20,18,43,.22);padding:18px;display:none;font-family:Inter,sans-serif}.cc.on{display:block}.cc b{display:block;color:var(--ink);font-size:1.02rem;overflow-wrap:anywhere;margin:0 0 12px}.cc a,.cc button{display:block;width:100%;box-sizing:border-box;text-align:center;border-radius:999px;padding:12px 16px;font:600 .95rem Inter,sans-serif;margin-top:8px;cursor:pointer;text-decoration:none;min-height:44px}.cc a{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border:0}.cc button{background:#fff;color:var(--navy);border:1px solid var(--pink)}.cc .x{position:absolute;top:4px;right:6px;width:44px;height:44px;margin:0;border:0;font-size:1.5rem;background:none;padding:0}.cc small{display:block;text-align:center;color:var(--navy);margin-top:8px;min-height:1.2em}a,button,summary{touch-action:manipulation;-webkit-tap-highlight-color:rgba(242,141,177,.25)}
-@media(pointer:coarse),(max-width:700px){.bar button{min-height:40px;min-width:48px;padding:8px 14px}.menu a{display:inline-block;padding:12px 8px}summary{min-height:44px;display:flex;align-items:center}.shero a,.nx a{min-height:44px;display:inline-flex;align-items:center}dialog button,.ar,.ar2{min-width:44px;min-height:44px}.fl a{padding:10px 8px}.hb,.pb,.pills a{min-height:44px;box-sizing:border-box}.btn{display:inline-block;min-height:44px;box-sizing:border-box}}
+@media(pointer:coarse),(max-width:700px){.bar button{min-height:38px;padding:6px 14px;line-height:1}.menu a{display:inline-block;padding:12px 8px}summary{min-height:44px;display:flex;align-items:center}.shero a,.nx a{min-height:44px;display:inline-flex;align-items:center}dialog button{min-height:44px}.ar,.ar2{min-width:44px;min-height:44px}.fl a{padding:10px 8px}.hb,.pb,.pills a{min-height:44px;box-sizing:border-box}.btn{display:inline-block;min-height:44px;box-sizing:border-box}}
 """
 
 PCSS = """body.ph{background:#fff}.ph .intro{display:none}
@@ -236,7 +236,7 @@ dialog.pd{border:0;border-radius:18px;padding:0;width:min(1040px,94vw);max-heigh
 .pd h3{font:700 1.7rem/1.1 Outfit,sans-serif;color:var(--ink);margin:.3em 0 .6em;letter-spacing:-.02em}.pd h4{font:600 .7rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);margin:1.2em 0 .3em}
 .pd ul{padding-left:1.1em;margin:0}.pd li{margin:.35em 0}.pd li::marker{color:var(--pink)}.pd p{margin:0 0 .7em}
 .pd .ct{position:sticky;bottom:-22px;display:flex;gap:8px;margin-top:22px;padding:12px 0 0;background:#fff}.pd .ct button{border:1px solid var(--pink);background:#fff;color:var(--navy);border-radius:999px;padding:7px 18px;cursor:pointer;font:600 .85rem Inter,sans-serif}.pd .ct button:first-child{margin-right:auto}
-@media(max-width:700px){.pt{grid-template-columns:1fr;margin-top:28px}.bd{grid-template-columns:1fr;grid-auto-rows:300px;gap:36px}.tl{grid-area:auto!important}.tl.top img:nth-child(n+3){display:none}.pd .in{grid-template-columns:1fr;overflow:auto}.pd .pi{max-height:44vh}.pd .px{overflow:visible}}"""
+@media(max-width:700px){.pd .in{grid-template-columns:minmax(0,1fr)!important}.pd .px{min-width:0;padding:24px 22px 18px;overflow-wrap:anywhere}.pd .ct{flex-wrap:nowrap;gap:6px}.pd .ct button{flex:1 1 0;min-width:0;padding:8px 6px;white-space:nowrap;text-align:center;margin:0!important}.pt{grid-template-columns:1fr;margin-top:28px}.bd{grid-template-columns:1fr;grid-auto-rows:300px;gap:36px}.tl{grid-area:auto!important}.tl.top img:nth-child(n+3){display:none}.pd .in{grid-template-columns:1fr;overflow:auto}.pd .pi{max-height:44vh}.pd .px{overflow:visible}}"""
 PJS = """(()=>{const dl=document.querySelector('dialog.pd');if(!dl)return;const ts=[...document.querySelectorAll('.tl')],ds=[...dl.querySelectorAll('.dc')];let k=0;
 const show=n=>{k=(n+ds.length)%ds.length;ds.forEach((d,i)=>d.hidden=i!=k);ds[k].querySelectorAll('img[data-s]').forEach(i=>{i.src=i.dataset.s;i.removeAttribute('data-s')});ds[k].querySelector('.pi').scrollTop=0;ds[k].querySelector('.px').scrollTop=0};
 ts.forEach((t,i)=>t.onclick=()=>{show(i);dl.showModal();ping()});
