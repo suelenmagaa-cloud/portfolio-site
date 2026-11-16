@@ -113,13 +113,13 @@ h3{font-size:1.2rem;margin:0 0 .4em;color:var(--ink)}.num{display:block;font:700
 .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:10px 16px;margin:0 -16px;border-bottom:1px solid #f0ecff}article{scroll-margin-top:56px}.pills a{border:1px solid var(--pink);border-radius:999px;padding:6px 20px;text-decoration:none;color:var(--navy);font-weight:600;font-size:.85rem}
 .pills a[aria-current]{background:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%);background-origin:border-box;color:#fff;border-color:transparent}
 .shero{display:flex;justify-content:space-between;align-items:center;gap:40px;color:#fff;border-radius:0;padding:56px calc(50vw - 50%);margin:12px calc(50% - 50vw) 0;background:var(--hex),linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%)}
-.shero small{font-size:.85rem}.shero h1{font:400 clamp(2.6rem,6vw,4.6rem)/1.05 Outfit,sans-serif;margin:.2em 0 0}
+.shero small{font-size:.85rem}.shero h1{font:700 clamp(2.8rem,7vw,4.8rem)/.98 Outfit,sans-serif;letter-spacing:-.04em;margin:.2em 0 0}
 .stats{min-width:200px}.stats div{border-top:1px solid rgba(255,255,255,.4);padding:22px 0}.stats div:last-child{padding-bottom:0}.stats div:first-child{border:0}.stats b{font:500 1.5rem/1.1 Outfit,sans-serif;display:block}.stats span{font-size:.75rem;display:block;margin-top:2px}
 .intro{font-size:1.15rem;margin:26px 0 16px;text-align:left}
 footer.site{margin-top:42px}.bandbar{height:14px;margin:0 calc(50% - 50vw);background:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%)}.ft{display:flex;justify-content:space-between;align-items:center;padding:34px 8px}
 .ft h4{font:500 1.6rem Outfit,sans-serif;margin:0;color:var(--ink)}.ft p{margin:.2em 0 0;font-size:.9rem}.btn{border:1px solid #d9d2ff;border-radius:999px;padding:10px 34px;text-decoration:none;color:var(--navy)}
 .fl{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:center;text-align:center;font-size:.85rem;padding:0 8px 24px}.fl a{color:var(--navy);overflow-wrap:anywhere}
-html[data-embed] .site:not(.shero):not(footer){display:none}html[data-embed] .top{justify-content:flex-end}html[data-embed=body] .shero{display:none}html[data-embed],html[data-embed] body{overflow:hidden!important}html[data-embed] [id]{scroll-margin-top:90px}html[data-embed] dialog[open]{position:absolute;top:var(--dy,20px);bottom:auto;left:0;right:0;margin:0 auto;max-height:none}html[data-embed] dialog.hv{height:min(86vh,780px)}html[data-embed] dialog img{max-height:720px}html[data-embed=hero] main>*:not(.shero),html[data-embed=hero] footer,html[data-embed=hero] body>*:not(main){display:none!important}html[data-embed=hero] .shero{margin:0;min-height:100vh;box-sizing:border-box}html[data-embed=hero] body{margin:0;padding:0}html[data-embed=hero] main{max-width:none;padding:0;margin:0;width:100%}html[data-embed=hero],html[data-embed=hero] body{overflow:hidden;height:100%;background:transparent!important}html[data-embed=hero] .shero{background:none!important}html[data-embed=hero] .shero{margin:0!important;padding:20px max(20px,calc((100vw - 900px)/2))!important;border-radius:0;height:100vh;min-height:0!important;overflow:hidden}html[data-embed=hero] .shero h1{font-size:clamp(44px,9vh,64px);line-height:1.05}html[data-embed=hero] .stats{gap:0}
+html[data-embed] .nx a[href='#top']{display:none}html[data-embed] .site:not(.shero):not(footer){display:none}html[data-embed] .top{justify-content:flex-end}html[data-embed=body] .shero{display:none}html[data-embed],html[data-embed] body{overflow:hidden!important}html[data-embed] [id]{scroll-margin-top:90px}html[data-embed] dialog[open]{position:absolute;top:var(--dy,20px);bottom:auto;left:0;right:0;margin:0 auto;max-height:none}html[data-embed] dialog.hv{height:min(86vh,780px)}html[data-embed] dialog img{max-height:720px}html[data-embed=hero] main>*:not(.shero),html[data-embed=hero] footer,html[data-embed=hero] body>*:not(main){display:none!important}html[data-embed=hero] .shero{margin:0;min-height:100vh;box-sizing:border-box}html[data-embed=hero] body{margin:0;padding:0}html[data-embed=hero] main{max-width:none;padding:0;margin:0;width:100%}html[data-embed=hero],html[data-embed=hero] body{overflow:hidden;height:100%;background:transparent!important}html[data-embed=hero] .shero{background:none!important}html[data-embed=hero] .shero{margin:0!important;padding:20px max(20px,calc((100vw - 900px)/2))!important;border-radius:0;height:100vh;min-height:0!important;overflow:hidden}html[data-embed=hero] .shero h1{font-size:clamp(2.8rem,7vw,4.8rem);line-height:.98}html[data-embed=hero] .stats{gap:0}
 .fg{width:100%;height:520px;border:0;border-radius:24px;background:var(--soft);margin-top:20px}summary{cursor:pointer;font-weight:600;margin-top:18px;color:var(--violet)}
 .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}.g img{width:100%;border-radius:10px;cursor:zoom-in}
 .nx{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:12px;margin-top:16px}
@@ -138,7 +138,7 @@ html[data-embed] main{padding-top:0}html[data-embed] .top{margin:0}
 .fl{flex-direction:column;align-items:center;gap:6px}
 .ft{padding:28px 8px}.btn{padding:10px 28px}
 html[data-embed=hero] .shero{height:auto!important;min-height:0!important;overflow:visible!important;padding:22px 20px!important;gap:22px}
-html[data-embed=hero] .shero h1{font-size:clamp(2rem,9vw,2.6rem)!important;line-height:1.08}
+html[data-embed=hero] .shero h1{font-size:2.8rem!important;line-height:1}
 html[data-embed=hero],html[data-embed=hero] body{overflow:visible!important;height:auto!important}
 .stats{min-width:0;width:100%}.stats div{padding:14px 0}
 }
@@ -168,6 +168,18 @@ addEventListener('message',e=>{if(e.data&&e.data.lang)set(String(e.data.lang).sl
 addEventListener('load',ping);addEventListener('resize',ping);
 document.querySelectorAll('details').forEach(d=>d.ontoggle=ping);
 {var q=new URLSearchParams(location.search);if(q.has('embed'))D.dataset.embed=q.get('embed')||'body';}
+(function(){var c=document.createElement('div');c.className='cc';c.setAttribute('role','dialog');var pt=()=>D.dataset.lang=='pt';
+c.innerHTML='<button class="x" aria-label="Fechar / Close">&times;</button><b></b><a target="_top" rel="noopener"></a><button class="cp"></button><small></small>';document.body.appendChild(c);
+var em=c.querySelector('b'),op=c.querySelector('a'),cp=c.querySelector('.cp'),sm=c.querySelector('small'),cur='';
+var close=()=>{c.classList.remove('on');ping()};
+c.querySelector('.x').onclick=close;
+function copy(t){try{if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).then(()=>1,()=>old(t))}catch(e){}return Promise.resolve(old(t))}
+function old(t){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.cssText='position:fixed;top:0;left:0;opacity:0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);var ok=0;try{ok=document.execCommand('copy')}catch(e){}a.remove();return ok}
+cp.onclick=()=>{copy(cur).then(ok=>{sm.textContent=ok?(pt()?'E-mail copiado ✓':'Email copied ✓'):(pt()?'Selecione e copie o e-mail acima':'Select and copy the email above')})};
+document.addEventListener('click',e=>{var a=e.target.closest('a[href^="mailto:"]');if(a&&!c.contains(a)){e.preventDefault();cur=a.getAttribute('href').slice(7);em.textContent=cur;op.href='mailto:'+cur;op.textContent=pt()?'Abrir meu app de e-mail':'Open my email app';cp.textContent=pt()?'Copiar e-mail':'Copy email';sm.textContent='';var r=a.getBoundingClientRect(),w=Math.min(320,innerWidth-24);c.classList.add('on');var h=c.offsetHeight,y=r.top+scrollY-h-10;if(y<scrollY+8)y=r.bottom+scrollY+10;var x=Math.max(12,Math.min(r.left+scrollX,innerWidth-w-12));c.style.top=y+'px';c.style.left=x+'px';ping();return}
+if(c.classList.contains('on')&&!c.contains(e.target))close()});
+document.addEventListener('keydown',e=>{if(e.key=='Escape')close()})})();
+
 if(D.dataset.embed){let cy=0;addEventListener('click',e=>{cy=e.clientY+scrollY},true);const o=HTMLDialogElement.prototype.showModal;HTMLDialogElement.prototype.showModal=function(){this.style.setProperty('--dy',Math.max(20,cy-260)+'px');o.call(this);setTimeout(()=>{this.scrollIntoView({block:'center'});parent.postMessage({goto:this.getBoundingClientRect().top+scrollY},'*')},30)}}
 if(D.dataset.embed)document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a||a.getAttribute('href').length<2)return;const t=document.getElementById(a.getAttribute('href').slice(1));if(!t)return;e.preventDefault();t.scrollIntoView({block:'start'});parent.postMessage({goto:t.getBoundingClientRect().top+scrollY},'*')});
 document.querySelectorAll('.car').forEach(c=>{const tr=c.querySelector('.track'),ds=c.nextElementSibling;ds.innerHTML='<i></i>'.repeat(tr.children.length);
@@ -187,15 +199,19 @@ def chrome(S, cur):
     menu = '<nav class="menu site">' + ''.join(f'<a href="{html.escape(u)}"' + (' aria-current="page"' if i == cur else '') + f'>{t([en, pt])}</a>' for i, (en, pt, u) in enumerate(S['menu'])) + '</nav>'
     foot = (f'<footer class="site"><div class="bandbar"></div><div class="ft"><div><h4>{t(S["cta"])}</h4><p>{t(S["cta2"])}</p></div>'
             f'<a class="btn" href="mailto:{S["email"]}">{t(S["btn"])}</a></div><div class="fl"><a href="mailto:{S["email"]}">{S["email"]}</a>'
-            f'<a href="{S["linkedin"]}">LinkedIn</a><span>© 2026 Suelen Magalhães</span></div></footer>')
+            f'<a href="{S["linkedin"]}" target="_blank" rel="noopener">LinkedIn</a><span>© 2026 Suelen Magalhães</span></div></footer>')
     return head, menu, foot
 
 def shell(title, body):
     return (f'<!doctype html><html data-lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            f'<title>{title}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
+            f'<title>{title}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}{CCSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
 
 def pimg(k, alt=''):
     return f'<img loading="lazy" alt="{html.escape(alt)}" src="assets/{k}.webp">' if (R / 'assets' / f'{k}.webp').exists() else ''
+
+CCSS = """.cc{position:absolute;z-index:99;width:min(320px,calc(100vw - 24px));background:#fff;border:1px solid #d9d2ff;border-radius:18px;box-shadow:0 12px 36px rgba(20,18,43,.22);padding:18px;display:none;font-family:Inter,sans-serif}.cc.on{display:block}.cc b{display:block;color:var(--ink);font-size:1.02rem;overflow-wrap:anywhere;margin:0 0 12px}.cc a,.cc button{display:block;width:100%;box-sizing:border-box;text-align:center;border-radius:999px;padding:12px 16px;font:600 .95rem Inter,sans-serif;margin-top:8px;cursor:pointer;text-decoration:none;min-height:44px}.cc a{background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border:0}.cc button{background:#fff;color:var(--navy);border:1px solid var(--pink)}.cc .x{position:absolute;top:4px;right:6px;width:44px;height:44px;margin:0;border:0;font-size:1.5rem;background:none;padding:0}.cc small{display:block;text-align:center;color:var(--navy);margin-top:8px;min-height:1.2em}a,button,summary{touch-action:manipulation;-webkit-tap-highlight-color:rgba(242,141,177,.25)}
+@media(pointer:coarse),(max-width:700px){.bar button{min-height:40px;min-width:48px;padding:8px 14px}.menu a{display:inline-block;padding:12px 8px}summary{min-height:44px;display:flex;align-items:center}.shero a,.nx a{min-height:44px;display:inline-flex;align-items:center}dialog button,.ar,.ar2{min-width:44px;min-height:44px}.fl a{padding:10px 8px}.hb,.pb,.pills a{min-height:44px;box-sizing:border-box}.btn{display:inline-block;min-height:44px;box-sizing:border-box}}
+"""
 
 PCSS = """body.ph{background:#fff}.ph .intro{display:none}
 .pt{display:grid;grid-template-columns:1.2fr 1fr;gap:20px 56px;align-items:end;margin:44px 4px 0}
