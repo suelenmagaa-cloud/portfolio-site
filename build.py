@@ -629,7 +629,46 @@ def about(data, S):
           'setTimeout(function(){if(!s.classList.contains("in")){try{io.disconnect()}catch(x){}run()}},6000)})()</script>')
     return page.replace('</body>', js + '</body>', 1)
 
-ICSS = """body.ia{background:#fff}.ia .intro{display:none}
+IHJS = """(function(){var sc=document.currentScript.parentNode,cv=sc.querySelector('.ihc'),cx=cv.getContext('2d'),rm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches,N=[],W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,2),ptr=null,sig=[];
+function size(){var r=sc.getBoundingClientRect();W=Math.max(1,r.width);H=Math.max(1,r.height);cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);var n=Math.round(Math.min(90,W*H/11000));N=[];for(var i=0;i<n;i++)N.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:1.4+Math.random()*2,p:Math.random()*6.28})}
+function draw(t){cx.clearRect(0,0,W,H);var D=Math.min(150,Math.max(100,W/9)),i,j,a,b,d;
+for(i=0;i<N.length;i++){a=N[i];if(!rm){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1}
+for(j=i+1;j<N.length;j++){b=N[j];d=Math.hypot(a.x-b.x,a.y-b.y);if(d<D){cx.strokeStyle='rgba(150,210,255,'+(.42*(1-d/D))+')';cx.lineWidth=1;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke();if(!rm&&sig.length<14&&Math.random()<.0009)sig.push({a:a,b:b,k:0})}}
+var g=.55+.45*Math.sin((t||0)/700+a.p),near=0;if(ptr){near=Math.max(0,1-Math.hypot(a.x-ptr.x,a.y-ptr.y)/160)}
+cx.fillStyle='rgba(190,228,255,'+Math.min(1,.7*g+near)+')';cx.beginPath();cx.arc(a.x,a.y,a.r+near*2.2,0,6.283);cx.fill()}
+for(i=sig.length-1;i>=0;i--){var s=sig[i];s.k+=.018;if(s.k>=1){sig.splice(i,1);continue}var x=s.a.x+(s.b.x-s.a.x)*s.k,y=s.a.y+(s.b.y-s.a.y)*s.k,gr=cx.createRadialGradient(x,y,0,x,y,9);gr.addColorStop(0,'rgba(242,141,177,.95)');gr.addColorStop(1,'rgba(242,141,177,0)');cx.fillStyle=gr;cx.beginPath();cx.arc(x,y,9,0,6.283);cx.fill()}
+if(!rm)requestAnimationFrame(draw)}
+size();draw(0);if(window.ResizeObserver)new ResizeObserver(function(){size();if(rm)draw(0)}).observe(sc);else addEventListener('resize',size);
+sc.addEventListener('pointermove',function(e){var r=sc.getBoundingClientRect();ptr={x:e.clientX-r.left,y:e.clientY-r.top}});sc.addEventListener('pointerleave',function(){ptr=null});
+var box=sc.querySelector('.ihp'),P=JSON.parse(box.dataset.p),q=box.querySelector('.q'),an=box.querySelector('.a'),k=0,run=0,L=function(){return document.documentElement.dataset.lang=='en'?0:1};
+function wait(ms){return new Promise(function(r){setTimeout(r,ms)})}
+async function type(el,str,sp,id){for(var i=1;i<=str.length;i++){if(id!=run)return false;el.textContent=str.slice(0,i);await wait(sp)}return true}
+async function loop(){var id=++run;if(rm){var p=P[0],l=L();q.textContent=p[l];an.textContent=p[l+2];return}
+while(id==run){var p=P[k%P.length],l=L();q.textContent='';an.textContent='';if(!await type(q,p[l],34,id))return;await wait(450);if(!await type(an,p[l+2],18,id))return;await wait(2600);k++}}
+new MutationObserver(function(){loop()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang']});loop()})();"""
+
+ICSS = """.ih{position:relative;isolation:isolate;overflow:hidden;color:#fff;margin:12px calc(50% - 50vw) 0;padding:clamp(48px,7vw,96px) calc(50vw - 50%);min-height:clamp(440px,52vw,600px);display:flex;align-items:center;box-sizing:border-box;background:linear-gradient(115deg,#07142e 0%,#0e2b52 38%,#1b4a78 70%,#2a6a9c 100%)}
+.ih::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--hex);opacity:.55}
+.ihc{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.ihb{position:absolute;inset:0;z-index:-2;pointer-events:none}.ihb i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform}
+.ihb i:nth-child(1){width:46vw;max-width:620px;aspect-ratio:1;left:-8%;top:-30%;background:#2f86d6;animation:ib1 16s ease-in-out infinite alternate}
+.ihb i:nth-child(2){width:38vw;max-width:520px;aspect-ratio:1;right:-6%;bottom:-35%;background:#1d5fa8;animation:ib2 19s ease-in-out infinite alternate}
+.ihb i:nth-child(3){width:22vw;max-width:300px;aspect-ratio:1;right:22%;top:-12%;background:#f28db1;opacity:.28;animation:ib3 14s ease-in-out infinite alternate}
+@keyframes ib1{to{transform:translate(18vw,14%) scale(1.15)}}@keyframes ib2{to{transform:translate(-20vw,-18%) scale(.9)}}@keyframes ib3{to{transform:translate(-16vw,30%) scale(1.3)}}
+.iht{position:relative;max-width:900px}
+.iht small{display:inline-block;font:600 .72rem Inter,sans-serif;letter-spacing:.22em;color:#bfe0ff;border:1px solid rgba(191,224,255,.45);border-radius:999px;padding:7px 14px;margin-bottom:22px;backdrop-filter:blur(6px);background:rgba(255,255,255,.06)}
+.iht h1{font:700 clamp(2.6rem,7.4vw,5.6rem)/.98 Outfit,sans-serif;letter-spacing:-.045em;margin:0;background:linear-gradient(100deg,#fff 0%,#fff 38%,#8fd0ff 50%,#fff 62%,#fff 100%) 0 0/250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:ish 5.5s linear infinite}
+@keyframes ish{from{background-position:120% 0}to{background-position:-120% 0}}
+.ihs{font:400 clamp(1rem,1.5vw,1.2rem)/1.55 Inter,sans-serif;color:#d6e8fa;max-width:62ch;margin:24px 0 0}
+.ihp{margin-top:30px;max-width:640px;border:1px solid rgba(191,224,255,.28);border-radius:18px;background:rgba(7,20,46,.55);backdrop-filter:blur(8px);padding:16px 20px;font:500 .95rem/1.5 Inter,sans-serif;color:#e8f3ff;min-height:5.6em}
+.ihp div{display:flex;gap:12px;align-items:baseline}.ihp div+div{margin-top:8px}
+.ihp b{flex:0 0 auto;font:700 .66rem Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7fc1ff;min-width:8.4em}
+.ihp div+div b{color:#f28db1}.ihp em{font-style:normal;min-width:0;overflow-wrap:anywhere}
+.ihp .q::after{content:"";display:inline-block;width:.55em;height:1.05em;margin-left:3px;vertical-align:-.15em;background:#8fd0ff;animation:ibk 1s steps(2) infinite}
+@keyframes ibk{50%{opacity:0}}
+@media(max-width:700px){.ih{padding:36px 22px;min-height:0;align-items:flex-start}.iht h1{font-size:clamp(2.4rem,11.5vw,3.2rem)}.ihp b{min-width:7.6em;letter-spacing:.1em}.ihp{padding:14px 16px}}
+@media(prefers-reduced-motion:reduce){.ihb i,.iht h1,.ihp .q::after{animation:none}.iht h1{background:none;-webkit-text-fill-color:#fff;color:#fff}}
+body.ia{background:#fff}.ia .intro{display:none}
 .fb{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative;overflow:hidden}.in{max-width:1080px;margin:0 auto;padding:0 16px}
 .ia .k{display:inline-block;font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f28db1;margin-bottom:14px}
 .a1{margin-top:28px;color:#fff;background:radial-gradient(900px 500px at 85% 20%,rgba(124,108,246,.45),transparent 60%),linear-gradient(110deg,#14122b 0%,#235070 70%,#f28db1 190%);padding:clamp(40px,7vw,84px) 0 0}
@@ -691,7 +730,12 @@ def ia(data, S):
     P = data['page']
     head, menu, foot = chrome(S, 6)
     tk = ''.join(f'<span>{t(x)}</span>' for x in P['ticker'])
-    hero = f'<section class="at"><div><h1>{t(P["title"])}</h1></div><p>{t(P["intro"])}</p></section>'
+    pairs = [[x[0][0], x[0][1], x[1][0], x[1][1]] for r in P['rr_rules'] for x in r['r']]
+    hero = ('<section class="ih"><canvas class="ihc" aria-hidden="true"></canvas><div class="ihb" aria-hidden="true"><i></i><i></i><i></i></div>'
+            f'<div class="iht"><small>{t(P["tag"])}</small><h1>{t(P["title"])}</h1><p class="ihs">{t(P["intro"])}</p>'
+            f'<div class="ihp" data-p="{html.escape(json.dumps(pairs, ensure_ascii=False), quote=True)}">'
+            f'<div><b>{t(P["rr_ask"])}</b><em class="q"></em></div><div><b>{t(P["rr_ret"])}</b><em class="a"></em></div></div></div>'
+            '<script>' + IHJS + '</script></section>')
     top3 = '<section class="a0">' + ''.join(f'<div><h3>{t(a)}</h3><p>{t(b)}</p></div>' for a, b in zip(P['close'], P['close_t'])) + '</section>'
     time_ = (f'<section class="a2"><span class="k">{t(P["time_k"])}</span><div class="big"><s>{t(P["time_old"])}</s><em>{t(P["time_new"])}</em></div>'
              f'<p>{t(P["time_t"])}</p><small>{t(P["time_n"])}</small></section>')
@@ -724,7 +768,7 @@ def ia(data, S):
     out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
     body = head + menu + hero + top3 + time_ + bars_ + tools_ + rec_ + pipe_ + out_ + foot
     page = shell('Suelen Magalhães — AI', body)
-    return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia ab">', 1)
+    return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
 
 def main():
     rasterize()
