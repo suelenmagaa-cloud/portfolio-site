@@ -156,6 +156,7 @@ body.ph .pt>p,body.hl .ht>p,body.ab .at>p,body.br .bt .br p,body.br .bt .ld{font
 body.br .bt .br{padding-left:0}body.br .bt .br p+p{margin-top:12px}
 body.ph .pf,body.hl .hg,body.ab .as{margin:44px 4px 0;padding-top:26px;border-top:3px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
 body.br .bt{padding-bottom:44px;border-width:0 0 3px;border-style:solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}body.br .bt+.pz{margin-top:36px}
+body.ia .at{padding-bottom:36px;border-width:0 0 3px;border-style:solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1;margin-bottom:8px}
 @media(max-width:700px){body.ph .pt,body.hl .ht,body.br .bt,body.ab .at{grid-template-columns:minmax(0,1fr);margin-top:16px}body.br .bt,body.ab .at{padding-top:0}body.ph .pt h1,body.hl .ht h1,body.br .bt h1,body.ab .at h1{min-height:0}body.ph .pt>p,body.hl .ht>p,body.ab .at>p,body.br .bt .br p,body.br .bt .ld{padding-left:0!important}}
 """
 JS = """const D=document.documentElement,ping=()=>parent.postMessage({h:D.scrollHeight},'*'),
@@ -690,7 +691,7 @@ def ia(data, S):
     P = data['page']
     head, menu, foot = chrome(S, 6)
     tk = ''.join(f'<span>{t(x)}</span>' for x in P['ticker'])
-    hero = '<section class="a1x"><div class="bn"></div></section>'
+    hero = f'<section class="at"><div><h1>{t(P["title"])}</h1></div><p>{t(P["intro"])}</p></section>'
     top3 = '<section class="a0">' + ''.join(f'<div><h3>{t(a)}</h3><p>{t(b)}</p></div>' for a, b in zip(P['close'], P['close_t'])) + '</section>'
     time_ = (f'<section class="a2"><span class="k">{t(P["time_k"])}</span><div class="big"><s>{t(P["time_old"])}</s><em>{t(P["time_new"])}</em></div>'
              f'<p>{t(P["time_t"])}</p><small>{t(P["time_n"])}</small></section>')
@@ -723,7 +724,7 @@ def ia(data, S):
     out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
     body = head + menu + hero + top3 + time_ + bars_ + tools_ + rec_ + pipe_ + out_ + foot
     page = shell('Suelen Magalhães — AI', body)
-    return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
+    return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia ab">', 1)
 
 def main():
     rasterize()
