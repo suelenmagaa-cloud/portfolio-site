@@ -143,7 +143,7 @@ html[data-embed=hero],html[data-embed=hero] body{overflow:visible!important;heig
 .stats{min-width:0;width:100%}.stats div{padding:14px 0}
 }
 @media(max-width:560px){
-body.ab .ac li a{flex-wrap:wrap;justify-content:flex-start;gap:6px 10px;padding:14px 16px}body.ab .ac li b{margin-right:0}body.ab .ac li span{flex:1 0 100%;min-width:0;font-size:.98rem;overflow-wrap:anywhere;word-break:normal}
+body.ab .ac li a{flex-wrap:wrap;justify-content:flex-start;gap:6px 10px;padding:14px 16px}body.ab .ac li b{margin-right:0}body.ab .ac li span{flex:1 0 100%;min-width:0;font-size:clamp(.74rem,3.8vw,.92rem);white-space:nowrap;letter-spacing:0}
 .ac{padding:26px 22px}
 }
 /* padrão de cabeçalho: pharma, health, brands, about */
