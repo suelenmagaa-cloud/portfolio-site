@@ -541,8 +541,8 @@ ACSS = """body.ab{background:#fff}.ab .intro{display:none}.ab footer .ft{display
 .at h1{font:700 clamp(3.6rem,11vw,8.4rem)/.9 Outfit,sans-serif;letter-spacing:-.05em;color:var(--ink);margin:.12em 0 0}
 .at p{margin:0;font:500 clamp(1.05rem,2.1vw,1.45rem)/1.45 Inter,sans-serif;color:var(--ink);padding-left:20px;border-left:6px solid var(--pink)}
 .as{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:34px 26px;margin:46px 4px 0;padding-top:26px;border-top:3px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
-.as>div{grid-column:span 2}.as>div:nth-child(n+4){grid-column:span 3}.as b{display:block;font:800 clamp(3.6rem,9.5vw,7.4rem)/.9 Outfit,sans-serif;letter-spacing:-.04em;background:linear-gradient(90deg,#235070,#f28db1);-webkit-background-clip:text;background-clip:text;color:transparent}.as div>span{display:block;margin-top:10px;font:600 1rem/1.4 Inter,sans-serif;max-width:26ch;color:var(--ink)}
-.ab2{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px clamp(28px,6vw,72px);margin:60px 4px 0}.ab2 p{margin:0;font-size:1.05rem;line-height:1.65;color:var(--navy)}
+.as>div{grid-column:span 2}.as>div:nth-child(n+4){grid-column:span 3}.as .v{display:flex;align-items:center;gap:.22em;font:600 clamp(2.6rem,6.2vw,4.6rem)/1 Outfit,sans-serif;letter-spacing:-.04em;color:#f28db1}.as .v svg{width:.62em;height:.62em;flex:none;fill:none;stroke:#f28db1;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.9}.as .v b{font:inherit;background:linear-gradient(90deg,#f28db1 55%,#c9669a 130%);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}.as div>span{display:block;margin-top:10px;font:600 1rem/1.4 Inter,sans-serif;max-width:26ch;color:var(--ink)}.as>div{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.as.in>div{opacity:1;transform:none}.as.in>div:nth-child(2){transition-delay:.12s}.as.in>div:nth-child(3){transition-delay:.24s}.as.in>div:nth-child(4){transition-delay:.36s}.as.in>div:nth-child(5){transition-delay:.48s}.as.nj>div{opacity:1;transform:none;transition:none}
+.ab2{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);align-items:start;gap:22px clamp(28px,6vw,72px);margin:60px 4px 0}.ab2 p{margin:0;font-size:1.2rem;line-height:1.65;color:var(--ink)}.ab2 div+div{border-top:1px solid #e1dcef;padding-top:16px}.ab2 div+div p{font-size:.92rem;line-height:1.6;color:#5d7b92}
 .ac{margin:72px 4px 40px;border-radius:32px;padding:clamp(28px,5vw,60px);color:#fff;background:radial-gradient(800px 420px at 90% 10%,rgba(124,108,246,.4),transparent 60%),var(--hex),linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px clamp(24px,5vw,60px);align-items:end}
 .ac small{font:600 .72rem Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f28db1}.ac h2{font:700 clamp(2.4rem,6.4vw,5rem)/.95 Outfit,sans-serif;letter-spacing:-.04em;margin:.15em 0 .25em}.ac .ct{margin:0;font-size:1.1rem;opacity:.92}.ac .pl{margin:14px 0 0;font:600 .8rem Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
 .ac ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.ac li a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;text-decoration:none;color:#fff;padding:14px 18px;border:1px solid rgba(255,255,255,.28);border-radius:16px;transition:background .2s,color .2s,transform .2s}
@@ -556,7 +556,18 @@ def about(data, S):
     S2['menu'] = [[P['menu_about'][0], P['menu_about'][1], m[2]] if m[0] == 'ABOUT' else m for m in S2['menu']]
     head, menu, foot = chrome(S2, 7)
     top = f'<section class="at"><div><small>{t(P["tag"])}</small><h1>{t(P["title"])}</h1></div><p>{t(P["lead"])}</p></section>'
-    st = ''.join(f'<div><b>{t(a) if isinstance(a, list) else html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in P['stats'])
+    SI = ['<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/></svg>',
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5l2.5 2.5 4.5-5"/></svg>',
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L3 10.5l7 3 3 7z"/><path d="M10 13.5L21 3"/></svg>',
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>',
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 01-8 0zM8 6H4v1a4 4 0 004 4M16 6h4v1a4 4 0 01-4 4M12 13v4M8 21h8M10 17h4"/></svg>']
+    def sv(a, i):
+        if isinstance(a, list): v = t(a)
+        else:
+            m = re.match(r'^(\D*)(\d+)(.*)$', a)
+            v = f'<span data-n="{m.group(2)}" data-pre="{html.escape(m.group(1))}" data-suf="{html.escape(m.group(3))}">{html.escape(a)}</span>' if m else html.escape(a)
+        return f'<div class="v">{SI[i]}<b>{v}</b></div>'
+    st = ''.join(f'<div>{sv(a, i)}<span>{t(b)}</span></div>' for i, (a, b) in enumerate(P['stats']))
     body = ''.join(f'<div><p>{t(x)}</p></div>' for x in P['body'])
     IC = {'Email': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/></svg>',
           'LinkedIn': '<svg viewBox="0 0 24 24" aria-hidden="true" class="f"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2 3.75-2 4 0 4.74 2.6 4.74 6V21h-4v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V21h-4z"/></svg>'}
@@ -564,7 +575,13 @@ def about(data, S):
     ct = (f'<section class="ac" id="contact"><div><small>{t(P["contact_k"])}</small><h2>{t(P["contact_h"])}</h2><p class="ct">{t(P["contact_t"])}</p><p class="pl">{t(P["place"])}</p></div><ul>{lk}</ul></section>')
     page = shell('Suelen Magalhães — About & Contact', head + menu + top + f'<section class="as">{st}</section><section class="ab2">{body}</section>' + ct + foot)
     page = page.replace('</style>', ACSS + '</style>', 1).replace('<body>', '<body class="ab">', 1)
-    return page
+    js = ('<script>(function(){var s=document.querySelector(".as");if(!s)return;var rm=matchMedia("(prefers-reduced-motion:reduce)").matches;'
+          'if(rm||!("IntersectionObserver" in window)){s.classList.add("nj");return}'
+          'var ns=[].slice.call(s.querySelectorAll("[data-n]"));ns.forEach(function(e){e.textContent=e.dataset.pre+"0"+e.dataset.suf});'
+          'function run(){s.classList.add("in");ns.forEach(function(e,i){var n=+e.dataset.n,t0=null,d=1400;function f(t){if(t0===null)t0=t;var p=Math.min(1,(t-t0)/d),k=1-Math.pow(1-p,3);e.textContent=e.dataset.pre+Math.round(n*k)+e.dataset.suf;if(p<1)requestAnimationFrame(f)}setTimeout(function(){requestAnimationFrame(f)},i*120)})}'
+          'var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();run()}},{threshold:.25});io.observe(s);'
+          'setTimeout(function(){if(!s.classList.contains("in")){try{io.disconnect()}catch(x){}run()}},6000)})()</script>')
+    return page.replace('</body>', js + '</body>', 1)
 
 ICSS = """body.ia{background:#fff}.ia .intro{display:none}
 .fb{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative;overflow:hidden}.in{max-width:1080px;margin:0 auto;padding:0 16px}
