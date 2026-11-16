@@ -451,7 +451,7 @@ def brands(data, S):
 
 NCSS = """
 .pd{display:flex;gap:10px;flex-wrap:wrap;margin:44px 4px 0;padding:0}
-.pd a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--bg);color:var(--fg);font:700 .9rem Outfit,sans-serif;text-decoration:none;box-shadow:0 0 0 1px rgba(20,18,43,.12);transition:transform .2s}.pd a:hover{transform:translateY(-3px)}.pd a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.pd a{display:grid;place-items:center;height:44px;padding:0 20px;border-radius:22px;background:var(--bg);color:var(--fg);font:700 .9rem Outfit,sans-serif;text-decoration:none;box-shadow:0 0 0 1px rgba(20,18,43,.12);transition:transform .2s}.pd a:hover{transform:translateY(-3px)}.pd a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .pz{--bg:#054557;--fg:#fff;--ac:#eacf19;margin:28px 4px 0;border-radius:36px;background:var(--bg);color:var(--fg);padding:clamp(28px,5vw,60px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:0 clamp(28px,5vw,64px);align-items:center;position:relative;overflow:hidden}
 .pz.r .px{order:2}.pz.r .py{order:1}
 .px{display:flex;flex-direction:column;align-items:flex-start}
@@ -472,7 +472,7 @@ NCSS = """
 .pf .m2{position:absolute;z-index:2;width:32%;left:-11%;top:-17%;transform:rotate(-5deg)}
 .pz:hover .m1{transform:rotate(6deg) translate(10px,10px)}.pz:hover .m2{transform:rotate(-7deg) translate(-8px,-8px)}.pz:hover .m0{transform:scale(1.02)}
 @media(prefers-reduced-motion:reduce){.pf img{transition:none}.pz:hover .m0,.pz:hover .m1,.pz:hover .m2{transform:none}}
-.pz.r .pf .m1{right:auto;left:-19%}.pz.r .pf .m2{left:auto;right:-9%;transform:rotate(5deg)}.pz.r:hover .m2{transform:rotate(7deg) translate(8px,-8px)}.pz.r .m1{transform:rotate(-4deg)}.pz.r:hover .m1{transform:rotate(-6deg) translate(-10px,10px)}
+.pz#margeci .pf{width:100%}.pz.r .pf .m1{right:auto;left:-19%}.pz.r .pf .m2{left:auto;right:-9%;transform:rotate(5deg)}.pz.r:hover .m2{transform:rotate(7deg) translate(8px,-8px)}.pz.r .m1{transform:rotate(-4deg)}.pz.r:hover .m1{transform:rotate(-6deg) translate(-10px,10px)}
 .pw{width:90%}.pz.r .pw{margin-left:auto}
 .pw{display:flex;height:18px;margin-top:0;border-radius:999px;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,.55)}.pw i{flex:1}
 dialog.bd{border:0;border-radius:28px;padding:0;width:min(940px,94vw);background:#fff;color:var(--ink)}dialog.bd::backdrop{background:rgba(20,18,43,.62)}
@@ -485,14 +485,15 @@ html:not([data-embed]) dialog.bd{max-height:92vh;overflow:auto}
 @media(max-width:860px){.pf{width:88%}.pw{width:88%}.pf .m1{right:-10%}.pz.r .pf .m1{left:-10%}.pf .m2{left:-6%}.pz.r .pf .m2{right:-6%}.pz{grid-template-columns:minmax(0,1fr);border-radius:26px}.pz.r .px{order:0}.px{display:contents}.pt{order:0}.pm{order:1}.py{order:2;margin:0 0 22px}.pz blockquote{order:3}.pp{order:4}.pb{order:5}.bd .dh,.bd .dc{padding-left:20px;padding-right:20px}}
 """
 
-MOCK = {'mar': 2, 'gis': 2, 'eff': 2, 'fkl': 3, 'tel': 1, 'hel': 3}
+MOCK = {'mar': 2, 'gis': 1, 'eff': 2, 'fkl': 3, 'tel': 1, 'hel': 3}
 
 def brands_novo(data, S):
+    data = dict(data); data['brands'] = sorted(data['brands'], key=lambda x: -int(x['year']))
     P = data['page']
     head, menu, foot = chrome(S, 4)
     def im(k, n): return f'assets/brands/{k}_{n:02d}.webp'
     top = (f'<section class="bt"><small>{html.escape(P["tags"])}</small><h1>{t(P["title"])}</h1><div class="br"><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></div></section>')
-    nav = ''.join(f'<a href="#{b["id"]}" aria-label="{html.escape(b["name"])}" style="--bg:{b["bg"]};--fg:{b["fg"]}">{b["n"]}</a>' for b in data['brands'])
+    nav = ''.join(f'<a href="#{b["id"]}" aria-label="{html.escape(b["name"])}" style="--bg:{b["bg"]};--fg:{b["fg"]}">{html.escape(b["name"])}</a>' for b in data['brands'])
     nav = f'<nav class="pd" aria-label="{html.escape(P["index"][1])}">{nav}</nav>'
     posters = ''; dialogs = ''
     def lum(c):
@@ -509,8 +510,8 @@ def brands_novo(data, S):
         ps = ''.join(f'<i style="background:{s["c"]}" title="{s["c"].upper()}"></i>' for s in b['swatches'])
         ps = f'<div class="pw" aria-hidden="true">{ps}</div>' if ps else ''
         posters += (f'<section class="pz{" r" if i % 2 else ""}" id="{b["id"]}" style="--bg:{b["bg"]};--fg:{b["fg"]};--ac:{b["ac"]};--on:{on}">'
-                    f'<div class="px"><div class="pt"><span class="pn">{b["n"]}</span><span class="pk">{t(b["kind"])} · {b["year"]}</span></div>'
-                    f'<h2 class="pm">{words}</h2><blockquote>{t(b["quote"])}</blockquote><p class="pp">{t(b["text"][0])}</p>'
+                    f'<div class="px"><div class="pt"><span class="pk">{t(b["kind"])} · {b["year"]}</span></div>'
+                    f'<h2 class="pm">{words}</h2><blockquote>{t(b["quote"])}</blockquote>{''.join(f'<p class="pp">{t(x)}</p>' for x in b['text'][:b.get('pshow', 1)])}'
                     f'<button type="button" class="pb" data-d="d-{b["id"]}">{t(["See the full story", "Ver a história completa"])} <i>&#8594;</i></button></div>'
                     f'<div class="py"><figure class="pf" data-d="d-{b["id"]}"><img class="m0" loading="lazy" alt="{html.escape(b["name"])}" src="{mk(1)}">{cl}</figure>{ps}</div></section>')
         paras = ''.join(f'<p>{t(x)}</p>' for x in b['text'])
@@ -524,7 +525,7 @@ def brands_novo(data, S):
         if sw: body += f'<h3>{t(P["palette"])}</h3><div class="pl">{sw}</div>'
         if ty: body += f'<h3>{t(P["type"])}</h3><div class="ty">{ty}</div>'
         if ap: body += f'<h3>{t(P["apps"])}</h3><ol class="sb ap">{ap}</ol>'
-        dialogs += (f'<dialog class="bd" id="d-{b["id"]}" style="--ac:{dac}" aria-labelledby="t-{b["id"]}"><div class="dh"><h2 id="t-{b["id"]}"><span class="n">{b["n"]}</span>{html.escape(b["name"])}</h2>'
+        dialogs += (f'<dialog class="bd" id="d-{b["id"]}" style="--ac:{dac}" aria-labelledby="t-{b["id"]}"><div class="dh"><h2 id="t-{b["id"]}">{html.escape(b["name"])}</h2>'
                     f'<button type="button" class="x" aria-label="{html.escape("Fechar")}">&#10005;</button></div><div class="dc">{body}</div></dialog>')
     more = f'<section class="bm"><h2>{t(P["more"])}</h2><p>{t(P["more2"])}</p></section>'
     js = ('<script>document.addEventListener("click",e=>{const o=e.target.closest(".pb,.pf");if(o){const d=document.getElementById(o.dataset.d);if(d){d.showModal();try{ping()}catch(x){}}return}'
