@@ -132,14 +132,16 @@ html[data-embed] .site:not(.shero):not(footer){display:none}html[data-embed] .to
 @media(max-width:700px){.feat{grid-template-columns:1fr}.im.row{flex-direction:column}.im.row img{max-height:300px;width:100%}.im.tall img{height:260px}}
 .g.m{display:none}dialog{border:0;background:none;padding:0}dialog img{max-width:92vw;max-height:90vh}
 /* padrão de cabeçalho: pharma, health, brands, about */
-body.ph .pt,body.hl .ht,body.br .bt,body.ab .at{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 0;align-items:end;margin:48px 4px 0;max-width:none}
-body.ph .pt h1,body.hl .ht h1,body.br .bt h1,body.ab .at h1{font:700 clamp(3rem,8vw,6.2rem)/.95 Outfit,sans-serif;letter-spacing:-.04em;color:var(--ink);margin:.2em 0 0}
+body.ph .pt,body.hl .ht,body.br .bt,body.ab .at{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 0;align-items:center;margin:48px 4px 0;max-width:none}
+body.ph .pt>div,body.hl .ht>div,body.ab .at>div{display:contents}
+body.ph .pt small,body.hl .ht small{grid-column:1/-1;justify-self:start;margin:0}
+body.br .bt,body.ab .at{padding-top:43px}
+body.ph .pt h1,body.hl .ht h1,body.br .bt h1,body.ab .at h1{font:700 clamp(2.8rem,7vw,4.8rem)/.95 Outfit,sans-serif;letter-spacing:-.04em;color:var(--ink);margin:0;min-height:1.9em;display:flex;align-items:center;align-self:start}
 body.ph .pt>p,body.hl .ht>p,body.ab .at>p,body.br .bt .br p,body.br .bt .ld{font:400 1.1rem/1.5 Inter,sans-serif;color:var(--navy);margin:0;max-width:none;padding:0 0 0 36px;border:0;border-image:none}
-body.br .bt .br{padding-left:0}body.br .bt .br p+p{margin-top:12px}body.br .bt .ld{padding-left:36px}
-body.br .bt .br p:not(.ld){padding-left:36px}
+body.br .bt .br{padding-left:0}body.br .bt .br p+p{margin-top:12px}
 body.ph .pf,body.hl .hg,body.ab .as{margin:44px 4px 0;padding-top:26px;border-top:3px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
-body.br .bt{padding-bottom:44px;border-width:0 0 3px;border-style:solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}body.br .pd{margin-top:28px}
-@media(max-width:700px){body.ph .pt,body.hl .ht,body.br .bt,body.ab .at{grid-template-columns:minmax(0,1fr);margin-top:28px}body.ph .pt>p,body.hl .ht>p,body.ab .at>p,body.br .bt .br p,body.br .bt .ld{padding-left:0!important}}
+body.br .bt{padding-bottom:44px;border-width:0 0 3px;border-style:solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}body.br .bt+.pz{margin-top:36px}
+@media(max-width:700px){body.ph .pt,body.hl .ht,body.br .bt,body.ab .at{grid-template-columns:minmax(0,1fr);margin-top:28px}body.ph .pt h1,body.hl .ht h1,body.br .bt h1,body.ab .at h1{min-height:0}body.ph .pt>p,body.hl .ht>p,body.ab .at>p,body.br .bt .br p,body.br .bt .ld{padding-left:0!important}}
 """
 JS = """const D=document.documentElement,ping=()=>parent.postMessage({h:D.scrollHeight},'*'),
 set=l=>{D.dataset.lang=l;ping()};
@@ -432,7 +434,7 @@ def brands(data, S):
     P = data['page']
     head, menu, foot = chrome(S, 4)
     def im(k, n): return f'assets/brands/{k}_{n:02d}.webp'
-    top = (f'<section class="bt"><small>{html.escape(P["tags"])}</small><h1>{t(P["title"])}</h1><div class="br"><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></div></section>')
+    top = (f'<section class="bt"><h1>{t(P["title"])}</h1><div class="br"><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></div></section>')
     idx = ''.join(f'<li><a href="#{b["id"]}"><div class="th"><img loading="lazy" alt="" src="{im(b["key"], b["hero"])}"></div><span class="sr">{html.escape(b["name"])}</span></a></li>' for b in data['brands'])
     index = f'<section class="bi"><h2>{t(P["index"])}</h2><ol class="bl">{idx}</ol></section>'
     scenes = ''
@@ -502,7 +504,7 @@ def brands_novo(data, S):
     P = data['page']
     head, menu, foot = chrome(S, 4)
     def im(k, n): return f'assets/brands/{k}_{n:02d}.webp'
-    top = (f'<section class="bt"><small>{html.escape(P["tags"])}</small><h1>{t(P["title"])}</h1><div class="br"><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></div></section>')
+    top = (f'<section class="bt"><h1>{t(P["title"])}</h1><div class="br"><p class="ld">{t(P["lead"])}</p><p>{t(P["intro"])}</p></div></section>')
     nav = ''.join(f'<a href="#{b["id"]}" aria-label="{html.escape(b["name"])}" style="--bg:{b["bg"]};--fg:{b["fg"]}">{html.escape(b["name"])}</a>' for b in data['brands'])
     nav = f'<nav class="pd" aria-label="{html.escape(P["index"][1])}">{nav}</nav>'
     posters = ''; dialogs = ''
@@ -540,7 +542,7 @@ def brands_novo(data, S):
     more = f'<section class="bm"><h2>{t(P["more"])}</h2><p>{t(P["more2"])}</p></section>'
     js = ('<script>document.addEventListener("click",e=>{const o=e.target.closest(".pb,.pf");if(o){const d=document.getElementById(o.dataset.d);if(d){d.showModal();try{ping()}catch(x){}}return}'
           'const d=e.target.closest("dialog.bd");if(d&&(e.target===d||e.target.closest(".x")))d.close()})</script>')
-    page = shell('Suelen Magalhães — Brands', head + menu + top + nav + posters + more + dialogs + foot)
+    page = shell('Suelen Magalhães — Brands', head + menu + top + posters + more + dialogs + foot)
     page = page.replace('</style>', BCSS + NCSS + '</style>', 1).replace('<body>', '<body class="br">', 1)
     return page.replace('</body>', js + '</body>', 1)
 
