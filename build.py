@@ -133,8 +133,9 @@ html[data-embed] .site:not(.shero):not(footer){display:none}html[data-embed] .to
 .g.m{display:none}dialog{border:0;background:none;padding:0}dialog img{max-width:92vw;max-height:90vh}
 /* mobile: ajustes gerais */
 @media(max-width:700px){
-html[data-embed] .top{margin-bottom:14px}
-.pills{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:12px 16px;margin:0 -16px}.pills::-webkit-scrollbar{display:none}.pills a{flex:none;white-space:nowrap}
+html[data-embed] main{padding-top:0}html[data-embed] .top{margin:0}
+.pills{flex-wrap:wrap;justify-content:center;gap:6px;padding:10px 8px;margin:0 -16px}.pills a{padding:5px 12px!important;font-size:.8rem!important;white-space:nowrap}
+.fl{flex-direction:column;align-items:center;gap:6px}
 .ft{padding:28px 8px}.btn{padding:10px 28px}
 html[data-embed=hero] .shero{height:auto!important;min-height:0!important;overflow:visible!important;padding:22px 20px!important;gap:22px}
 html[data-embed=hero] .shero h1{font-size:clamp(2rem,9vw,2.6rem)!important;line-height:1.08}
@@ -142,7 +143,7 @@ html[data-embed=hero],html[data-embed=hero] body{overflow:visible!important;heig
 .stats{min-width:0;width:100%}.stats div{padding:14px 0}
 }
 @media(max-width:560px){
-body.ab .ac li a{flex-wrap:wrap;gap:6px 12px;padding:14px 16px}body.ab .ac li b{margin-right:0}body.ab .ac li span{flex:1 0 100%;min-width:0;font-size:.98rem;overflow-wrap:anywhere;word-break:normal}
+body.ab .ac li a{flex-wrap:wrap;justify-content:flex-start;gap:6px 10px;padding:14px 16px}body.ab .ac li b{margin-right:0}body.ab .ac li span{flex:1 0 100%;min-width:0;font-size:.98rem;overflow-wrap:anywhere;word-break:normal}
 .ac{padding:26px 22px}
 }
 /* padrão de cabeçalho: pharma, health, brands, about */
@@ -155,7 +156,7 @@ body.ph .pt>p,body.hl .ht>p,body.ab .at>p,body.br .bt .br p,body.br .bt .ld{font
 body.br .bt .br{padding-left:0}body.br .bt .br p+p{margin-top:12px}
 body.ph .pf,body.hl .hg,body.ab .as{margin:44px 4px 0;padding-top:26px;border-top:3px solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}
 body.br .bt{padding-bottom:44px;border-width:0 0 3px;border-style:solid;border-image:linear-gradient(90deg,#1c1140 0%,#235070 62%,#f28db1 190%) 1}body.br .bt+.pz{margin-top:36px}
-@media(max-width:700px){body.ph .pt,body.hl .ht,body.br .bt,body.ab .at{grid-template-columns:minmax(0,1fr);margin-top:28px}body.ph .pt h1,body.hl .ht h1,body.br .bt h1,body.ab .at h1{min-height:0}body.ph .pt>p,body.hl .ht>p,body.ab .at>p,body.br .bt .br p,body.br .bt .ld{padding-left:0!important}}
+@media(max-width:700px){body.ph .pt,body.hl .ht,body.br .bt,body.ab .at{grid-template-columns:minmax(0,1fr);margin-top:16px}body.br .bt,body.ab .at{padding-top:0}body.ph .pt h1,body.hl .ht h1,body.br .bt h1,body.ab .at h1{min-height:0}body.ph .pt>p,body.hl .ht>p,body.ab .at>p,body.br .bt .br p,body.br .bt .ld{padding-left:0!important}}
 """
 JS = """const D=document.documentElement,ping=()=>parent.postMessage({h:D.scrollHeight},'*'),
 set=l=>{D.dataset.lang=l;ping()};
