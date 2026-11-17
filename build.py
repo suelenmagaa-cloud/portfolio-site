@@ -648,7 +648,12 @@ async function loop(){var id=++run,l=L(),p,i;if(rm){p=P[0];for(i=0;i<4;i++){E[i]
 while(id==run){p=P[k%P.length];l=L();for(i=0;i<4;i++){E[i].textContent='';E[i].parentNode.classList.remove('on')}for(i=0;i<4;i++){cur(i);if(!await type(E[i],p[i][l],SP[i],id))return;await wait(i==1?900:420)}cur(-1);await wait(3400);k++}}
 new MutationObserver(function(){loop()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang']});loop()})();"""
 
-ICSS = """.a8 .wip{position:relative;border:1.5px dashed #f28db1;background:linear-gradient(135deg,#fff5f9,#f3f6fd);border-radius:16px;padding:16px 18px 16px}.a8 .wip u{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font:700 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#c4457f;background:#fff;border:1px solid #f9c3d8;border-radius:999px;padding:5px 11px;margin-bottom:10px}.a8 .wip u i{width:8px;height:8px;border-radius:50%;background:#f28db1;animation:wpd 1.4s ease-in-out infinite}.a8 .wip b{font-size:1.1rem}
+ICSS = """.a10{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:stretch;padding:clamp(40px,6vw,72px) 0 0}.a10 h2{font:700 clamp(1.5rem,3.2vw,2.3rem)/1.1 Outfit,sans-serif;letter-spacing:-.03em;margin:.35em 0 .7em;color:var(--ink);max-width:22ch}
+.a10 ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.a10 li{position:relative;padding:12px 16px 12px 46px;border-radius:14px;background:#f5f2ff;font:500 1rem/1.4 Inter,sans-serif;color:var(--ink)}.a10 li:before{content:"\\2713";position:absolute;left:14px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:#235070;color:#fff;font:700 .75rem/22px Inter,sans-serif;text-align:center}
+.a10 .gr{background:#14122b;color:#fff;border-radius:22px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;justify-content:center}.a10 .gr .k{color:#f9b4cf}.a10 .fc{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 26px}.a10 .fc b{font:700 clamp(1.5rem,3.4vw,2.2rem) Outfit,sans-serif;letter-spacing:-.03em;background:#f28db1;color:#14122b;border-radius:999px;padding:.12em .6em .16em}
+.a10 .ds{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:12px}.a10 .ds s{font:500 1rem Inter,sans-serif;color:#9a96b8;text-decoration-color:#f28db1;text-decoration-thickness:2px}
+@media(max-width:820px){.a10{grid-template-columns:minmax(0,1fr)}}
+.a8 .wip{position:relative;border:1.5px dashed #f28db1;background:linear-gradient(135deg,#fff5f9,#f3f6fd);border-radius:16px;padding:16px 18px 16px}.a8 .wip u{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font:700 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#c4457f;background:#fff;border:1px solid #f9c3d8;border-radius:999px;padding:5px 11px;margin-bottom:10px}.a8 .wip u i{width:8px;height:8px;border-radius:50%;background:#f28db1;animation:wpd 1.4s ease-in-out infinite}.a8 .wip b{font-size:1.1rem}
 @keyframes wpd{0%,100%{box-shadow:0 0 0 0 rgba(242,141,177,.7)}50%{box-shadow:0 0 0 7px rgba(242,141,177,0)}}@media(prefers-reduced-motion:reduce){.a8 .wip u i{animation:none}}
 .ihq{position:relative;width:100%;border-bottom:1px solid rgba(191,224,255,.22);padding-bottom:clamp(26px,3vw,36px);margin-bottom:clamp(24px,3vw,32px)}
 .ihq .k{display:block;color:#f9b4cf}.ihq .pc{color:#d6e8fa;max-width:62ch;font-size:1rem}
@@ -785,8 +790,12 @@ def ia(data, S):
              'setInterval(function(){i=(i+1)%(n+2);set(Math.min(i,n))},1500)})()</script></div>')
     rules_ = f'<section class="fb a7"><div class="in"><span class="k">{t(P["rules_k"])}</span><ol>' + ''.join(f'<li>{t(x)}</li>' for x in P['rules']) + '</ol></div></section>'
     out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div class="wip"><u><i></i>{t(["In progress","Em andamento"])}</u><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
+    gain_ = (f'<section class="a10"><div class="gl"><span class="k">{t(P["gain_k"])}</span><h2>{t(P["gain_h"])}</h2><ul>'
+             + ''.join(f'<li>{t(x)}</li>' for x in P['gain']) + '</ul></div><div class="gr">'
+             f'<span class="k">{t(P["focus_k"])}</span><div class="fc">' + ''.join(f'<b>{t(x)}</b>' for x in P['focus']) + '</div>'
+             f'<span class="k">{t(P["instead_k"])}</span><div class="ds">' + ''.join(f'<s>{t(x)}</s>' for x in P['instead']) + '</div></div></section>')
     rules9 = (f'<section class="a9">{pipe_}<span class="k">{t(P["rr_k"])}</span><div class="c9">' + ''.join(f'<span>{t(x)}</span>' for x in P['ticker']) + '</div></section>')
-    body = head + menu + hero + time_ + top3 + bars_ + tools_ + rules9 + out_ + foot
+    body = head + menu + hero + time_ + top3 + gain_ + bars_ + tools_ + rules9 + out_ + foot
     page = shell('Suelen Magalhães — AI', body)
     return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
 

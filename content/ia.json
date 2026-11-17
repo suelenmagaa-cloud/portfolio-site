@@ -716,6 +716,72 @@
     "How it turned out",
     "Como ficou"
    ]
+  ],
+  "gain_k": [
+   "Why use AI",
+   "Por que usar IA"
+  ],
+  "gain_h": [
+   "The AI isn't the point. What I gain as a professional is.",
+   "A IA não é o ponto. O ponto é o que eu ganho como profissional."
+  ],
+  "gain": [
+   [
+    "Time saved",
+    "Ganho de tempo"
+   ],
+   [
+    "More resources within reach: animation, HTML, CSS and more",
+    "Mais recursos ao meu alcance: animação, HTML, CSS e mais"
+   ],
+   [
+    "Better command of the Wix and GitHub platforms",
+    "Melhor conhecimento das plataformas Wix e GitHub"
+   ],
+   [
+    "Less production time, for images, for code, for everything",
+    "Menos tempo de produção, de imagens a código, de tudo"
+   ],
+   [
+    "More agility to test and adjust what's needed",
+    "Mais agilidade para testar e ajustar o que precisa"
+   ]
+  ],
+  "focus_k": [
+   "My focus stays on",
+   "Meu foco fica em"
+  ],
+  "focus": [
+   [
+    "Design",
+    "Design"
+   ],
+   [
+    "UX/UI",
+    "UX/UI"
+   ],
+   [
+    "Copy",
+    "Copy"
+   ]
+  ],
+  "instead_k": [
+   "Instead of",
+   "Em vez de"
+  ],
+  "instead": [
+   [
+    "fiddling with tools",
+    "mexer em ferramenta"
+   ],
+   [
+    "writing code",
+    "escrever código"
+   ],
+   [
+    "fixing everything in CSS",
+    "arrumar tudo no CSS"
+   ]
   ]
  }
 }
