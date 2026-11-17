@@ -800,7 +800,7 @@ def ia(data, S):
     gain_ = (f'<section class="a10 a10l"><ul class="gs">{gs}</ul>'
              f'<p class="gq">' + re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t(P['gain_s'])) + '</p></section>')
     rules9 = (f'<section class="a9">{pipe_}<span class="k">{t(P["rr_k"])}</span><div class="c9">' + ''.join(f'<span>{t(x)}</span>' for x in P['ticker']) + '</div></section>')
-    body = head + menu + hero + time_ + gain_h + top3 + gain_ + bars_ + tools_ + rules9 + out_ + foot
+    body = head + menu + hero + time_ + bars_ + tools_ + rules9 + out_ + foot
     page = shell('Suelen Magalhães — AI', body)
     return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
 
