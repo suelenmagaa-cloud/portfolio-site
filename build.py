@@ -762,9 +762,9 @@ def ia(data, S):
     bars = ''.join(f'<div class="br2"><b>{b[0]}</b><div class="tr"><i style="width:{b[2]}%"></i><em>{t(b[1])}</em></div></div>' for b in P['bars'])
     ax = ''.join(f'<span>{t(x)}</span>' for x in P['axis'])
     bars_ = (f'<section class="fb a3"><div class="in"><span class="k">{t(P["bars_k"])}</span><h2>{t(P["bars_h"])}</h2>'
-             f'<div class="ch2" role="img" aria-label="chart"><div class="ct">{t(P["chart_t"])}</div>{bars}'
+             f'<div class="ch2" role="img" aria-label="chart">{('<div class="ct">'+t(P["chart_t"])+'</div>') if P["chart_t"][1] else ''}{bars}'
              f'<div class="br2 big"><b>{t(P["bar_big"])}</b><div class="tr"><i>{t(P["bar_big2"])}</i></div></div>'
-             f'<div class="ax"><span></span><div>{ax}</div></div></div><small>{t(P["bar_note"])}</small></div></section>')
+             f'<div class="ax"><span></span><div>{ax}</div></div></div>{('<small>'+t(P["bar_note"])+'</small>') if P["bar_note"][1] else ''}</div></section>')
     tools = ''.join(f'<div class="tl"><h3>{t(x[0])}</h3><p>{t(x[1])}</p></div>' for x in P['tools'])
     tools_ = f'<section class="a4"><span class="k">{t(P["tool_k"])}</span>{tools}</section>'
     also = ''.join(f'<span>{t(x)}</span>' for x in P['also_l'])

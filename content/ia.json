@@ -17,8 +17,8 @@
    "Eu projeto."
   ],
   "intro": [
-   "My site was on Wix and it held me back. I replaced it with one made with AI, even though I know basic HTML, CSS is a struggle, and Python and GitHub were theory. I know what I want and why. AI replaced the tools that held me back. It did not replace the design knowledge I built over the years.",
-   "Meu site estava no Wix e me travava. Troquei por um feito com IA, mesmo sabendo só o básico de HTML, com CSS difícil e Python e GitHub só na teoria. Eu sei o que quero e por quê. A IA substituiu as ferramentas que me travavam. Não substituiu o conhecimento de design que construí ao longo dos anos."
+   "Wix is a platform that lets me build sites, but it has limits. I replaced it with one made with AI, even though I only know basic HTML, find CSS hard, and know Python and GitHub only in theory. I know what I want and why. AI replaced the tools that held me back. It did not replace the design knowledge I built over the years.",
+   "O Wix é uma plataforma que me permite criar sites, mas tem limitações. Troquei por um feito com IA, mesmo sabendo só o básico de HTML, com CSS difícil e Python e GitHub só na teoria. Eu sei o que quero e por quê. A IA substituiu as ferramentas que me travavam. Não substituiu o conhecimento de design que construí ao longo dos anos."
   ],
   "mock_me": [
    "Green is the client's color, not mine.",
@@ -63,12 +63,12 @@
    "13 horas"
   ],
   "time_t": [
-   "From our first conversation to today: about 13 hours of active work alongside the AI, spread over 4 days. Doing it by hand, fully focused, would have taken me around two weeks.",
-   "Da nossa primeira conversa até aqui: cerca de 13 horas de trabalho ativo junto com a IA, espalhadas por 4 dias. Se eu fizesse na mão, totalmente focada, levaria em torno de 2 semanas."
+   "From the first conversation to today: 13 hours of active work alongside the AI. Done by hand, even fully focused, it would stretch to 2 weeks.",
+   "Da primeira conversa até aqui: 13 horas de trabalho ativo junto a IA. Se fosse feito na mão, mesmo totalmente focada, o tempo se estende para 2 semanas."
   ],
   "time_n": [
-   "Duration measured from the conversation log (Nov 12 to 16, 2026). The two weeks are my own estimate. The Wix site stays online until I approve everything.",
-   "Duração medida no registro da conversa (12 a 16 de nov. de 2026). As 2 semanas são estimativa minha. O site no Wix segue no ar até eu aprovar tudo."
+   "The site already in place stayed online while this one was being built.",
+   "O site já produzido continuava no ar enquanto este estava em produção."
   ],
   "bars_k": [
    "Who drove",
@@ -121,8 +121,8 @@
    "10+ anos"
   ],
   "bar_note": [
-   "Illustrative self-assessment, not a measurement. AI covered the areas where I am a beginner.",
-   "Autoavaliação ilustrativa, não é uma medição. A IA cobriu as áreas em que sou iniciante."
+   "",
+   ""
   ],
   "tool_k": [
    "In place of the tool",
@@ -440,8 +440,8 @@
    ]
   ],
   "chart_t": [
-   "My skill level, self-assessed",
-   "Meu nível em cada área, autoavaliação"
+   "",
+   ""
   ],
   "axis": [
    [
@@ -449,17 +449,13 @@
     "iniciante"
    ],
    [
-    "intermediate",
-    "intermediário"
-   ],
-   [
     "advanced",
     "avançado"
    ]
   ],
   "out_k": [
-   "Outside this site",
-   "Fora deste site"
+   "Other projects using AI",
+   "Outros projetos com uso de IA"
   ],
   "out": [
    [
@@ -468,8 +464,8 @@
      "Radar político"
     ],
     [
-     "The same approach on another tool.",
-     "A mesma abordagem em outra ferramenta."
+     "A newsletter to follow the mandates of everyone elected in 2026, plus national and world geopolitics news.",
+     "Uma newsletter para acompanhar os mandatos de todos os eleitos de 2026. Notícias de geopolítica nacional e mundial."
     ]
    ],
    [
@@ -478,8 +474,8 @@
      "Acompanhamento de clientes"
     ],
     [
-     "With Lovable.",
-     "Com Lovable."
+     "Payments, scheduling and sending messages.",
+     "Pagamento, agendamento e envio de mensagens."
     ]
    ]
   ],
@@ -565,8 +561,8 @@
     "r": [
      [
       [
-       "Write the text for each brand.",
-       "Escreva o texto de cada marca."
+       "Write the brand's text according to the manual provided.",
+       "Escreva o texto da marca de acordo com o manual fornecido."
       ],
       [
        "Claims the manuals did not support.",
@@ -577,8 +573,8 @@
        "Não invente conteúdo profissional."
       ],
       [
-       "Texts cut back to what the material says.",
-       "Textos cortados ao que o material diz."
+       "Texts in line with what the material says.",
+       "Textos de acordo com o que o material diz."
       ]
      ]
     ]
@@ -599,8 +595,8 @@
     "r": [
      [
       [
-       "Build the Pharma page.",
-       "Monte a página Pharma."
+       "Build the Pharma page, based on the one that already exists.",
+       "Monte a página Pharma, baseada na que já existe."
       ],
       [
        "The client's green as the main color.",
