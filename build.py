@@ -648,7 +648,9 @@ async function loop(){var id=++run,l=L(),p,i;if(rm){p=P[0];for(i=0;i<4;i++){E[i]
 while(id==run){p=P[k%P.length];l=L();for(i=0;i<4;i++){E[i].textContent='';E[i].parentNode.classList.remove('on')}for(i=0;i<4;i++){cur(i);if(!await type(E[i],p[i][l],SP[i],id))return;await wait(i==1?900:420)}cur(-1);await wait(3400);k++}}
 new MutationObserver(function(){loop()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang']});loop()})();"""
 
-ICSS = """.ihq{position:relative;width:100%;border-bottom:1px solid rgba(191,224,255,.22);padding-bottom:clamp(26px,3vw,36px);margin-bottom:clamp(24px,3vw,32px)}
+ICSS = """.a8 .wip{position:relative;border:1.5px dashed #f28db1;background:linear-gradient(135deg,#fff5f9,#f3f6fd);border-radius:16px;padding:16px 18px 16px}.a8 .wip u{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font:700 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#c4457f;background:#fff;border:1px solid #f9c3d8;border-radius:999px;padding:5px 11px;margin-bottom:10px}.a8 .wip u i{width:8px;height:8px;border-radius:50%;background:#f28db1;animation:wpd 1.4s ease-in-out infinite}.a8 .wip b{font-size:1.1rem}
+@keyframes wpd{0%,100%{box-shadow:0 0 0 0 rgba(242,141,177,.7)}50%{box-shadow:0 0 0 7px rgba(242,141,177,0)}}@media(prefers-reduced-motion:reduce){.a8 .wip u i{animation:none}}
+.ihq{position:relative;width:100%;border-bottom:1px solid rgba(191,224,255,.22);padding-bottom:clamp(26px,3vw,36px);margin-bottom:clamp(24px,3vw,32px)}
 .ihq .k{display:block;color:#f9b4cf}.ihq .pc{color:#d6e8fa;max-width:62ch;font-size:1rem}
 .ihq .stp li{color:#7f9bbb}.ihq .stp li.on,.ihq .stp li.dn{color:#fff}.ihq .stp i{background:rgba(255,255,255,.08);border-color:rgba(191,224,255,.35);color:#bfe0ff}.ihq .stp li.on i{background:#f28db1;border-color:#f28db1;color:#fff}.ihq .stp li.dn i{background:#fff;border-color:#fff;color:#235070}
 .ihq .stp li:not(:last-child)::after{background:rgba(191,224,255,.22)}.ihq .stp li:not(:last-child)::before{background:#f28db1}
@@ -782,9 +784,9 @@ def ia(data, S):
              'if(matchMedia("(prefers-reduced-motion:reduce)").matches){set(n);return}set(0);'
              'setInterval(function(){i=(i+1)%(n+2);set(Math.min(i,n))},1500)})()</script></div>')
     rules_ = f'<section class="fb a7"><div class="in"><span class="k">{t(P["rules_k"])}</span><ol>' + ''.join(f'<li>{t(x)}</li>' for x in P['rules']) + '</ol></div></section>'
-    out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
+    out_ = f'<section class="a8"><span class="k">{t(P["out_k"])}</span><div class="og">' + ''.join(f'<div class="wip"><u><i></i>{t(["In progress","Em andamento"])}</u><b>{t(o[0])}</b><p>{t(o[1])}</p></div>' for o in P['out']) + '</div></section>'
     rules9 = (f'<section class="a9">{pipe_}<span class="k">{t(P["rr_k"])}</span><div class="c9">' + ''.join(f'<span>{t(x)}</span>' for x in P['ticker']) + '</div></section>')
-    body = head + menu + hero + top3 + time_ + bars_ + tools_ + rules9 + out_ + foot
+    body = head + menu + hero + time_ + top3 + bars_ + tools_ + rules9 + out_ + foot
     page = shell('Suelen Magalhães — AI', body)
     return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
 
