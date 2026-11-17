@@ -727,24 +727,54 @@
   ],
   "gain": [
    [
-    "Time saved",
-    "Ganho de tempo"
+    [
+     "+Time",
+     "+Tempo"
+    ],
+    [
+     "Time saved",
+     "Ganho de tempo"
+    ]
    ],
    [
-    "More resources within reach: animation, HTML, CSS and more",
-    "Mais recursos ao meu alcance: animação, HTML, CSS e mais"
+    [
+     "+Resources",
+     "+Recursos"
+    ],
+    [
+     "Animation, HTML, CSS and more within reach",
+     "Animação, HTML, CSS e mais ao meu alcance"
+    ]
    ],
    [
-    "Better command of the Wix and GitHub platforms",
-    "Melhor conhecimento das plataformas Wix e GitHub"
+    [
+     "+Know-how",
+     "+Domínio"
+    ],
+    [
+     "Better knowledge of the Wix and GitHub platforms",
+     "Melhor conhecimento das plataformas Wix e GitHub"
+    ]
    ],
    [
-    "Less production time, for images, for code, for everything",
-    "Menos tempo de produção, de imagens a código, de tudo"
+    [
+     "−Production",
+     "−Produção"
+    ],
+    [
+     "Less time making images, writing code and doing everything",
+     "Menos tempo para criar imagens, escrever código e fazer tudo"
+    ]
    ],
    [
-    "More agility to test and adjust what's needed",
-    "Mais agilidade para testar e ajustar o que precisa"
+    [
+     "+Agility",
+     "+Agilidade"
+    ],
+    [
+     "To test and adjust whatever is needed",
+     "Para testar e ajustar o que precisa"
+    ]
    ]
   ],
   "focus_k": [
@@ -782,6 +812,10 @@
     "fixing everything in CSS",
     "arrumar tudo no CSS"
    ]
+  ],
+  "gain_s": [
+   "My focus stays on **design**, **UX/UI** and **copy**, instead of fiddling with tools, writing code or fixing everything in CSS.",
+   "Meu foco fica em **design**, **UX/UI** e **copy**, em vez de mexer em ferramenta, escrever código ou arrumar tudo no CSS."
   ]
  }
 }
