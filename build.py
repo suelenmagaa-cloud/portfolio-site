@@ -649,10 +649,10 @@ while(id==run){p=P[k%P.length];l=L();for(i=0;i<4;i++){E[i].textContent='';E[i].p
 new MutationObserver(function(){loop()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang']});loop()})();"""
 
 ICSS = """.a10{padding:clamp(40px,6vw,72px) 0 0}.a10 h2{font:700 clamp(1.5rem,3.2vw,2.3rem)/1.1 Outfit,sans-serif;letter-spacing:-.03em;margin:.35em 0 0;color:var(--ink);max-width:24ch}
-.a10 .gs{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid #e1def0}.a10 .gs li{display:grid;grid-template-columns:28px minmax(9.5em,13em) minmax(0,1fr);align-items:center;gap:6px 18px;padding:16px 4px;border-bottom:1px solid #e1def0}.a10 .gs svg{width:24px;height:24px;fill:none;stroke:#f28db1;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.a10 .gs{list-style:none;margin:0;padding:0;border-top:1px solid #e1def0}.a10 .gs li{display:grid;grid-template-columns:28px minmax(9.5em,13em) minmax(0,1fr);align-items:center;gap:6px 18px;padding:16px 4px;border-bottom:1px solid #e1def0}.a10 .gs svg{width:24px;height:24px;fill:none;stroke:#f28db1;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .a10 .gs b{font:700 1.25rem Outfit,sans-serif;letter-spacing:-.02em;color:#235070}.a10 .gs li>span{font:500 1rem/1.4 Inter,sans-serif;color:var(--ink)}
 @media(max-width:640px){.a10 .gs li{grid-template-columns:28px minmax(0,1fr)}.a10 .gs li>span{grid-column:2}}
-.a10 .gq{margin:40px 0 0;font:500 clamp(1.15rem,2.2vw,1.45rem)/1.35 Outfit,sans-serif;color:var(--ink);padding-left:22px;border-left:6px solid #f28db1;max-width:46ch}.a10 .gq strong{color:#235070;font-weight:700}
+.a10l{padding-top:clamp(28px,4vw,44px)}.a10 .gq{margin:40px 0 0;font:500 clamp(1.15rem,2.2vw,1.45rem)/1.35 Outfit,sans-serif;color:var(--ink);padding-left:22px;border-left:6px solid #f28db1;max-width:46ch}.a10 .gq strong{color:#235070;font-weight:700}
 .a8 .wip{position:relative;border:1.5px dashed #f28db1;background:linear-gradient(135deg,#fff5f9,#f3f6fd);border-radius:16px;padding:16px 18px 16px}.a8 .wip u{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font:700 .68rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#c4457f;background:#fff;border:1px solid #f9c3d8;border-radius:999px;padding:5px 11px;margin-bottom:10px}.a8 .wip u i{width:8px;height:8px;border-radius:50%;background:#f28db1;animation:wpd 1.4s ease-in-out infinite}.a8 .wip b{font-size:1.1rem}
 @keyframes wpd{0%,100%{box-shadow:0 0 0 0 rgba(242,141,177,.7)}50%{box-shadow:0 0 0 7px rgba(242,141,177,0)}}@media(prefers-reduced-motion:reduce){.a8 .wip u i{animation:none}}
 .ihq{position:relative;width:100%;border-bottom:1px solid rgba(191,224,255,.22);padding-bottom:clamp(26px,3vw,36px);margin-bottom:clamp(24px,3vw,32px)}
@@ -796,10 +796,11 @@ def ia(data, S):
           '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h5"/></svg>',
           '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg>']
     gs = ''.join(f'<li>{GI[i % len(GI)]}<b>{t(a)}</b><span>{t(b)}</span></li>' for i, (a, b) in enumerate(P['gain']))
-    gain_ = (f'<section class="a10"><span class="k">{t(P["gain_k"])}</span><h2>{t(P["gain_h"])}</h2><ul class="gs">{gs}</ul>'
+    gain_h = f'<section class="a10 a10h"><span class="k">{t(P["gain_k"])}</span><h2>{t(P["gain_h"])}</h2></section>'
+    gain_ = (f'<section class="a10 a10l"><ul class="gs">{gs}</ul>'
              f'<p class="gq">' + re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t(P['gain_s'])) + '</p></section>')
     rules9 = (f'<section class="a9">{pipe_}<span class="k">{t(P["rr_k"])}</span><div class="c9">' + ''.join(f'<span>{t(x)}</span>' for x in P['ticker']) + '</div></section>')
-    body = head + menu + hero + time_ + top3 + gain_ + bars_ + tools_ + rules9 + out_ + foot
+    body = head + menu + hero + time_ + gain_h + top3 + gain_ + bars_ + tools_ + rules9 + out_ + foot
     page = shell('Suelen Magalhães — AI', body)
     return page.replace('</style>', ICSS + '</style>', 1).replace('<body>', '<body class="ia">', 1)
 
