@@ -17,8 +17,8 @@
    "Eu projeto."
   ],
   "intro": [
-   "Wix is a platform that lets me build sites, but it has limits. I replaced it with one made with AI, even though I only know basic HTML, find CSS hard, and know Python and GitHub only in theory. I know what I want and why. AI replaced the tools that held me back. It did not replace the design knowledge I built over the years.",
-   "O Wix é uma plataforma que me permite criar sites, mas tem limitações. Troquei por um feito com IA, mesmo sabendo só o básico de HTML, com CSS difícil e Python e GitHub só na teoria. Eu sei o que quero e por quê. A IA substituiu as ferramentas que me travavam. Não substituiu o conhecimento de design que construí ao longo dos anos."
+   "Wix is a platform that lets me build sites, but it has limits. I replaced it with one made with AI (Claude), even though I only know basic HTML, find CSS hard, and know Python and GitHub only in theory. I know what I want and why. AI replaced the tools that held me back. It did not replace the design knowledge I built over the years.",
+   "O Wix é uma plataforma que me permite criar sites, mas tem limitações. Troquei por um feito com IA (o Claude), mesmo sabendo só o básico de HTML, com CSS difícil e Python e GitHub só na teoria. Eu sei o que quero e por quê. A IA substituiu as ferramentas que me travavam. Não substituiu o conhecimento de design que construí ao longo dos anos."
   ],
   "mock_me": [
    "Green is the client's color, not mine.",
@@ -344,8 +344,8 @@
    ]
   ],
   "pipe_t": [
-   "The project is replacing my Wix site with one made with AI. The Wix site stays online until I approve everything.",
-   "O projeto é trocar o meu site no Wix por um feito com IA. O Wix segue no ar até eu aprovar tudo."
+   "The project is replacing my Wix site with one made with AI: Claude writes the code, GitHub stores and publishes it. The Wix site stays online until I approve everything.",
+   "O projeto é trocar o meu site no Wix por um feito com IA: o Claude escreve o código e o GitHub guarda e publica. O Wix segue no ar até eu aprovar tudo."
   ],
   "loop": [
    [
