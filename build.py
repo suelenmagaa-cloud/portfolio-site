@@ -160,7 +160,7 @@ body.ia .at{padding-bottom:36px;border-width:0 0 3px;border-style:solid;border-i
 @media(max-width:700px){body.ph .pt,body.hl .ht,body.br .bt,body.ab .at{grid-template-columns:minmax(0,1fr);margin-top:16px}body.br .bt,body.ab .at{padding-top:0}body.ph .pt h1,body.hl .ht h1,body.br .bt h1,body.ab .at h1{min-height:0}body.ph .pt>p,body.hl .ht>p,body.ab .at>p,body.br .bt .br p,body.br .bt .ld{padding-left:0!important}}
 """
 JS = """const D=document.documentElement,ping=()=>parent.postMessage({h:D.scrollHeight},'*'),
-set=l=>{D.dataset.lang=l;ping()};
+set=l=>{D.dataset.lang=l;D.lang=l=='pt'?'pt-BR':'en';ping()};
 let sv='';try{sv=localStorage.sl||''}catch(e){}
 set(new URLSearchParams(location.search).get('lang')||sv||(navigator.language.startsWith('pt')?'pt':'en'));
 addEventListener('storage',e=>{if(e.key=='sl'&&e.newValue)set(e.newValue)});
@@ -196,16 +196,18 @@ document.addEventListener('click',e=>{if(e.target.matches('.g img,.im img')){dl.
 
 def chrome(S, cur):
     bar = '<div class="bar"><button data-l="en">EN</button><button data-l="pt">PT</button></div>'
-    head = '<div class="top"><a class="brand site" href="#top"><img class="logo" src="assets/logo.png" alt=""><span><b>SUELEN MAGALHÃES</b><i>|</i>DESIGN</span></a>' + bar + '</div>'
+    head = '<div class="top"><a class="brand site" href="index.html"><img class="logo" src="assets/logo.png" alt=""><span><b>SUELEN MAGALHÃES</b><i>|</i>DESIGN</span></a>' + bar + '</div>'
     menu = '<nav class="menu site">' + ''.join(f'<a href="{html.escape(u)}"' + (' aria-current="page"' if i == cur else '') + f'>{t([en, pt])}</a>' for i, (en, pt, u) in enumerate(S['menu'])) + '</nav>'
     foot = (f'<footer class="site"><div class="bandbar"></div><div class="ft"><div><h4>{t(S["cta"])}</h4><p>{t(S["cta2"])}</p></div>'
             f'<a class="btn" href="mailto:{S["email"]}">{t(S["btn"])}</a></div><div class="fl"><a href="mailto:{S["email"]}">{S["email"]}</a>'
             f'<a href="{S["linkedin"]}" target="_blank" rel="noopener">LinkedIn</a><span>© 2026 Suelen Magalhães</span></div></footer>')
     return head, menu, foot
 
+META = {}
+
 def shell(title, body):
-    return (f'<!doctype html><html data-lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            f'<title>{title}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}{CCSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
+    return (f'<!doctype html><html data-lang="en" lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<title>{title}</title>{META.get("head", "")}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"><style>{CSS}{CCSS}</style></head><body><main id="top">{body}</main><dialog><img alt=""></dialog><script>{JS}</script></body></html>')
 
 def pimg(k, alt=''):
     return f'<img loading="lazy" alt="{html.escape(alt)}" src="assets/{k}.webp">' if (R / 'assets' / f'{k}.webp').exists() else ''
@@ -598,8 +600,8 @@ ACSS = """body.ab{background:#fff}.ab .intro{display:none}.ab footer .ft{display
 
 def about(data, S):
     P = data['page']
-    S2 = dict(S); S2['menu'] = [m for m in S['menu'] if m[0] != 'CONTACT']
-    S2['menu'] = [[P['menu_about'][0], P['menu_about'][1], m[2]] if m[0] == 'ABOUT' else m for m in S2['menu']]
+    S2 = dict(S)
+    S2['menu'] = [[P['menu_about'][0], P['menu_about'][1], m[2]] if m[0] == 'ABOUT' else m for m in S['menu']]
     head, menu, foot = chrome(S2, 7)
     top = f'<section class="at"><div><h1>{t(P["title"])}</h1></div><p>{t(P["lead"])}</p></section>'
     SI = ['<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/></svg>',
@@ -812,6 +814,13 @@ def main():
     data = json.loads((R / 'content' / 'cases.json').read_text('utf-8'))
     crops(data)
     S = data['site']; cs = data['cases']
+    aj0 = R / 'content' / 'about.json'
+    if aj0.exists():  # mesmo rótulo de Sobre/Contato em todas as páginas
+        lab = json.loads(aj0.read_text('utf-8'))['page']['menu_about']
+        S['menu'] = [[lab[0], lab[1], m[2]] if m[0] == 'ABOUT' else m for m in S['menu']]
+    ds = html.escape(S['description'][0])
+    META['head'] = (f'<meta name="description" content="{ds}"><meta property="og:type" content="website"><meta property="og:title" content="Suelen Magalhães — Design">'
+                    f'<meta property="og:description" content="{ds}"><meta property="og:image" content="{S["base_url"]}assets/logo.png"><link rel="icon" type="image/png" href="assets/logo.png">')
     head, menu, foot = chrome(S, 1)
     hero = ('<section class="shero site"><div><small>' + html.escape(S['tags']) + '</small><h1>' + t(S['title']) + '</h1></div><div class="stats">'
             + ''.join(f'<div><b>{html.escape(a)}</b><span>{t(b)}</span></div>' for a, b in S['stats']) + '</div></section><p class="intro site">' + t(S['intro']) + '</p>')
@@ -835,6 +844,20 @@ def main():
     if ij.exists():
         (D / 'ia.html').write_text(ia(json.loads(ij.read_text('utf-8')), S), 'utf-8')
     shutil.copytree(R / 'assets', D / 'assets')
+    extras(S)
+
+def extras(S):
+    """Arquivos para o site funcionar sem o Wix: 404, sitemap, robots e redirects dos endereços antigos."""
+    head, menu, foot = chrome(S, -1)
+    msg = '<section class="at"><div><h1>' + t(['Page not found', 'Página não encontrada']) + '</h1></div><p>' + t(['This address may be from the old version of the site. Use the menu above or go to ', 'Esse endereço pode ser da versão antiga do site. Use o menu acima ou vá para ']) + '<a href="index.html">Product Design</a>.</p></section>'
+    (D / '404.html').write_text(shell('Suelen Magalhães — 404', head + menu + msg + foot).replace('<head>', f'<head><base href="{S["base_url"]}">', 1), 'utf-8')
+    pages = sorted(p.name for p in D.glob('*.html') if p.name not in ('404.html', 'brands-novo.html'))
+    (D / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{S["base_url"]}{"" if p == "index.html" else p}</loc></url>' for p in pages) + '</urlset>', 'utf-8')
+    (D / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {S["base_url"]}sitemap.xml\n', 'utf-8')
+    for slug, dest in S.get('wix_redirects', {}).items():
+        f = D / slug / 'index.html'; f.parent.mkdir(exist_ok=True)
+        u = '../' + dest
+        f.write_text(f'<!doctype html><meta charset="utf-8"><title>Redirecionando…</title><link rel="canonical" href="{S["base_url"]}{dest}"><meta http-equiv="refresh" content="0;url={u}"><a href="{u}">{dest}</a>', 'utf-8')
 
 if __name__ == '__main__':
     main()

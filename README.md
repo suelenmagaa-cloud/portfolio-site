@@ -19,3 +19,15 @@ $w.onReady(() => {
 
 ## Figma
 Cole o link do arquivo/frame em `"figma"` no `cases.json` (compartilhamento: qualquer pessoa com o link pode ver). O build converte em embed com zoom e arraste.
+
+## Migração (site funcionando sem o Wix)
+O plano do Wix renova em 19/dez/2026. Enquanto isso, o Wix continua no ar e as páginas embutidas não mudam (no modo embed o menu e o rodapé ficam escondidos).
+
+Feito:
+- Menu aponta para as páginas do próprio site (`index`, `pharma`, `health`, `brands`, `ia`, `about`); Contato virou parte de Sobre.
+- `404.html`, `sitemap.xml`, `robots.txt`, favicon e descrição para buscadores/LinkedIn.
+- Endereços antigos do Wix (`/farmacêutico`, `/impressos`, `/sobre`…) redirecionam para a página nova — só passam a valer quando o domínio apontar para o GitHub. Lista em `site.wix_redirects` no `cases.json`.
+
+Falta decidir:
+- **Home** (hub institucional) e **Other Media**: ainda apontam para o Wix.
+- Domínio: quando aprovar, trocar `site.base_url` para `https://www.suelenmagaa.com.br/`, criar o arquivo `CNAME` e apontar o DNS no Registro.br para o GitHub Pages. Não fazer antes de tudo aprovado — o CNAME redireciona o github.io para o domínio.
