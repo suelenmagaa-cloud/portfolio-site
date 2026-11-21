@@ -194,10 +194,13 @@ else{addEventListener('scroll',mark,{passive:true});mark()}
 const dl=document.querySelector('dialog');
 document.addEventListener('click',e=>{if(e.target.matches('.g img,.im img')){dl.querySelector('img').src=e.target.src;dl.showModal()}else if(e.target===dl||e.target.closest('dialog'))dl.close()});"""
 
+PAGE = {1: 'index.html', 2: 'pharma.html', 3: 'health.html', 4: 'brands.html', 6: 'ia.html', 7: 'about.html'}
+
 def chrome(S, cur):
+    cur = PAGE.get(cur, cur)
     bar = '<div class="bar"><button data-l="en">EN</button><button data-l="pt">PT</button></div>'
     head = '<div class="top"><a class="brand site" href="index.html"><img class="logo" src="assets/logo.png" alt=""><span><b>SUELEN MAGALHÃES</b><i>|</i>DESIGN</span></a>' + bar + '</div>'
-    menu = '<nav class="menu site">' + ''.join(f'<a href="{html.escape(u)}"' + (' aria-current="page"' if i == cur else '') + f'>{t([en, pt])}</a>' for i, (en, pt, u) in enumerate(S['menu'])) + '</nav>'
+    menu = '<nav class="menu site">' + ''.join(f'<a href="{html.escape(u)}"' + (' aria-current="page"' if u == cur else '') + f'>{t([en, pt])}</a>' for i, (en, pt, u) in enumerate(S['menu'])) + '</nav>'
     foot = (f'<footer class="site"><div class="bandbar"></div><div class="ft"><div><h4>{t(S["cta"])}</h4><p>{t(S["cta2"])}</p></div>'
             f'<a class="btn" href="mailto:{S["email"]}">{t(S["btn"])}</a></div><div class="fl"><a href="mailto:{S["email"]}">{S["email"]}</a>'
             f'<a href="{S["linkedin"]}" target="_blank" rel="noopener">LinkedIn</a><span>© 2026 Suelen Magalhães</span></div></footer>')
@@ -601,7 +604,6 @@ ACSS = """body.ab{background:#fff}.ab .intro{display:none}.ab footer .ft{display
 def about(data, S):
     P = data['page']
     S2 = dict(S)
-    S2['menu'] = [[P['menu_about'][0], P['menu_about'][1], m[2]] if m[0] == 'ABOUT' else m for m in S['menu']]
     head, menu, foot = chrome(S2, 7)
     top = f'<section class="at"><div><h1>{t(P["title"])}</h1></div><p>{t(P["lead"])}</p></section>'
     SI = ['<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/></svg>',
@@ -814,10 +816,6 @@ def main():
     data = json.loads((R / 'content' / 'cases.json').read_text('utf-8'))
     crops(data)
     S = data['site']; cs = data['cases']
-    aj0 = R / 'content' / 'about.json'
-    if aj0.exists():  # mesmo rótulo de Sobre/Contato em todas as páginas
-        lab = json.loads(aj0.read_text('utf-8'))['page']['menu_about']
-        S['menu'] = [[lab[0], lab[1], m[2]] if m[0] == 'ABOUT' else m for m in S['menu']]
     ds = html.escape(S['description'][0])
     META['head'] = (f'<meta name="description" content="{ds}"><meta property="og:type" content="website"><meta property="og:title" content="Suelen Magalhães — Design">'
                     f'<meta property="og:description" content="{ds}"><meta property="og:image" content="{S["base_url"]}assets/logo.png"><link rel="icon" type="image/png" href="assets/logo.png">')

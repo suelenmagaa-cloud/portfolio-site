@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://suelenmagaa-cloud.github.io/portfolio-site/sitemap.xml

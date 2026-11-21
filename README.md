@@ -24,10 +24,10 @@ Cole o link do arquivo/frame em `"figma"` no `cases.json` (compartilhamento: qua
 O plano do Wix renova em 19/dez/2026. Enquanto isso, o Wix continua no ar e as páginas embutidas não mudam (no modo embed o menu e o rodapé ficam escondidos).
 
 Feito:
-- Menu aponta para as páginas do próprio site (`index`, `pharma`, `health`, `brands`, `ia`, `about`); Contato virou parte de Sobre.
+- Menu igual ao do Wix atual (PRODUCT, PHARMA, HEALTH, BRAND, ABOUT, IA + DESIGN), apontando para as páginas do próprio site; Contato faz parte de Sobre. Home e Other Media saíram, como no Wix.
 - `404.html`, `sitemap.xml`, `robots.txt`, favicon e descrição para buscadores/LinkedIn.
-- Endereços antigos do Wix (`/farmacêutico`, `/impressos`, `/sobre`…) redirecionam para a página nova — só passam a valer quando o domínio apontar para o GitHub. Lista em `site.wix_redirects` no `cases.json`.
+- Endereços do Wix, atuais e antigos (`/pharma`, `/health`, `/brands`, `/about`, `/ia-design`, `/farmacêutico`, `/impressos`, `/sobre`…), redirecionam para a página nova — só passam a valer quando o domínio apontar para o GitHub. Lista em `site.wix_redirects` no `cases.json`.
 
 Falta decidir:
-- **Home** (hub institucional) e **Other Media**: ainda apontam para o Wix.
+- **Other Media**: conteúdo ainda só no Wix (`/videos`), fora do menu.
 - Domínio: quando aprovar, trocar `site.base_url` para `https://www.suelenmagaa.com.br/`, criar o arquivo `CNAME` e apontar o DNS no Registro.br para o GitHub Pages. Não fazer antes de tudo aprovado — o CNAME redireciona o github.io para o domínio.

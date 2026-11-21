@@ -429,13 +429,8 @@
   "linkedin": "https://linkedin.com/in/suelenmagaa",
   "menu": [
    [
-    "Home",
-    "Home",
-    "https://www.suelenmagaa.com.br/início"
-   ],
-   [
-    "PRODUCT DESIGN",
-    "PRODUCT DESIGN",
+    "PRODUCT",
+    "PRODUCT",
     "index.html"
    ],
    [
@@ -449,24 +444,19 @@
     "health.html"
    ],
    [
-    "BRANDS",
+    "BRAND",
     "MARCAS",
     "brands.html"
-   ],
-   [
-    "OTHER MEDIA",
-    "OUTRAS MÍDIAS",
-    "https://www.suelenmagaa.com.br/videos"
-   ],
-   [
-    "AI",
-    "IA",
-    "ia.html"
    ],
    [
     "ABOUT",
     "SOBRE",
     "about.html"
+   ],
+   [
+    "IA + DESIGN",
+    "IA + DESIGN",
+    "ia.html"
    ]
   ],
   "base_url": "https://suelenmagaa-cloud.github.io/portfolio-site/",
@@ -481,7 +471,12 @@
    "marca-e-identidade-visual-1": "brands.html",
    "ia": "ia.html",
    "sobre": "about.html",
-   "entre-em-contato": "about.html#contact"
+   "entre-em-contato": "about.html#contact",
+   "pharma": "pharma.html",
+   "health": "health.html",
+   "brands": "brands.html",
+   "about": "about.html",
+   "ia-design": "ia.html"
   }
  }
 }
